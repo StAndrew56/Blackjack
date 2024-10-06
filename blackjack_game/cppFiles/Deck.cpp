@@ -17,7 +17,7 @@ public:
     int drawCard();
 };
 
-void Deck::Deck(void int cardCount, void Cards card) {
+Deck::Deck(void int cardCount, void Cards card) {
     
 }
 
