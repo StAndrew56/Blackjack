@@ -33,7 +33,7 @@ void Dealer::void dealCards(void Cards card) {
  * @param double amount
  * @return return void
  */
-return void Dealer::void pay(void Player player, void double amount) {
+void Dealer::void pay(void Player player, void double amount) {
     return null;
 }
 
