@@ -12,6 +12,7 @@ private:
     int cardCount = 0;
     Cards card;
 public:
+    //Declarations
     Deck(int cardCount, Cards card);
     void shuffle();
     int drawCard();
