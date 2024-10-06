@@ -1,7 +1,7 @@
 /**
  * Project Untitled
  */
-
+using namespace std;
 
 #include "Deck.h"
 
