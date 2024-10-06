@@ -7,17 +7,18 @@ using namespace std;
 
 #include "Deck.h"
 
-/**
- * Deck implementation
- */
+class Deck{
+private:
+    int cardCount = 0;
+    Cards card;
+public:
+    Deck(int cardCount, Cards card);
+    void shuffle();
+    int drawCard();
+};
 
-
-/**
- * @param int cardCount
- * @param Cards card
- */
 void Deck::Deck(void int cardCount, void Cards card) {
-
+    
 }
 
 /**
