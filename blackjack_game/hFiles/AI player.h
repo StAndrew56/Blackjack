@@ -9,7 +9,7 @@
 class AI player {
 public: 
     
-void playHand();
+void void playHand();
 };
 
 #endif //_AI PLAYER_H

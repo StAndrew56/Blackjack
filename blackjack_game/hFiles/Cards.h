@@ -11,9 +11,17 @@ public:
     void string suit;
     void int value;
     
-void getCardValue();
+/**
+ * @param Suit s
+ * @param int value
+ */
+void Cards(void Suit s, void int value);
     
-void calcHandValue();
+int int getCardValue();
+    
+string string getSuit();
+    
+string string toString();
 };
 
 #endif //_CARDS_H
