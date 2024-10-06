@@ -8,17 +8,46 @@
 
 class Dealer {
 public: 
-    void int handVal;
+    void int dealerHandVal;
+    void Cards card;
+    void int UserHandVal;
     
-void dealCards();
+/**
+ * @param int dealerHandVal
+ * @param Cards card
+ */
+void Dealer(void int dealerHandVal, void Cards card);
     
-void dealerHandTotal();
+/**
+ * @param Cards card
+ */
+void void dealCards(void Cards card);
     
-void pay();
+/**
+ * @param Player player
+ * @param double amount
+ */
+return void void pay(void Player player, void double amount);
     
-void take();
+/**
+ * @param Cards card
+ */
+void void removeCards(void Cards card);
     
-void removeCards();
+/**
+ * @param Cards card
+ */
+void void addCard(void Cards card);
+    
+/**
+ * @param Cards card
+ */
+int int getUserHandVal(void Cards card);
+    
+/**
+ * @param Cards card
+ */
+void void setUserHandVal(void Cards card);
 };
 
 #endif //_DEALER_H

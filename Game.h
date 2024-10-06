@@ -12,7 +12,9 @@ public:
     void Player player;
     void Deck deck;
     
-void startGame();
+return void startGame();
+    
+void void resetGame();
 };
 
 #endif //_GAME_H

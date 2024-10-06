@@ -10,22 +10,66 @@
  */
 
 
-void User::hit() {
+/**
+ * @param int handVal
+ * @param double balance
+ */
+void User::User(void int handVal, void double balance) {
 
 }
 
-void User::stand() {
-
+/**
+ * @param int handVal
+ * @return void
+ */
+void User::void hit(void int handVal) {
+    return;
 }
 
-void User::split() {
-
+/**
+ * @return void
+ */
+void User::void stand() {
+    return;
 }
 
-void User::placeBet() {
-
+/**
+ * @param int handVal
+ * @param double balance
+ * @return void
+ */
+void User::void split(void int handVal, void double balance) {
+    return;
 }
 
-void User::userHandTotal() {
+/**
+ * @param double balance
+ * @return void
+ */
+void User::void placeBet(void double balance) {
+    return;
+}
 
+/**
+ * @param int handVal
+ * @return return int
+ */
+return int User::int userHandTotal(void int handVal) {
+    return null;
+}
+
+/**
+ * @param double balance
+ * @return void
+ */
+void User::void pay(void double balance) {
+    return;
+}
+
+/**
+ * @param double balance
+ * @return void
+ */
+void User::void take(void double balance) {
+    return;
 }

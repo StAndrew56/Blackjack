@@ -10,6 +10,9 @@
  */
 
 
-void AI player::playHand() {
-
+/**
+ * @return void
+ */
+void AI player::void playHand() {
+    return;
 }

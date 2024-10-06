@@ -10,6 +10,24 @@
  */
 
 
-void Deck::shuffle() {
+/**
+ * @param int cardCount
+ * @param Cards card
+ */
+void Deck::Deck(void int cardCount, void Cards card) {
 
+}
+
+/**
+ * @return void
+ */
+void Deck::void shuffle() {
+    return;
+}
+
+/**
+ * @return int
+ */
+int Deck::int drawCard() {
+    return 0;
 }

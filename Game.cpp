@@ -10,6 +10,16 @@
  */
 
 
-void Game::startGame() {
+/**
+ * @return return
+ */
+return Game::void startGame() {
+    return null;
+}
 
+/**
+ * @return void
+ */
+void Game::void resetGame() {
+    return;
 }

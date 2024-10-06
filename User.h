@@ -10,17 +10,46 @@ class User {
 public: 
     void int handVal;
     void double betVal;
-    void double currency;
+    void double balance;
     
-void hit();
+/**
+ * @param int handVal
+ * @param double balance
+ */
+void User(void int handVal, void double balance);
     
-void stand();
+/**
+ * @param int handVal
+ */
+void void hit(void int handVal);
     
-void split();
+void void stand();
     
-void placeBet();
+/**
+ * @param int handVal
+ * @param double balance
+ */
+void void split(void int handVal, void double balance);
     
-void userHandTotal();
+/**
+ * @param double balance
+ */
+void void placeBet(void double balance);
+    
+/**
+ * @param int handVal
+ */
+return int int userHandTotal(void int handVal);
+    
+/**
+ * @param double balance
+ */
+void void pay(void double balance);
+    
+/**
+ * @param double balance
+ */
+void void take(void double balance);
 };
 
 #endif //_USER_H
