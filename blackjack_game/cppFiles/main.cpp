@@ -1,16 +1,12 @@
+#include "Game.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main(){
-    cout << "Hello World!" << endl;
-    int hello = 0;
 
-    if(hello == 0){
-        cout <<"sup"<<endl;
-    }
 
-    else{
-        cout<<"nope"<<endl;
-    }
+
+int main() {
+    cout << "Do I compile? Yes I compile.";
     return 0;
 }

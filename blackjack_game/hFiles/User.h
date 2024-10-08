@@ -6,50 +6,35 @@
 #ifndef _USER_H
 #define _USER_H
 
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 class User {
-public: 
-    void int handVal;
-    void double betVal;
-    void double balance;
-    
-/**
- * @param int handVal
- * @param double balance
- */
-void User(void int handVal, void double balance);
-    
-/**
- * @param int handVal
- */
-void void hit(void int handVal);
-    
-void void stand();
-    
-/**
- * @param int handVal
- * @param double balance
- */
-void void split(void int handVal, void double balance);
-    
-/**
- * @param double balance
- */
-void void placeBet(void double balance);
-    
+public:
+    int handVal;
+    double betVal;
+    double balance;
+
+User();
+
+void hit();
+
+void stand();
+
+void split();
+
+void placeBet();
+
 /**
  * @param int handVal
  */
-return int int userHandTotal(void int handVal);
-    
-/**
- * @param double balance
- */
-void void pay(void double balance);
-    
-/**
- * @param double balance
- */
-void void take(void double balance);
+int userHandTotal();
+
+void pay();
+
+void take();
 };
 
 #endif //_USER_H

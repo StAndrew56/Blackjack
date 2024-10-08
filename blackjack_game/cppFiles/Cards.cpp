@@ -1,42 +1,27 @@
 /**
  * Project Untitled
  */
-using namespace std;
-#include <iostream>
-#include <vector>
+
 
 #include "Cards.h"
-
+#include <string>
 /**
  * Cards implementation
  */
 
 
-/**
- * @param Suit s
- * @param int value
- */
-void Cards::Cards(void Suit s, void int value) {
+Cards::Cards() {
 
 }
 
-/**
- * @return int
- */
-int Cards::int getCardValue() {
-    return 0;
+void getCardValue() {
+
 }
 
-/**
- * @return string
- */
-string Cards::string getSuit() {
-    return "";
+void Cards::getSuit() {
+
 }
 
-/**
- * @return string
- */
-string Cards::string toString() {
-    return "";
+void Cards::toString() {
+
 }

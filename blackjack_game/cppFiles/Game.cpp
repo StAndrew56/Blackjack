@@ -1,9 +1,7 @@
 /**
  * Project Untitled
  */
-using namespace std;
-#include <iostream>
-#include <vector>
+
 
 #include "Game.h"
 
@@ -12,16 +10,22 @@ using namespace std;
  */
 
 
-/**
- * @return return
- */
-return Game::void startGame() {
-    return null;
+void Game::startGame() {
+
 }
 
-/**
- * @return void
- */
-void Game::void resetGame() {
-    return;
+void Game::resetGame() {
+
+}
+
+void Game::playerTurn() {
+
+}
+
+void Game::dealerTurn() {
+
+}
+
+void Game::determineWinner() {
+
 }

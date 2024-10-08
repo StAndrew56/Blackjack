@@ -1,9 +1,7 @@
 /**
  * Project Untitled
  */
-using namespace std;
-#include <iostream>
-#include <vector>
+
 
 #include "User.h"
 
@@ -12,66 +10,38 @@ using namespace std;
  */
 
 
-/**
- * @param int handVal
- * @param double balance
- */
-void User::User(void int handVal, void double balance) {
+User::User() {
 
 }
 
-/**
- * @param int handVal
- * @return void
- */
-void User::void hit(void int handVal) {
-    return;
+void User::hit() {
+
 }
 
-/**
- * @return void
- */
-void User::void stand() {
-    return;
+void User::stand() {
+
 }
 
-/**
- * @param int handVal
- * @param double balance
- * @return void
- */
-void User::void split(void int handVal, void double balance) {
-    return;
+void User::split() {
+
 }
 
-/**
- * @param double balance
- * @return void
- */
-void User::void placeBet(void double balance) {
-    return;
+void User::placeBet() {
+
 }
 
 /**
  * @param int handVal
  * @return return int
  */
-return int User::int userHandTotal(void int handVal) {
-    return null;
+int User::userHandTotal() {
+    return 0;
 }
 
-/**
- * @param double balance
- * @return void
- */
-void User::void pay(void double balance) {
-    return;
+void User::pay() {
+
 }
 
-/**
- * @param double balance
- * @return void
- */
-void User::void take(void double balance) {
-    return;
+void User::take() {
+
 }

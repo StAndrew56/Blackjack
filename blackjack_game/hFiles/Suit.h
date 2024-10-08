@@ -6,12 +6,13 @@
 #ifndef _SUIT_H
 #define _SUIT_H
 
-class Suit {
-public: 
-    void Heart;
-    void Spade;
-    void Club;
-    void Diamond;
+enum class Suit{
+
+    Hearts,
+    Spades,
+    Clubs,
+    Diamonds
 };
 
 #endif //_SUIT_H
+
