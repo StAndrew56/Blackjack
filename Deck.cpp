@@ -4,30 +4,24 @@
 
 
 #include "Deck.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 /**
  * Deck implementation
  */
 
 
-/**
- * @param int cardCount
- * @param Cards card
- */
-void Deck::Deck(void int cardCount, void Cards card) {
+Deck::Deck() {
 
 }
 
-/**
- * @return void
- */
-void Deck::void shuffle() {
-    return;
+void Deck::shuffle() {
+
 }
 
-/**
- * @return int
- */
-int Deck::int drawCard() {
-    return 0;
+void Deck::drawCard() {
+
 }

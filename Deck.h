@@ -5,21 +5,20 @@
 
 #ifndef _DECK_H
 #define _DECK_H
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class Deck {
-public: 
-    void int cardCount;
-    void Cards card;
-    
-/**
- * @param int cardCount
- * @param Cards card
- */
-void Deck(void int cardCount, void Cards card);
-    
-void void shuffle();
-    
-int int drawCard();
+public:
+    int cardCount;
+
+Deck();
+
+void shuffle();
+
+void drawCard();
 };
 
 #endif //_DECK_H
