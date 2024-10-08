@@ -1,37 +1,27 @@
 /**
  * Project Untitled
  */
-using namespace std;
-#include <iostream>
-#include <vector>
+
 
 #include "Deck.h"
+#include <iostream>
+#include <string>
 
-class Deck{
-private:
-    int cardCount = 0;
-    Cards card;
-public:
-    //Declarations
-    Deck(int cardCount, Cards card);
-    void shuffle();
-    int drawCard();
-};
-
-Deck::Deck(void int cardCount, void Cards card) {
-    
-}
+using namespace std;
 
 /**
- * @return void
+ * Deck implementation
  */
-void Deck::void shuffle() {
-    return;
+
+
+Deck::Deck() {
+
 }
 
-/**
- * @return int
- */
-int Deck::int drawCard() {
-    return 0;
+void Deck::shuffle() {
+
+}
+
+void Deck::drawCard() {
+
 }
