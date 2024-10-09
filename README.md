@@ -3,7 +3,7 @@
 Welcome to Blackjack, the one-stop virtual casino where the cards are always shuffled, and the dealer never sleeps. This project is a modern, digital take on the classic card game that everyone loves (or loves to lose to). Whether you're here to hit, stand, or double down, this is where the action happens!
 
 This application allows you to play a virtual version of the famous Blackjack card game, designed to replicate the real-life experience (without the need to tip the dealer). Players compete against a computer-controlled dealer and AI opponents to see who can get closer to 21 without going bust! Let the cards fall where they may and may the odds ever be in your favor.
-
+ 
 
 ## 🕹️ Features 🕹️
 **Single-Player Mode:** Challenge our unforgiving AI dealer. He's heartless, trust us.<br>
