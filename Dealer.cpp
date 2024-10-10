@@ -19,7 +19,7 @@ Dealer::Dealer() {
 
 }
 
-dealCards() {
+void dealCards() {
 
 }
 
