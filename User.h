@@ -6,6 +6,9 @@
 #ifndef _USER_H
 #define _USER_H
 
+#include "Deck.h"
+#include "Cards.h"
+#include "Suit.h"
 #include <iostream>
 #include <string>
 
@@ -14,27 +17,38 @@ using namespace std;
 class User {
 public:
     int handVal;
+    vector<Cards> userHand;
     double betVal;
-    double balance;
+    double balance = 5000;
 
 User();
 
-void hit();
+void printRankUser(Rank cardRank);
+
+void printSuitUser(Suit suit);
+
+void printUserHand();
+
+void hit(Deck& deck);
 
 void stand();
 
 void split();
 
-void placeBet();
+void placeBet(int bet);
 
-/**
- * @param int handVal
- */
-int userHandTotal();
+void printUserHandTotal();
 
 void pay();
 
-void take();
+void clearUserHand();
+
+int getUserHandTotal();
+
+void trueRank();
+
+void takeBet();
+
 };
 
 #endif //_USER_H

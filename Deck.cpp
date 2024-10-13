@@ -11,6 +11,7 @@
 #include <string>
 #include <algorithm>
 #include <random>
+#include <vector>
 using namespace std;
 
 /**
@@ -53,7 +54,7 @@ void Deck::createDeck(){
 
             int index = (13 * i) + j - 1;
 
-            deckOfCards[index] = card;
+            deckOfCards.push_back(card);
 
         }
     }
@@ -154,26 +155,23 @@ void Deck::shuffle() {
 }
 
 //this is not the actual main it is for testing the class only.
-int main(){
+//int main(){
 
+   //Deck deck;
 
+    //deck.createDeck();
 
+    //cout << endl;
 
-    Deck deck;
+    //deck.printDeck();
 
-    deck.createDeck();
+    //deck.shuffle();
+    //cout << endl;
+    //cout << endl;
+    //cout << "----------------------------------------------------------------" <<endl;
+    //cout << "After Shuffling the Deck, This is the order," << endl;
+    //cout << "First line is the first card in the vector that makes up the deck" << endl;
+    //cout << "----------------------------------------------------------------" << endl;
+    //deck.printDeck();
 
-    cout << endl;
-
-    deck.printDeck();
-
-    deck.shuffle();
-    cout << endl;
-    cout << endl;
-    cout << "----------------------------------------------------------------" <<endl;
-    cout << "After Shuffling the Deck, This is the order," << endl;
-    cout << "First line is the first card in the array that makes up the deck" << endl;
-    cout << "----------------------------------------------------------------" << endl;
-    deck.printDeck();
-
-}
+//}

@@ -9,6 +9,7 @@
 #include "Suit.h"
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ class Deck {
 
 public:
 
-    Cards deckOfCards[52];
+    vector<Cards> deckOfCards;
 
 Deck();
 
