@@ -20,6 +20,8 @@ public:
     vector<Cards> userHand;
     double betVal;
     double balance = 5000;
+    vector<Cards> splitHand;
+    int splitBetVal;
 
 User();
 
@@ -28,6 +30,10 @@ void printRankUser(Rank cardRank);
 void printSuitUser(Suit suit);
 
 void printUserHand();
+
+void printUserSplitHand();
+
+void doubleDown();
 
 void hit(Deck& deck);
 

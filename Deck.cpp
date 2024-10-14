@@ -22,7 +22,7 @@ using namespace std;
 Deck::Deck() {
 
 }
-
+//will create the create of 52 cards
 void Deck::createDeck(){
 
     //iterate through all suits
@@ -61,7 +61,7 @@ void Deck::createDeck(){
 
 
 }
-
+//called when you want to print the suit of the card.
 void Deck::printSuit(Suit suit){
 
     if(suit == Suit::Hearts){
@@ -94,6 +94,8 @@ void Deck::printCard(){
         }
     }
 }
+//called when you want to print the rank(int value as a string associated
+//with the name of the card, Jack = Ten).
 void Deck::printRank(Rank cardRank){
 
     if(cardRank == Rank::ACE){
@@ -136,7 +138,7 @@ void Deck::printRank(Rank cardRank){
         cout << "King";
     }
 }
-
+//prints the deck of cards.
 void Deck::printDeck(){
 
     printCard();

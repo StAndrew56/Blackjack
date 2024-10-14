@@ -19,6 +19,7 @@ using namespace std;
 User::User() {
 
 }
+//prints the cards rank.
 void User::printRankUser(Rank cardRank){
 
     if(cardRank == Rank::ACE){
@@ -61,7 +62,7 @@ void User::printRankUser(Rank cardRank){
         cout << "King";
     }
 }
-
+//prints the cards suit.
 void User::printSuitUser(Suit suit){
 
     if(suit == Suit::Hearts){
@@ -78,7 +79,8 @@ void User::printSuitUser(Suit suit){
     }
 
 }
-
+//called when you want to print the users hand.
+//this will not convert the hand to int.
 void User::printUserHand(){
 
     for(int i = 0; i < userHand.size(); i++){
@@ -89,6 +91,17 @@ void User::printUserHand(){
     }
 
 }
+void User::printUserSplitHand(){
+
+    for(int i = 0; i < splitHand.size(); i++){
+        printRankUser(splitHand[i].cardRank);
+        cout << " of ";
+        printSuitUser(splitHand[i].suit);
+        cout << endl;
+    }
+
+}
+//called when you want to set the trueRank of the Users hand.
 void User::trueRank(){
     handVal = 0;
     for(int i = 0; i < userHand.size(); i++){
@@ -107,8 +120,8 @@ void User::trueRank(){
          }
         }
 }
-
-void User::hit(Deck& deck) {// fix cardRank
+//called when the User wants to hit, will add 1 card to their hand.
+void User::hit(Deck& deck) {
     handVal = 0;
     trueRank();
     if(handVal < 21){
@@ -125,16 +138,38 @@ void User::hit(Deck& deck) {// fix cardRank
         cout << "you cannot hit!";
     }
 }
-
+//called when user wants to stand.
+//a semantic call.
 void User::stand() {
 
 }
 
 void User::split() {
 
+    if(userHand[0].cardRank == userHand[1].cardRank){
+            if(betVal <= balance){
+                splitHand[0] = userHand[1];
+                splitBetVal = betVal;
+                placeBet(splitBetVal);
+                userHand.pop_back();
+
+            }
+            else{
+                cout << "You can't afford to split!" << endl;
+            }
+        }
+    else{
+        cout << "You can't split!" << endl;
+    }
+
+}
+void User::doubleDown(){
+    balance -= betVal;
+    betVal = betVal + betVal;
+
 }
 //gets called when user places legal bet
-//will do the subtraction
+//will do the subtraction from the balance
 void User::placeBet(int bet) {
 
         balance -= bet;
@@ -146,17 +181,19 @@ void User::placeBet(int bet) {
  * @param int handVal
  * @return return int
  */
-
+//called if you want to print the users handVal.
 void User::printUserHandTotal() {
     trueRank();
     cout << handVal;
 }
+//called to get the users handVal.
 int User::getUserHandTotal() {
     trueRank();
 
     return handVal;
 }
-//pays winner.
+//pays winner. double the bet and adds that number to the
+//users balance.
 void User::pay() {
 
         balance += (betVal * 2);

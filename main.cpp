@@ -19,8 +19,11 @@ int main(){
 
     cout << "Welcome to Blackjack! Newest home of all your money!" << endl << endl;
     cout << "Want to try your luck? Type y for yes and n for no." << endl;
+
     char answer;
     cin >> answer;
+
+    //switch to ask user to proceed to play the game.
     switch(answer){
         case 'n':
             flag = false;
@@ -45,7 +48,7 @@ int main(){
         Deck deck;
         deck.createDeck();
         deck.shuffle();
-        //for testing
+        //for testing, will be removed.
         deck.printDeck();
 
         cout << endl << endl;
@@ -55,6 +58,7 @@ int main(){
         //takes the users bet
         user.takeBet();
         cout << endl << endl;
+
         //for testing bet
         cout << "New balance after bet: " << user.balance << endl << endl;
         bool lose;
@@ -67,7 +71,7 @@ int main(){
 
 
             //-----------------------
-            cout << "Type h to hit or s to stand. Anything else to quit game. Money will not be returned!" << endl;
+            cout << "Type h to hit or s to stand or sp to split or d to double down. Anything else to quit game. Money will not be returned!" << endl;
             //-----------------------
 
 
@@ -106,6 +110,39 @@ int main(){
                         user.stand();
                         bust = true;
                         break;
+
+                    case 'sp'://case to split
+                        user.split();
+                        cout << "Your main hand is now: " << endl;
+                        user.printUserHand();
+                        cout << "Your split hand is now: " << endl;
+                        user.printUserSplitHand();
+                        break;
+
+                    case 'd':
+                        if(user.userHand.size() <= 2){
+                            if(user.betVal <= user.balance){
+                                user.hit(deck);
+                                cout << "Your hand is now: " << endl;
+                                user.printUserHand();
+                                cout << endl;
+                                cout << "Your hand total is: ";
+                                user.printUserHandTotal();
+                                cout << endl << endl;
+                                user.doubleDown();
+                                user.stand();
+                                bust = true;
+                                break;
+                            }
+                            else{
+                                cout << "You can't afford to double down!" << endl;
+                                break;
+                            }
+                        }
+                        else{
+                            cout << "You can't double down after the first hit!" << endl;
+                            break;
+                        }
 
                     default:
 
