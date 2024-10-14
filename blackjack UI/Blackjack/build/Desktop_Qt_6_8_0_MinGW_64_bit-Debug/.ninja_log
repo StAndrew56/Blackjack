@@ -1,0 +1,99 @@
+# ninja log v6
+25	242	7504908430372688	Blackjack_autogen/timestamp	efde757323ad0ef3
+25	242	7504908430372688	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+25	242	7504908430372688	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+42	60	7502487079419693	clean	577b940aee94fbd7
+243	5230	7504908432553079	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+727	2568	7502553481809151	CMakeFiles/Blackjack.dir/main.cpp.obj	2b7185356d396c91
+25	242	7504908430372688	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+715	2513	7502553481689130	CMakeFiles/Blackjack.dir/Blackjack_autogen/mocs_compilation.cpp.obj	80edf9efeac643ac
+5231	5699	7504908482423364	Blackjack.exe	dca04bc2e6344d1d
+19	864	7504788665342162	build.ninja	26bef69dc19e3ce9
+196	783	7504788673978680	Blackjack_autogen/EWIEGA46WW/qrc_BJpngs.cpp	4c18c4fa9638e18a
+196	783	7504788673978680	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/EWIEGA46WW/qrc_BJpngs.cpp	4c18c4fa9638e18a
+797	24945	7504788674213721	CMakeFiles/Blackjack.dir/Blackjack_autogen/EWIEGA46WW/qrc_BJpngs.cpp.obj	c37a809a9e29fcd4
+14	42	7502487079139653	CMakeFiles/clean.additional	baedbe210acaa455
+21	259	7504909377530494	Blackjack_autogen/timestamp	efde757323ad0ef3
+21	259	7504909377530494	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+21	259	7504909377530494	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+21	259	7504909377530494	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+260	5238	7504909379918876	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+5238	5680	7504909429702463	Blackjack.exe	dca04bc2e6344d1d
+26	258	7504916323947479	Blackjack_autogen/timestamp	efde757323ad0ef3
+26	258	7504916323947479	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+26	258	7504916323947479	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+26	258	7504916323947479	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+259	5307	7504916326283144	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+5307	5749	7504916376761628	Blackjack.exe	dca04bc2e6344d1d
+27	273	7504916589365824	Blackjack_autogen/timestamp	efde757323ad0ef3
+27	273	7504916589365824	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+27	273	7504916589365824	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+27	273	7504916589365824	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+274	5362	7504916591827658	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+5363	5807	7504916642717448	Blackjack.exe	dca04bc2e6344d1d
+26	269	7504917276769146	Blackjack_autogen/timestamp	efde757323ad0ef3
+26	269	7504917276769146	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+26	269	7504917276769146	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+26	269	7504917276769146	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+270	5336	7504917279210027	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+5337	5789	7504917329874006	Blackjack.exe	dca04bc2e6344d1d
+29	268	7504920592082369	Blackjack_autogen/timestamp	efde757323ad0ef3
+29	268	7504920592082369	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+29	268	7504920592082369	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+29	268	7504920592082369	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+269	5371	7504920594481176	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+5371	5817	7504920645500038	Blackjack.exe	dca04bc2e6344d1d
+30	300	7504929375488157	Blackjack_autogen/timestamp	efde757323ad0ef3
+30	300	7504929375488157	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+30	300	7504929375488157	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+30	300	7504929375488157	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+301	9022	7504929378185408	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+9022	9507	7504929465400782	Blackjack.exe	dca04bc2e6344d1d
+26	293	7504929566711718	Blackjack_autogen/timestamp	efde757323ad0ef3
+26	293	7504929566711718	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+26	293	7504929566711718	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+26	293	7504929566711718	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+294	8961	7504929569390559	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+8961	9438	7504929656056868	Blackjack.exe	dca04bc2e6344d1d
+26	293	7504931861481188	Blackjack_autogen/timestamp	efde757323ad0ef3
+26	293	7504931861481188	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+26	293	7504931861481188	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+26	293	7504931861481188	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+294	9088	7504931864158238	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+9088	9562	7504931952098705	Blackjack.exe	dca04bc2e6344d1d
+26	291	7504932107812376	Blackjack_autogen/timestamp	efde757323ad0ef3
+26	291	7504932107812376	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+26	291	7504932107812376	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+26	291	7504932107812376	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+292	8978	7504932110470405	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+8978	9450	7504932197327370	Blackjack.exe	dca04bc2e6344d1d
+26	286	7504932316941321	Blackjack_autogen/timestamp	efde757323ad0ef3
+26	286	7504932316941321	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+26	286	7504932316941321	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+26	286	7504932316941321	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+287	8999	7504932319550190	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+9000	9473	7504932406676695	Blackjack.exe	dca04bc2e6344d1d
+27	311	7504934074124198	Blackjack_autogen/timestamp	efde757323ad0ef3
+27	311	7504934074124198	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+27	311	7504934074124198	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+27	311	7504934074124198	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+312	12590	7504934076976958	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+12590	13111	7504934199763560	Blackjack.exe	dca04bc2e6344d1d
+26	309	7504935035065173	Blackjack_autogen/timestamp	efde757323ad0ef3
+26	309	7504935035065173	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+26	309	7504935035065173	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+26	309	7504935035065173	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+310	12589	7504935037900363	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+12589	13100	7504935160689806	Blackjack.exe	dca04bc2e6344d1d
+28	313	7504936413858705	Blackjack_autogen/timestamp	efde757323ad0ef3
+28	313	7504936413858705	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+28	313	7504936413858705	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+28	313	7504936413858705	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+314	12613	7504936416716333	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+12613	13120	7504936539712968	Blackjack.exe	dca04bc2e6344d1d
+17	351	7505684276462390	Blackjack_autogen/timestamp	efde757323ad0ef3
+17	351	7505684276462390	Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+17	351	7505684276462390	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	efde757323ad0ef3
+17	351	7505684276462390	C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	efde757323ad0ef3
+352	13136	7505684279817985	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	77e84dfc800ecc0d
+13137	14040	7505684407660478	Blackjack.exe	dca04bc2e6344d1d
