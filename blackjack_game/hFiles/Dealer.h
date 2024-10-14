@@ -5,6 +5,7 @@
 
 #ifndef _DEALER_H
 #define _DEALER_H
+#include "Deck.h"
 #include <iostream>
 #include <string>
 

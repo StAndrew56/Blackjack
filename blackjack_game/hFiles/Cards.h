@@ -8,20 +8,40 @@
 #include <iostream>
 #include <string>
 
+#include "Suit.h"
+
+
 using namespace std;
 
-class Cards {
+enum class Rank{
+    ACE = 1,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN,
+    EIGHT,
+    NINE,
+    TEN,
+    JACK,
+    QUEEN,
+    KING
+
+};
+
+class Cards{
+
 public:
-    string suit;
+    Suit suit;
+    Rank cardRank;
     int value;
 
-Cards();
+    void getCardValue();
 
-void getCardValue();
+    void getSuit();
 
-void getSuit();
-
-void toString();
+    void toString();
 };
 
 #endif //_CARDS_H

@@ -4,6 +4,8 @@
 
 
 #include "Dealer.h"
+#include "Deck.h"
+#include "User.h"
 
 #include <iostream>
 #include <string>
