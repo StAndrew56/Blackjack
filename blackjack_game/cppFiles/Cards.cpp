@@ -4,17 +4,18 @@
 
 
 #include "Cards.h"
+#include "Deck.h"
+#include "Suit.h"
+
 #include <string>
+#include <iostream>
+using namespace std;
+
 /**
  * Cards implementation
  */
 
-
-Cards::Cards() {
-
-}
-
-void getCardValue() {
+void Cards::getCardValue() {
 
 }
 
