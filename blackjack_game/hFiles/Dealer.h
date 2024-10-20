@@ -5,33 +5,53 @@
 
 #ifndef _DEALER_H
 #define _DEALER_H
+<<<<<<< Updated upstream
+=======
+//#include "Deck.h" //For interaction with main Deck
+#include "Cards.h" //To create a vector of cards as a Dealer's hand
+>>>>>>> Stashed changes
 #include <iostream>
 #include <string>
+#include <vector> //Dealer uses vectors
 
 using namespace std;
 
 class Dealer {
 
-    int dealerHandVal;
-    int UserHandVal;
+    private:
+        int dealerHandVal;
+        int UserHandVal;
+        vector<Cards> dealerHand; //Dealer's hand vector of cards
+        Deck mainDeck;
 
-Dealer();
+    public:
+        Dealer(); //Constructor
 
-void dealCards();
+        //Param: Player+Dealer count
+        void dealCards(vector<Cards>&);
+        //Set 2 cards each from Deck vector into:
+        //Dealer's hand vector - One set to visible in UI
+        //Player's hand vector
 
-/**
- * @param Player player
- * @param double amount
- */
-void pay();
+        /**
+         * @param Player player
+         * @param double amount
+         */
+        //void pay(); //Not needed for now at least
+        //Dealer adds extra currency to bet currency
+        //& gives resulting new currency value to winner
+        //If Dealer wins, Dealer takes bet currency
+        //(Bet currency total set to 0)
 
-void removeCards();
+        void removeCards();
 
-void addCard();
+        //Param: Pass by ref. the hand getting a card
+        void addCard(vector<Cards>&);
+        //Called when adding cards from Deck to hands
 
-void getUserHandVal();
+        void getUserHandVal();
 
-void setUserHandVal();
+        void setUserHandVal();
 };
 
 #endif //_DEALER_H
