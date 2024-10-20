@@ -1,11 +1,10 @@
-<<<<<<< Updated upstream
+#include "Game.h"
 #include "Deck.h"
 #include "User.h"
 #include "Cards.h"
 #include "Suit.h"
 #include "Game.h"
 #include "Dealer.h"
->>>>>>> Stashed changes
 #include <iostream>
 #include <string>
 using namespace std;
@@ -13,11 +12,6 @@ using namespace std;
 
 
 
-<<<<<<< Updated upstream
-int main() {
-    cout << "Do I compile? Yes I compile.";
-    return 0;
-=======
 int main(){
 
     User user;
@@ -53,15 +47,15 @@ int main(){
         //creates the deck and shuffles
         Deck deck;
         deck.createDeck();
-        //Test
-        Dealer dealer;
-        dealer.dealCards(user.userHand);
-        user.printUserHand();
-        //Test
 
+        Dealer dealer;
+        dealer.dealCards(user.userHand, deck.deckOfCards);
+        user.printUserHand();
+
+        //deck.printDeck();
         deck.shuffle();
         //for testing, will be removed.
-        deck.printDeck();
+        //deck.printDeck();
 
         cout << endl << endl;
         cout << "Your current Balance is: " << user.balance << endl << endl;
@@ -239,5 +233,4 @@ int main(){
 
     //cout << "now printing user hand";
     //user.printUserHand();
->>>>>>> Stashed changes
 }
