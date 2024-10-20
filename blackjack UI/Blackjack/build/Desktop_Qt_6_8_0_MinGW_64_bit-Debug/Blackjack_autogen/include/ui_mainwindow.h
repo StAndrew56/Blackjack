@@ -1833,7 +1833,7 @@ public:
     QLabel *label_2484;
     QSpacerItem *horizontalSpacer_8;
     QSpacerItem *verticalSpacer;
-    QSpacerItem *verticalSpacer_4;
+    QVBoxLayout *verticalLayout_6;
     QVBoxLayout *verticalLayout_8;
     QHBoxLayout *horizontalLayout_7;
     QSpacerItem *horizontalSpacer_4;
@@ -5450,6 +5450,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
+    QPushButton *pushButton_11;
 
     void setupUi(QMainWindow *mainWindow)
     {
@@ -5510,7 +5511,7 @@ public:
 
         verticalLayout_10 = new QVBoxLayout();
         verticalLayout_10->setObjectName("verticalLayout_10");
-        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_5 = new QSpacerItem(20, 90, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         verticalLayout_10->addItem(verticalSpacer_5);
 
@@ -5527,11 +5528,8 @@ public:
 
         stackedWidget_34 = new QStackedWidget(widget_2);
         stackedWidget_34->setObjectName("stackedWidget_34");
-        QSizePolicy sizePolicy1(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(stackedWidget_34->sizePolicy().hasHeightForWidth());
-        stackedWidget_34->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_34->sizePolicy().hasHeightForWidth());
+        stackedWidget_34->setSizePolicy(sizePolicy);
         stackedWidget_34->setMinimumSize(QSize(100, 150));
         stackedWidget_34->setMaximumSize(QSize(100, 150));
         stackedWidget_34->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -6207,8 +6205,8 @@ public:
 
         stackedWidget_35 = new QStackedWidget(widget_2);
         stackedWidget_35->setObjectName("stackedWidget_35");
-        sizePolicy1.setHeightForWidth(stackedWidget_35->sizePolicy().hasHeightForWidth());
-        stackedWidget_35->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_35->sizePolicy().hasHeightForWidth());
+        stackedWidget_35->setSizePolicy(sizePolicy);
         stackedWidget_35->setMinimumSize(QSize(100, 150));
         stackedWidget_35->setMaximumSize(QSize(100, 150));
         stackedWidget_35->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -6884,8 +6882,8 @@ public:
 
         stackedWidget_36 = new QStackedWidget(widget_2);
         stackedWidget_36->setObjectName("stackedWidget_36");
-        sizePolicy1.setHeightForWidth(stackedWidget_36->sizePolicy().hasHeightForWidth());
-        stackedWidget_36->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_36->sizePolicy().hasHeightForWidth());
+        stackedWidget_36->setSizePolicy(sizePolicy);
         stackedWidget_36->setMinimumSize(QSize(100, 150));
         stackedWidget_36->setMaximumSize(QSize(100, 150));
         stackedWidget_36->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -7561,8 +7559,8 @@ public:
 
         stackedWidget_37 = new QStackedWidget(widget_2);
         stackedWidget_37->setObjectName("stackedWidget_37");
-        sizePolicy1.setHeightForWidth(stackedWidget_37->sizePolicy().hasHeightForWidth());
-        stackedWidget_37->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_37->sizePolicy().hasHeightForWidth());
+        stackedWidget_37->setSizePolicy(sizePolicy);
         stackedWidget_37->setMinimumSize(QSize(100, 150));
         stackedWidget_37->setMaximumSize(QSize(100, 150));
         stackedWidget_37->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -8238,8 +8236,8 @@ public:
 
         stackedWidget_38 = new QStackedWidget(widget_2);
         stackedWidget_38->setObjectName("stackedWidget_38");
-        sizePolicy1.setHeightForWidth(stackedWidget_38->sizePolicy().hasHeightForWidth());
-        stackedWidget_38->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_38->sizePolicy().hasHeightForWidth());
+        stackedWidget_38->setSizePolicy(sizePolicy);
         stackedWidget_38->setMinimumSize(QSize(100, 150));
         stackedWidget_38->setMaximumSize(QSize(100, 150));
         stackedWidget_38->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -8915,8 +8913,8 @@ public:
 
         stackedWidget_39 = new QStackedWidget(widget_2);
         stackedWidget_39->setObjectName("stackedWidget_39");
-        sizePolicy1.setHeightForWidth(stackedWidget_39->sizePolicy().hasHeightForWidth());
-        stackedWidget_39->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_39->sizePolicy().hasHeightForWidth());
+        stackedWidget_39->setSizePolicy(sizePolicy);
         stackedWidget_39->setMinimumSize(QSize(100, 150));
         stackedWidget_39->setMaximumSize(QSize(100, 150));
         stackedWidget_39->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -9592,8 +9590,8 @@ public:
 
         stackedWidget_40 = new QStackedWidget(widget_2);
         stackedWidget_40->setObjectName("stackedWidget_40");
-        sizePolicy1.setHeightForWidth(stackedWidget_40->sizePolicy().hasHeightForWidth());
-        stackedWidget_40->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_40->sizePolicy().hasHeightForWidth());
+        stackedWidget_40->setSizePolicy(sizePolicy);
         stackedWidget_40->setMinimumSize(QSize(100, 150));
         stackedWidget_40->setMaximumSize(QSize(100, 150));
         stackedWidget_40->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -10269,8 +10267,8 @@ public:
 
         stackedWidget_41 = new QStackedWidget(widget_2);
         stackedWidget_41->setObjectName("stackedWidget_41");
-        sizePolicy1.setHeightForWidth(stackedWidget_41->sizePolicy().hasHeightForWidth());
-        stackedWidget_41->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_41->sizePolicy().hasHeightForWidth());
+        stackedWidget_41->setSizePolicy(sizePolicy);
         stackedWidget_41->setMinimumSize(QSize(100, 150));
         stackedWidget_41->setMaximumSize(QSize(100, 150));
         stackedWidget_41->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -10946,8 +10944,8 @@ public:
 
         stackedWidget_42 = new QStackedWidget(widget_2);
         stackedWidget_42->setObjectName("stackedWidget_42");
-        sizePolicy1.setHeightForWidth(stackedWidget_42->sizePolicy().hasHeightForWidth());
-        stackedWidget_42->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_42->sizePolicy().hasHeightForWidth());
+        stackedWidget_42->setSizePolicy(sizePolicy);
         stackedWidget_42->setMinimumSize(QSize(100, 150));
         stackedWidget_42->setMaximumSize(QSize(100, 150));
         stackedWidget_42->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -11623,8 +11621,8 @@ public:
 
         stackedWidget_43 = new QStackedWidget(widget_2);
         stackedWidget_43->setObjectName("stackedWidget_43");
-        sizePolicy1.setHeightForWidth(stackedWidget_43->sizePolicy().hasHeightForWidth());
-        stackedWidget_43->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_43->sizePolicy().hasHeightForWidth());
+        stackedWidget_43->setSizePolicy(sizePolicy);
         stackedWidget_43->setMinimumSize(QSize(100, 150));
         stackedWidget_43->setMaximumSize(QSize(100, 150));
         stackedWidget_43->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -12300,8 +12298,8 @@ public:
 
         stackedWidget_44 = new QStackedWidget(widget_2);
         stackedWidget_44->setObjectName("stackedWidget_44");
-        sizePolicy1.setHeightForWidth(stackedWidget_44->sizePolicy().hasHeightForWidth());
-        stackedWidget_44->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_44->sizePolicy().hasHeightForWidth());
+        stackedWidget_44->setSizePolicy(sizePolicy);
         stackedWidget_44->setMinimumSize(QSize(100, 150));
         stackedWidget_44->setMaximumSize(QSize(100, 150));
         stackedWidget_44->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -12988,13 +12986,14 @@ public:
 
         verticalLayout->addLayout(verticalLayout_10);
 
-        verticalSpacer = new QSpacerItem(20, 50, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 90, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Fixed);
 
         verticalLayout->addItem(verticalSpacer);
 
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setObjectName("verticalLayout_6");
 
-        verticalLayout->addItem(verticalSpacer_4);
+        verticalLayout->addLayout(verticalLayout_6);
 
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setObjectName("verticalLayout_8");
@@ -13006,8 +13005,8 @@ public:
 
         stackedWidget_11 = new QStackedWidget(centralwidget);
         stackedWidget_11->setObjectName("stackedWidget_11");
-        sizePolicy1.setHeightForWidth(stackedWidget_11->sizePolicy().hasHeightForWidth());
-        stackedWidget_11->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_11->sizePolicy().hasHeightForWidth());
+        stackedWidget_11->setSizePolicy(sizePolicy);
         stackedWidget_11->setMinimumSize(QSize(100, 150));
         stackedWidget_11->setMaximumSize(QSize(100, 150));
         stackedWidget_11->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -13683,8 +13682,8 @@ public:
 
         stackedWidget_12 = new QStackedWidget(centralwidget);
         stackedWidget_12->setObjectName("stackedWidget_12");
-        sizePolicy1.setHeightForWidth(stackedWidget_12->sizePolicy().hasHeightForWidth());
-        stackedWidget_12->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_12->sizePolicy().hasHeightForWidth());
+        stackedWidget_12->setSizePolicy(sizePolicy);
         stackedWidget_12->setMinimumSize(QSize(100, 150));
         stackedWidget_12->setMaximumSize(QSize(100, 150));
         stackedWidget_12->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -14360,8 +14359,8 @@ public:
 
         stackedWidget_3 = new QStackedWidget(centralwidget);
         stackedWidget_3->setObjectName("stackedWidget_3");
-        sizePolicy1.setHeightForWidth(stackedWidget_3->sizePolicy().hasHeightForWidth());
-        stackedWidget_3->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_3->sizePolicy().hasHeightForWidth());
+        stackedWidget_3->setSizePolicy(sizePolicy);
         stackedWidget_3->setMinimumSize(QSize(100, 150));
         stackedWidget_3->setMaximumSize(QSize(100, 150));
         stackedWidget_3->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -15037,8 +15036,8 @@ public:
 
         stackedWidget_5 = new QStackedWidget(centralwidget);
         stackedWidget_5->setObjectName("stackedWidget_5");
-        sizePolicy1.setHeightForWidth(stackedWidget_5->sizePolicy().hasHeightForWidth());
-        stackedWidget_5->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_5->sizePolicy().hasHeightForWidth());
+        stackedWidget_5->setSizePolicy(sizePolicy);
         stackedWidget_5->setMinimumSize(QSize(100, 150));
         stackedWidget_5->setMaximumSize(QSize(100, 150));
         stackedWidget_5->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -15714,8 +15713,8 @@ public:
 
         stackedWidget_10 = new QStackedWidget(centralwidget);
         stackedWidget_10->setObjectName("stackedWidget_10");
-        sizePolicy1.setHeightForWidth(stackedWidget_10->sizePolicy().hasHeightForWidth());
-        stackedWidget_10->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_10->sizePolicy().hasHeightForWidth());
+        stackedWidget_10->setSizePolicy(sizePolicy);
         stackedWidget_10->setMinimumSize(QSize(100, 150));
         stackedWidget_10->setMaximumSize(QSize(100, 150));
         stackedWidget_10->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -16391,8 +16390,8 @@ public:
 
         stackedWidget_9 = new QStackedWidget(centralwidget);
         stackedWidget_9->setObjectName("stackedWidget_9");
-        sizePolicy1.setHeightForWidth(stackedWidget_9->sizePolicy().hasHeightForWidth());
-        stackedWidget_9->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_9->sizePolicy().hasHeightForWidth());
+        stackedWidget_9->setSizePolicy(sizePolicy);
         stackedWidget_9->setMinimumSize(QSize(100, 150));
         stackedWidget_9->setMaximumSize(QSize(100, 150));
         stackedWidget_9->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -17068,8 +17067,8 @@ public:
 
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        sizePolicy1.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
-        stackedWidget->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
+        stackedWidget->setSizePolicy(sizePolicy);
         stackedWidget->setMinimumSize(QSize(100, 150));
         stackedWidget->setMaximumSize(QSize(100, 150));
         stackedWidget->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -17080,6 +17079,8 @@ public:
         horizontalLayout_697->setObjectName("horizontalLayout_697");
         label_696 = new QLabel(page_162);
         label_696->setObjectName("label_696");
+        sizePolicy.setHeightForWidth(label_696->sizePolicy().hasHeightForWidth());
+        label_696->setSizePolicy(sizePolicy);
 
         horizontalLayout_697->addWidget(label_696);
 
@@ -17745,8 +17746,8 @@ public:
 
         stackedWidget_8 = new QStackedWidget(centralwidget);
         stackedWidget_8->setObjectName("stackedWidget_8");
-        sizePolicy1.setHeightForWidth(stackedWidget_8->sizePolicy().hasHeightForWidth());
-        stackedWidget_8->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_8->sizePolicy().hasHeightForWidth());
+        stackedWidget_8->setSizePolicy(sizePolicy);
         stackedWidget_8->setMinimumSize(QSize(100, 150));
         stackedWidget_8->setMaximumSize(QSize(100, 150));
         stackedWidget_8->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -18422,8 +18423,8 @@ public:
 
         stackedWidget_4 = new QStackedWidget(centralwidget);
         stackedWidget_4->setObjectName("stackedWidget_4");
-        sizePolicy1.setHeightForWidth(stackedWidget_4->sizePolicy().hasHeightForWidth());
-        stackedWidget_4->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_4->sizePolicy().hasHeightForWidth());
+        stackedWidget_4->setSizePolicy(sizePolicy);
         stackedWidget_4->setMinimumSize(QSize(100, 150));
         stackedWidget_4->setMaximumSize(QSize(100, 150));
         stackedWidget_4->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -19099,8 +19100,8 @@ public:
 
         stackedWidget_7 = new QStackedWidget(centralwidget);
         stackedWidget_7->setObjectName("stackedWidget_7");
-        sizePolicy1.setHeightForWidth(stackedWidget_7->sizePolicy().hasHeightForWidth());
-        stackedWidget_7->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_7->sizePolicy().hasHeightForWidth());
+        stackedWidget_7->setSizePolicy(sizePolicy);
         stackedWidget_7->setMinimumSize(QSize(100, 150));
         stackedWidget_7->setMaximumSize(QSize(100, 150));
         stackedWidget_7->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -19776,8 +19777,8 @@ public:
 
         stackedWidget_6 = new QStackedWidget(centralwidget);
         stackedWidget_6->setObjectName("stackedWidget_6");
-        sizePolicy1.setHeightForWidth(stackedWidget_6->sizePolicy().hasHeightForWidth());
-        stackedWidget_6->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_6->sizePolicy().hasHeightForWidth());
+        stackedWidget_6->setSizePolicy(sizePolicy);
         stackedWidget_6->setMinimumSize(QSize(100, 150));
         stackedWidget_6->setMaximumSize(QSize(100, 150));
         stackedWidget_6->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -20474,8 +20475,8 @@ public:
 
         stackedWidget_23 = new QStackedWidget(widget);
         stackedWidget_23->setObjectName("stackedWidget_23");
-        sizePolicy1.setHeightForWidth(stackedWidget_23->sizePolicy().hasHeightForWidth());
-        stackedWidget_23->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_23->sizePolicy().hasHeightForWidth());
+        stackedWidget_23->setSizePolicy(sizePolicy);
         stackedWidget_23->setMinimumSize(QSize(100, 150));
         stackedWidget_23->setMaximumSize(QSize(100, 150));
         stackedWidget_23->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -21151,8 +21152,8 @@ public:
 
         stackedWidget_24 = new QStackedWidget(widget);
         stackedWidget_24->setObjectName("stackedWidget_24");
-        sizePolicy1.setHeightForWidth(stackedWidget_24->sizePolicy().hasHeightForWidth());
-        stackedWidget_24->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_24->sizePolicy().hasHeightForWidth());
+        stackedWidget_24->setSizePolicy(sizePolicy);
         stackedWidget_24->setMinimumSize(QSize(100, 150));
         stackedWidget_24->setMaximumSize(QSize(100, 150));
         stackedWidget_24->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -21828,8 +21829,8 @@ public:
 
         stackedWidget_25 = new QStackedWidget(widget);
         stackedWidget_25->setObjectName("stackedWidget_25");
-        sizePolicy1.setHeightForWidth(stackedWidget_25->sizePolicy().hasHeightForWidth());
-        stackedWidget_25->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_25->sizePolicy().hasHeightForWidth());
+        stackedWidget_25->setSizePolicy(sizePolicy);
         stackedWidget_25->setMinimumSize(QSize(100, 150));
         stackedWidget_25->setMaximumSize(QSize(100, 150));
         stackedWidget_25->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -22505,8 +22506,8 @@ public:
 
         stackedWidget_26 = new QStackedWidget(widget);
         stackedWidget_26->setObjectName("stackedWidget_26");
-        sizePolicy1.setHeightForWidth(stackedWidget_26->sizePolicy().hasHeightForWidth());
-        stackedWidget_26->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_26->sizePolicy().hasHeightForWidth());
+        stackedWidget_26->setSizePolicy(sizePolicy);
         stackedWidget_26->setMinimumSize(QSize(100, 150));
         stackedWidget_26->setMaximumSize(QSize(100, 150));
         stackedWidget_26->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -23182,8 +23183,8 @@ public:
 
         stackedWidget_27 = new QStackedWidget(widget);
         stackedWidget_27->setObjectName("stackedWidget_27");
-        sizePolicy1.setHeightForWidth(stackedWidget_27->sizePolicy().hasHeightForWidth());
-        stackedWidget_27->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_27->sizePolicy().hasHeightForWidth());
+        stackedWidget_27->setSizePolicy(sizePolicy);
         stackedWidget_27->setMinimumSize(QSize(100, 150));
         stackedWidget_27->setMaximumSize(QSize(100, 150));
         stackedWidget_27->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -23859,8 +23860,8 @@ public:
 
         stackedWidget_28 = new QStackedWidget(widget);
         stackedWidget_28->setObjectName("stackedWidget_28");
-        sizePolicy1.setHeightForWidth(stackedWidget_28->sizePolicy().hasHeightForWidth());
-        stackedWidget_28->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_28->sizePolicy().hasHeightForWidth());
+        stackedWidget_28->setSizePolicy(sizePolicy);
         stackedWidget_28->setMinimumSize(QSize(100, 150));
         stackedWidget_28->setMaximumSize(QSize(100, 150));
         stackedWidget_28->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -24536,8 +24537,8 @@ public:
 
         stackedWidget_29 = new QStackedWidget(widget);
         stackedWidget_29->setObjectName("stackedWidget_29");
-        sizePolicy1.setHeightForWidth(stackedWidget_29->sizePolicy().hasHeightForWidth());
-        stackedWidget_29->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_29->sizePolicy().hasHeightForWidth());
+        stackedWidget_29->setSizePolicy(sizePolicy);
         stackedWidget_29->setMinimumSize(QSize(100, 150));
         stackedWidget_29->setMaximumSize(QSize(100, 150));
         stackedWidget_29->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -25213,8 +25214,8 @@ public:
 
         stackedWidget_30 = new QStackedWidget(widget);
         stackedWidget_30->setObjectName("stackedWidget_30");
-        sizePolicy1.setHeightForWidth(stackedWidget_30->sizePolicy().hasHeightForWidth());
-        stackedWidget_30->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_30->sizePolicy().hasHeightForWidth());
+        stackedWidget_30->setSizePolicy(sizePolicy);
         stackedWidget_30->setMinimumSize(QSize(100, 150));
         stackedWidget_30->setMaximumSize(QSize(100, 150));
         stackedWidget_30->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -25890,8 +25891,8 @@ public:
 
         stackedWidget_31 = new QStackedWidget(widget);
         stackedWidget_31->setObjectName("stackedWidget_31");
-        sizePolicy1.setHeightForWidth(stackedWidget_31->sizePolicy().hasHeightForWidth());
-        stackedWidget_31->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_31->sizePolicy().hasHeightForWidth());
+        stackedWidget_31->setSizePolicy(sizePolicy);
         stackedWidget_31->setMinimumSize(QSize(100, 150));
         stackedWidget_31->setMaximumSize(QSize(100, 150));
         stackedWidget_31->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -26567,8 +26568,8 @@ public:
 
         stackedWidget_32 = new QStackedWidget(widget);
         stackedWidget_32->setObjectName("stackedWidget_32");
-        sizePolicy1.setHeightForWidth(stackedWidget_32->sizePolicy().hasHeightForWidth());
-        stackedWidget_32->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_32->sizePolicy().hasHeightForWidth());
+        stackedWidget_32->setSizePolicy(sizePolicy);
         stackedWidget_32->setMinimumSize(QSize(100, 150));
         stackedWidget_32->setMaximumSize(QSize(100, 150));
         stackedWidget_32->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -27244,8 +27245,8 @@ public:
 
         stackedWidget_33 = new QStackedWidget(widget);
         stackedWidget_33->setObjectName("stackedWidget_33");
-        sizePolicy1.setHeightForWidth(stackedWidget_33->sizePolicy().hasHeightForWidth());
-        stackedWidget_33->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(stackedWidget_33->sizePolicy().hasHeightForWidth());
+        stackedWidget_33->setSizePolicy(sizePolicy);
         stackedWidget_33->setMinimumSize(QSize(100, 150));
         stackedWidget_33->setMaximumSize(QSize(100, 150));
         stackedWidget_33->setStyleSheet(QString::fromUtf8("border-image: none;\n"
@@ -27946,12 +27947,25 @@ public:
         horizontalLayout_5->setContentsMargins(50, -1, -1, 37);
         pushButton_6 = new QPushButton(centralwidget);
         pushButton_6->setObjectName("pushButton_6");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
         pushButton_6->setSizePolicy(sizePolicy1);
         pushButton_6->setMinimumSize(QSize(125, 125));
-        pushButton_6->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-radius: 16px;\n"
-"border-image: url(:/buttons/hitButton.png);"));
+        pushButton_6->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"       /* Default button style */\n"
+"       border-image: none;\n"
+"	   border-radius: 16px;\n"
+"	   border-image: url(:/buttons/hitButton.png);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"       background-color: #c2c2c2; /* Slightly darker color */\n"
+"   }"));
         pushButton_6->setAutoDefault(true);
         pushButton_6->setFlat(false);
 
@@ -28101,6 +28115,23 @@ public:
 
         horizontalLayout->addWidget(pushButton_5);
 
+        pushButton_11 = new QPushButton(centralwidget);
+        pushButton_11->setObjectName("pushButton_11");
+        sizePolicy1.setHeightForWidth(pushButton_11->sizePolicy().hasHeightForWidth());
+        pushButton_11->setSizePolicy(sizePolicy1);
+        pushButton_11->setMinimumSize(QSize(100, 100));
+        QFont font2;
+        font2.setPointSize(14);
+        font2.setBold(true);
+        font2.setItalic(true);
+        pushButton_11->setFont(font2);
+        pushButton_11->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+"border-image: url(:/chips/white.png);\n"
+"border-radius: 50px;\n"
+"color: rgb(0, 0, 0);"));
+
+        horizontalLayout->addWidget(pushButton_11);
+
 
         verticalLayout_3->addLayout(horizontalLayout);
 
@@ -28119,7 +28150,7 @@ public:
         stackedWidget_36->setCurrentIndex(0);
         stackedWidget_37->setCurrentIndex(0);
         stackedWidget_38->setCurrentIndex(0);
-        stackedWidget_39->setCurrentIndex(2);
+        stackedWidget_39->setCurrentIndex(19);
         stackedWidget_40->setCurrentIndex(1);
         stackedWidget_41->setCurrentIndex(0);
         stackedWidget_42->setCurrentIndex(0);
@@ -28131,7 +28162,7 @@ public:
         stackedWidget_5->setCurrentIndex(0);
         stackedWidget_10->setCurrentIndex(0);
         stackedWidget_9->setCurrentIndex(2);
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
         stackedWidget_8->setCurrentIndex(0);
         stackedWidget_4->setCurrentIndex(0);
         stackedWidget_7->setCurrentIndex(0);
@@ -28141,7 +28172,7 @@ public:
         stackedWidget_25->setCurrentIndex(0);
         stackedWidget_26->setCurrentIndex(0);
         stackedWidget_27->setCurrentIndex(0);
-        stackedWidget_28->setCurrentIndex(2);
+        stackedWidget_28->setCurrentIndex(0);
         stackedWidget_29->setCurrentIndex(0);
         stackedWidget_30->setCurrentIndex(0);
         stackedWidget_31->setCurrentIndex(0);
@@ -29950,6 +29981,7 @@ public:
         pushButton_3->setText(QCoreApplication::translate("mainWindow", "10$", nullptr));
         pushButton_4->setText(QCoreApplication::translate("mainWindow", "20$", nullptr));
         pushButton_5->setText(QCoreApplication::translate("mainWindow", "100$", nullptr));
+        pushButton_11->setText(QCoreApplication::translate("mainWindow", "Submit", nullptr));
     } // retranslateUi
 
 };

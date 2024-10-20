@@ -297,6 +297,42 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/maype/Desktop/blackjack UI/Blackjack/AIplayer.h",
+			"MU",
+			"EWIEGA46WW/moc_AIplayer.cpp",
+			null
+		],
+		[
+			"C:/Users/maype/Desktop/blackjack UI/Blackjack/Cards.h",
+			"MU",
+			"EWIEGA46WW/moc_Cards.cpp",
+			null
+		],
+		[
+			"C:/Users/maype/Desktop/blackjack UI/Blackjack/Dealer.h",
+			"MU",
+			"EWIEGA46WW/moc_Dealer.cpp",
+			null
+		],
+		[
+			"C:/Users/maype/Desktop/blackjack UI/Blackjack/Deck.h",
+			"MU",
+			"EWIEGA46WW/moc_Deck.cpp",
+			null
+		],
+		[
+			"C:/Users/maype/Desktop/blackjack UI/Blackjack/Suit.h",
+			"MU",
+			"EWIEGA46WW/moc_Suit.cpp",
+			null
+		],
+		[
+			"C:/Users/maype/Desktop/blackjack UI/Blackjack/User.h",
+			"MU",
+			"EWIEGA46WW/moc_User.cpp",
+			null
+		],
+		[
 			"C:/Users/maype/Desktop/blackjack UI/Blackjack/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -374,6 +410,20 @@
 	"SETTINGS_FILE" : "C:/Users/maype/Desktop/blackjack UI/Blackjack/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/Blackjack_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/maype/Desktop/blackjack UI/Blackjack/AIplayer.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Users/maype/Desktop/blackjack UI/Blackjack/Cards.cpp", "MU", null ],
+		[
+			"C:/Users/maype/Desktop/blackjack UI/Blackjack/Dealer.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Users/maype/Desktop/blackjack UI/Blackjack/Deck.cpp", "MU", null ],
+		[ "C:/Users/maype/Desktop/blackjack UI/Blackjack/Suit.cpp", "MU", null ],
+		[ "C:/Users/maype/Desktop/blackjack UI/Blackjack/User.cpp", "MU", null ],
 		[ "C:/Users/maype/Desktop/blackjack UI/Blackjack/main.cpp", "MU", null ],
 		[
 			"C:/Users/maype/Desktop/blackjack UI/Blackjack/mainwindow.cpp",
