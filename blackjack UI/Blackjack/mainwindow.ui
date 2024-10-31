@@ -116,7 +116,7 @@ color: rgb(255, 255, 255);</string>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>40</height>
+          <height>90</height>
          </size>
         </property>
        </spacer>
@@ -145,7 +145,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_34">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -1148,7 +1148,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_35">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -2151,7 +2151,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_36">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -3154,7 +3154,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_37">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -4157,7 +4157,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_38">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -5160,7 +5160,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_39">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -5182,7 +5182,7 @@ color: rgb(255, 255, 255);</string>
 </string>
              </property>
              <property name="currentIndex">
-              <number>2</number>
+              <number>19</number>
              </property>
              <widget class="QWidget" name="page_2161">
               <layout class="QHBoxLayout" name="horizontalLayout_2171">
@@ -6163,7 +6163,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_40">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -7166,7 +7166,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_41">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -8169,7 +8169,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_42">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -9172,7 +9172,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_43">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -10175,7 +10175,7 @@ color: rgb(255, 255, 255);</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_44">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -11201,28 +11201,18 @@ color: rgb(255, 255, 255);</string>
        <enum>Qt::Orientation::Vertical</enum>
       </property>
       <property name="sizeType">
-       <enum>QSizePolicy::Policy::Expanding</enum>
+       <enum>QSizePolicy::Policy::Fixed</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>50</height>
+        <height>90</height>
        </size>
       </property>
      </spacer>
     </item>
     <item>
-     <spacer name="verticalSpacer_4">
-      <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
+     <layout class="QVBoxLayout" name="verticalLayout_6"/>
     </item>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -11244,7 +11234,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_11">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -12247,7 +12237,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_12">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -13250,7 +13240,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_3">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -14253,7 +14243,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_5">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -15256,7 +15246,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_10">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -16259,7 +16249,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_9">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -17262,7 +17252,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -17284,12 +17274,18 @@ color: rgb(255, 255, 255);</string>
 </string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="page_162">
            <layout class="QHBoxLayout" name="horizontalLayout_697">
             <item>
              <widget class="QLabel" name="label_696">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -18265,7 +18261,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_8">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -19268,7 +19264,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_4">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -20271,7 +20267,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_7">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -21274,7 +21270,7 @@ color: rgb(255, 255, 255);</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_6">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -22315,7 +22311,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_23">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -23318,7 +23314,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_24">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -24321,7 +24317,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_25">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -25324,7 +25320,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_26">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -26327,7 +26323,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_27">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -27330,7 +27326,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_28">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -27352,7 +27348,7 @@ color: rgb(255, 255, 255);</string>
 </string>
            </property>
            <property name="currentIndex">
-            <number>2</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="page_1567">
             <layout class="QHBoxLayout" name="horizontalLayout_1575">
@@ -28333,7 +28329,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_29">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -29336,7 +29332,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_30">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -30339,7 +30335,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_31">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -31342,7 +31338,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_32">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -32345,7 +32341,7 @@ color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QStackedWidget" name="stackedWidget_33">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -33414,9 +33410,19 @@ color: rgb(255, 255, 255);</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: none;
-border-radius: 16px;
-border-image: url(:/buttons/hitButton.png);</string>
+               <string notr="true">
+QPushButton {
+       /* Default button style */
+       border-image: none;
+	   border-radius: 16px;
+	   border-image: url(:/buttons/hitButton.png);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+       background-color: #c2c2c2; /* Slightly darker color */
+   }</string>
               </property>
               <property name="text">
                <string/>
@@ -33739,6 +33745,38 @@ color: rgb(255, 255, 255);</string>
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_11">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-image: none;
+border-image: url(:/chips/white.png);
+border-radius: 50px;
+color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="text">
+             <string>Submit</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
        </layout>
@@ -33752,4 +33790,7 @@ color: rgb(255, 255, 255);</string>
   <include location="BJpngs.qrc"/>
  </resources>
  <connections/>
+ <slots>
+  <slot>add1ToBet()</slot>
+ </slots>
 </ui>

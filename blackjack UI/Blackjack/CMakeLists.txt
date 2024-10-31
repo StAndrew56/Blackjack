@@ -24,6 +24,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         BJpngs.qrc
+        AIplayer.cpp AIplayer.h
+        Cards.cpp Cards.h
+        Dealer.cpp Dealer.h Deck.cpp Deck.h
+        Suit.cpp Suit.h
+        User.cpp User.h
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Blackjack APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
