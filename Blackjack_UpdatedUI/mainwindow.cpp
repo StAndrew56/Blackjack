@@ -110,17 +110,29 @@ void mainWindow::onSubmitBet() {
     user->trueRank();
     qDebug() << "Current handVal: " << user->handVal;
     displayPlayerHand();
+    if(user->handVal == 21){
+        showErrorMessage("BlackJack! Congratulations!");
+        user->pay();
+        user->betVal = 0;
+        //call dealer to show cards.
+    }
 }
 
 void mainWindow::onHitButtonClicked() {
     qDebug() << "Hit has been SMACKED!!!";
-
-    // Add a card to the user's hand
-    user->hit(deck);  // Player hits and gets another card //edit::::::: changed function call as was already built.
-
-    if(user->handVal == 21){
+    //checks if bet is placed, if not bet is placed will send error
+    if(user->betVal == 0){
+        showErrorMessage("You need to place a bet first!");
         return;
     }
+    //prevents users from hitting on 21.
+    if(user->handVal == 21){
+        showErrorMessage("You already have 21! Press stand to continue.");
+        return;
+    }
+
+    // Add a card to the user's hand
+    user->hit(deck);  // Player hits and gets another card
 
     // Get the index of the newly added card
     int newCardIndex = user->userHand.size() - 1;  // The last card in the hand is the new one
@@ -148,7 +160,7 @@ void mainWindow::onHitButtonClicked() {
         for (int i = 0; i < cardLabels.size(); ++i) {
             delete cardLabels[i];  // Delete each QLabel
         }
-        cardLabels.clear();
+        cardLabels.clear();//clear the label of the card png
 
         //if you bust re-create the deck
         deck.killDeck();
@@ -158,8 +170,6 @@ void mainWindow::onHitButtonClicked() {
     }
 
 }
-
-
 
 
 void mainWindow::displayCardProperly(const QString &cardPath, QWidget *parentWidget, int width = 100, int height = 150) {

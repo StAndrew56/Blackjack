@@ -34,10 +34,20 @@ void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* use
         addCard(playerHand, deck);
         addCard(dealerHand, deck);
     }
+    //do NOT remove, needed to deal with aces, will count num of
+    //aces in playerHand off original deal.
     for(int i = 0; i < playerHand.size(); i++){
 
         if(playerHand[i].cardRank == Rank::ACE){
             user->aceCount++;
+        }
+    }
+    //do Not remove, needed to deal with aces, will count num of
+    //aces in dealerHand off original deal.
+    for(int i = 0; i < dealerHand.size(); i++){
+
+        if(dealerHand[i].cardRank == Rank::ACE){
+            dealerAceCount++;
         }
     }
 

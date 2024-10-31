@@ -22,6 +22,7 @@ private:
     int UserHandVal;
     vector<Cards> dealerHand; //Dealer's hand vector of cards
     Deck mainDeck;
+    int dealerAceCount = 0;
 
 public:
     Dealer(); //Constructor
