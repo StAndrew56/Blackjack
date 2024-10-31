@@ -155,6 +155,16 @@ void Deck::shuffle() {
         swap(deckOfCards[i], deckOfCards[j]);
     }
 }
+void Deck::printSize(){
+    cout << "Deck Size: " << deckOfCards.size();
+
+}
+void Deck::killDeck(){
+
+    deckOfCards.clear();
+    deckOfCards.shrink_to_fit();
+
+}
 
 //this is not the actual main it is for testing the class only.
 //int main(){

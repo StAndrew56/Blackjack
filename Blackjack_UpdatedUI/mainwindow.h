@@ -5,6 +5,8 @@
 #include "User.h"
 #include "Dealer.h"
 #include "Deck.h"
+#include <QList>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,6 +28,7 @@ private:
     User *user;
     Dealer *dealer;  // Add this line to declare dealer as a pointer
     Deck deck;       // Deck object
+    QList<QLabel*> cardLabels;
     void setBackgroundImage();
     void setButtons();
     void setGraphic();

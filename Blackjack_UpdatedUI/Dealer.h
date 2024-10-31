@@ -8,6 +8,7 @@
 
 #include "Deck.h" //For interaction with main Deck
 #include "Cards.h" //To create a vector of cards as a Dealer's hand
+#include "User.h"
 #include <iostream>
 #include <string>
 #include <vector> //Dealer uses vectors
@@ -26,7 +27,7 @@ public:
     Dealer(); //Constructor
 
     //Param: Player+Dealer count
-    void dealCards(vector<Cards>& playerHand, vector<Cards>& deck);
+    void dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* user);
     //Set 2 cards each from Deck vector into:
     //Dealer's hand vector - One set to visible in UI
     //Player's hand vector

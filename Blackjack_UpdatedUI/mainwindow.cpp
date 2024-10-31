@@ -39,7 +39,7 @@ mainWindow::mainWindow(QWidget *parent)
 
     deck.createDeck();
     deck.shuffle();
-    dealer->dealCards(user->userHand, deck.deckOfCards);
+    dealer->dealCards(user->userHand, deck.deckOfCards, user);
 
 }
 
@@ -99,27 +99,28 @@ void mainWindow::updateBetDisplay(int bet) {
 void mainWindow::updateBalanceDisplay() {
     ui->label->setText(QString("Current Balance: $%1").arg(user->balance)); // Update balance label
 }
-void mainWindow::onSubmitBet() {//_)_)_)_)_)_)_)_)_)_)_)_)_)-0-0-0-0-0-0-0_)_)_)_0-0-0-0-0 fix this once we have dealer class
+void mainWindow::onSubmitBet() {
     // Ensure a bet is placed
     if (user->betVal <= 0) {
         return;
     }
     user->userHand.clear();
 
-    dealer->dealCards(user->userHand, deck.deckOfCards);
+    dealer->dealCards(user->userHand, deck.deckOfCards, user);
+    user->trueRank();
+    qDebug() << "Current handVal: " << user->handVal;
     displayPlayerHand();
-
-
-
-    // Proceed to deal cards
-    //dealCards(); game loop starts here!!@!@!@!@!@!@!@@!@!@!@@!@!@!@@!@!@!@@!@!@!@!@@!@!@!@!@@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@
 }
 
 void mainWindow::onHitButtonClicked() {
     qDebug() << "Hit has been SMACKED!!!";
 
     // Add a card to the user's hand
-    dealer->addCard(user->userHand, deck.deckOfCards);  // Player hits and gets another card
+    user->hit(deck);  // Player hits and gets another card //edit::::::: changed function call as was already built.
+
+    if(user->handVal == 21){
+        return;
+    }
 
     // Get the index of the newly added card
     int newCardIndex = user->userHand.size() - 1;  // The last card in the hand is the new one
@@ -134,12 +135,28 @@ void mainWindow::onHitButtonClicked() {
         // Only animate the newly added card to the corresponding widget
         animateCardToWidget(userWidgets[newCardIndex], cardPath, 100, 150);
     }
+    qDebug() << "Current handVal: " << user->handVal;
 
     // Check if the user has busted after hitting
-    if (user->getUserHandTotal() > 21) {
+    if (user->handVal > 21) {
         qDebug() << "Player busted!";
         showErrorMessage("You busted!");
+        user->clearUserHand();//clear the hand from the vector
+        user->bust();//deal with loss of currency
+
+        //clear each widget after a bust
+        for (int i = 0; i < cardLabels.size(); ++i) {
+            delete cardLabels[i];  // Delete each QLabel
+        }
+        cardLabels.clear();
+
+        //if you bust re-create the deck
+        deck.killDeck();
+        deck.createDeck();
+        deck.shuffle();
+        deck.printSize();
     }
+
 }
 
 
@@ -238,6 +255,9 @@ void mainWindow::animateCardToWidget(QWidget* targetWidget, const QString &cardP
 
     // Start the animation
     animation->start(QAbstractAnimation::DeleteWhenStopped);
+
+    //store the cardLabel
+    cardLabels.append(cardLabel);
 
     qDebug() << "Card animation started for: " << cardPath;
 }
