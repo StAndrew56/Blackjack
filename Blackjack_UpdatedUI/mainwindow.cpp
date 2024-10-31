@@ -57,13 +57,12 @@ void mainWindow::showErrorMessage(const QString &message) {
     msgBox.addButton(QMessageBox::Ok);
 
     msgBox.exec();
-    //QMessageBox::warning(this, "Error", message); // Use a message box to show the error
 }
 void mainWindow::onOneDollarBet() {
     user->increaseBet(1); // Call the placeBet method from User class
 
-    qDebug() << "Current Balance: $" << user->balance; // Accessing balance directly
-    qDebug() << "Current Bet: $" << user->betVal; // Accessing betVal directly
+    qDebug() << "Current Balance: $" << user->balance;
+    qDebug() << "Current Bet: $" << user->betVal;
 }
 void mainWindow::onFiveDollarBet() {
     user->increaseBet(5);
@@ -110,11 +109,25 @@ void mainWindow::onSubmitBet() {
     user->trueRank();
     qDebug() << "Current handVal: " << user->handVal;
     displayPlayerHand();
+
+    //pays player for getting "BlackJack" 21 off original deal.
     if(user->handVal == 21){
         showErrorMessage("BlackJack! Congratulations!");
         user->pay();
         user->betVal = 0;
-        //call dealer to show cards.
+        //clear each widget after a bust
+        for (int i = 0; i < cardLabels.size(); ++i) {
+            delete cardLabels[i];  // Delete each QLabel
+        }
+        cardLabels.clear();//clear the label of the card png
+
+        //if you bust re-create the deck
+        deck.killDeck();
+        deck.createDeck();
+        deck.shuffle();
+        //call dealer to show cards after this comment
+
+        //code here.
     }
 }
 
@@ -166,7 +179,6 @@ void mainWindow::onHitButtonClicked() {
         deck.killDeck();
         deck.createDeck();
         deck.shuffle();
-        deck.printSize();
     }
 
 }
