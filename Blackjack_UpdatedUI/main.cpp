@@ -25,7 +25,10 @@ int main(int argc, char *argv[])
     deck.createDeck();
     deck.shuffle();
     Dealer dealer;//Creates Dealer object & starts game loop from there
-    dealer.gameLoop(user.userHand, deck.deckOfCards);
+    //Deals initial cards
+    dealer.dealCards(user.userHand, deck.deckOfCards);
+    //Dealer's turn
+    dealer.gameLoop(deck.deckOfCards, user);
 
 
     w.show();

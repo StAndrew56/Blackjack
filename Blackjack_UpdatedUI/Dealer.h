@@ -15,18 +15,28 @@
 
 using namespace std;
 
-class Dealer {
+class Dealer : public QObject{
+    Q_OBJECT
 
 private:
     int dealerHandVal;
-    int UserHandVal;
+    int userHandVal;
     vector<Cards> dealerHand; //Dealer's hand vector of cards
     Deck mainDeck;
+    const int down = 1;
+    const int up = 0;
 
 public:
     Dealer(); //Constructor
 
-    //Param: Player+Dealer count
+    //TEXT OUTPUT MEMBER FUNCTIONS-----------------
+    void printRankDealer(Rank cardRank);
+    void printSuitDealer(Suit suit);
+    void printDealerHand();
+    void trueRank();
+    //TEXT OUTPUT MEMBER FUNCTIONS-----------------
+
+    //Param: User's hand, deck
     void dealCards(vector<Cards>& playerHand, vector<Cards>& deck);
     //Set 2 cards each from Deck vector into:
     //Dealer's hand vector - One set to visible in UI
@@ -48,16 +58,18 @@ public:
     void addCard(vector<Cards>& currHand, vector<Cards>& deck);
     //Called when adding cards from Deck to hands
 
-    void getUserHandVal(User);
+    int getUserHandVal(User&);
 
     //void setUserHandVal();
-    void compareCards(vector<Cards>& playerHand, vector<Cards>& deck, User&);
+    void compareCards(vector<Cards>& deck, User&);
 
-    void gameLoop(vector<Cards>& playerHand, vector<Cards>& deck, User&);
+    void gameLoop(vector<Cards>& deck, User&);
 
     void hit(vector<Cards>& deck);
 
     void stand();
+
+    void bust(User& user);
 };
 
 #endif //_DEALER_H
