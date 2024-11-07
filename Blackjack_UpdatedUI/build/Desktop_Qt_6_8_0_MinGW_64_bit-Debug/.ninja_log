@@ -1,0 +1,21 @@
+# ninja log v6
+10	1168	7520565415965479	Blackjack_autogen/timestamp	4ca2ce5bffaf8ff5
+10	1168	7520565415965479	Blackjack_autogen/mocs_compilation.cpp	4ca2ce5bffaf8ff5
+10	1168	7520565415965479	C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/timestamp	4ca2ce5bffaf8ff5
+10	1168	7520565415965479	C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp	4ca2ce5bffaf8ff5
+1187	1644	7520565421530936	Blackjack_autogen/EWIEGA46WW/qrc_resources.cpp	21fc9f651f3284fc
+1187	1644	7520565421530936	C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/EWIEGA46WW/qrc_resources.cpp	21fc9f651f3284fc
+1179	2308	7520565428137383	Blackjack_autogen/EWIEGA46WW/qrc_BJpngs.cpp	6370aec65dfa52a
+1179	2308	7520565428137383	C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/EWIEGA46WW/qrc_BJpngs.cpp	6370aec65dfa52a
+2325	2756	7520565428476155	CMakeFiles/Blackjack.dir/AIplayer.cpp.obj	8129c372177ccf76
+2331	7000	7520565428545976	CMakeFiles/Blackjack.dir/Cards.cpp.obj	97596c22207a7f20
+2337	7740	7520565428595831	CMakeFiles/Blackjack.dir/Dealer.cpp.obj	b16ca87e65b7611c
+2756	7879	7520565432794608	CMakeFiles/Blackjack.dir/Deck.cpp.obj	7009f199764282f1
+7000	8829	7520565475231165	CMakeFiles/Blackjack.dir/Suit.cpp.obj	8eae5932190eb908
+2314	8838	7520565428376418	CMakeFiles/Blackjack.dir/main.cpp.obj	f3eaf8a4d07ef280
+2309	9001	7520565428316602	CMakeFiles/Blackjack.dir/Blackjack_autogen/mocs_compilation.cpp.obj	763de06de44003b2
+7740	11788	7520565482631389	CMakeFiles/Blackjack.dir/User.cpp.obj	bd21258ec7d16dad
+8829	11856	7520565493522268	CMakeFiles/Blackjack.dir/Blackjack_autogen/EWIEGA46WW/qrc_resources.cpp.obj	98c074835a5698c5
+2319	25511	7520565428416315	CMakeFiles/Blackjack.dir/mainwindow.cpp.obj	a4c3f63fb5278f46
+7879	40514	7520565484027651	CMakeFiles/Blackjack.dir/Blackjack_autogen/EWIEGA46WW/qrc_BJpngs.cpp.obj	42733864922f5047
+40514	41536	7520565810374371	Blackjack.exe	f2c3ba46f65a88db

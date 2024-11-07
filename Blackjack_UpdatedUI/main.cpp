@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
     Deck deck;
     deck.createDeck();
     deck.shuffle();
-
+    Dealer dealer;//Creates Dealer object & starts game loop from there
+    dealer.gameLoop(user.userHand, deck.deckOfCards);
 
 
     w.show();

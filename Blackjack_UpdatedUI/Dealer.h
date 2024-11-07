@@ -8,6 +8,7 @@
 
 #include "Deck.h" //For interaction with main Deck
 #include "Cards.h" //To create a vector of cards as a Dealer's hand
+#include "User.h" //To get User's hand value
 #include <iostream>
 #include <string>
 #include <vector> //Dealer uses vectors
@@ -47,9 +48,10 @@ public:
     void addCard(vector<Cards>& currHand, vector<Cards>& deck);
     //Called when adding cards from Deck to hands
 
-    void getUserHandVal();
+    void getUserHandVal(User);
 
-    void setUserHandVal();
+    //void setUserHandVal();
+    void gameLoop(vector<Cards>& playerHand, vector<Cards>& deck, User&);
 };
 
 #endif //_DEALER_H
