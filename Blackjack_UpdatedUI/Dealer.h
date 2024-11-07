@@ -51,7 +51,13 @@ public:
     void getUserHandVal(User);
 
     //void setUserHandVal();
+    void compareCards(vector<Cards>& playerHand, vector<Cards>& deck, User&);
+
     void gameLoop(vector<Cards>& playerHand, vector<Cards>& deck, User&);
+
+    void hit(vector<Cards>& deck);
+
+    void stand();
 };
 
 #endif //_DEALER_H

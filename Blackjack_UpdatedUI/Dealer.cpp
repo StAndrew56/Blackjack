@@ -16,12 +16,14 @@ using namespace std;
 /**
  * Dealer implementation
  */
+/* Ignore, might be useful code for later
 bool sortBySuit(Cards firstC, Cards secondC){
     return(firstC.suit < secondC.suit);
 }
 bool sortByRank(Cards firstC, Cards secondC){
     return(firstC.cardRank < secondC.cardRank);
 }
+*/
 
 Dealer::Dealer() {
     mainDeck.createDeck();  // Create the deck of cards
@@ -70,9 +72,70 @@ void Dealer::getUserHandVal(User user) {
 //void Dealer::setUserHandVal() {
 
 //}
+void Dealer::hit(vector<Cards>& deck){
+    addCard(dealerHand, deck);
+}
+
+void Dealer::stand(){
+    //UI stuff maybe
+}
+void Dealer::compareCards(vector<Cards>& playerHand, vector<Cards>& deck, User& user){
+    //User wins
+    if(user.getUserHandTotal() > dealerHandVal){
+        user.pay();
+    }
+    //A tie
+    if(user.getUserHandTotal() == dealerHandVal){
+        //pay back with no extra, clearBet() does this
+        user.clearBet();
+    }
+    //User loses
+    if(user.getUserHandTotal() < dealerHandVal){
+        //sets betVal to 0 to clear bet
+        //to update without returning bet to balance
+        user.betVal = 0;
+        user.clearBet();
+    }
+}
+//Dealer's turn loop, called through UI triggered by user choosing "stand"
+void Dealer::gameLoop(vector<Cards>& playerHand, vector<Cards>& deck, User& user){
+    //Dealer play
+    cout << "Dealer's turn";
+    //Facedown card faceup, needs ui implementation --------- NEEDS DISCUSSION!!!!
+    //Check Dealer val
+    if(dealerHandVal < 21){
+        //While loop{
+        bool dealerTurn = true;
+        while(dealerTurn){
+            //Check if Dealer did not bust
+            if(dealerHandVal < 21){
+                //If Dealer val >= 17 then stand
+                if(dealerHandVal >= 17){
+                    //end Dealer's turn
+                    stand();
+                    dealerTurn = false;
+                }
+                //Else Dealer takes a card
+                if(dealerHandVal < 17){
+                    hit(deck);
+                }
+            }
+            //If Dealer busts
+            else{
+                user.pay();
+            }
+        }
+    }
+    //Compare card values
+    compareCards(playerHand, deck, user);
+    //Reset Dealer's hand
+    removeCards();
+}
+
+//Ignore, but might have useful code for later
+/*
 void Dealer::gameLoop(vector<Cards>& playerHand, vector<Cards>& deck, User& user){
     //While(turns<=turn amount || a currency is empty){
-
     while(user.balance > 0){
         //Deal initial 2 cards each
         dealCards(playerHand, deck);
@@ -140,7 +203,9 @@ void Dealer::gameLoop(vector<Cards>& playerHand, vector<Cards>& deck, User& user
             }
         }
         //Compare card values
+        user.pay();
         removeCards();
     //}
     }
 }
+*/
