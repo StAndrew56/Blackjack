@@ -38,7 +38,7 @@ public:
     //TEXT OUTPUT MEMBER FUNCTIONS-----------------
 
     //Param: User's hand, deck
-    void dealCards(vector<Cards>& playerHand, vector<Cards>& deck);
+    void dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* user);
     //Set 2 cards each from Deck vector into:
     //Dealer's hand vector - One set to visible in UI
     //Player's hand vector
