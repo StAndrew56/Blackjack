@@ -8,6 +8,8 @@
 #include <QList>
 #include <QLabel>
 
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class mainWindow;
@@ -29,9 +31,15 @@ private:
     Dealer *dealer;  // Add this line to declare dealer as a pointer
     Deck deck;       // Deck object
     QList<QLabel*> cardLabels;
+    QList<QLabel*> dealerCardLabels;
     void setBackgroundImage();
     void setButtons();
     void setGraphic();
+    QTimer *standTimer;
+    int lastDisplayedUserCardIndex = 0;
+    int lastDisplayedDealerCardIndex = 0;
+
+
 
 
 
@@ -46,9 +54,15 @@ private slots:
     void onHundredDollarBet();
     void updateBalanceDisplay();
     void onSubmitBet();
-    void displayCardProperly(const QString &cardPath, QWidget *parentWidget, int width, int height);  // Declare the display function
     void displayPlayerHand();
     void onHitButtonClicked();
     void animateCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height);
+    void animateDealerCardToWidget(QWidget* targetWidget, const QString &cardPath, int width = 100, int height = 150, bool faceDown = false);  // New function for dealer
+    void displayDealerHand();
+    void onDoubleDownButton();
+    void onStandButton();
+    void dealerStandStep();
+    void onEndGame();
+
 };
 #endif // MAINWINDOW_H

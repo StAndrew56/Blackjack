@@ -11,12 +11,15 @@
 #include "User.h"
 #include "Dealer.h"
 #include <QMessageBox>
+#include <QTimer>
 
 mainWindow::mainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::mainWindow)
     , dealer(new Dealer())
     , user(new User)
+
+
 {
     ui->setupUi(this);
     //setBackgroundImage();
@@ -35,11 +38,17 @@ mainWindow::mainWindow(QWidget *parent)
     connect(ui->pushButton_11, &QPushButton::clicked, this, &mainWindow::onSubmitBet);
     connect(user, &User::actionError, this, &mainWindow::showErrorMessage);
     connect(ui->pushButton_6, &QPushButton::clicked, this, &mainWindow::onHitButtonClicked);
+    connect(ui->pushButton_9, &QPushButton::clicked, this, &mainWindow::onDoubleDownButton);
+    connect(ui->pushButton_7, &QPushButton::clicked, this, &mainWindow::onStandButton);
+
+
+
     updateBalanceDisplay();
 
     deck.createDeck();
     deck.shuffle();
     dealer->dealCards(user->userHand, deck.deckOfCards, user);
+
 
 }
 
@@ -58,6 +67,9 @@ void mainWindow::showErrorMessage(const QString &message) {
 
     msgBox.exec();
 }
+//--------------------------------------***********--------------------------------------
+
+//--------------------------------------BET AMOUNTS--------------------------------------
 void mainWindow::onOneDollarBet() {
     user->increaseBet(1); // Call the placeBet method from User class
 
@@ -91,46 +103,50 @@ void mainWindow::onHundredDollarBet() {
     qDebug() << "Current Balance: $" << user->balance;
     qDebug() << "Current Bet: $" << user->betVal;
 }
-void mainWindow::updateBetDisplay(int bet) {
-    // Update the display label to show the current bet amount
-    ui->label_691->setText(QString("Current Bet: $%1").arg(bet));
-}
-void mainWindow::updateBalanceDisplay() {
-    ui->label->setText(QString("Current Balance: $%1").arg(user->balance)); // Update balance label
-}
+
+
+
+
 void mainWindow::onSubmitBet() {
     // Ensure a bet is placed
     if (user->betVal <= 0) {
         return;
     }
     user->userHand.clear();
+    dealer->removeCards();
+
 
     dealer->dealCards(user->userHand, deck.deckOfCards, user);
+
     user->trueRank();
     qDebug() << "Current handVal: " << user->handVal;
+    qDebug() << "tbvwayyyyyyyvabvaw";
+    displayDealerHand();
     displayPlayerHand();
 
     //pays player for getting "BlackJack" 21 off original deal.
-    if(user->handVal == 21){
-        showErrorMessage("BlackJack! Congratulations!");
+    if (user->getUserHandTotal() == 21) {
+        showErrorMessage("Blackjack! You win!");
         user->pay();
         user->betVal = 0;
-        //clear each widget after a bust
-        for (int i = 0; i < cardLabels.size(); ++i) {
-            delete cardLabels[i];  // Delete each QLabel
-        }
-        cardLabels.clear();//clear the label of the card png
-
-        //if you get 21 re-create the deck
-        deck.killDeck();
-        deck.createDeck();
-        deck.shuffle();
-        //call dealer to show cards after this comment
-
-        //code here.
+        onEndGame();
+        return;
     }
+
+    updateBetDisplay(user->betVal);
+    updateBalanceDisplay();
+    qDebug() << "New round started, cards dealt, and UI updated.";
 }
 
+
+
+//--------------------------------------BET AMOUNTS--------------------------------------
+
+//--------------------------------------***********--------------------------------------
+//--------------------------------------***********--------------------------------------
+
+
+//--------------------------------------BUTTONCLICK--------------------------------------
 void mainWindow::onHitButtonClicked() {
     qDebug() << "Hit has been SMACKED!!!";
     //checks if bet is placed, if not bet is placed will send error
@@ -167,71 +183,141 @@ void mainWindow::onHitButtonClicked() {
         qDebug() << "Player busted!";
         showErrorMessage("You busted!");
         user->clearUserHand();//clear the hand from the vector
-        user->bust();//deal with loss of currency
-
-        //clear each widget after a bust
-        for (int i = 0; i < cardLabels.size(); ++i) {
-            delete cardLabels[i];  // Delete each QLabel
-        }
-        cardLabels.clear();//clear the label of the card png
-
-        //if you bust re-create the deck
-        deck.killDeck();
-        deck.createDeck();
-        deck.shuffle();
+        onEndGame();
     }
 
 }
 
 
-void mainWindow::displayCardProperly(const QString &cardPath, QWidget *parentWidget, int width = 100, int height = 150) {
-    QPixmap cardPixmap(cardPath);  // Load the card image
 
-    if (cardPixmap.isNull()) {
-        qDebug() << "Failed to load image for card: " << cardPath;
-    } else {
-        QLabel* cardLabel = new QLabel(parentWidget);  // Create a QLabel to display the card
 
-        // Scale the card image and set it to the QLabel
-        QPixmap scaledPixmap = cardPixmap.scaled(width, height, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        cardLabel->setPixmap(scaledPixmap);
 
-        // Set a fixed size for the QLabel to prevent clipping
-        cardLabel->setFixedSize(width, height);
-        cardLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        cardLabel->setAlignment(Qt::AlignCenter);
+void mainWindow::onDoubleDownButton(){
+    // Checks if user has 2 cards and enough money
+    if (user->userHand.size() == 2 && user->balance >= user->betVal)
+    {
+        user->doubleDown();  // Double current bet amount
+        updateBalanceDisplay();  // Show new current money on UI
+        updateBetDisplay(user->betVal);  // Show new current bet amount on UI
 
-        // Add the QLabel to the layout of the parent widget
-        if (!parentWidget->layout()) {
-            QVBoxLayout* layout = new QVBoxLayout(parentWidget);
-            parentWidget->setLayout(layout);  // Apply a layout if it doesn't already exist
+        // Deal only one card to user
+        dealer->addCard(user->userHand, deck.deckOfCards);
+        displayPlayerHand();
+
+        // Check if the player has busted after doubling down
+        if (user->getUserHandTotal() > 21) {
+            qDebug() << "Player busted after double down!";
+            showErrorMessage("You busted!");
+            onEndGame();
         }
-
-        parentWidget->layout()->addWidget(cardLabel);  // Add QLabel to the parent layout
-        cardLabel->show();  // Make sure the card is visible
-        qDebug() << "Card displayed successfully for: " << cardPath;
+        // Player finishes turn for rest of game and dealer takes over
+        else
+        {
+            qDebug() << "Player doubled down and stands.";
+            onStandButton();
+        }
+    }
+    else
+    {
+        showErrorMessage("Double down is available only on the initial deal with enough balance.");
     }
 }
 
 
+
+
+
+void mainWindow::onStandButton() {
+    // Make sure theres a bet before stand is clicked
+    if (user->betVal > 0)
+    {
+        dealer->stand(); // Trigger stand though its empty
+
+        // Add a delay animation in between cards to prevent all of them showing up at same time
+        standTimer = new QTimer(this);
+        connect(standTimer, &QTimer::timeout, this, &mainWindow::dealerStandStep);
+        standTimer->start(750); // 750 ms delay between each dealer hit animation
+    }
+    else
+    {
+        showErrorMessage("Please place a bet before standing.");
+    }
+}
+
+
+
+void mainWindow::dealerStandStep() {
+    // Getter to get dealer hand value
+    if (dealer->getDealerHandVal() >= 17 || dealer->getDealerHandVal() > 21 || deck.deckOfCards.empty())
+    {
+        // Stop timer if conditions met
+        standTimer->stop();
+        delete standTimer;
+        standTimer = nullptr;
+
+        displayDealerHand();  // Final display of dealers hand
+
+        // Check who winner is and  end game (need copy paste end game)
+        dealer->compareCards(deck.deckOfCards, *user);
+        // End the game
+        onEndGame();
+
+    }
+    else
+    {
+        // Dealer takes anotha card
+        dealer->hit(deck.deckOfCards);
+        dealer->trueRank();  // Recalc hand value for dealer
+        displayDealerHand(); // Update the UI to show the new card
+    }
+}
+
+
+
+
+//--------------------------------------BUTTONCLICK--------------------------------------
+
+//--------------------------------------***********--------------------------------------
+//--------------------------------------***********--------------------------------------
+
+//--------------------------------------CARDANIMATE--------------------------------------
 
 void mainWindow::displayPlayerHand() {
-    qDebug() << "User hand size:" << user->userHand.size();  // Output the number of cards in thui->widget4ui->widget4ui->widget4ui->widget4ui->widget4e user's hand
+    qDebug() << "User hand size:" << user->userHand.size();  // Output the number of cards in user's hand
 
-    // Assuming you have user widgets named widget1, widget2, widget3, etc.
-    QList<QWidget*> userWidgets =  {ui->widget1, ui->widget2, ui->widget3, ui->widget4, ui->widget5, ui->widget6,
+    QList<QWidget*> userWidgets = {ui->widget1, ui->widget2, ui->widget3, ui->widget4, ui->widget5, ui->widget6,
                                     ui->widget7, ui->widget8, ui->widget9, ui->widget10, ui->widget11};
 
-    for (int i = 0; i < user->userHand.size(); ++i) {
+    // Start animating only from the last displayed card index
+    for (int i = lastDisplayedUserCardIndex; i < user->userHand.size(); ++i) {
         QString cardPath = user->userHand[i].getCardImagePath();  // Get the image path for the current card
+        qDebug() << "Animating User Card " << i + 1 << ": " << cardPath;
 
-        qDebug() << "Card " << i + 1 << ": " << cardPath;
-
-        if (i < userWidgets.size()) {  // Make sure there is a corresponding widget
+        if (i < userWidgets.size()) {
             animateCardToWidget(userWidgets[i], cardPath, 100, 150);
         }
     }
+    // Update the index to the last displayed card
+    lastDisplayedUserCardIndex = user->userHand.size();
 }
+
+void mainWindow::displayDealerHand() {
+    QList<QWidget*> dealerWidgets = {ui->dealerWidget1, ui->dealerWidget2, ui->dealerWidget3, ui->dealerWidget4,
+                                      ui->dealerWidget5, ui->dealerWidget6, ui->dealerWidget7, ui->dealerWidget8,
+                                      ui->dealerWidget9, ui->dealerWidget10, ui->dealerWidget11};
+
+    for (int i = lastDisplayedDealerCardIndex; i < dealer->getDealerHand().size() && i < dealerWidgets.size(); ++i) {
+        QString cardPath = dealer->getDealerHand()[i].getCardImagePath();
+        qDebug() << "Animating Dealer Card " << i + 1 << ": " << cardPath;
+
+        animateDealerCardToWidget(dealerWidgets[i], cardPath, 100, 150);  // Animate only new cards
+    }
+    // Update the index to the last displayed card
+    lastDisplayedDealerCardIndex = dealer->getDealerHand().size();
+}
+
+
+
 
 
 void mainWindow::animateCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height) {
@@ -286,49 +372,90 @@ void mainWindow::animateCardToWidget(QWidget* targetWidget, const QString &cardP
 
 
 
-
-
-
-/*
-void mainWindow::displayPlayerHand() {
-    // Load the card image directly by specifying the file path
-    QString cardPath = ":/cards/diamonds_A.png";  // Use the correct image path
-    QPixmap cardPixmap(cardPath);  // Load the card image
+void mainWindow::animateDealerCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height, bool faceDown) {
+    QPixmap cardPixmap(faceDown ? ":/cards/back_dark.png" : cardPath); // Use a face-down image if necessary
 
     if (cardPixmap.isNull()) {
-        qDebug() << "Failed to load image for card: " << cardPath;
-    } else {
-        // Create a QLabel to display the card
-        QLabel* cardLabel = new QLabel(this);
-
-        // Set a fixed size for the QLabel that matches the card size
-        cardLabel->setFixedSize(100, 150);  // Set QLabel to be the exact size of the card
-
-        // Scale the card image if needed, maintaining aspect ratio
-        QPixmap scaledPixmap = cardPixmap.scaled(100, 150, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        cardLabel->setPixmap(scaledPixmap);
-
-        // Set size policy and alignment
-        cardLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);  // Make sure the label doesn’t shrink
-        cardLabel->setAlignment(Qt::AlignCenter);
-
-        // Check if a layout exists for stackedWidget_3, if not, create one
-        if (!ui->stackedWidget_3->layout()) {
-            QVBoxLayout* stackedLayout = new QVBoxLayout(ui->stackedWidget_3);
-            ui->stackedWidget_3->setLayout(stackedLayout);  // Apply the layout
-        }
-
-        // Add the QLabel (with the card) to the stacked widget's layout
-        ui->stackedWidget_3->layout()->addWidget(cardLabel);
-
-        // Make sure the QLabel is visible
-        cardLabel->show();
-
-        qDebug() << "Card displayed successfully.";
-        qDebug() << cardPath;
+        qDebug() << "Failed to load image for dealer card: " << cardPath;
+        return;
     }
+
+    QLabel* cardLabel = new QLabel(this);
+
+    QPixmap scaledPixmap = cardPixmap.scaled(width, height, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    cardLabel->setPixmap(scaledPixmap);
+
+    cardLabel->setFixedSize(scaledPixmap.width(), scaledPixmap.height());
+    cardLabel->setAlignment(Qt::AlignCenter);
+
+    QRect startGeometry(-100, -100, scaledPixmap.width(), scaledPixmap.height());
+    cardLabel->setGeometry(startGeometry);
+    cardLabel->show();
+
+    QPropertyAnimation* animation = new QPropertyAnimation(cardLabel, "geometry");
+    animation->setDuration(750);
+
+    QRect targetGeometry = targetWidget->geometry();
+    int targetX = targetGeometry.x() + (targetGeometry.width() - scaledPixmap.width()) / 2;
+    int targetY = targetGeometry.y() + (targetGeometry.height() - scaledPixmap.height()) / 2;
+
+    // Apply vertical offset to move the card down
+    targetY += 80; // Adjust this value until the placement looks correct
+
+    animation->setStartValue(startGeometry);
+    animation->setEndValue(QRect(targetX, targetY, scaledPixmap.width(), scaledPixmap.height()));
+
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+
+    qDebug() << "Dealer card animation started for: " << cardPath;
 }
-*/
+
+
+//--------------------------------------CARDANIMATE--------------------------------------
+
+//--------------------------------------***********--------------------------------------
+//--------------------------------------***********--------------------------------------
+
+
+void mainWindow::updateBetDisplay(int bet) {
+    // Update the display label to show the current bet amount
+    ui->label_691->setText(QString("Current Bet: $%1").arg(bet));
+}
+void mainWindow::updateBalanceDisplay() {
+    ui->label->setText(QString("Current Balance: $%1").arg(user->balance)); // Update balance label
+}
+
+
+
+
+void mainWindow::onEndGame() {
+    // Clear UI card displays
+    for(auto label : cardLabels){
+        if(label){
+            label->deleteLater();
+        }
+    }
+    cardLabels.clear();  // Clear the list to reset for a new game
+
+    // Clear user and dealer hands
+    user->clearUserHand();  // Clear the user's hand
+    dealer->removeCards();   // Clear the dealer's hand
+
+    // Reset the deck if needed
+    deck.killDeck();
+    deck.createDeck();
+    deck.shuffle();
+
+    // Update balance and bet displays
+    updateBalanceDisplay();  // Update balance display label
+    updateBetDisplay(0);     // Reset bet display to 0
+
+    // Reset the displayed card indices to 0 for the next game
+    lastDisplayedUserCardIndex = 0;
+    lastDisplayedDealerCardIndex = 0;
+
+    qDebug() << "End game: All displays reset, hands cleared, and deck reshuffled.";
+}
 
 
 
