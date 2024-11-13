@@ -117,29 +117,78 @@ void User::trueRank(){
          else if(userHand[i].cardRank == Rank::KING){
             handVal += 10;
          }
+         else if(userHand[i].cardRank == Rank::ACE){
+             handVal += 11;
+         }
          else{
             handVal += (int)userHand[i].cardRank;
          }
         }
 }
+
 //called when the User wants to hit, will add 1 card to their hand.
 void User::hit(Deck& deck) {
-    handVal = 0;
-    trueRank();
-    if(handVal < 21){
-
+    //handVal = 0;
+    if(handVal == 0){
+        trueRank();
+    }
+    //make sure user doesn't have 21
+    if(handVal != 21){
+        //add the card to userHand
         userHand.push_back(deck.deckOfCards.front());
-
+        //delete card from deckOfCards
         deck.deckOfCards.erase(deck.deckOfCards.begin());
 
-        for(int i = 0; i < userHand.size(); i++){
-        handVal = (int)userHand[i].cardRank;
+        //get the last position of userHand(where you just added the card)
+        int lastCard = userHand.size() - 1;
+
+        //add the last card's value to handVal
+        if(userHand[lastCard].cardRank == Rank::JACK){
+            handVal += 10;
+        }
+        else if(userHand[lastCard].cardRank == Rank::QUEEN){
+            handVal += 10;
+        }
+        else if(userHand[lastCard].cardRank == Rank::KING){
+            handVal += 10;
+        }
+        else if(userHand[lastCard].cardRank == Rank::ACE){
+            handVal += 11;
+            aceCount++;//if ace add to ace counter, each ace will only be counted once.
+        }
+        else{
+            handVal += (int)userHand[lastCard].cardRank;
+        }
+        //this block deals with ace's when nessecary. very dpendent on ace counter.
+        //ace counter is above and in dealer class(in function dealCards()).
+        if(handVal > 21){
+
+            for(int i =0; i < userHand.size(); i++){
+
+                if(userHand[i].cardRank == Rank::ACE){
+
+                    if(handVal != 21){
+
+                        while(handVal > 21 && aceCount > 0){
+
+                            handVal -= 10;//turn the ace into a 1.
+
+                            aceCount--;//ace can't be decremented again.
+                        }
+                    }
+
+                }
+            }
         }
     }
+    //user has 21
     else{
-        cout << "you cannot hit!";
+
+        emit actionError("Your already have 21! Press Stand to continue.");
     }
+
 }
+
 //called when user wants to stand.
 //a semantic call.
 void User::stand() {
@@ -169,6 +218,9 @@ void User::split() {
 void User::doubleDown(){
     balance -= betVal;
     betVal = betVal + betVal;
+
+}
+void User::blackJack(){
 
 }
 //gets called when user places legal bet
@@ -212,7 +264,13 @@ void User::clearUserHand(){
     userHand.clear();
     userHand.shrink_to_fit();
 }
+void User::bust(){
+    betVal = 0;
+    aceCount = 0;
+    emit betPlaced(betVal);
+    emit balanceUpdated(balance);
 
+}
 //takes users bet, if it is a valid amount will
 //subtract the bet from their balance
 void User::takeBet(){

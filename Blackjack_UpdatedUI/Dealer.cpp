@@ -11,6 +11,9 @@
 //Qt UI includes
 #include <QString>
 #include <QObject>
+#include <QTimer>
+#include <QMessageBox>
+#include <QThread>
 
 using namespace std;
 
@@ -30,9 +33,10 @@ bool sortByRank(Cards firstC, Cards secondC){
 */
 
 Dealer::Dealer() {
-    mainDeck.createDeck();  // Create the deck of cards
-    mainDeck.shuffle();     // Shuffle the deck
+    mainDeck.createDeck();
+    mainDeck.shuffle();
 }
+
 //TEXT OUTPUT MEMBER FUNCTIONS START------------------------------------------
 //prints the cards rank.
 void Dealer::printRankDealer(Rank cardRank){
@@ -129,26 +133,18 @@ void Dealer::trueRank(){
 //TEXT OUTPUT MEMBER FUNCTIONS END--------------------------------------------
 
 //Dealer deals cards - 1 to User then 1 to Dealer performed 2 times
-void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* user) {
-    //Adds a card to each hand twice
+void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* user)  {
     for(int i = 0; i < 2; i++){
         addCard(playerHand, deck);
-        //Needs face up & face down visual feature implementation
-        //2nd dealer card face down
-        if(i == 0){
         addCard(dealerHand, deck);
-        }
-        if(i == 1){
-            addCard(dealerHand, deck);
-            //Toggle card face down here
-            ////emit toggleCardImage(down);
-        }
+    }
+    //Adds a card to each hand twice
         //do NOT remove, needed to deal with aces, will count num of
         //aces in playerHand off original deal.
         for(int i = 0; i < playerHand.size(); i++){
 
             if(playerHand[i].cardRank == Rank::ACE){
-                //user->aceCount++;
+                user->aceCount++;
             }
         }
         //do Not remove, needed to deal with aces, will count num of
@@ -156,11 +152,11 @@ void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* use
         for(int i = 0; i < dealerHand.size(); i++){
 
             if(dealerHand[i].cardRank == Rank::ACE){
-                //dealerAceCount++;
+                dealerAceCount++;
             }
         }
-    }
-}
+ }
+
 /**
  * @param Player player
  * @param double amount
@@ -184,50 +180,32 @@ void Dealer::addCard(vector<Cards>& currHand, vector<Cards>& deck) {
 }
 
 int Dealer::getUserHandVal(User& user) {
-    userHandVal = user.getUserHandTotal();
+    return user.getUserHandTotal();  // This ensures user's hand value is used accurately in comparisons
 }
 //May not be needed either
 //void Dealer::setUserHandVal() {
 
 //}
 
-string Dealer::handState(){
-    if(dealerHandVal >= 17){
-        return "stand";
-    }
-    else if(dealerHandVal < 17){
-        return "hit";
-    }
-    else{
-        return "----INCORRECT VALUE IN HANDSTATE----";
-    }
-}
-
 //Dealer hit
-void Dealer::hit(vector<Cards>& deck){
-    //Add card to Dealer's hand
+void Dealer::hit(vector<Cards>& deck) {
+    if (deck.empty()) {
+        qDebug() << "Error: Deck is empty, cannot hit!";
+        return;
+    }
+    qDebug() << "Dealer hitting, adding card from deck.";
     addCard(dealerHand, deck);
+    qDebug() << "Dealer hand size after hit:" << dealerHand.size();
 }
 
-//Dealer stand - Function may be needed
-//void Dealer::stand(){
+
+
+//Dealer stand
+void Dealer::stand(){
     //Dealer's turn is going to end
     //UI stuff maybe
-//}
-
-bool Dealer::isBust(){
-    if(dealerHandVal <= 21){
-        return false;
-    }
-    else if(dealerHandVal > 21){
-        return true;
-    }
-    //Should never run - but satisfies guarantee of return bool
-    else{
-        return true;
-    }
-
 }
+
 
 //Dealer hand value is over 21
 void Dealer::bust(User& user){
@@ -243,40 +221,30 @@ void Dealer::bust(User& user){
 }
 
 //Card comparison - Which is closer to 21?
-void Dealer::compareCards(vector<Cards>& deck, User& user){
+void Dealer::compareCards(vector<Cards>& deck, User& user) {
+    int userHandValue = getUserHandVal(user);  // Get the user’s hand value for comparison
 
-    //User wins
-    if(getUserHandVal(user) > dealerHandVal){
-        //Dealer calls pay function to double bet val and add this to balance
+    qDebug() << "Comparing cards: User hand value:" << userHandValue << ", Dealer hand value:" << dealerHandVal;
+
+    // User wins
+    if (userHandValue > dealerHandVal || dealerHandVal > 21) {
         user.pay();
-        //user.pay() should have betVal = 0 after adding to balance
-        //user.pay() should have emit betPlaced(betVal);
-        //user.pay() should have emit balanceUpdated(balance);
-
-        //Dealer doesn't need to update these since
-        //User already does this in other User member functions
+        qDebug() << "User wins. Balance updated.";
     }
-
-    //A tie
-    if(getUserHandVal(user) == dealerHandVal){
-        //pay back with no extra, clearBet() does this
+    // Tie condition
+    else if (userHandValue == dealerHandVal) {
         user.clearBet();
+        qDebug() << "It's a tie. Bet cleared.";
     }
-
-    //User loses
-    if(getUserHandVal(user) < dealerHandVal){
-        //sets betVal to 0 to clear bet
-        //to update without returning bet to balance
+    // Dealer wins
+    else {
         user.betVal = 0;
-        //clearBet() already emits for UI updates
-        user.clearBet();
+        user.clearBet();  // Clear the bet with no payout
+        qDebug() << "Dealer wins. Bet cleared, user loses.";
     }
 }
 
-//Dealer's turn loop, called through UI triggered by user choosing "stand"
-//Parameters:
-//----- deck to add cards to hands from deck - dealCards() & addCard()
-//----- user to compare hands of Dealer & User, & to handle user pay result
+
 void Dealer::gameLoop(vector<Cards>& deck, User& user){
     //Dealer play
     cout << "Dealer's turn";
@@ -289,114 +257,50 @@ void Dealer::gameLoop(vector<Cards>& deck, User& user){
         //While loop for Dealer's turn until Dealer stands{
         while(dealerTurn){
             //Check if Dealer did not bust
-            if(isBust() == false){
+            if(dealerHandVal < 21){
                 //If Dealer val >= 17 then stand
-                if(handState() == "stand"){
+                if(dealerHandVal >= 17){
                     //end Dealer's turn
-                    //stand(); //Function may be needed
+                    stand();
                     dealerTurn = false;
                 }
                 //Else Dealer takes a card
-                if(handState() == "hit"){
+                if(dealerHandVal < 17){
                     hit(deck);
                 }
             }
             //If Dealer busts
             else{
                 bust(user);
-                dealerTurn = false;
             }
         }
     }
-    if(isBust() == false){
-        //Compare card values
-        compareCards(deck, user);
-    }
-    else{
-        //Who busted first?
-
-    }
+    //Compare card values
+    compareCards(deck, user);
     //Reset Dealer's hand
     removeCards();
 }
 
-//Ignore, but might have useful code for later
-/*
-void Dealer::gameLoop(vector<Cards>& playerHand, vector<Cards>& deck, User& user){
-    //While(turns<=turn amount || a currency is empty){
-    while(user.balance > 0){
-        //Deal initial 2 cards each
-        dealCards(playerHand, deck);
-        //Signal User turn ----------------------------------------- NEEDS DISCUSSION!!!!
-        //If val >= 9 && val <= 11 then "DoubleDown" available
-        if(user.getUserHandTotal() >= 9 && user.getUserHandTotal() <= 11){
 
-        }
-//Code for using sort() to sort hand temporarily
-//for finding similar suits & ranks
-        //Copy vector of hand to sort
-        vector<Cards>temp (playerHand);
-        //Sort by suit
-        sort(temp.begin(), temp.end(), sortBySuit);
-        //If 2 with a suit similarity "Split" becomes available
-        bool match = false;
-        for(int i = 0; i < temp.size(); i++){
-            if(temp[i].suit == temp[i+1].suit){
-                match = true;
-            }
-        }
-        //Sort by rank
-        sort(temp.begin(), temp.end(), sortByRank);
-        //If 2 with a suit similarity "Split" becomes available
-        for(int i = 0; i < temp.size(); i++){
-            if(temp[i].suit == temp[i+1].suit){
-                match = true;
-            }
-        }
-//
-        //Suit availability --------- NEEDS DISCUSSION!!!!
-        //while player's turn{
-        while(user.getUserHandTotal() < 21){
-            string userChoice = "";
-            //Get User choice
-            //If "Stand" no addCard called
-            if(userChoice == "Stand"){
-                //user's turn ends
-            }
-            if(userChoice == "Hit"){
-                //user's turn ends
-                addCard(playerHand, deck);
-            }
-            //If "Hit" then call addCard
-            //If "Hit" check User val
-            //If under 21 signal User play
-            //If over 21 User loses bet
-        //}
-        }
 
-        //Dealer play
-        //Facedown card faceup, needs ui implementation --------- NEEDS DISCUSSION!!!!
-        //Check Dealer val
-        if(dealerHandVal < 21){
-            //While loop{
-            bool dealerTurn = true;
-            while(dealerTurn){
-                //If Dealer val >= 17 then stand
-                if(dealerHandVal >= 17){
-                    //end Dealer's turn
-                    dealerTurn = false;
-                }
-                //Else Dealer takes a card
-                if(dealerHandVal < 17){
-                    addCard(dealerHand, deck);
-                }
-            //}
-            }
-        }
-        //Compare card values
-        user.pay();
-        removeCards();
-    //}
-    }
+
+int Dealer::getHandValue() {
+    trueRank();  // Calculate the hand value
+    return dealerHandVal;
 }
-*/
+
+
+
+
+
+
+
+vector<Cards>& Dealer::getDealerHand() {
+    return dealerHand;
+}
+
+int Dealer::getDealerHandVal() const {
+    return dealerHandVal;
+}
+
+

@@ -52,5 +52,6 @@
         <file>spades_J.png</file>
         <file>spades_K.png</file>
         <file>spades_Q.png</file>
+        <file>back_dark.png</file>
     </qresource>
 </RCC>

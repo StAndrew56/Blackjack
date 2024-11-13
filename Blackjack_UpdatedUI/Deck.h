@@ -34,6 +34,10 @@ void createDeck();
 void shuffle();
 
 void drawCard();
+
+void printSize();
+
+void killDeck();
 };
 
 #endif //_DECK_H
