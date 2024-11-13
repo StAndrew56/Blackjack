@@ -1,17 +1,17 @@
 {
 	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
-	"BUILD_DIR" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen",
-	"CMAKE_BINARY_DIR" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI",
+	"BUILD_DIR" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI",
 	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/CMakeLists.txt",
-		"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/CMakeLists.txt",
+		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystem.cmake.in",
-		"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake",
+		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeNinjaFindMake.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake",
@@ -65,7 +65,7 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindBinUtils.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompiler.cmake.in",
-		"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake",
+		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake",
@@ -80,7 +80,7 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineRCCompiler.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCCompiler.cmake.in",
-		"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake",
+		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCInformation.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeTestRCCompiler.cmake",
@@ -97,7 +97,7 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeDetermineCompileFeatures.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/FeatureTesting.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompiler.cmake.in",
-		"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake",
+		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
@@ -269,6 +269,11 @@
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake",
@@ -299,11 +304,36 @@
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake",
@@ -327,61 +357,61 @@
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
-		"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/BJpngs.qrc",
-		"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/resources.qrc"
+		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/BJpngs.qrc",
+		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/resources.qrc"
 	],
-	"CMAKE_SOURCE_DIR" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI",
+	"CMAKE_SOURCE_DIR" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/deps",
+	"DEP_FILE" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "Blackjack_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/AIplayer.h",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/AIplayer.h",
 			"MU",
 			"EWIEGA46WW/moc_AIplayer.cpp",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.h",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.h",
 			"MU",
 			"EWIEGA46WW/moc_Cards.cpp",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.h",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.h",
 			"MU",
 			"EWIEGA46WW/moc_Dealer.cpp",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.h",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.h",
 			"MU",
 			"EWIEGA46WW/moc_Deck.cpp",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.h",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.h",
 			"MU",
 			"EWIEGA46WW/moc_Suit.cpp",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.h",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.h",
 			"MU",
 			"EWIEGA46WW/moc_User.cpp",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.h",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/include",
-	"MOC_COMPILATION_FILE" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -437,56 +467,56 @@
 		"-c",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 2,
-	"PARSE_CACHE_FILE" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/Blackjack_autogen.dir/ParseCache.txt",
+	"PARALLEL" : 12,
+	"PARSE_CACHE_FILE" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/Blackjack_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Qt/6.8.0/mingw_64/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Qt/6.8.0/mingw_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 8,
-	"SETTINGS_FILE" : "C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/Blackjack_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/Blackjack_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/AIplayer.cpp",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/AIplayer.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.cpp",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.cpp",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.cpp",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.cpp",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.cpp",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/main.cpp",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/main.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/Brittany H/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.cpp",
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.cpp",
 			"MU",
 			null
 		]

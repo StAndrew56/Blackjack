@@ -26,6 +26,7 @@ public:
     double balance = 1000;
     vector<Cards> splitHand;
     int splitBetVal;
+    int aceCount = 0;
 
 User();
 
@@ -45,6 +46,8 @@ void stand();
 
 void split();
 
+void blackJack();
+
 void placeBet(int bet);
 
 void printUserHandTotal();
@@ -52,6 +55,8 @@ void printUserHandTotal();
 void pay();
 
 void clearUserHand();
+
+void bust();
 
 int getUserHandTotal();
 

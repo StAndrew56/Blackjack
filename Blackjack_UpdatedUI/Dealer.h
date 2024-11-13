@@ -15,6 +15,7 @@
 
 using namespace std;
 
+
 class Dealer : public QObject{
     Q_OBJECT
 
@@ -22,12 +23,15 @@ private:
     int dealerHandVal;
     int userHandVal;
     vector<Cards> dealerHand; //Dealer's hand vector of cards
-    int dealerAceCard = 0;
+    int dealerAceCount = 0;
     Deck mainDeck;
     const int down = 1;
     const int up = 0;
 
 public:
+
+
+
     Dealer(); //Constructor
 
     //TEXT OUTPUT MEMBER FUNCTIONS-----------------
@@ -66,15 +70,25 @@ public:
 
     void gameLoop(vector<Cards>& deck, User&);
 
-    string handState();
-
     void hit(vector<Cards>& deck);
 
     void stand();
 
-    bool isBust();
 
     void bust(User& user);
+
+    int getHandValue();
+    bool hitIfNeeded(std::vector<Cards>& deck);
+
+    vector<Cards>& getDealerHand();
+
+    int getDealerHandVal() const;
+
+
+
+signals:
+    void endGame();
+
 };
 
 #endif //_DEALER_H
