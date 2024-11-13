@@ -121,7 +121,7 @@ void mainWindow::onSubmitBet() {
         }
         cardLabels.clear();//clear the label of the card png
 
-        //if you bust re-create the deck
+        //if you get 21 re-create the deck
         deck.killDeck();
         deck.createDeck();
         deck.shuffle();

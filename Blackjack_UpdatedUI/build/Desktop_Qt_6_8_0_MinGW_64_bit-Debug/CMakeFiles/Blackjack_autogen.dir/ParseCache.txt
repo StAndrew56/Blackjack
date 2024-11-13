@@ -327,8 +327,9 @@ C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User
  mdp:C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.h
  mdp:C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/moc_predefs.h
 C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.h
-C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.h
 C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.h
+C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.h
+C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.h
 C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.0/mingw_64/include/QtCore/QList
@@ -721,9 +722,8 @@ C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/main
  mdp:C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.h
  mdp:C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/moc_predefs.h
  mdp:C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.h
-C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.h
-C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.cpp
 C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/AIplayer.cpp
+C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.cpp
 C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.cpp
 C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.cpp
 C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.cpp
