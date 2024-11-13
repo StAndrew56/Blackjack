@@ -27,9 +27,20 @@ int main(int argc, char *argv[])
     Dealer dealer;//Creates Dealer object & starts game loop from there
     //Deals initial cards
     dealer.dealCards(user.userHand, deck.deckOfCards);
-    //Dealer's turn
-    dealer.gameLoop(deck.deckOfCards, user);
-
+    bool test = true;
+    //Actual
+    while(user.balance > 0 && test == false){
+        //User's turn
+        //Button actions available
+        //Dealer's turn
+        dealer.gameLoop(deck.deckOfCards, user);
+    }
+    //Dealer test cases
+    while(test == true){
+        dealer.printDealerHand();
+        //dealer.addCard(deck.deckOfCards);
+        test = false;
+    }
 
     w.show();
     return a.exec();

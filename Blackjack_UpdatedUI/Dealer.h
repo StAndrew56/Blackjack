@@ -22,6 +22,7 @@ private:
     int dealerHandVal;
     int userHandVal;
     vector<Cards> dealerHand; //Dealer's hand vector of cards
+    int dealerAceCard = 0;
     Deck mainDeck;
     const int down = 1;
     const int up = 0;
@@ -65,9 +66,13 @@ public:
 
     void gameLoop(vector<Cards>& deck, User&);
 
+    string handState();
+
     void hit(vector<Cards>& deck);
 
     void stand();
+
+    bool isBust();
 
     void bust(User& user);
 };

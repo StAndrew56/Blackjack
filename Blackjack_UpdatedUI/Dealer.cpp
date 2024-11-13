@@ -129,19 +129,36 @@ void Dealer::trueRank(){
 //TEXT OUTPUT MEMBER FUNCTIONS END--------------------------------------------
 
 //Dealer deals cards - 1 to User then 1 to Dealer performed 2 times
-void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck) {
+void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* user) {
     //Adds a card to each hand twice
     for(int i = 0; i < 2; i++){
         addCard(playerHand, deck);
         //Needs face up & face down visual feature implementation
         //2nd dealer card face down
-        ////if(i == 0){
+        if(i == 0){
         addCard(dealerHand, deck);
-        ////}
-        ////if(i == 1){
+        }
+        if(i == 1){
+            addCard(dealerHand, deck);
             //Toggle card face down here
             ////emit toggleCardImage(down);
-        ////}
+        }
+        //do NOT remove, needed to deal with aces, will count num of
+        //aces in playerHand off original deal.
+        for(int i = 0; i < playerHand.size(); i++){
+
+            if(playerHand[i].cardRank == Rank::ACE){
+                user->aceCount++;
+            }
+        }
+        //do Not remove, needed to deal with aces, will count num of
+        //aces in dealerHand off original deal.
+        for(int i = 0; i < dealerHand.size(); i++){
+
+            if(dealerHand[i].cardRank == Rank::ACE){
+                dealerAceCount++;
+            }
+        }
     }
 }
 /**
@@ -174,16 +191,42 @@ int Dealer::getUserHandVal(User& user) {
 
 //}
 
+string Dealer::handState(){
+    if(dealerHandVal >= 17){
+        return "stand";
+    }
+    else if(dealerHandVal < 17){
+        return "hit";
+    }
+    else{
+        return "----INCORRECT VALUE IN HANDSTATE----";
+    }
+}
+
 //Dealer hit
 void Dealer::hit(vector<Cards>& deck){
     //Add card to Dealer's hand
     addCard(dealerHand, deck);
 }
 
-//Dealer stand
-void Dealer::stand(){
+//Dealer stand - Function may be needed
+//void Dealer::stand(){
     //Dealer's turn is going to end
     //UI stuff maybe
+//}
+
+bool Dealer::isBust(){
+    if(dealerHandVal <= 21){
+        return false;
+    }
+    else if(dealerHandVal > 21){
+        return true;
+    }
+    //Should never run - but satisfies guarantee of return bool
+    else{
+        return true;
+    }
+
 }
 
 //Dealer hand value is over 21
@@ -246,26 +289,33 @@ void Dealer::gameLoop(vector<Cards>& deck, User& user){
         //While loop for Dealer's turn until Dealer stands{
         while(dealerTurn){
             //Check if Dealer did not bust
-            if(dealerHandVal < 21){
+            if(isBust() == false){
                 //If Dealer val >= 17 then stand
-                if(dealerHandVal >= 17){
+                if(handState() == "stand"){
                     //end Dealer's turn
-                    stand();
+                    //stand(); //Function may be needed
                     dealerTurn = false;
                 }
                 //Else Dealer takes a card
-                if(dealerHandVal < 17){
+                if(handState() == "hit"){
                     hit(deck);
                 }
             }
             //If Dealer busts
             else{
                 bust(user);
+                dealerTurn = false;
             }
         }
     }
-    //Compare card values
-    compareCards(deck, user);
+    if(isBust() == false){
+        //Compare card values
+        compareCards(deck, user);
+    }
+    else{
+        //Who busted first?
+
+    }
     //Reset Dealer's hand
     removeCards();
 }
