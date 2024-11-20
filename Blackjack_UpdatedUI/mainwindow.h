@@ -63,6 +63,7 @@ private slots:
     void onStandButton();
     void dealerStandStep();
     void onEndGame();
+    void clearCardsDisplayed();
 
 };
 #endif // MAINWINDOW_H

@@ -33349,7 +33349,10 @@ QPushButton {
 
    QPushButton:pressed {
        /* Style when button is pressed */
-       background-color: #c2c2c2; /* Slightly darker color */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
    }</string>
               </property>
               <property name="text">
@@ -33381,9 +33384,21 @@ QPushButton {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: none;
-border-image: url(:/buttons/standButton.png);
-border-radius: 16px;</string>
+               <string notr="true">QPushButton {
+       /* Default button style */
+       border-image: none;
+	   border-radius: 16px;
+	   border-image: url(:/buttons/standButton.png);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
               </property>
               <property name="text">
                <string/>
@@ -33405,9 +33420,21 @@ border-radius: 16px;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: none;
-border-image: url(:/buttons/splitButton.png);
-border-radius: 16px;</string>
+               <string notr="true">QPushButton {
+       /* Default button style */
+       border-image: none;
+	   border-radius: 16px;
+	   border-image: url(:/buttons/splitButton.png);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
               </property>
               <property name="text">
                <string/>
@@ -33429,9 +33456,21 @@ border-radius: 16px;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: none;
-border-image: url(:/buttons/doubleDownButton.png);
-border-radius: 16px;</string>
+               <string notr="true">QPushButton {
+       /* Default button style */
+       border-image: none;
+	   border-radius: 16px;
+	   border-image: url(:/buttons/doubleDownButton.png);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
               </property>
               <property name="text">
                <string/>
@@ -33526,10 +33565,22 @@ color: rgb(255, 255, 255);</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-image: none;
-border-image: url(:/chips/clearButton.png);
-border-radius: 50px;
-color: rgb(0, 0, 0);</string>
+             <string notr="true">QPushButton {
+       /* Default button style */
+		border-image: none;
+		border-image: url(:/chips/clearButton.png);
+		border-radius: 50px;
+		color: rgb(0, 0, 0);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
             </property>
             <property name="text">
              <string/>
@@ -33559,10 +33610,22 @@ color: rgb(0, 0, 0);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-image: none;
-border-radius: 50px;
-border-image: url(:/chips/white.png);
-color: rgb(0, 0, 0);</string>
+             <string notr="true">QPushButton {
+       /* Default button style */
+		border-image: none;
+		border-image: url(:/chips/white.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
             </property>
             <property name="text">
              <string>1$</string>
@@ -33585,10 +33648,22 @@ color: rgb(0, 0, 0);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-image: none;
-border-radius: 50px;
-border-image: url(:/chips/red.png);
-color: rgb(0, 0, 0);</string>
+             <string notr="true">QPushButton {
+       /* Default button style */
+		border-image: none;
+		border-image: url(:/chips/red.png);
+		border-radius: 50px;
+		color: rgb(0, 0, 0);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
             </property>
             <property name="text">
              <string>5$</string>
@@ -33611,10 +33686,22 @@ color: rgb(0, 0, 0);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-image: none;
-border-radius: 50px;
-border-image: url(:/chips/blue.png);
-color: rgb(255, 255, 255);</string>
+             <string notr="true">QPushButton {
+       /* Default button style */
+		border-image: none;
+		border-radius: 50px;
+		border-image: url(:/chips/blue.png);
+		color: rgb(255, 255, 255);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
             </property>
             <property name="text">
              <string>10$</string>
@@ -33637,10 +33724,22 @@ color: rgb(255, 255, 255);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-image: none;
-border-radius: 50px;
-border-image: url(:/chips/green.png);
-color: rgb(0, 0, 0);</string>
+             <string notr="true">QPushButton {
+       /* Default button style */
+		border-image: none;
+		border-radius: 50px;
+		border-image: url(:/chips/green.png);
+		color: rgb(0, 0, 0);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
             </property>
             <property name="text">
              <string>20$</string>
@@ -33663,10 +33762,22 @@ color: rgb(0, 0, 0);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-image: none;
-border-radius: 50px;
-border-image: url(:/chips/black.png);
-color: rgb(255, 255, 255);</string>
+             <string notr="true">QPushButton {
+       /* Default button style */
+		border-image: none;
+		border-radius: 50px;
+		border-image: url(:/chips/black.png);
+		color: rgb(255, 255, 255);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
             </property>
             <property name="text">
              <string>100$</string>
@@ -33695,10 +33806,22 @@ color: rgb(255, 255, 255);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-image: none;
-border-image: url(:/chips/white.png);
-border-radius: 50px;
-color: rgb(0, 0, 0);</string>
+             <string notr="true">QPushButton {
+       /* Default button style */
+		border-image: none;
+		border-image: url(:/chips/white.png);
+		border-radius: 50px;
+		color: rgb(0, 0, 0);
+		
+   }
+
+   QPushButton:pressed {
+       /* Style when button is pressed */
+		border-image: none;
+		border-image: url(:/buttons/button-icon-png-21055.png);
+		border-radius: 55px;
+		color: rgb(0, 0, 0);
+   }</string>
             </property>
             <property name="text">
              <string>Submit</string>

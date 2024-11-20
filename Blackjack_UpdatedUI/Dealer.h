@@ -13,6 +13,10 @@
 #include <string>
 #include <vector> //Dealer uses vectors
 
+//UI includes
+#include <QString>
+#include <QObject>
+
 using namespace std;
 
 
@@ -88,6 +92,8 @@ public:
 
 signals:
     void endGame();
+
+    void actionError(const QString &message);
 
 };
 

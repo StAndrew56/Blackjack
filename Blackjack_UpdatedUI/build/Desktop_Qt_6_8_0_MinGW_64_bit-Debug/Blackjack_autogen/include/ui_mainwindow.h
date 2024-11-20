@@ -27932,7 +27932,10 @@ public:
 "\n"
 "   QPushButton:pressed {\n"
 "       /* Style when button is pressed */\n"
-"       background-color: #c2c2c2; /* Slightly darker color */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
 "   }"));
         pushButton_6->setAutoDefault(true);
         pushButton_6->setFlat(false);
@@ -27944,9 +27947,21 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
         pushButton_7->setSizePolicy(sizePolicy1);
         pushButton_7->setMinimumSize(QSize(125, 125));
-        pushButton_7->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-image: url(:/buttons/standButton.png);\n"
-"border-radius: 16px;"));
+        pushButton_7->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"       border-image: none;\n"
+"	   border-radius: 16px;\n"
+"	   border-image: url(:/buttons/standButton.png);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout_5->addWidget(pushButton_7);
 
@@ -27955,9 +27970,21 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
         pushButton_8->setSizePolicy(sizePolicy1);
         pushButton_8->setMinimumSize(QSize(125, 125));
-        pushButton_8->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-image: url(:/buttons/splitButton.png);\n"
-"border-radius: 16px;"));
+        pushButton_8->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"       border-image: none;\n"
+"	   border-radius: 16px;\n"
+"	   border-image: url(:/buttons/splitButton.png);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout_5->addWidget(pushButton_8);
 
@@ -27966,9 +27993,21 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
         pushButton_9->setSizePolicy(sizePolicy1);
         pushButton_9->setMinimumSize(QSize(125, 125));
-        pushButton_9->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-image: url(:/buttons/doubleDownButton.png);\n"
-"border-radius: 16px;"));
+        pushButton_9->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"       border-image: none;\n"
+"	   border-radius: 16px;\n"
+"	   border-image: url(:/buttons/doubleDownButton.png);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout_5->addWidget(pushButton_9);
 
@@ -28011,10 +28050,22 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
         pushButton_10->setSizePolicy(sizePolicy1);
         pushButton_10->setMinimumSize(QSize(125, 125));
-        pushButton_10->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-image: url(:/chips/clearButton.png);\n"
-"border-radius: 50px;\n"
-"color: rgb(0, 0, 0);"));
+        pushButton_10->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"		border-image: none;\n"
+"		border-image: url(:/chips/clearButton.png);\n"
+"		border-radius: 50px;\n"
+"		color: rgb(0, 0, 0);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout->addWidget(pushButton_10);
 
@@ -28032,10 +28083,22 @@ public:
         font1.setItalic(true);
         font1.setUnderline(false);
         pushButton->setFont(font1);
-        pushButton->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-radius: 50px;\n"
-"border-image: url(:/chips/white.png);\n"
-"color: rgb(0, 0, 0);"));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"		border-image: none;\n"
+"		border-image: url(:/chips/white.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout->addWidget(pushButton);
 
@@ -28043,10 +28106,22 @@ public:
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setMinimumSize(QSize(100, 100));
         pushButton_2->setFont(font);
-        pushButton_2->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-radius: 50px;\n"
-"border-image: url(:/chips/red.png);\n"
-"color: rgb(0, 0, 0);"));
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"		border-image: none;\n"
+"		border-image: url(:/chips/red.png);\n"
+"		border-radius: 50px;\n"
+"		color: rgb(0, 0, 0);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout->addWidget(pushButton_2);
 
@@ -28054,10 +28129,22 @@ public:
         pushButton_3->setObjectName("pushButton_3");
         pushButton_3->setMinimumSize(QSize(100, 100));
         pushButton_3->setFont(font);
-        pushButton_3->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-radius: 50px;\n"
-"border-image: url(:/chips/blue.png);\n"
-"color: rgb(255, 255, 255);"));
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"		border-image: none;\n"
+"		border-radius: 50px;\n"
+"		border-image: url(:/chips/blue.png);\n"
+"		color: rgb(255, 255, 255);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout->addWidget(pushButton_3);
 
@@ -28065,10 +28152,22 @@ public:
         pushButton_4->setObjectName("pushButton_4");
         pushButton_4->setMinimumSize(QSize(100, 100));
         pushButton_4->setFont(font);
-        pushButton_4->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-radius: 50px;\n"
-"border-image: url(:/chips/green.png);\n"
-"color: rgb(0, 0, 0);"));
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"		border-image: none;\n"
+"		border-radius: 50px;\n"
+"		border-image: url(:/chips/green.png);\n"
+"		color: rgb(0, 0, 0);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout->addWidget(pushButton_4);
 
@@ -28076,10 +28175,22 @@ public:
         pushButton_5->setObjectName("pushButton_5");
         pushButton_5->setMinimumSize(QSize(100, 100));
         pushButton_5->setFont(font);
-        pushButton_5->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-radius: 50px;\n"
-"border-image: url(:/chips/black.png);\n"
-"color: rgb(255, 255, 255);"));
+        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"		border-image: none;\n"
+"		border-radius: 50px;\n"
+"		border-image: url(:/chips/black.png);\n"
+"		color: rgb(255, 255, 255);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout->addWidget(pushButton_5);
 
@@ -28093,10 +28204,22 @@ public:
         font2.setBold(true);
         font2.setItalic(true);
         pushButton_11->setFont(font2);
-        pushButton_11->setStyleSheet(QString::fromUtf8("border-image: none;\n"
-"border-image: url(:/chips/white.png);\n"
-"border-radius: 50px;\n"
-"color: rgb(0, 0, 0);"));
+        pushButton_11->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"		border-image: none;\n"
+"		border-image: url(:/chips/white.png);\n"
+"		border-radius: 50px;\n"
+"		color: rgb(0, 0, 0);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
 
         horizontalLayout->addWidget(pushButton_11);
 

@@ -70,6 +70,8 @@ void increaseBet(int amount);
 
 void clearBet();
 
+void clearBetForStand();
+
 signals:
 
 void actionError(const QString &message);

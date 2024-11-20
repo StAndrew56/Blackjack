@@ -13,6 +13,8 @@
 #include <QMessageBox>
 #include <QTimer>
 
+
+
 mainWindow::mainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::mainWindow)
@@ -47,7 +49,7 @@ mainWindow::mainWindow(QWidget *parent)
 
     deck.createDeck();
     deck.shuffle();
-    dealer->dealCards(user->userHand, deck.deckOfCards, user);
+    //dealer->dealCards(user->userHand, deck.deckOfCards, user);
 
 
 }
@@ -71,34 +73,78 @@ void mainWindow::showErrorMessage(const QString &message) {
 
 //--------------------------------------BET AMOUNTS--------------------------------------
 void mainWindow::onOneDollarBet() {
+    if(user->balance == 0){
+        showErrorMessage("Out of money!");
+        return;
+    }
+    if(user->userHand.size() == 0){
     user->increaseBet(1); // Call the placeBet method from User class
-
+    }
+    else{
+        showErrorMessage("You can't change your bet aftering start!");
+    }
     qDebug() << "Current Balance: $" << user->balance;
     qDebug() << "Current Bet: $" << user->betVal;
+
 }
 void mainWindow::onFiveDollarBet() {
-    user->increaseBet(5);
-
+    if(user->balance == 0){
+        showErrorMessage("Out of money!");
+        return;
+    }
+    if(user->userHand.size() == 0){
+        user->increaseBet(5); // Call the placeBet method from User class
+    }
+    else{
+        showErrorMessage("You can't change your bet aftering start!");
+    }
     qDebug() << "Current Balance: $" << user->balance;
     qDebug() << "Current Bet: $" << user->betVal;
 }
 
 void mainWindow::onTenDollarBet() {
-    user->increaseBet(10);
+    if(user->balance == 0){
+        showErrorMessage("Out of money!");
+        return;
+    }
+    if(user->userHand.size() == 0){
+        user->increaseBet(10); // Call the placeBet method from User class
+    }
+    else{
+        showErrorMessage("You can't change your bet aftering start!");
+    }
 
     qDebug() << "Current Balance: $" << user->balance;
     qDebug() << "Current Bet: $" << user->betVal;
 }
 
 void mainWindow::onTwentyDollarBet() {
-    user->increaseBet(20);
+    if(user->balance == 0){
+        showErrorMessage("Out of money!");
+        return;
+    }
+    if(user->userHand.size() == 0){
+        user->increaseBet(20); // Call the placeBet method from User class
+    }
+    else{
+        showErrorMessage("You can't change your bet aftering start!");
+    }
 
     qDebug() << "Current Balance: $" << user->balance;
     qDebug() << "Current Bet: $" << user->betVal;
 }
 
 void mainWindow::onHundredDollarBet() {
-    user->increaseBet(100);
+    if(user->balance == 0){
+        showErrorMessage("Out of money!");
+        return;
+    }
+    if(user->userHand.size() == 0){
+        user->increaseBet(100); // Call the placeBet method from User class
+    }
+    else{
+        showErrorMessage("You can't change your bet aftering start!");
+    }
 
     qDebug() << "Current Balance: $" << user->balance;
     qDebug() << "Current Bet: $" << user->betVal;
@@ -108,13 +154,18 @@ void mainWindow::onHundredDollarBet() {
 
 
 void mainWindow::onSubmitBet() {
+    if(user->balance == 0 && user->betVal == 0){
+        showErrorMessage("Out of money! Restart the game to get more.");
+        return;
+    }
     // Ensure a bet is placed
+    if(user->userHand.size() == 0){
     if (user->betVal <= 0) {
         return;
     }
     user->userHand.clear();
     dealer->removeCards();
-
+    clearCardsDisplayed();
 
     dealer->dealCards(user->userHand, deck.deckOfCards, user);
 
@@ -125,7 +176,7 @@ void mainWindow::onSubmitBet() {
     displayPlayerHand();
 
     //pays player for getting "BlackJack" 21 off original deal.
-    if (user->getUserHandTotal() == 21) {
+    if (user->getUserHandTotal() == 21 && dealer->getHandValue() != 21) {
         showErrorMessage("Blackjack! You win!");
         user->pay();
         user->betVal = 0;
@@ -133,9 +184,21 @@ void mainWindow::onSubmitBet() {
         return;
     }
 
+    if(dealer->getHandValue() == 21 && user->getUserHandTotal() != 21){
+        showErrorMessage("Dealer has blackjack... You Lose.");
+        user->betVal = 0;
+        user->clearUserHand();
+        onEndGame();
+        return;
+    }
+
     updateBetDisplay(user->betVal);
     updateBalanceDisplay();
     qDebug() << "New round started, cards dealt, and UI updated.";
+    }
+    else{
+        showErrorMessage("Finish the current hand first!");
+    }
 }
 
 
@@ -148,6 +211,7 @@ void mainWindow::onSubmitBet() {
 
 //--------------------------------------BUTTONCLICK--------------------------------------
 void mainWindow::onHitButtonClicked() {
+    if(user->userHand.size() > 0){
     qDebug() << "Hit has been SMACKED!!!";
     //checks if bet is placed, if not bet is placed will send error
     if(user->betVal == 0){
@@ -185,7 +249,10 @@ void mainWindow::onHitButtonClicked() {
         user->clearUserHand();//clear the hand from the vector
         onEndGame();
     }
-
+    }
+    else{
+        showErrorMessage("Must place a bet first! Please click submit after choosing the amount.");
+    }
 }
 
 
@@ -194,6 +261,10 @@ void mainWindow::onHitButtonClicked() {
 
 void mainWindow::onDoubleDownButton(){
     // Checks if user has 2 cards and enough money
+    if(user->betVal == 0){
+        showErrorMessage("Double down is available only on the initial deal with enough balance.");
+        return;
+    }
     if (user->userHand.size() == 2 && user->balance >= user->betVal)
     {
         user->doubleDown();  // Double current bet amount
@@ -201,7 +272,7 @@ void mainWindow::onDoubleDownButton(){
         updateBetDisplay(user->betVal);  // Show new current bet amount on UI
 
         // Deal only one card to user
-        dealer->addCard(user->userHand, deck.deckOfCards);
+        user->hit(deck);
         displayPlayerHand();
 
         // Check if the player has busted after doubling down
@@ -228,6 +299,7 @@ void mainWindow::onDoubleDownButton(){
 
 
 void mainWindow::onStandButton() {
+    if(user->userHand.size() > 0){
     // Make sure theres a bet before stand is clicked
     if (user->betVal > 0)
     {
@@ -241,6 +313,11 @@ void mainWindow::onStandButton() {
     else
     {
         showErrorMessage("Please place a bet before standing.");
+    }
+    }
+    else{
+        showErrorMessage("First place a bet!");
+
     }
 }
 
@@ -261,13 +338,15 @@ void mainWindow::dealerStandStep() {
         dealer->compareCards(deck.deckOfCards, *user);
         // End the game
         onEndGame();
+        //clear user hand to allow further betting(condition to placing bet is userHand.size() == 0)
+        user->clearUserHand();
 
     }
     else
     {
         // Dealer takes anotha card
         dealer->hit(deck.deckOfCards);
-        dealer->trueRank();  // Recalc hand value for dealer
+        //dealer->trueRank();  // Recalc hand value for dealer
         displayDealerHand(); // Update the UI to show the new card
     }
 }
@@ -407,6 +486,8 @@ void mainWindow::animateDealerCardToWidget(QWidget* targetWidget, const QString 
 
     animation->start(QAbstractAnimation::DeleteWhenStopped);
 
+    dealerCardLabels.append(cardLabel);
+
     qDebug() << "Dealer card animation started for: " << cardPath;
 }
 
@@ -425,21 +506,32 @@ void mainWindow::updateBalanceDisplay() {
     ui->label->setText(QString("Current Balance: $%1").arg(user->balance)); // Update balance label
 }
 
-
-
-
-void mainWindow::onEndGame() {
-    // Clear UI card displays
+void mainWindow::clearCardsDisplayed(){
+    // Clear UI card displays for User
     for(auto label : cardLabels){
         if(label){
             label->deleteLater();
         }
     }
-    cardLabels.clear();  // Clear the list to reset for a new game
+    cardLabels.clear();  // Clear the User list to reset for a new game
+
+    // Clear UI card displays for Dealer
+    for(auto label : dealerCardLabels){
+        if(label){
+            label->deleteLater();
+        }
+    }
+    dealerCardLabels.clear();  // Clear the Dealer list to reset for a new game
 
     // Clear user and dealer hands
     user->clearUserHand();  // Clear the user's hand
     dealer->removeCards();   // Clear the dealer's hand
+
+}
+
+
+void mainWindow::onEndGame() {
+
 
     // Reset the deck if needed
     deck.killDeck();
@@ -449,6 +541,7 @@ void mainWindow::onEndGame() {
     // Update balance and bet displays
     updateBalanceDisplay();  // Update balance display label
     updateBetDisplay(0);     // Reset bet display to 0
+    user->betVal = 0;
 
     // Reset the displayed card indices to 0 for the next game
     lastDisplayedUserCardIndex = 0;
