@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI
+# Install script for directory: C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,13 +38,18 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack.exe")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Blackjack.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Blackjack.exe")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "C:/Qt/Tools/mingw1310_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Blackjack.exe")
     endif()
   endif()
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
