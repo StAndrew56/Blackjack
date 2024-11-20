@@ -72,5 +72,6 @@
         <file>standButton.png</file>
         <file>doubleDownButton.png</file>
         <file>splitButton.png</file>
+        <file>button-icon-png-21055.png</file>
     </qresource>
 </RCC>

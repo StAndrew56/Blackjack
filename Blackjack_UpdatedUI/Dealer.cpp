@@ -125,6 +125,9 @@ void Dealer::trueRank(){
         else if(dealerHand[i].cardRank == Rank::KING){
             dealerHandVal += 10;
         }
+        else if(dealerHand[i].cardRank == Rank::ACE){
+            dealerHandVal += 11;
+        }
         else{
             dealerHandVal += (int)dealerHand[i].cardRank;
         }
@@ -138,7 +141,7 @@ void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* use
         addCard(playerHand, deck);
         addCard(dealerHand, deck);
     }
-    //Adds a card to each hand twice
+        //Adds a card to each hand twice
         //do NOT remove, needed to deal with aces, will count num of
         //aces in playerHand off original deal.
         for(int i = 0; i < playerHand.size(); i++){
@@ -193,9 +196,68 @@ void Dealer::hit(vector<Cards>& deck) {
         qDebug() << "Error: Deck is empty, cannot hit!";
         return;
     }
-    qDebug() << "Dealer hitting, adding card from deck.";
-    addCard(dealerHand, deck);
-    qDebug() << "Dealer hand size after hit:" << dealerHand.size();
+    //qDebug() << "Dealer hitting, adding card from deck.";
+    //addCard(dealerHand, deck);
+    //qDebug() << "Dealer hand size after hit:" << dealerHand.size();
+    //handVal = 0;
+    if(dealerHandVal == 0){
+        trueRank();
+    }
+    //make sure dealer doesn't have 21
+    if(dealerHandVal != 21){
+        //add the card to dealerHand
+        dealerHand.push_back(deck.front());
+        //delete card from deckOfCards
+        deck.erase(deck.begin());
+
+        //get the last position of dealerHand(where you just added the card)
+        int lastCard = dealerHand.size() - 1;
+
+        //add the last card's value to dealerHandVal
+        if(dealerHand[lastCard].cardRank == Rank::JACK){
+            dealerHandVal += 10;
+        }
+        else if(dealerHand[lastCard].cardRank == Rank::QUEEN){
+            dealerHandVal += 10;
+        }
+        else if(dealerHand[lastCard].cardRank == Rank::KING){
+            dealerHandVal += 10;
+        }
+        else if(dealerHand[lastCard].cardRank == Rank::ACE){
+            dealerHandVal += 11;
+            dealerAceCount++;//if ace add to ace counter, each ace will only be counted once.
+        }
+        else{
+            dealerHandVal += (int)dealerHand[lastCard].cardRank;
+        }
+        //this block deals with ace's when nessecary. very dpendent on ace counter.
+        //ace counter is above and in dealer class(in function dealCards()).
+        if(dealerHandVal > 21){
+
+            for(int i =0; i < dealerHand.size(); i++){
+
+                if(dealerHand[i].cardRank == Rank::ACE){
+
+                    if(dealerHandVal != 21){
+
+                        while(dealerHandVal > 21 && dealerAceCount > 0){
+
+                            dealerHandVal -= 10;//turn the ace into a 1.
+
+                            dealerAceCount--;//ace can't be decremented again.
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    //user has 21
+    else{
+
+        emit actionError("Your already have 21! Press Stand to continue.");
+    }
+
 }
 
 
@@ -233,13 +295,14 @@ void Dealer::compareCards(vector<Cards>& deck, User& user) {
     }
     // Tie condition
     else if (userHandValue == dealerHandVal) {
-        user.clearBet();
+        user.clearBetForStand();
+        user.balance += user.betVal;
         qDebug() << "It's a tie. Bet cleared.";
     }
     // Dealer wins
     else {
         user.betVal = 0;
-        user.clearBet();  // Clear the bet with no payout
+        user.clearBetForStand();  // Clear the bet with no payout
         qDebug() << "Dealer wins. Bet cleared, user loses.";
     }
 }

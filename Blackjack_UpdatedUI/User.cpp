@@ -249,8 +249,6 @@ void User::printUserHandTotal() {
 }
 //called to get the users handVal.
 int User::getUserHandTotal() {
-    trueRank();
-
     return handVal;
 }
 //pays winner. double the bet and adds that number to the
@@ -309,8 +307,20 @@ void User::increaseBet(int amount) {
     }
 }
 void User::clearBet() {
-    balance += betVal;  // Add the bet amount back to the balance
-    betVal = 0;         // Reset the bet amount to zero
-    emit betPlaced(betVal); // Emit signal to update the UI
-    emit balanceUpdated(balance); // Emit signal to update balance display if you have that signal
+    if(userHand.size() == 0){
+        balance += betVal;  // Add the bet amount back to the balance
+        betVal = 0;         // Reset the bet amount to zero
+        emit betPlaced(betVal); // Emit signal to update the UI
+        emit balanceUpdated(balance); // Emit signal to update balance display if you have that signal
+    }
+    else{
+        emit actionError("You can't clear your bet after starting!");
+    }
+}
+void User::clearBetForStand() {
+
+        balance += betVal;  // Add the bet amount back to the balance
+        betVal = 0;         // Reset the bet amount to zero
+        emit betPlaced(betVal); // Emit signal to update the UI
+        emit balanceUpdated(balance); // Emit signal to update balance display if you have that signal
 }
