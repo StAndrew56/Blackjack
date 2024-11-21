@@ -12,8 +12,12 @@
 #include "Dealer.h"
 #include <QMessageBox>
 #include <QTimer>
-
-
+#include <QMediaPlayer>
+#include <QtMultimedia>
+#include <QFileDialog>
+#include <QStyle>
+#include <QString>
+#include <QSoundEffect>
 
 mainWindow::mainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -24,10 +28,16 @@ mainWindow::mainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
-    //setBackgroundImage();
-    //setButtons();
 
+    //music object pointers
+    M_Player = new QMediaPlayer();
+    volumeControl = new QAudioOutput();
+    M_Player->setAudioOutput(volumeControl);
 
+    //SFX objext pointers
+    M_Player2 = new QMediaPlayer();
+    controlSFX = new QAudioOutput();
+    M_Player2->setAudioOutput(controlSFX);
 
     connect(ui->pushButton, &QPushButton::clicked, this, &mainWindow::onOneDollarBet);
     connect(user, &User::betPlaced, this, &mainWindow::updateBetDisplay);
@@ -49,7 +59,15 @@ mainWindow::mainWindow(QWidget *parent)
 
     deck.createDeck();
     deck.shuffle();
-    //dealer->dealCards(user->userHand, deck.deckOfCards, user);
+
+    //music (free from https://pixabay.com/music/search/lofi%20chill/)
+    //other sounds (free from https://pixabay.com/sound-effects/search/card-flip/)
+    M_Player->setSource(QUrl("qrc:/sounds/musicFile"));
+    volumeControl->setVolume(0.1);
+    M_Player->play();
+    M_Player->setLoops(QMediaPlayer::Infinite);
+
+
 
 
 }
@@ -175,11 +193,17 @@ void mainWindow::onSubmitBet() {
     displayDealerHand();
     displayPlayerHand();
 
+    //sound during original deal
+    M_Player2->setSource(QUrl("qrc:/sounds/shuffleSound"));
+    M_Player2->play();
+    controlSFX->setVolume(100);
+
     //pays player for getting "BlackJack" 21 off original deal.
     if (user->getUserHandTotal() == 21 && dealer->getHandValue() != 21) {
         showErrorMessage("Blackjack! You win!");
         user->pay();
         user->betVal = 0;
+        user->clearUserHand();
         onEndGame();
         return;
     }
@@ -239,6 +263,12 @@ void mainWindow::onHitButtonClicked() {
     if (newCardIndex < userWidgets.size()) {
         // Only animate the newly added card to the corresponding widget
         animateCardToWidget(userWidgets[newCardIndex], cardPath, 100, 150);
+
+        //sound during hit
+        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+        M_Player2->play();
+        controlSFX->setVolume(100);
+
     }
     qDebug() << "Current handVal: " << user->handVal;
 
@@ -274,6 +304,11 @@ void mainWindow::onDoubleDownButton(){
         // Deal only one card to user
         user->hit(deck);
         displayPlayerHand();
+
+        //sound during player DD
+        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+        M_Player2->play();
+        controlSFX->setVolume(100);
 
         // Check if the player has busted after doubling down
         if (user->getUserHandTotal() > 21) {
@@ -348,6 +383,11 @@ void mainWindow::dealerStandStep() {
         dealer->hit(deck.deckOfCards);
         //dealer->trueRank();  // Recalc hand value for dealer
         displayDealerHand(); // Update the UI to show the new card
+
+        //sound during dealer hit
+        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+        M_Player2->play();
+        controlSFX->setVolume(100);
     }
 }
 
@@ -551,12 +591,12 @@ void mainWindow::onEndGame() {
 }
 
 
+void mainWindow::on_horizontalSlider_valueChanged(int value)
+{
 
+    volumeControl->setVolume(static_cast<float>(value) / 100.0f);
 
-
-
-
-
+}
 
 
 
@@ -583,4 +623,3 @@ mainWindow::~mainWindow()
 {
     delete ui;
 }
-

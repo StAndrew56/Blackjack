@@ -74,4 +74,10 @@
         <file>splitButton.png</file>
         <file>button-icon-png-21055.png</file>
     </qresource>
+    <qresource prefix="/sounds">
+        <file>volume-up-interface-symbol.png</file>
+        <file>musicFile</file>
+        <file>shuffleSound</file>
+        <file>singleFlipSound</file>
+    </qresource>
 </RCC>

@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -32,7 +33,16 @@ public:
     QVBoxLayout *verticalLayout_4;
     QLabel *label;
     QWidget *widget_3;
+    QSpacerItem *horizontalSpacer_10;
+    QSpacerItem *horizontalSpacer_11;
+    QSpacerItem *horizontalSpacer_12;
+    QSpacerItem *horizontalSpacer_13;
     QSpacerItem *horizontalSpacer;
+    QHBoxLayout *horizontalLayout_60;
+    QVBoxLayout *verticalLayout_12;
+    QWidget *widget_4;
+    QLabel *label_54;
+    QSlider *horizontalSlider;
     QVBoxLayout *verticalLayout_10;
     QSpacerItem *verticalSpacer_5;
     QWidget *widget_2;
@@ -5501,9 +5511,61 @@ public:
 
         horizontalLayout_6->addWidget(widget_3);
 
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_10);
+
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_11);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_12);
+
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_13);
+
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout_6->addItem(horizontalSpacer);
+
+        horizontalLayout_60 = new QHBoxLayout();
+        horizontalLayout_60->setObjectName("horizontalLayout_60");
+        verticalLayout_12 = new QVBoxLayout();
+        verticalLayout_12->setObjectName("verticalLayout_12");
+        widget_4 = new QWidget(centralwidget);
+        widget_4->setObjectName("widget_4");
+
+        verticalLayout_12->addWidget(widget_4);
+
+
+        horizontalLayout_60->addLayout(verticalLayout_12);
+
+        label_54 = new QLabel(centralwidget);
+        label_54->setObjectName("label_54");
+        label_54->setMaximumSize(QSize(40, 40));
+        label_54->setStyleSheet(QString::fromUtf8("border-image: none;"));
+        label_54->setPixmap(QPixmap(QString::fromUtf8(":/sounds/volume-up-interface-symbol.png")));
+        label_54->setScaledContents(true);
+
+        horizontalLayout_60->addWidget(label_54);
+
+        horizontalSlider = new QSlider(centralwidget);
+        horizontalSlider->setObjectName("horizontalSlider");
+        horizontalSlider->setMinimumSize(QSize(160, 10));
+        horizontalSlider->setStyleSheet(QString::fromUtf8("border-image: none;"));
+        horizontalSlider->setMaximum(100);
+        horizontalSlider->setValue(10);
+        horizontalSlider->setOrientation(Qt::Orientation::Horizontal);
+        horizontalSlider->setInvertedAppearance(false);
+        horizontalSlider->setInvertedControls(false);
+
+        horizontalLayout_60->addWidget(horizontalSlider);
+
+
+        horizontalLayout_6->addLayout(horizontalLayout_60);
 
 
         verticalLayout_5->addLayout(horizontalLayout_6);
@@ -28279,6 +28341,7 @@ public:
     {
         mainWindow->setWindowTitle(QCoreApplication::translate("mainWindow", "mainWindow", nullptr));
         label->setText(QCoreApplication::translate("mainWindow", "Balance: $0", nullptr));
+        label_54->setText(QString());
         label_1891->setText(QString());
         label_1892->setText(QString());
         label_1893->setText(QString());

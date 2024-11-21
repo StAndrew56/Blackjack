@@ -8,6 +8,9 @@
 
 #include "../../../../mainwindow.h"
 #include <QtGui/qtextcursor.h>
+#include <QtGui/qscreen.h>
+#include <QtNetwork/QSslPreSharedKeyAuthenticator>
+#include <QtNetwork/QSslError>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -64,7 +67,9 @@ constexpr auto qt_meta_stringdata_CLASSmainWindowENDCLASS = QtMocHelpers::string
     "onStandButton",
     "dealerStandStep",
     "onEndGame",
-    "clearCardsDisplayed"
+    "clearCardsDisplayed",
+    "on_horizontalSlider_valueChanged",
+    "value"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -77,7 +82,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSmainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      22,   14, // methods
+      23,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -85,28 +90,29 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSmainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  146,    2, 0x08,    1 /* Private */,
-       4,    1,  149,    2, 0x08,    3 /* Private */,
-       6,    0,  152,    2, 0x08,    5 /* Private */,
-       7,    0,  153,    2, 0x08,    6 /* Private */,
-       8,    0,  154,    2, 0x08,    7 /* Private */,
-       9,    0,  155,    2, 0x08,    8 /* Private */,
-      10,    0,  156,    2, 0x08,    9 /* Private */,
-      11,    0,  157,    2, 0x08,   10 /* Private */,
-      12,    0,  158,    2, 0x08,   11 /* Private */,
-      13,    0,  159,    2, 0x08,   12 /* Private */,
-      14,    0,  160,    2, 0x08,   13 /* Private */,
-      15,    4,  161,    2, 0x08,   14 /* Private */,
-      21,    5,  170,    2, 0x08,   19 /* Private */,
-      21,    4,  181,    2, 0x28,   25 /* Private | MethodCloned */,
-      21,    3,  190,    2, 0x28,   30 /* Private | MethodCloned */,
-      21,    2,  197,    2, 0x28,   34 /* Private | MethodCloned */,
-      23,    0,  202,    2, 0x08,   37 /* Private */,
-      24,    0,  203,    2, 0x08,   38 /* Private */,
-      25,    0,  204,    2, 0x08,   39 /* Private */,
-      26,    0,  205,    2, 0x08,   40 /* Private */,
-      27,    0,  206,    2, 0x08,   41 /* Private */,
-      28,    0,  207,    2, 0x08,   42 /* Private */,
+       1,    1,  152,    2, 0x08,    1 /* Private */,
+       4,    1,  155,    2, 0x08,    3 /* Private */,
+       6,    0,  158,    2, 0x08,    5 /* Private */,
+       7,    0,  159,    2, 0x08,    6 /* Private */,
+       8,    0,  160,    2, 0x08,    7 /* Private */,
+       9,    0,  161,    2, 0x08,    8 /* Private */,
+      10,    0,  162,    2, 0x08,    9 /* Private */,
+      11,    0,  163,    2, 0x08,   10 /* Private */,
+      12,    0,  164,    2, 0x08,   11 /* Private */,
+      13,    0,  165,    2, 0x08,   12 /* Private */,
+      14,    0,  166,    2, 0x08,   13 /* Private */,
+      15,    4,  167,    2, 0x08,   14 /* Private */,
+      21,    5,  176,    2, 0x08,   19 /* Private */,
+      21,    4,  187,    2, 0x28,   25 /* Private | MethodCloned */,
+      21,    3,  196,    2, 0x28,   30 /* Private | MethodCloned */,
+      21,    2,  203,    2, 0x28,   34 /* Private | MethodCloned */,
+      23,    0,  208,    2, 0x08,   37 /* Private */,
+      24,    0,  209,    2, 0x08,   38 /* Private */,
+      25,    0,  210,    2, 0x08,   39 /* Private */,
+      26,    0,  211,    2, 0x08,   40 /* Private */,
+      27,    0,  212,    2, 0x08,   41 /* Private */,
+      28,    0,  213,    2, 0x08,   42 /* Private */,
+      29,    1,  214,    2, 0x08,   43 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -131,6 +137,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSmainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   30,
 
        0        // eod
 };
@@ -207,7 +214,10 @@ Q_CONSTINIT const QMetaObject mainWindow::staticMetaObject = { {
         // method 'onEndGame'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'clearCardsDisplayed'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_horizontalSlider_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -240,6 +250,7 @@ void mainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 19: _t->dealerStandStep(); break;
         case 20: _t->onEndGame(); break;
         case 21: _t->clearCardsDisplayed(); break;
+        case 22: _t->on_horizontalSlider_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -303,13 +314,13 @@ int mainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 22)
+        if (_id < 23)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 22;
+        _id -= 23;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 22)
+        if (_id < 23)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 22;
+        _id -= 23;
     }
     return _id;
 }
