@@ -79,5 +79,6 @@
         <file>musicFile</file>
         <file>shuffleSound</file>
         <file>singleFlipSound</file>
+        <file>muteSoundSymbol</file>
     </qresource>
 </RCC>

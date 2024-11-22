@@ -72,6 +72,8 @@ void clearBet();
 
 void clearBetForStand();
 
+void displayUserHandVal();
+
 signals:
 
 void actionError(const QString &message);
@@ -79,6 +81,8 @@ void actionError(const QString &message);
 void betPlaced(int bet);
 
 void balanceUpdated(int newBalance);
+
+void updateUserHandVal(int val);
 };
 
 #endif //_USER_H

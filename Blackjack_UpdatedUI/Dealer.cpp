@@ -353,10 +353,14 @@ int Dealer::getHandValue() {
 }
 
 
+void Dealer::displayDealerHandVal(){
+    int val = getDealerHandVal();
+    emit updateDealerHandVal(val);
+}
 
-
-
-
+int Dealer::getDealerHandSize() {
+    return dealerHand.size();
+}
 
 vector<Cards>& Dealer::getDealerHand() {
     return dealerHand;
@@ -364,6 +368,9 @@ vector<Cards>& Dealer::getDealerHand() {
 
 int Dealer::getDealerHandVal() const {
     return dealerHandVal;
+}
+void Dealer::setDealerHandVal(int val){
+    dealerHandVal = val;
 }
 
 

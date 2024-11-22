@@ -324,3 +324,7 @@ void User::clearBetForStand() {
         emit betPlaced(betVal); // Emit signal to update the UI
         emit balanceUpdated(balance); // Emit signal to update balance display if you have that signal
 }
+void User::displayUserHandVal() {
+    int val = handVal;
+    emit updateUserHandVal(val);
+}

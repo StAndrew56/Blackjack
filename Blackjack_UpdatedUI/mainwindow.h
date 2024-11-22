@@ -48,7 +48,6 @@ private:
 
 
 
-
 private slots:
     void showErrorMessage(const QString &message);
     void updateBetDisplay(int bet);
@@ -70,5 +69,8 @@ private slots:
     void onEndGame();
     void clearCardsDisplayed();
     void on_horizontalSlider_valueChanged(int value);
+    void on_muteButton_clicked(bool checked);
+    void updateUserHandValDisplay();
+    void updateDealerHandValDisplay();
 };
 #endif // MAINWINDOW_H
