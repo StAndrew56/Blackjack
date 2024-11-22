@@ -205,14 +205,6 @@ void mainWindow::onSubmitBet() {
 
     dealer->dealCards(user->userHand, deck.deckOfCards, user);
 
-    if(user->handVal == 22){
-        user->handVal -= 10;
-    }
-
-    if(dealer->getDealerHandVal() == 22){
-        int val = dealer->getDealerHandVal();
-        dealer->setDealerHandVal(val);
-    }
 
     user->trueRank();
     qDebug() << "Current handVal: " << user->handVal;
@@ -234,7 +226,7 @@ void mainWindow::onSubmitBet() {
     // User is dealt blackjack
     if (user->getUserHandTotal() == 21 && dealer->getHandValue() != 21){
         showErrorMessage("Blackjack! You win!");
-        user->pay();
+        user->blackJack();
         user->betVal = 0;
         user->clearUserHand();
 
@@ -325,6 +317,11 @@ void mainWindow::onHitButtonClicked() {
 
     // Check if the user has busted after hitting
     if (user->handVal > 21) {
+        userTurn = false;
+        displayDealerHand();
+        // Display dealer hand value
+        dealer->displayDealerHandVal();
+
         qDebug() << "Player busted!";
         showErrorMessage("You busted!");
         user->clearUserHand();//clear the hand from the vector
@@ -365,8 +362,14 @@ void mainWindow::onDoubleDownButton(){
 
         // Check if the player has busted after doubling down
         if (user->getUserHandTotal() > 21) {
+            userTurn = false;
+            displayDealerHand();
+            // Display dealer hand value
+            dealer->displayDealerHandVal();
+
             qDebug() << "Player busted after double down!";
             showErrorMessage("You busted!");
+            user->clearUserHand();//clear the hand from the vector
             onEndGame();
         }
         // Player finishes turn for rest of game and dealer takes over
@@ -414,7 +417,7 @@ void mainWindow::onStandButton() {
 void mainWindow::dealerStandStep() {
     userTurn = false;
     // Getter to get dealer hand value
-    if (dealer->getDealerHandVal() >= 17 || dealer->getDealerHandVal() > 21 || deck.deckOfCards.empty())
+    if (dealer->getDealerHandVal() >= 17 || dealer->getDealerHandVal() > 21)
     {
         // Stop timer if conditions met
         standTimer->stop();

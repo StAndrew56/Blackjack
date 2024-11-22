@@ -163,20 +163,17 @@ void User::hit(Deck& deck) {
         //ace counter is above and in dealer class(in function dealCards()).
         if(handVal > 21){
 
-            for(int i =0; i < userHand.size(); i++){
+            if(handVal != 21){
 
-                if(userHand[i].cardRank == Rank::ACE){
+                while(handVal > 21 && aceCount > 0){
 
-                    if(handVal != 21){
+                    handVal -= 10;//turn the ace into a 1.
 
-                        while(handVal > 21 && aceCount > 0){
+                    aceCount--;//ace can't be decremented again.
 
-                            handVal -= 10;//turn the ace into a 1.
-
-                            aceCount--;//ace can't be decremented again.
-                        }
+                    if(handVal <= 21){
+                        return;
                     }
-
                 }
             }
         }
@@ -222,6 +219,7 @@ void User::doubleDown(){
 }
 void User::blackJack(){
 
+    balance += (betVal * 2.5);
 }
 //gets called when user places legal bet
 //will do the subtraction from the balance
