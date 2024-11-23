@@ -12,8 +12,18 @@
 #include "Dealer.h"
 #include <QMessageBox>
 #include <QTimer>
+#include <QMediaPlayer>
+#include <QtMultimedia>
+#include <QFileDialog>
+#include <QStyle>
+#include <QString>
+#include <QSoundEffect>
 
+//user's turn tracker
+bool userTurn = true;
 
+//muteButton toggle tracker
+bool muted = false;
 
 mainWindow::mainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -24,9 +34,16 @@ mainWindow::mainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
-    //setBackgroundImage();
-    //setButtons();
 
+    //music object pointers
+    M_Player = new QMediaPlayer();
+    volumeControl = new QAudioOutput();
+    M_Player->setAudioOutput(volumeControl);
+
+    //SFX objext pointers
+    M_Player2 = new QMediaPlayer();
+    controlSFX = new QAudioOutput();
+    M_Player2->setAudioOutput(controlSFX);
 
 
     connect(ui->pushButton, &QPushButton::clicked, this, &mainWindow::onOneDollarBet);
@@ -42,6 +59,8 @@ mainWindow::mainWindow(QWidget *parent)
     connect(ui->pushButton_6, &QPushButton::clicked, this, &mainWindow::onHitButtonClicked);
     connect(ui->pushButton_9, &QPushButton::clicked, this, &mainWindow::onDoubleDownButton);
     connect(ui->pushButton_7, &QPushButton::clicked, this, &mainWindow::onStandButton);
+    connect(user, &User::updateUserHandVal, this, &mainWindow::updateUserHandValDisplay);
+    connect(dealer, &Dealer::updateDealerHandVal, this, &mainWindow::updateDealerHandValDisplay);
 
 
 
@@ -49,7 +68,15 @@ mainWindow::mainWindow(QWidget *parent)
 
     deck.createDeck();
     deck.shuffle();
-    //dealer->dealCards(user->userHand, deck.deckOfCards, user);
+
+    //music (free from https://pixabay.com/music/search/lofi%20chill/)
+    //other sounds (free from https://pixabay.com/sound-effects/search/card-flip/)
+    M_Player->setSource(QUrl("qrc:/sounds/musicFile"));
+    volumeControl->setVolume(0.1);
+    M_Player->play();
+    M_Player->setLoops(QMediaPlayer::Infinite);
+
+
 
 
 }
@@ -69,6 +96,15 @@ void mainWindow::showErrorMessage(const QString &message) {
 
     msgBox.exec();
 }
+//mute button
+void mainWindow::on_muteButton_clicked(bool checked) {
+    if (checked) {
+        volumeControl->setMuted(true);
+    } else {
+        volumeControl->setMuted(false);
+    }
+}
+
 //--------------------------------------***********--------------------------------------
 
 //--------------------------------------BET AMOUNTS--------------------------------------
@@ -169,31 +205,59 @@ void mainWindow::onSubmitBet() {
 
     dealer->dealCards(user->userHand, deck.deckOfCards, user);
 
+
     user->trueRank();
     qDebug() << "Current handVal: " << user->handVal;
     qDebug() << "tbvwayyyyyyyvabvaw";
     displayDealerHand();
     displayPlayerHand();
 
-    //pays player for getting "BlackJack" 21 off original deal.
-    if (user->getUserHandTotal() == 21 && dealer->getHandValue() != 21) {
+    // Sound during card deal
+    M_Player2->setSource(QUrl("qrc:/sounds/shuffleSound"));
+    M_Player2->play();
+    controlSFX->setVolume(100);
+
+    // Display user hand value
+    user->displayUserHandVal();
+
+    // Turn off dealer hand value on deal
+    ui->label_56->setText(QString(""));
+
+    // User is dealt blackjack
+    if (user->getUserHandTotal() == 21 && dealer->getHandValue() != 21){
         showErrorMessage("Blackjack! You win!");
-        user->pay();
+        user->blackJack();
         user->betVal = 0;
+        user->clearUserHand();
+
+        userTurn = false;
+        // Update the UI to show the new card
+        displayDealerHand();
+        // Display dealer hand value
+        dealer->displayDealerHandVal();
+
         onEndGame();
         return;
     }
-
+    // Dealer is dealt blackjack
     if(dealer->getHandValue() == 21 && user->getUserHandTotal() != 21){
         showErrorMessage("Dealer has blackjack... You Lose.");
         user->betVal = 0;
         user->clearUserHand();
+
+        userTurn = false;
+        // Update the UI to show the new card
+        displayDealerHand();
+        // Display dealer hand value
+        dealer->displayDealerHandVal();
+
         onEndGame();
         return;
     }
 
     updateBetDisplay(user->betVal);
     updateBalanceDisplay();
+
     qDebug() << "New round started, cards dealt, and UI updated.";
     }
     else{
@@ -239,11 +303,25 @@ void mainWindow::onHitButtonClicked() {
     if (newCardIndex < userWidgets.size()) {
         // Only animate the newly added card to the corresponding widget
         animateCardToWidget(userWidgets[newCardIndex], cardPath, 100, 150);
+
+        //sound during hit
+        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+        M_Player2->play();
+        controlSFX->setVolume(100);
+
     }
+    // Display user hand value
+    user->displayUserHandVal();
+
     qDebug() << "Current handVal: " << user->handVal;
 
     // Check if the user has busted after hitting
     if (user->handVal > 21) {
+        userTurn = false;
+        displayDealerHand();
+        // Display dealer hand value
+        dealer->displayDealerHandVal();
+
         qDebug() << "Player busted!";
         showErrorMessage("You busted!");
         user->clearUserHand();//clear the hand from the vector
@@ -273,12 +351,25 @@ void mainWindow::onDoubleDownButton(){
 
         // Deal only one card to user
         user->hit(deck);
+
         displayPlayerHand();
+        user->displayUserHandVal();
+
+        //sound during player DD
+        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+        M_Player2->play();
+        controlSFX->setVolume(100);
 
         // Check if the player has busted after doubling down
         if (user->getUserHandTotal() > 21) {
+            userTurn = false;
+            displayDealerHand();
+            // Display dealer hand value
+            dealer->displayDealerHandVal();
+
             qDebug() << "Player busted after double down!";
             showErrorMessage("You busted!");
+            user->clearUserHand();//clear the hand from the vector
             onEndGame();
         }
         // Player finishes turn for rest of game and dealer takes over
@@ -299,12 +390,12 @@ void mainWindow::onDoubleDownButton(){
 
 
 void mainWindow::onStandButton() {
+
     if(user->userHand.size() > 0){
     // Make sure theres a bet before stand is clicked
     if (user->betVal > 0)
     {
         dealer->stand(); // Trigger stand though its empty
-
         // Add a delay animation in between cards to prevent all of them showing up at same time
         standTimer = new QTimer(this);
         connect(standTimer, &QTimer::timeout, this, &mainWindow::dealerStandStep);
@@ -324,21 +415,25 @@ void mainWindow::onStandButton() {
 
 
 void mainWindow::dealerStandStep() {
+    userTurn = false;
     // Getter to get dealer hand value
-    if (dealer->getDealerHandVal() >= 17 || dealer->getDealerHandVal() > 21 || deck.deckOfCards.empty())
+    if (dealer->getDealerHandVal() >= 17 || dealer->getDealerHandVal() > 21)
     {
         // Stop timer if conditions met
         standTimer->stop();
         delete standTimer;
         standTimer = nullptr;
 
-        displayDealerHand();  // Final display of dealers hand
+        displayDealerHand();
+        // Display dealer hand value
+        dealer->displayDealerHandVal();
+
 
         // Check who winner is and  end game (need copy paste end game)
         dealer->compareCards(deck.deckOfCards, *user);
         // End the game
         onEndGame();
-        //clear user hand to allow further betting(condition to placing bet is userHand.size() == 0)
+        // clear user hand to allow further betting(condition to placing bet is userHand.size() == 0)
         user->clearUserHand();
 
     }
@@ -346,8 +441,15 @@ void mainWindow::dealerStandStep() {
     {
         // Dealer takes anotha card
         dealer->hit(deck.deckOfCards);
-        //dealer->trueRank();  // Recalc hand value for dealer
-        displayDealerHand(); // Update the UI to show the new card
+        // Update the UI to show the new card
+        displayDealerHand();
+        // Display dealer hand value
+        dealer->displayDealerHandVal();
+
+        // Sound during dealer hit
+        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+        M_Player2->play();
+        controlSFX->setVolume(100);
     }
 }
 
@@ -389,10 +491,26 @@ void mainWindow::displayDealerHand() {
         QString cardPath = dealer->getDealerHand()[i].getCardImagePath();
         qDebug() << "Animating Dealer Card " << i + 1 << ": " << cardPath;
 
-        animateDealerCardToWidget(dealerWidgets[i], cardPath, 100, 150);  // Animate only new cards
+        if(i == 1 && userTurn == true){
+            animateDealerCardToWidget(dealerWidgets[i], cardPath, 100, 150, true);
+        }
+
+        else{
+            animateDealerCardToWidget(dealerWidgets[i], cardPath, 100, 150);  // Animate only new cards
+        }
     }
     // Update the index to the last displayed card
     lastDisplayedDealerCardIndex = dealer->getDealerHand().size();
+
+    if(!userTurn){
+        QString cardPath2 = dealer->getDealerHand()[1].getCardImagePath();
+        QPixmap cardPixmap(cardPath2);
+
+        QLabel* dealerCardLabel = dealerCardLabels[1];
+        dealerCardLabel->setPixmap(cardPixmap);
+        dealerCardLabel->setScaledContents(true);
+        userTurn = true;
+    }
 }
 
 
@@ -452,7 +570,8 @@ void mainWindow::animateCardToWidget(QWidget* targetWidget, const QString &cardP
 
 
 void mainWindow::animateDealerCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height, bool faceDown) {
-    QPixmap cardPixmap(faceDown ? ":/cards/back_dark.png" : cardPath); // Use a face-down image if necessary
+
+    QPixmap cardPixmap(faceDown ? ":/cards/back_dark.png" : cardPath); //face-down image
 
     if (cardPixmap.isNull()) {
         qDebug() << "Failed to load image for dealer card: " << cardPath;
@@ -479,7 +598,7 @@ void mainWindow::animateDealerCardToWidget(QWidget* targetWidget, const QString 
     int targetY = targetGeometry.y() + (targetGeometry.height() - scaledPixmap.height()) / 2;
 
     // Apply vertical offset to move the card down
-    targetY += 80; // Adjust this value until the placement looks correct
+    targetY += 0; // Adjust this value until the placement looks correct
 
     animation->setStartValue(startGeometry);
     animation->setEndValue(QRect(targetX, targetY, scaledPixmap.width(), scaledPixmap.height()));
@@ -490,6 +609,7 @@ void mainWindow::animateDealerCardToWidget(QWidget* targetWidget, const QString 
 
     qDebug() << "Dealer card animation started for: " << cardPath;
 }
+
 
 
 //--------------------------------------CARDANIMATE--------------------------------------
@@ -503,7 +623,18 @@ void mainWindow::updateBetDisplay(int bet) {
     ui->label_691->setText(QString("Current Bet: $%1").arg(bet));
 }
 void mainWindow::updateBalanceDisplay() {
-    ui->label->setText(QString("Current Balance: $%1").arg(user->balance)); // Update balance label
+    // Update balance label to show current balance
+    ui->label->setText(QString("Current Balance: $%1").arg(user->balance));
+}
+void mainWindow::updateUserHandValDisplay() {
+    // Update balance label to show current balance
+    ui->label_54->setText(QString("Your hand value: %1").arg(user->handVal));
+}
+void mainWindow::updateDealerHandValDisplay() {
+
+        // Update balance label to show current balance
+        ui->label_56->setText(QString("Dealer hand value: %1").arg(dealer->getDealerHandVal()));
+
 }
 
 void mainWindow::clearCardsDisplayed(){
@@ -551,12 +682,12 @@ void mainWindow::onEndGame() {
 }
 
 
+void mainWindow::on_horizontalSlider_valueChanged(int value)
+{
 
+    volumeControl->setVolume(static_cast<float>(value) / 100.0f);
 
-
-
-
-
+}
 
 
 
@@ -583,4 +714,6 @@ mainWindow::~mainWindow()
 {
     delete ui;
 }
+
+
 

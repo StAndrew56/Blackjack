@@ -7,7 +7,9 @@
 #include "Deck.h"
 #include <QList>
 #include <QLabel>
-
+#include <QtMultimedia>
+#include <QFileDialog>
+#include <QStyle>
 
 
 QT_BEGIN_NAMESPACE
@@ -38,8 +40,10 @@ private:
     QTimer *standTimer;
     int lastDisplayedUserCardIndex = 0;
     int lastDisplayedDealerCardIndex = 0;
-
-
+    QMediaPlayer *M_Player;
+    QMediaPlayer *M_Player2;
+    QAudioOutput *volumeControl;
+    QAudioOutput *controlSFX;
 
 
 
@@ -64,6 +68,9 @@ private slots:
     void dealerStandStep();
     void onEndGame();
     void clearCardsDisplayed();
-
+    void on_horizontalSlider_valueChanged(int value);
+    void on_muteButton_clicked(bool checked);
+    void updateUserHandValDisplay();
+    void updateDealerHandValDisplay();
 };
 #endif // MAINWINDOW_H

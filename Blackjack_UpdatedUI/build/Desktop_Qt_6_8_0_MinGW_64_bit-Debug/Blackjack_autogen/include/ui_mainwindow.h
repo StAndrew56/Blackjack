@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -32,13 +33,20 @@ public:
     QVBoxLayout *verticalLayout_4;
     QLabel *label;
     QWidget *widget_3;
+    QSpacerItem *horizontalSpacer_10;
+    QSpacerItem *horizontalSpacer_11;
+    QSpacerItem *horizontalSpacer_12;
+    QSpacerItem *horizontalSpacer_13;
     QSpacerItem *horizontalSpacer;
+    QHBoxLayout *horizontalLayout_60;
+    QVBoxLayout *verticalLayout_12;
+    QWidget *widget_4;
+    QPushButton *muteButton;
+    QSlider *horizontalSlider;
     QVBoxLayout *verticalLayout_10;
     QSpacerItem *verticalSpacer_5;
-    QWidget *widget_2;
-    QVBoxLayout *verticalLayout_11;
     QHBoxLayout *horizontalLayout_1900;
-    QSpacerItem *horizontalSpacer_7;
+    QLabel *label_56;
     QStackedWidget *dealerWidget1;
     QWidget *page_1891;
     QHBoxLayout *horizontalLayout_1901;
@@ -1835,7 +1843,7 @@ public:
     QVBoxLayout *verticalLayout_6;
     QVBoxLayout *verticalLayout_8;
     QHBoxLayout *horizontalLayout_7;
-    QSpacerItem *horizontalSpacer_4;
+    QLabel *label_54;
     QStackedWidget *widget1;
     QWidget *page_694;
     QHBoxLayout *horizontalLayout_707;
@@ -3628,10 +3636,8 @@ public:
     QHBoxLayout *horizontalLayout_378;
     QLabel *label_372;
     QSpacerItem *horizontalSpacer_3;
-    QWidget *widget;
-    QVBoxLayout *verticalLayout_9;
     QHBoxLayout *horizontalLayout_1304;
-    QSpacerItem *horizontalSpacer_5;
+    QLabel *label_55;
     QStackedWidget *widget12;
     QWidget *page_1297;
     QHBoxLayout *horizontalLayout_1305;
@@ -5501,9 +5507,67 @@ public:
 
         horizontalLayout_6->addWidget(widget_3);
 
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_10);
+
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_11);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_12);
+
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_13);
+
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout_6->addItem(horizontalSpacer);
+
+        horizontalLayout_60 = new QHBoxLayout();
+        horizontalLayout_60->setObjectName("horizontalLayout_60");
+        verticalLayout_12 = new QVBoxLayout();
+        verticalLayout_12->setObjectName("verticalLayout_12");
+        widget_4 = new QWidget(centralwidget);
+        widget_4->setObjectName("widget_4");
+
+        verticalLayout_12->addWidget(widget_4);
+
+
+        horizontalLayout_60->addLayout(verticalLayout_12);
+
+        muteButton = new QPushButton(centralwidget);
+        muteButton->setObjectName("muteButton");
+        muteButton->setMinimumSize(QSize(40, 40));
+        muteButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border-image: none;\n"
+"	border-image: url(:/sounds/volume-up-interface-symbol.png);\n"
+"}\n"
+"QPushButton:checked {\n"
+"    border-image: none;\n"
+"	border-image: url(:/sounds/muteSoundSymbol);\n"
+"}"));
+        muteButton->setCheckable(true);
+
+        horizontalLayout_60->addWidget(muteButton);
+
+        horizontalSlider = new QSlider(centralwidget);
+        horizontalSlider->setObjectName("horizontalSlider");
+        horizontalSlider->setMinimumSize(QSize(160, 10));
+        horizontalSlider->setStyleSheet(QString::fromUtf8("border-image: none;"));
+        horizontalSlider->setMaximum(100);
+        horizontalSlider->setValue(10);
+        horizontalSlider->setOrientation(Qt::Orientation::Horizontal);
+        horizontalSlider->setInvertedAppearance(false);
+        horizontalSlider->setInvertedControls(false);
+
+        horizontalLayout_60->addWidget(horizontalSlider);
+
+
+        horizontalLayout_6->addLayout(horizontalLayout_60);
 
 
         verticalLayout_5->addLayout(horizontalLayout_6);
@@ -5517,18 +5581,26 @@ public:
 
         verticalLayout_10->addItem(verticalSpacer_5);
 
-        widget_2 = new QWidget(centralwidget);
-        widget_2->setObjectName("widget_2");
-        widget_2->setStyleSheet(QString::fromUtf8("border-image: none;"));
-        verticalLayout_11 = new QVBoxLayout(widget_2);
-        verticalLayout_11->setObjectName("verticalLayout_11");
+
+        verticalLayout->addLayout(verticalLayout_10);
+
         horizontalLayout_1900 = new QHBoxLayout();
         horizontalLayout_1900->setObjectName("horizontalLayout_1900");
-        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        label_56 = new QLabel(centralwidget);
+        label_56->setObjectName("label_56");
+        sizePolicy.setHeightForWidth(label_56->sizePolicy().hasHeightForWidth());
+        label_56->setSizePolicy(sizePolicy);
+        label_56->setMinimumSize(QSize(150, 50));
+        QFont font1;
+        font1.setPointSize(20);
+        font1.setBold(true);
+        label_56->setFont(font1);
+        label_56->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+"color: rgb(255, 255, 255);"));
 
-        horizontalLayout_1900->addItem(horizontalSpacer_7);
+        horizontalLayout_1900->addWidget(label_56);
 
-        dealerWidget1 = new QStackedWidget(widget_2);
+        dealerWidget1 = new QStackedWidget(centralwidget);
         dealerWidget1->setObjectName("dealerWidget1");
         sizePolicy.setHeightForWidth(dealerWidget1->sizePolicy().hasHeightForWidth());
         dealerWidget1->setSizePolicy(sizePolicy);
@@ -6205,7 +6277,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget1);
 
-        dealerWidget2 = new QStackedWidget(widget_2);
+        dealerWidget2 = new QStackedWidget(centralwidget);
         dealerWidget2->setObjectName("dealerWidget2");
         sizePolicy.setHeightForWidth(dealerWidget2->sizePolicy().hasHeightForWidth());
         dealerWidget2->setSizePolicy(sizePolicy);
@@ -6882,7 +6954,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget2);
 
-        dealerWidget3 = new QStackedWidget(widget_2);
+        dealerWidget3 = new QStackedWidget(centralwidget);
         dealerWidget3->setObjectName("dealerWidget3");
         sizePolicy.setHeightForWidth(dealerWidget3->sizePolicy().hasHeightForWidth());
         dealerWidget3->setSizePolicy(sizePolicy);
@@ -7559,7 +7631,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget3);
 
-        dealerWidget4 = new QStackedWidget(widget_2);
+        dealerWidget4 = new QStackedWidget(centralwidget);
         dealerWidget4->setObjectName("dealerWidget4");
         sizePolicy.setHeightForWidth(dealerWidget4->sizePolicy().hasHeightForWidth());
         dealerWidget4->setSizePolicy(sizePolicy);
@@ -8236,7 +8308,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget4);
 
-        dealerWidget5 = new QStackedWidget(widget_2);
+        dealerWidget5 = new QStackedWidget(centralwidget);
         dealerWidget5->setObjectName("dealerWidget5");
         sizePolicy.setHeightForWidth(dealerWidget5->sizePolicy().hasHeightForWidth());
         dealerWidget5->setSizePolicy(sizePolicy);
@@ -8913,7 +8985,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget5);
 
-        dealerWidget6 = new QStackedWidget(widget_2);
+        dealerWidget6 = new QStackedWidget(centralwidget);
         dealerWidget6->setObjectName("dealerWidget6");
         sizePolicy.setHeightForWidth(dealerWidget6->sizePolicy().hasHeightForWidth());
         dealerWidget6->setSizePolicy(sizePolicy);
@@ -9583,7 +9655,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget6);
 
-        dealerWidget7 = new QStackedWidget(widget_2);
+        dealerWidget7 = new QStackedWidget(centralwidget);
         dealerWidget7->setObjectName("dealerWidget7");
         sizePolicy.setHeightForWidth(dealerWidget7->sizePolicy().hasHeightForWidth());
         dealerWidget7->setSizePolicy(sizePolicy);
@@ -10253,7 +10325,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget7);
 
-        dealerWidget8 = new QStackedWidget(widget_2);
+        dealerWidget8 = new QStackedWidget(centralwidget);
         dealerWidget8->setObjectName("dealerWidget8");
         sizePolicy.setHeightForWidth(dealerWidget8->sizePolicy().hasHeightForWidth());
         dealerWidget8->setSizePolicy(sizePolicy);
@@ -10930,7 +11002,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget8);
 
-        dealerWidget9 = new QStackedWidget(widget_2);
+        dealerWidget9 = new QStackedWidget(centralwidget);
         dealerWidget9->setObjectName("dealerWidget9");
         sizePolicy.setHeightForWidth(dealerWidget9->sizePolicy().hasHeightForWidth());
         dealerWidget9->setSizePolicy(sizePolicy);
@@ -11607,7 +11679,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget9);
 
-        dealerWidget10 = new QStackedWidget(widget_2);
+        dealerWidget10 = new QStackedWidget(centralwidget);
         dealerWidget10->setObjectName("dealerWidget10");
         sizePolicy.setHeightForWidth(dealerWidget10->sizePolicy().hasHeightForWidth());
         dealerWidget10->setSizePolicy(sizePolicy);
@@ -12284,7 +12356,7 @@ public:
 
         horizontalLayout_1900->addWidget(dealerWidget10);
 
-        dealerWidget11 = new QStackedWidget(widget_2);
+        dealerWidget11 = new QStackedWidget(centralwidget);
         dealerWidget11->setObjectName("dealerWidget11");
         sizePolicy.setHeightForWidth(dealerWidget11->sizePolicy().hasHeightForWidth());
         dealerWidget11->setSizePolicy(sizePolicy);
@@ -12966,13 +13038,7 @@ public:
         horizontalLayout_1900->addItem(horizontalSpacer_8);
 
 
-        verticalLayout_11->addLayout(horizontalLayout_1900);
-
-
-        verticalLayout_10->addWidget(widget_2);
-
-
-        verticalLayout->addLayout(verticalLayout_10);
+        verticalLayout->addLayout(horizontalLayout_1900);
 
         verticalSpacer = new QSpacerItem(20, 90, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Fixed);
 
@@ -12987,9 +13053,17 @@ public:
         verticalLayout_8->setObjectName("verticalLayout_8");
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName("horizontalLayout_7");
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        label_54 = new QLabel(centralwidget);
+        label_54->setObjectName("label_54");
+        sizePolicy.setHeightForWidth(label_54->sizePolicy().hasHeightForWidth());
+        label_54->setSizePolicy(sizePolicy);
+        label_54->setMinimumSize(QSize(150, 50));
+        label_54->setFont(font1);
+        label_54->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+"color: rgb(255, 255, 255);\n"
+""));
 
-        horizontalLayout_7->addItem(horizontalSpacer_4);
+        horizontalLayout_7->addWidget(label_54);
 
         widget1 = new QStackedWidget(centralwidget);
         widget1->setObjectName("widget1");
@@ -20430,18 +20504,19 @@ public:
 
         verticalLayout->addLayout(verticalLayout_8);
 
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setStyleSheet(QString::fromUtf8("border-image: none;"));
-        verticalLayout_9 = new QVBoxLayout(widget);
-        verticalLayout_9->setObjectName("verticalLayout_9");
         horizontalLayout_1304 = new QHBoxLayout();
         horizontalLayout_1304->setObjectName("horizontalLayout_1304");
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        label_55 = new QLabel(centralwidget);
+        label_55->setObjectName("label_55");
+        sizePolicy.setHeightForWidth(label_55->sizePolicy().hasHeightForWidth());
+        label_55->setSizePolicy(sizePolicy);
+        label_55->setMinimumSize(QSize(150, 50));
+        label_55->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+"color: rgb(255, 255, 255);"));
 
-        horizontalLayout_1304->addItem(horizontalSpacer_5);
+        horizontalLayout_1304->addWidget(label_55);
 
-        widget12 = new QStackedWidget(widget);
+        widget12 = new QStackedWidget(centralwidget);
         widget12->setObjectName("widget12");
         sizePolicy.setHeightForWidth(widget12->sizePolicy().hasHeightForWidth());
         widget12->setSizePolicy(sizePolicy);
@@ -21118,7 +21193,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget12);
 
-        widget13 = new QStackedWidget(widget);
+        widget13 = new QStackedWidget(centralwidget);
         widget13->setObjectName("widget13");
         sizePolicy.setHeightForWidth(widget13->sizePolicy().hasHeightForWidth());
         widget13->setSizePolicy(sizePolicy);
@@ -21795,7 +21870,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget13);
 
-        widget14 = new QStackedWidget(widget);
+        widget14 = new QStackedWidget(centralwidget);
         widget14->setObjectName("widget14");
         sizePolicy.setHeightForWidth(widget14->sizePolicy().hasHeightForWidth());
         widget14->setSizePolicy(sizePolicy);
@@ -22472,7 +22547,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget14);
 
-        widget15 = new QStackedWidget(widget);
+        widget15 = new QStackedWidget(centralwidget);
         widget15->setObjectName("widget15");
         sizePolicy.setHeightForWidth(widget15->sizePolicy().hasHeightForWidth());
         widget15->setSizePolicy(sizePolicy);
@@ -23149,7 +23224,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget15);
 
-        widget16 = new QStackedWidget(widget);
+        widget16 = new QStackedWidget(centralwidget);
         widget16->setObjectName("widget16");
         sizePolicy.setHeightForWidth(widget16->sizePolicy().hasHeightForWidth());
         widget16->setSizePolicy(sizePolicy);
@@ -23826,7 +23901,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget16);
 
-        widget17 = new QStackedWidget(widget);
+        widget17 = new QStackedWidget(centralwidget);
         widget17->setObjectName("widget17");
         sizePolicy.setHeightForWidth(widget17->sizePolicy().hasHeightForWidth());
         widget17->setSizePolicy(sizePolicy);
@@ -24503,7 +24578,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget17);
 
-        widget18 = new QStackedWidget(widget);
+        widget18 = new QStackedWidget(centralwidget);
         widget18->setObjectName("widget18");
         sizePolicy.setHeightForWidth(widget18->sizePolicy().hasHeightForWidth());
         widget18->setSizePolicy(sizePolicy);
@@ -25180,7 +25255,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget18);
 
-        widget19 = new QStackedWidget(widget);
+        widget19 = new QStackedWidget(centralwidget);
         widget19->setObjectName("widget19");
         sizePolicy.setHeightForWidth(widget19->sizePolicy().hasHeightForWidth());
         widget19->setSizePolicy(sizePolicy);
@@ -25857,7 +25932,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget19);
 
-        widget20 = new QStackedWidget(widget);
+        widget20 = new QStackedWidget(centralwidget);
         widget20->setObjectName("widget20");
         sizePolicy.setHeightForWidth(widget20->sizePolicy().hasHeightForWidth());
         widget20->setSizePolicy(sizePolicy);
@@ -26534,7 +26609,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget20);
 
-        widget21 = new QStackedWidget(widget);
+        widget21 = new QStackedWidget(centralwidget);
         widget21->setObjectName("widget21");
         sizePolicy.setHeightForWidth(widget21->sizePolicy().hasHeightForWidth());
         widget21->setSizePolicy(sizePolicy);
@@ -27211,7 +27286,7 @@ public:
 
         horizontalLayout_1304->addWidget(widget21);
 
-        widget22 = new QStackedWidget(widget);
+        widget22 = new QStackedWidget(centralwidget);
         widget22->setObjectName("widget22");
         sizePolicy.setHeightForWidth(widget22->sizePolicy().hasHeightForWidth());
         widget22->setSizePolicy(sizePolicy);
@@ -27893,10 +27968,7 @@ public:
         horizontalLayout_1304->addItem(horizontalSpacer_6);
 
 
-        verticalLayout_9->addLayout(horizontalLayout_1304);
-
-
-        verticalLayout->addWidget(widget);
+        verticalLayout->addLayout(horizontalLayout_1304);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
@@ -28077,12 +28149,12 @@ public:
         sizePolicy2.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy2);
         pushButton->setMinimumSize(QSize(100, 100));
-        QFont font1;
-        font1.setPointSize(20);
-        font1.setBold(true);
-        font1.setItalic(true);
-        font1.setUnderline(false);
-        pushButton->setFont(font1);
+        QFont font2;
+        font2.setPointSize(20);
+        font2.setBold(true);
+        font2.setItalic(true);
+        font2.setUnderline(false);
+        pushButton->setFont(font2);
         pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "       /* Default button style */\n"
 "		border-image: none;\n"
@@ -28199,11 +28271,11 @@ public:
         sizePolicy1.setHeightForWidth(pushButton_11->sizePolicy().hasHeightForWidth());
         pushButton_11->setSizePolicy(sizePolicy1);
         pushButton_11->setMinimumSize(QSize(100, 100));
-        QFont font2;
-        font2.setPointSize(14);
-        font2.setBold(true);
-        font2.setItalic(true);
-        pushButton_11->setFont(font2);
+        QFont font3;
+        font3.setPointSize(14);
+        font3.setBold(true);
+        font3.setItalic(true);
+        pushButton_11->setFont(font3);
         pushButton_11->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "       /* Default button style */\n"
 "		border-image: none;\n"
@@ -28279,6 +28351,8 @@ public:
     {
         mainWindow->setWindowTitle(QCoreApplication::translate("mainWindow", "mainWindow", nullptr));
         label->setText(QCoreApplication::translate("mainWindow", "Balance: $0", nullptr));
+        muteButton->setText(QString());
+        label_56->setText(QString());
         label_1891->setText(QString());
         label_1892->setText(QString());
         label_1893->setText(QString());
@@ -28871,6 +28945,7 @@ public:
         label_2482->setText(QString());
         label_2483->setText(QString());
         label_2484->setText(QString());
+        label_54->setText(QString());
         label_702->setText(QString());
         label_585->setText(QString());
         label_586->setText(QString());
@@ -29463,6 +29538,7 @@ public:
         label_370->setText(QString());
         label_371->setText(QString());
         label_372->setText(QString());
+        label_55->setText(QString());
         label_1297->setText(QString());
         label_1298->setText(QString());
         label_1299->setText(QString());
