@@ -22237,7 +22237,7 @@ color: rgb(255, 255, 255);</string>
           </spacer>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget12">
+          <widget class="QStackedWidget" name="splitWidget1">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -23240,7 +23240,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget13">
+          <widget class="QStackedWidget" name="splitWidget2">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -24243,7 +24243,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget14">
+          <widget class="QStackedWidget" name="splitWidget3">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -25246,7 +25246,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget15">
+          <widget class="QStackedWidget" name="splitWidget4">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -26249,7 +26249,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget16">
+          <widget class="QStackedWidget" name="splitWidget5">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -27252,7 +27252,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget17">
+          <widget class="QStackedWidget" name="splitWidget6">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -28255,7 +28255,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget18">
+          <widget class="QStackedWidget" name="splitWidget7">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -29258,7 +29258,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget19">
+          <widget class="QStackedWidget" name="splitWidget8">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -30261,7 +30261,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget20">
+          <widget class="QStackedWidget" name="splitWidget9">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -31264,7 +31264,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget21">
+          <widget class="QStackedWidget" name="splitWidget10">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -32267,7 +32267,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QStackedWidget" name="widget22">
+          <widget class="QStackedWidget" name="splitWidget11">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>

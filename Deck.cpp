@@ -23,7 +23,6 @@ Deck::Deck() {
 
 }
 //will create the create of 52 cards
-
 void Deck::createDeck(){
 
     //iterate through all suits
@@ -62,56 +61,6 @@ void Deck::createDeck(){
 
 
 }
-
- //FOR TESTING SPLIT
-/*
-void Deck::createDeck() {
-    deckOfCards.clear();
-
-    // Add specific test cards for the player at the top of the deck
-    Cards playerCard1;
-    playerCard1.suit = Suit::Hearts;
-    playerCard1.cardRank = Rank::JACK;
-    playerCard1.value = 6;
-
-    Cards playerCard2;
-    playerCard2.suit = Suit::Clubs;
-    playerCard2.cardRank = Rank::JACK;
-    playerCard2.value = 6;
-
-    // Add specific cards for the dealer next
-    Cards dealerCard1;
-    dealerCard1.suit = Suit::Diamonds;
-    dealerCard1.cardRank = Rank::FIVE;
-    dealerCard1.value = 10;
-
-    Cards dealerCard2;
-    dealerCard2.suit = Suit::Spades;
-    dealerCard2.cardRank = Rank::TWO;
-    dealerCard2.value = 10;
-
-    // Push the test cards in the correct dealing order
-    deckOfCards.push_back(playerCard1); // Player's first card
-    deckOfCards.push_back(dealerCard1); // Dealer's first card
-    deckOfCards.push_back(playerCard2); // Player's second card
-    deckOfCards.push_back(dealerCard2); // Dealer's second card
-
-    // Add the rest of the deck normally
-    for (int suit = (int)Suit::Hearts; suit <= (int)Suit::Diamonds; ++suit) {
-        for (int rank = (int)Rank::ACE; rank <= (int)Rank::KING; ++rank) {
-            Cards card;
-            card.suit = static_cast<Suit>(suit);
-            card.cardRank = static_cast<Rank>(rank);
-            card.value = (rank >= (int)Rank::JACK) ? 10 : rank;
-            deckOfCards.push_back(card);
-        }
-    }
-
-    shuffle();  // Shuffle the remaining cards (optional, but useful for testing)
-}
-*/
-
-
 //called when you want to print the suit of the card.
 void Deck::printSuit(Suit suit){
 
@@ -197,7 +146,6 @@ void Deck::printDeck(){
 
 //Shuffles the deck of cards. This implementation is modified version
 //of the "Fisher-Yates" Shuffle algorithm.
-
 void Deck::shuffle() {
     unsigned int seed = std::random_device{}() + static_cast<unsigned int>(chrono::system_clock::now().time_since_epoch().count());
     default_random_engine rng(seed);
@@ -206,29 +154,6 @@ void Deck::shuffle() {
         int j = distribution(rng);
         swap(deckOfCards[i], deckOfCards[j]);
     }
-}
-
-
-
-
-//FOR TESTING SPLIT
-/*
-void Deck::shuffle() {
-    if (!testingMode) {
-        std::random_shuffle(deckOfCards.begin(), deckOfCards.end());
-    }
-}
-*/
-
-void Deck::printSize(){
-    cout << "Deck Size: " << deckOfCards.size();
-
-}
-void Deck::killDeck(){
-
-    deckOfCards.clear();
-    deckOfCards.shrink_to_fit();
-
 }
 
 //this is not the actual main it is for testing the class only.

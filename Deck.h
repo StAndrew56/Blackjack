@@ -18,8 +18,6 @@ class Deck {
 public:
 
     vector<Cards> deckOfCards;
-   bool testingMode = true;  // Enable this as well as 2 other functions in Deck.cpp to test split
-
 
 Deck();
 
@@ -36,13 +34,6 @@ void createDeck();
 void shuffle();
 
 void drawCard();
-
-void printSize();
-
-void killDeck();
-
-
-
 };
 
 #endif //_DECK_H

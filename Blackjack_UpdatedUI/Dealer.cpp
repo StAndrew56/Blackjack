@@ -284,28 +284,54 @@ void Dealer::bust(User& user){
 
 //Card comparison - Which is closer to 21?
 void Dealer::compareCards(vector<Cards>& deck, User& user) {
-    int userHandValue = getUserHandVal(user);  // Get the user’s hand value for comparison
+    int userHandValue = getUserHandVal(user);  // Get the user's main hand value
+    int splitHandValue = user.getSplitHandTotal();  // Get the user's split hand value
+    bool hasSplit = !user.splitHand.empty();  // Check if there is a split hand
 
-    qDebug() << "Comparing cards: User hand value:" << userHandValue << ", Dealer hand value:" << dealerHandVal;
+    qDebug() << "Comparing cards: Main hand value:" << userHandValue
+             << ", Split hand value:" << splitHandValue
+             << ", Dealer hand value:" << dealerHandVal;
 
-    // User wins
-    if (userHandValue > dealerHandVal || dealerHandVal > 21) {
-        user.pay();
-        qDebug() << "User wins. Balance updated.";
+    // --- Main hand comparison ---
+    if (userHandValue <= 21) {
+        if (userHandValue > dealerHandVal || dealerHandVal > 21) {
+            user.balance += user.betVal * 2;  // Return the bet and add winnings
+            qDebug() << "User wins with main hand. Balance updated.";
+        } else if (userHandValue == dealerHandVal) {
+            user.balance += user.betVal;  // Return the bet only
+            qDebug() << "It's a tie with main hand. Bet returned.";
+        } else {
+            qDebug() << "Dealer wins against main hand. Bet lost.";
+        }
+    } else {
+        qDebug() << "Main hand busted. Bet lost.";
     }
-    // Tie condition
-    else if (userHandValue == dealerHandVal) {
-        user.clearBetForStand();
-        user.balance += user.betVal;
-        qDebug() << "It's a tie. Bet cleared.";
+
+    // --- Split hand comparison ---
+    if (hasSplit) {
+        if (splitHandValue <= 21) {
+            if (splitHandValue > dealerHandVal || dealerHandVal > 21) {
+                user.balance += user.splitBetVal * 2;  // Return the bet and add winnings
+                qDebug() << "User wins with split hand. Balance updated.";
+            } else if (splitHandValue == dealerHandVal) {
+                user.balance += user.splitBetVal;  // Return the bet only
+                qDebug() << "It's a tie with split hand. Split bet returned.";
+            } else {
+                qDebug() << "Dealer wins against split hand. Split bet lost.";
+            }
+        } else {
+            qDebug() << "Split hand busted. Split bet lost.";
+        }
     }
-    // Dealer wins
-    else {
-        user.betVal = 0;
-        user.clearBetForStand();  // Clear the bet with no payout
-        qDebug() << "Dealer wins. Bet cleared, user loses.";
-    }
+
+    // Clear bets after processing
+    user.betVal = 0;
+    user.splitBetVal = 0;
+
+    qDebug() << "Game results processed. Final balance:" << user.balance;
 }
+
+
 
 
 void Dealer::gameLoop(vector<Cards>& deck, User& user){

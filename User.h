@@ -11,25 +11,17 @@
 #include "Suit.h"
 #include <iostream>
 #include <string>
-#include <QString>
-#include <QObject>
 
 using namespace std;
 
-class User : public QObject{
-    Q_OBJECT
+class User {
 public:
-
     int handVal;
     vector<Cards> userHand;
     double betVal;
-    double balance = 1000;
+    double balance = 5000;
     vector<Cards> splitHand;
     int splitBetVal;
-    int aceCount = 0;
-    int splitHandVal = 0;
-
-
 
 User();
 
@@ -49,8 +41,6 @@ void stand();
 
 void split();
 
-void blackJack();
-
 void placeBet(int bet);
 
 void printUserHandTotal();
@@ -59,44 +49,12 @@ void pay();
 
 void clearUserHand();
 
-void bust();
-
 int getUserHandTotal();
 
 void trueRank();
 
 void takeBet();
 
-void submitBet(int bet);
-
-void increaseBet(int amount);
-
-void clearBet();
-
-void clearBetForStand();
-
-
-//Split Bet caluclating
-void paySplitBet();
-void clearSplitBet();
-void returnSplitBet();
-void returnBet();  // Declare the method
-
-
-void hitSplit(Deck& deck);
-
-int getSplitHandTotal();
-int calculateHandTotal(vector<Cards>& hand);
-
-
-signals:
-
-void actionError(const QString &message);
-
-void betPlaced(int bet);
-
-void balanceUpdated(int newBalance);
-void betUpdated(int newBet);
 };
 
 #endif //_USER_H
