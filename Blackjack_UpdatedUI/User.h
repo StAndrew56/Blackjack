@@ -27,52 +27,63 @@ public:
     vector<Cards> splitHand;
     int splitBetVal;
     int aceCount = 0;
+    int splitHandVal = 0;
 
-User();
 
-void printRankUser(Rank cardRank);
 
-void printSuitUser(Suit suit);
+    User();
 
-void printUserHand();
+    void printRankUser(Rank cardRank);
 
-void printUserSplitHand();
+    void printSuitUser(Suit suit);
 
-void doubleDown();
+    void printUserHand();
 
-void hit(Deck& deck);
+    void printUserSplitHand();
 
-void stand();
+    void doubleDown();
 
-void split();
+    void hit(Deck& deck);
 
-void blackJack();
+    void stand();
 
-void placeBet(int bet);
+    void split();
 
-void printUserHandTotal();
+    void blackJack();
 
-void pay();
+    void placeBet(int bet);
 
-void clearUserHand();
+    void printUserHandTotal();
 
-void bust();
+    void pay();
 
-int getUserHandTotal();
+    void clearUserHand();
 
-void trueRank();
+    void bust();
 
-void takeBet();
+    int getUserHandTotal();
 
-void submitBet(int bet);
+    void trueRank();
 
-void increaseBet(int amount);
+    void takeBet();
 
-void clearBet();
+    void submitBet(int bet);
 
-void clearBetForStand();
+    void increaseBet(int amount);
 
-void displayUserHandVal();
+    void clearBet();
+
+    void clearBetForStand();
+
+    void displayUserHandVal();
+
+
+
+    void hitSplit(Deck& deck);
+
+    int getSplitHandTotal();
+    int calculateHandTotal(vector<Cards>& hand);
+
 
 signals:
 
@@ -81,7 +92,7 @@ void actionError(const QString &message);
 void betPlaced(int bet);
 
 void balanceUpdated(int newBalance);
-
+void betUpdated(int newBet);
 void updateUserHandVal(int val);
 };
 

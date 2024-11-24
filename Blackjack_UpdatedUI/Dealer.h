@@ -32,6 +32,7 @@ private:
     const int down = 1;
     const int up = 0;
 
+
 public:
 
 

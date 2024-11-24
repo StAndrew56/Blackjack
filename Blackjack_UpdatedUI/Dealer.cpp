@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 #include "Dealer.h"
 #include "Deck.h" //For interaction with main Deck
 #include "User.h" //For interaction with user hand vector
@@ -15,7 +11,7 @@
 #include <QMessageBox>
 #include <QThread>
 
-using namespace std;
+    using namespace std;
 
 /**
  * Dealer implementation
@@ -141,35 +137,24 @@ void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* use
         addCard(playerHand, deck);
         addCard(dealerHand, deck);
     }
-        //Adds a card to each hand twice
-        //do NOT remove, needed to deal with aces, will count num of
-        //aces in playerHand off original deal.
-        for(int i = 0; i < playerHand.size(); i++){
+    //Adds a card to each hand twice
+    //do NOT remove, needed to deal with aces, will count num of
+    //aces in playerHand off original deal.
+    for(int i = 0; i < playerHand.size(); i++){
 
-            if(playerHand[i].cardRank == Rank::ACE){
-                user->aceCount++;
-            }
-            //case for 2 ace's dealt
-            if(user->aceCount == 2){
-                user->handVal -= 10;
-                user->aceCount --;
-                user->displayUserHandVal();
-            }
+        if(playerHand[i].cardRank == Rank::ACE){
+            user->aceCount++;
         }
-        //do Not remove, needed to deal with aces, will count num of
-        //aces in dealerHand off original deal.
-        for(int i = 0; i < dealerHand.size(); i++){
+    }
+    //do Not remove, needed to deal with aces, will count num of
+    //aces in dealerHand off original deal.
+    for(int i = 0; i < dealerHand.size(); i++){
 
-            if(dealerHand[i].cardRank == Rank::ACE){
-                dealerAceCount++;
-            }
-            //case for 2 ace's dealt
-            if(dealerAceCount == 2){
-                dealerHandVal -= 10;
-                dealerAceCount --;
-            }
+        if(dealerHand[i].cardRank == Rank::ACE){
+            dealerAceCount++;
         }
- }
+    }
+}
 
 /**
  * @param Player player
@@ -208,8 +193,12 @@ void Dealer::hit(vector<Cards>& deck) {
         return;
     }
     //qDebug() << "Dealer hitting, adding card from deck.";
+    //addCard(dealerHand, deck);
     //qDebug() << "Dealer hand size after hit:" << dealerHand.size();
-
+    //handVal = 0;
+    if(dealerHandVal == 0){
+        trueRank();
+    }
     //make sure dealer doesn't have 21
     if(dealerHandVal != 21){
         //add the card to dealerHand
@@ -217,7 +206,7 @@ void Dealer::hit(vector<Cards>& deck) {
         //delete card from deckOfCards
         deck.erase(deck.begin());
 
-        //get the index of dealerHand(where you just added the card)
+        //get the last position of dealerHand(where you just added the card)
         int lastCard = dealerHand.size() - 1;
 
         //add the last card's value to dealerHandVal
@@ -237,24 +226,26 @@ void Dealer::hit(vector<Cards>& deck) {
         else{
             dealerHandVal += (int)dealerHand[lastCard].cardRank;
         }
-
         //this block deals with ace's when nessecary. very dpendent on ace counter.
         //ace counter is above and in dealer class(in function dealCards()).
         if(dealerHandVal > 21){
 
-                if(dealerHandVal != 21){
+            for(int i =0; i < dealerHand.size(); i++){
 
-                    while(dealerHandVal > 21 && dealerAceCount > 0){
+                if(dealerHand[i].cardRank == Rank::ACE){
 
-                        dealerHandVal -= 10;//turn the ace into a 1.
+                    if(dealerHandVal != 21){
 
-                        dealerAceCount--;//ace can't be decremented again.
+                        while(dealerHandVal > 21 && dealerAceCount > 0){
 
-                        if(dealerHandVal < 21){
-                                return;
+                            dealerHandVal -= 10;//turn the ace into a 1.
+
+                            dealerAceCount--;//ace can't be decremented again.
                         }
                     }
+
                 }
+            }
         }
     }
     //user has 21
@@ -384,14 +375,14 @@ int Dealer::getHandValue() {
 }
 
 
+
 void Dealer::displayDealerHandVal(){
     int val = getDealerHandVal();
     emit updateDealerHandVal(val);
 }
 
-int Dealer::getDealerHandSize() {
-    return dealerHand.size();
-}
+
+
 
 vector<Cards>& Dealer::getDealerHand() {
     return dealerHand;
@@ -400,8 +391,7 @@ vector<Cards>& Dealer::getDealerHand() {
 int Dealer::getDealerHandVal() const {
     return dealerHandVal;
 }
+
 void Dealer::setDealerHandVal(int val){
     dealerHandVal = val;
 }
-
-

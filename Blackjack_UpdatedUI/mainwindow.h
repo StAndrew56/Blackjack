@@ -34,16 +34,21 @@ private:
     Deck deck;       // Deck object
     QList<QLabel*> cardLabels;
     QList<QLabel*> dealerCardLabels;
+    QList<QLabel*> splitCardLabels;
     void setBackgroundImage();
     void setButtons();
     void setGraphic();
     QTimer *standTimer;
     int lastDisplayedUserCardIndex = 0;
     int lastDisplayedDealerCardIndex = 0;
+    int lastDisplayedSplitCardIndex = 0;
     QMediaPlayer *M_Player;
     QMediaPlayer *M_Player2;
     QAudioOutput *volumeControl;
     QAudioOutput *controlSFX;
+    bool isSplitHandDisplayed = false;
+    bool isPlayingSplitHand = false;
+    bool hasSplit = false;
 
 
 
@@ -72,5 +77,14 @@ private slots:
     void on_muteButton_clicked(bool checked);
     void updateUserHandValDisplay();
     void updateDealerHandValDisplay();
+    void onSplitButton();
+    void displaySplitHand();
+    void animateSplitCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height);
+
+    void showFloatingMessage(const QString &message);
 };
 #endif // MAINWINDOW_H
+
+
+void on_horizontalSlider_valueChanged(int value);
+void on_muteButton_clicked(bool checked);

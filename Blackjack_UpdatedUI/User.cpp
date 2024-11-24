@@ -108,22 +108,22 @@ void User::trueRank(){
     handVal = 0;
     for(int i = 0; i < userHand.size(); i++){
 
-         if(userHand[i].cardRank == Rank::JACK){
+        if(userHand[i].cardRank == Rank::JACK){
             handVal += 10;
-         }
-         else if(userHand[i].cardRank == Rank::QUEEN){
-            handVal += 10;
-         }
-         else if(userHand[i].cardRank == Rank::KING){
-            handVal += 10;
-         }
-         else if(userHand[i].cardRank == Rank::ACE){
-             handVal += 11;
-         }
-         else{
-            handVal += (int)userHand[i].cardRank;
-         }
         }
+        else if(userHand[i].cardRank == Rank::QUEEN){
+            handVal += 10;
+        }
+        else if(userHand[i].cardRank == Rank::KING){
+            handVal += 10;
+        }
+        else if(userHand[i].cardRank == Rank::ACE){
+            handVal += 11;
+        }
+        else{
+            handVal += (int)userHand[i].cardRank;
+        }
+    }
 }
 
 //called when the User wants to hit, will add 1 card to their hand.
@@ -163,17 +163,20 @@ void User::hit(Deck& deck) {
         //ace counter is above and in dealer class(in function dealCards()).
         if(handVal > 21){
 
-            if(handVal != 21){
+            for(int i =0; i < userHand.size(); i++){
 
-                while(handVal > 21 && aceCount > 0){
+                if(userHand[i].cardRank == Rank::ACE){
 
-                    handVal -= 10;//turn the ace into a 1.
+                    if(handVal != 21){
 
-                    aceCount--;//ace can't be decremented again.
+                        while(handVal > 21 && aceCount > 0){
 
-                    if(handVal <= 21){
-                        return;
+                            handVal -= 10;//turn the ace into a 1.
+
+                            aceCount--;//ace can't be decremented again.
+                        }
                     }
+
                 }
             }
         }
@@ -194,7 +197,7 @@ void User::stand() {
 //splits user hand into 2 hands.
 void User::split() {
 
-    if(userHand[0].cardRank == userHand[1].cardRank){
+    /*if(userHand[0].cardRank == userHand[1].cardRank){
             if(betVal <= balance){
                 splitHand[0] = userHand[1];
                 splitBetVal = betVal;
@@ -208,7 +211,34 @@ void User::split() {
         }
     else{
         cout << "You can't split!" << endl;
+    }*/
+
+
+    if (userHand.size() >= 2 && userHand[0].cardRank == userHand[1].cardRank) {
+        if (betVal <= balance) {
+            splitHand.push_back(userHand[1]); // Move the second card to split hand
+            splitBetVal = betVal;            // Duplicate the bet for the split hand
+            placeBet(splitBetVal);           // Deduct the bet for the split hand
+            userHand.pop_back();             // Remove the second card from the main hand
+
+            // Recalculate totals for both hands
+            trueRank(); // Recalculate the total for the main hand
+            splitHandVal = calculateHandTotal(splitHand); // Recalculate split hand total
+
+            cout << "Split completed. Main hand total:" << handVal
+                 << "Split hand total:" << splitHandVal;
+
+            //Add bet value to balance to account for split bet
+            betVal = betVal + betVal;
+
+        } else {
+            cout << "You can't afford to split!";
+        }
+    } else {
+        cout << "You can't split!";
     }
+
+
 
 }
 //doubles the players bet value and subtracts from the balance
@@ -219,7 +249,6 @@ void User::doubleDown(){
 }
 void User::blackJack(){
 
-    balance += (betVal * 2.5);
 }
 //gets called when user places legal bet
 //will do the subtraction from the balance
@@ -253,7 +282,7 @@ int User::getUserHandTotal() {
 //users balance.
 void User::pay() {
 
-        balance += (betVal * 2);
+    balance += (betVal * 2);
 
 }
 void User::clearUserHand(){
@@ -317,12 +346,73 @@ void User::clearBet() {
 }
 void User::clearBetForStand() {
 
-        balance += betVal;  // Add the bet amount back to the balance
-        betVal = 0;         // Reset the bet amount to zero
-        emit betPlaced(betVal); // Emit signal to update the UI
-        emit balanceUpdated(balance); // Emit signal to update balance display if you have that signal
+    balance += betVal;  // Add the bet amount back to the balance
+    betVal = 0;         // Reset the bet amount to zero
+    emit betPlaced(betVal); // Emit signal to update the UI
+    emit balanceUpdated(balance); // Emit signal to update balance display if you have that signal
 }
+
+
 void User::displayUserHandVal() {
     int val = handVal;
     emit updateUserHandVal(val);
+}
+
+
+void User::hitSplit(Deck& deck) {
+    if (!deck.deckOfCards.empty()) {
+        splitHand.push_back(deck.deckOfCards.front()); // Add a card to the split hand
+        deck.deckOfCards.erase(deck.deckOfCards.begin()); // Remove the card from the deck
+        splitHandVal = calculateHandTotal(splitHand); // Update the total for split hand
+    }
+}
+
+
+int User::getSplitHandTotal() {
+    return splitHandVal; // Returns the current total for split hand
+}
+
+
+int User::calculateHandTotal(std::vector<Cards>& hand) {
+    int total = 0;
+    int aceCount = 0;
+
+    // Initialize total if it's zero
+    if (total == 0) {
+        for (size_t i = 0; i < hand.size(); i++) {
+            if (hand[i].cardRank == Rank::JACK) {
+                total += 10;
+            }
+            else if (hand[i].cardRank == Rank::QUEEN) {
+                total += 10;
+            }
+            else if (hand[i].cardRank == Rank::KING) {
+                total += 10;
+            }
+            else if (hand[i].cardRank == Rank::ACE) {
+                total += 11;
+                aceCount++; // Increment Ace counter
+            }
+            else {
+                total += (int)hand[i].cardRank;
+            }
+        }
+
+        // Adjust for Aces if total exceeds 21
+        if (total > 21) {
+            for (size_t i = 0; i < hand.size(); i++) {
+                if (hand[i].cardRank == Rank::ACE) {
+                    if (total != 21) {
+                        while (total > 21 && aceCount > 0) {
+                            total -= 10;
+                            aceCount--;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    return total;
 }

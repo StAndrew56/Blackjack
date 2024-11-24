@@ -61,6 +61,7 @@ mainWindow::mainWindow(QWidget *parent)
     connect(ui->pushButton_7, &QPushButton::clicked, this, &mainWindow::onStandButton);
     connect(user, &User::updateUserHandVal, this, &mainWindow::updateUserHandValDisplay);
     connect(dealer, &Dealer::updateDealerHandVal, this, &mainWindow::updateDealerHandValDisplay);
+    connect(ui->pushButton_8, &QPushButton::clicked, this, &mainWindow::onSplitButton);
 
 
 
@@ -218,7 +219,7 @@ void mainWindow::onSubmitBet() {
     controlSFX->setVolume(100);
 
     // Display user hand value
-    user->displayUserHandVal();
+    //user->displayUserHandVal();
 
     // Turn off dealer hand value on deal
     ui->label_56->setText(QString(""));
@@ -275,66 +276,82 @@ void mainWindow::onSubmitBet() {
 
 //--------------------------------------BUTTONCLICK--------------------------------------
 void mainWindow::onHitButtonClicked() {
-    if(user->userHand.size() > 0){
-    qDebug() << "Hit has been SMACKED!!!";
-    //checks if bet is placed, if not bet is placed will send error
-    if(user->betVal == 0){
+    // Ensure the user has placed a bet
+    if (user->betVal == 0) {
         showErrorMessage("You need to place a bet first!");
         return;
     }
-    //prevents users from hitting on 21.
-    if(user->handVal == 21){
-        showErrorMessage("You already have 21! Press stand to continue.");
-        return;
-    }
 
-    // Add a card to the user's hand
-    user->hit(deck);  // Player hits and gets another card
+    // Check if playing the main hand
+    if (!isPlayingSplitHand) {
+        // Ensure there is no split hand before switching
+        if (!user->splitHand.empty() && user->getUserHandTotal() > 21) {
+            isPlayingSplitHand = true;
+            showErrorMessage("You busted on your main hand. Now playing your split hand.");
+            displaySplitHand();
+            return;
+        }
 
-    // Get the index of the newly added card
-    int newCardIndex = user->userHand.size() - 1;  // The last card in the hand is the new one
-    QString cardPath = user->userHand[newCardIndex].getCardImagePath();
+        // Prevent hitting on a perfect main hand
+        if (user->getUserHandTotal() == 21) {
+            showFloatingMessage("You already have 21 on your main hand! Press stand to continue.");
+            return;
+        }
 
+        // Hit for the main hand
+        user->hit(deck);
 
-    QList<QWidget*> userWidgets =   {ui->widget1, ui->widget2, ui->widget3, ui->widget4, ui->widget5, ui->widget6,
-                                    ui->widget7, ui->widget8, ui->widget9, ui->widget10, ui->widget11};
+        // Animate and display the card
+        int newCardIndex = user->userHand.size() - 1;
+        QString cardPath = user->userHand[newCardIndex].getCardImagePath();
+        QList<QWidget*> userWidgets = {ui->widget1, ui->widget2, ui->widget3, ui->widget4, ui->widget5, ui->widget6};
+        if (newCardIndex < userWidgets.size()) {
+            animateCardToWidget(userWidgets[newCardIndex], cardPath, 100, 150);
+        }
 
-    // Check if there is a corresponding widget to display the new card
-    if (newCardIndex < userWidgets.size()) {
-        // Only animate the newly added card to the corresponding widget
-        animateCardToWidget(userWidgets[newCardIndex], cardPath, 100, 150);
+        // Check for bust on the main hand
+        if (user->getUserHandTotal() > 21) {
+            showErrorMessage("You busted on your main hand!");
+            if (!user->splitHand.empty()) {
+                isPlayingSplitHand = true;  // Switch to the split hand if it exists
+                displaySplitHand();
+                showErrorMessage("Now playing your split hand.");
+            } else {
+                onEndGame();  // End the game if there's no split hand
+            }
+        }
+    } else {
+        // Ensure there is a valid split hand
+        if (user->splitHand.empty()) {
+            showErrorMessage("No split hand to play!");
+            return;
+        }
 
-        //sound during hit
-        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
-        M_Player2->play();
-        controlSFX->setVolume(100);
+        // Prevent hitting on a perfect split hand
+        if (user->getSplitHandTotal() == 21) {
+            showFloatingMessage("You already have 21 on your split hand! Press stand to continue.");
+            return;
+        }
 
-    }
-    // Display user hand value
-    user->displayUserHandVal();
+        // Hit for the split hand
+        user->hitSplit(deck);
 
-    qDebug() << "Current handVal: " << user->handVal;
+        // Animate and display the card
+        int newCardIndex = user->splitHand.size() - 1;
+        QString cardPath = user->splitHand[newCardIndex].getCardImagePath();
+        QList<QWidget*> splitWidgets = {ui->splitWidget1, ui->splitWidget2, ui->splitWidget3, ui->splitWidget4, ui->splitWidget5};
+        if (newCardIndex < splitWidgets.size()) {
+            animateSplitCardToWidget(splitWidgets[newCardIndex], cardPath, 100, 150);
+        }
 
-    // Check if the user has busted after hitting
-    if (user->handVal > 21) {
-        userTurn = false;
-        displayDealerHand();
-        // Display dealer hand value
-        dealer->displayDealerHandVal();
-
-        qDebug() << "Player busted!";
-        showErrorMessage("You busted!");
-        user->clearUserHand();//clear the hand from the vector
-        onEndGame();
-    }
-    }
-    else{
-        showErrorMessage("Must place a bet first! Please click submit after choosing the amount.");
+        // Check for bust on the split hand
+        if (user->getSplitHandTotal() > 21) {
+            showErrorMessage("You busted on your split hand!");
+            isPlayingSplitHand = false;  // End split hand play
+            onEndGame();
+        }
     }
 }
-
-
-
 
 
 void mainWindow::onDoubleDownButton(){
@@ -353,7 +370,7 @@ void mainWindow::onDoubleDownButton(){
         user->hit(deck);
 
         displayPlayerHand();
-        user->displayUserHandVal();
+        //user->displayUserHandVal();
 
         //sound during player DD
         M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
@@ -390,27 +407,26 @@ void mainWindow::onDoubleDownButton(){
 
 
 void mainWindow::onStandButton() {
+    if (user->betVal > 0) {
+        // If playing the starting hand, switch to the split hand after standing
+        if (hasSplit && !isPlayingSplitHand) {
+            qDebug() << "Finished playing the starting hand. Switching to split hand.";
+            isPlayingSplitHand = true;
+            showErrorMessage("Now playing the split hand.");
+        } else {
+            // If playing the split hand, proceed with the dealer's turn
+            dealer->stand();  // Trigger dealer logic
 
-    if(user->userHand.size() > 0){
-    // Make sure theres a bet before stand is clicked
-    if (user->betVal > 0)
-    {
-        dealer->stand(); // Trigger stand though its empty
-        // Add a delay animation in between cards to prevent all of them showing up at same time
-        standTimer = new QTimer(this);
-        connect(standTimer, &QTimer::timeout, this, &mainWindow::dealerStandStep);
-        standTimer->start(750); // 750 ms delay between each dealer hit animation
-    }
-    else
-    {
+            // Add a delay animation in between cards to prevent all of them showing up at the same time
+            standTimer = new QTimer(this);
+            connect(standTimer, &QTimer::timeout, this, &mainWindow::dealerStandStep);
+            standTimer->start(750);  // 750 ms delay between each dealer hit animation
+        }
+    } else {
         showErrorMessage("Please place a bet before standing.");
     }
-    }
-    else{
-        showErrorMessage("First place a bet!");
-
-    }
 }
+
 
 
 
@@ -455,6 +471,51 @@ void mainWindow::dealerStandStep() {
 
 
 
+void mainWindow::onSplitButton() {
+    // NOT FINISHED
+    // 1. IMPLEMENTATION NEEDED FOR NOT HAVING ENOUGH MONEY TO SPLIT!!!
+    // 2. NEED TO CONSIDER DOUBLE DOWN
+    // 3 .
+
+    // Check if user can split
+    if (user->userHand.size() >= 2 && user->userHand[0].cardRank == user->userHand[1].cardRank ) {
+        user->split();  // User.cpp Split Function
+        hasSplit = true;
+
+        // Remove the split card from the starting deck's UI but we can't because error message
+        QLabel* splitCardLabel = cardLabels.last();
+        splitCardLabel->deleteLater();
+        cardLabels.pop_back(); // Removed card from split cardlabel
+
+
+
+        // Update UI hand
+        displayPlayerHand();
+        updateBetDisplay(user->betVal);
+        updateBalanceDisplay();
+
+
+        // Delaying Error Message to allow split hand to be removed first
+        QTimer::singleShot(500, this, [this]() {
+            showErrorMessage("Playing the starting hand. Split hand will follow.");
+        });
+
+        // Animate the card
+        QString cardPath = user->splitHand[0].getCardImagePath(); // Get the image path for the split card
+        animateSplitCardToWidget(ui->splitWidget1, cardPath, 100, 150); // Move the split card to the split UI
+        qDebug() << "Split completed. Message delayed to ensure UI updates first.";
+
+
+    } else {
+        showErrorMessage("You cannot split these cards.");
+    }
+
+}
+
+
+
+
+
 
 //--------------------------------------BUTTONCLICK--------------------------------------
 
@@ -480,6 +541,23 @@ void mainWindow::displayPlayerHand() {
     }
     // Update the index to the last displayed card
     lastDisplayedUserCardIndex = user->userHand.size();
+}
+
+
+void mainWindow::displaySplitHand() {
+    QList<QWidget*> splitWidgets = {ui->splitWidget1, ui->splitWidget2, ui->splitWidget3, ui->splitWidget4, ui->splitWidget5};
+
+    for (int i = lastDisplayedSplitCardIndex; i < user->splitHand.size(); ++i) {
+        QString cardPath = user->splitHand[i].getCardImagePath();
+        qDebug() << "Animating Split Hand Card " << i + 1 << ": " << cardPath;
+
+        if (i < splitWidgets.size()) {
+            animateSplitCardToWidget(splitWidgets[i], cardPath, 100, 150);
+        }
+    }
+
+    // Update the index to the last displayed card
+    lastDisplayedSplitCardIndex = user->splitHand.size();
 }
 
 void mainWindow::displayDealerHand() {
@@ -568,6 +646,53 @@ void mainWindow::animateCardToWidget(QWidget* targetWidget, const QString &cardP
 }
 
 
+void mainWindow::animateSplitCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height) {
+    QPixmap cardPixmap(cardPath);
+
+    if (cardPixmap.isNull()) {
+        qDebug() << "Failed to load image for split card: " << cardPath;
+        return;
+    }
+
+    // Create QLabel for the card and set its parent to the main window
+    QLabel* cardLabel = new QLabel(this); // Parent is the main window
+
+    // Scale the card image and maintain aspect ratio
+    QPixmap scaledPixmap = cardPixmap.scaled(width, height, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    cardLabel->setPixmap(scaledPixmap);
+
+    // Set QLabel properties
+    cardLabel->setFixedSize(scaledPixmap.width(), scaledPixmap.height());
+    cardLabel->setAlignment(Qt::AlignCenter);
+
+    // Start the card off-screen
+    QRect startGeometry(-scaledPixmap.width(), -scaledPixmap.height(), scaledPixmap.width(), scaledPixmap.height());
+    cardLabel->setGeometry(startGeometry);
+    cardLabel->show();
+    cardLabel->raise(); // Ensure the card is drawn above other widgets
+
+    // Calculate the absolute position of the target widget relative to the main window
+    QPoint targetWidgetPosition = targetWidget->mapTo(this, QPoint(0, 0)); // Map target widget position to mainWindow coordinates
+    QPoint targetCenter(targetWidgetPosition.x() + (targetWidget->width() - scaledPixmap.width()) / 2,
+                        targetWidgetPosition.y() + (targetWidget->height() - scaledPixmap.height()) / 2);
+
+    // Create QPropertyAnimation to move the card smoothly
+    QPropertyAnimation* animation = new QPropertyAnimation(cardLabel, "pos");
+    animation->setDuration(750);
+    animation->setStartValue(QPoint(-100, -100)); // Start off-screen
+    animation->setEndValue(targetCenter);         // End at the widget's center
+
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+
+    // Store the cardLabel for cleanup
+    splitCardLabels.append(cardLabel);
+
+    qDebug() << "Split card animation started for: " << cardPath;
+}
+
+
+
+
 
 void mainWindow::animateDealerCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height, bool faceDown) {
 
@@ -637,6 +762,7 @@ void mainWindow::updateDealerHandValDisplay() {
 
 }
 
+
 void mainWindow::clearCardsDisplayed(){
     // Clear UI card displays for User
     for(auto label : cardLabels){
@@ -645,6 +771,14 @@ void mainWindow::clearCardsDisplayed(){
         }
     }
     cardLabels.clear();  // Clear the User list to reset for a new game
+
+    for (auto label : splitCardLabels) {
+        if (label) {
+            label->deleteLater();
+        }
+    }
+    splitCardLabels.clear();
+
 
     // Clear UI card displays for Dealer
     for(auto label : dealerCardLabels){
@@ -657,6 +791,9 @@ void mainWindow::clearCardsDisplayed(){
     // Clear user and dealer hands
     user->clearUserHand();  // Clear the user's hand
     dealer->removeCards();   // Clear the dealer's hand
+    user->splitHand.clear(); // Clear the 2nd user's hand
+
+
 
 }
 
@@ -669,17 +806,67 @@ void mainWindow::onEndGame() {
     deck.createDeck();
     deck.shuffle();
 
+
     // Update balance and bet displays
     updateBalanceDisplay();  // Update balance display label
     updateBetDisplay(0);     // Reset bet display to 0
     user->betVal = 0;
-
+    user->splitBetVal = 0;
     // Reset the displayed card indices to 0 for the next game
     lastDisplayedUserCardIndex = 0;
     lastDisplayedDealerCardIndex = 0;
 
+    //Reseting these for next game
+    isPlayingSplitHand = false;
+    hasSplit = false;
+
+    showErrorMessage("Game over. Ready for a new game.");
+    clearCardsDisplayed();
     qDebug() << "End game: All displays reset, hands cleared, and deck reshuffled.";
 }
+
+
+
+void mainWindow::showFloatingMessage(const QString &message) {
+    // Create a QLabel dynamically
+    QLabel *floatingMessage = new QLabel(this);
+    floatingMessage->setText(message);
+    floatingMessage->setStyleSheet("background-color: rgba(50, 50, 50, 200);"
+                                   "color: white;"
+                                   "font: bold 25px;"
+                                   "padding: 15px;"
+                                   "border-radius: 10px;"
+                                   "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);");
+    floatingMessage->setAlignment(Qt::AlignCenter);
+
+    // Adjust the size dynamically based on the text
+    QFont font("Arial", 25, QFont::Bold);
+    floatingMessage->setFont(font);
+    QFontMetrics metrics(font);
+    QSize textSize = metrics.size(Qt::TextSingleLine, message);
+    int labelWidth = textSize.width() + 30;  // Add padding to width
+    int labelHeight = textSize.height() + 30; // Add padding to height
+
+    // Set the initial position and size dynamically
+    floatingMessage->setGeometry(width() / 2 - labelWidth / 2, height(), labelWidth, labelHeight);
+    floatingMessage->setAttribute(Qt::WA_TranslucentBackground, true); // Enable translucency
+    floatingMessage->show();
+
+    // Create the animation for the floating message
+    QPropertyAnimation *animation = new QPropertyAnimation(floatingMessage, "geometry");
+    animation->setDuration(2000); // Duration in milliseconds
+    animation->setStartValue(floatingMessage->geometry());
+    animation->setEndValue(QRect(width() / 2 - labelWidth / 2, height() / 2, labelWidth, labelHeight)); // Float to the center
+
+    // Delete the message after animation finishes
+    connect(animation, &QPropertyAnimation::finished, floatingMessage, &QLabel::deleteLater);
+
+    // Start the animation
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+}
+
+
+
 
 
 void mainWindow::on_horizontalSlider_valueChanged(int value)
