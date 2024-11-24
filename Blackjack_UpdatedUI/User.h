@@ -27,9 +27,6 @@ public:
     vector<Cards> splitHand;
     int splitBetVal;
     int aceCount = 0;
-    int splitHandVal = 0;
-
-
 
 User();
 
@@ -75,19 +72,7 @@ void clearBet();
 
 void clearBetForStand();
 
-
-//Split Bet caluclating
-void paySplitBet();
-void clearSplitBet();
-void returnSplitBet();
-void returnBet();  // Declare the method
-
-
-void hitSplit(Deck& deck);
-
-int getSplitHandTotal();
-int calculateHandTotal(vector<Cards>& hand);
-
+void displayUserHandVal();
 
 signals:
 
@@ -96,7 +81,8 @@ void actionError(const QString &message);
 void betPlaced(int bet);
 
 void balanceUpdated(int newBalance);
-void betUpdated(int newBet);
+
+void updateUserHandVal(int val);
 };
 
 #endif //_USER_H

@@ -69,6 +69,8 @@ public:
 
     int getUserHandVal(User&);
 
+    void setDealerHandVal(int val);
+
     //void setUserHandVal();
     void compareCards(vector<Cards>& deck, User&);
 
@@ -88,12 +90,17 @@ public:
 
     int getDealerHandVal() const;
 
+    int getDealerHandSize();
+
+    void displayDealerHandVal();
 
 
 signals:
     void endGame();
 
     void actionError(const QString &message);
+
+    void updateDealerHandVal(int val);
 
 };
 

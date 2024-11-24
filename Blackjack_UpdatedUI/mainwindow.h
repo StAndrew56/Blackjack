@@ -7,7 +7,9 @@
 #include "Deck.h"
 #include <QList>
 #include <QLabel>
-
+#include <QtMultimedia>
+#include <QFileDialog>
+#include <QStyle>
 
 
 QT_BEGIN_NAMESPACE
@@ -32,18 +34,16 @@ private:
     Deck deck;       // Deck object
     QList<QLabel*> cardLabels;
     QList<QLabel*> dealerCardLabels;
-    QList<QLabel*> splitCardLabels;
     void setBackgroundImage();
     void setButtons();
     void setGraphic();
     QTimer *standTimer;
     int lastDisplayedUserCardIndex = 0;
     int lastDisplayedDealerCardIndex = 0;
-    int lastDisplayedSplitCardIndex = 0;
-    bool isSplitHandDisplayed = false;
-    bool isPlayingSplitHand = false;
-    bool hasSplit = false;
-
+    QMediaPlayer *M_Player;
+    QMediaPlayer *M_Player2;
+    QAudioOutput *volumeControl;
+    QAudioOutput *controlSFX;
 
 
 
@@ -68,14 +68,9 @@ private slots:
     void dealerStandStep();
     void onEndGame();
     void clearCardsDisplayed();
-    void onSplitButton();
-    void displaySplitHand();
-    void animateSplitCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height);
-    void animateCardMovement(QLabel* cardLabel, QWidget* targetWidget, int width, int height);
-    void updateDealerHandCountLabel();
-    void updateSplitCountLabel();
-    void updateHandCountLabel();
-    void showFloatingMessage(const QString &message);
-
+    void on_horizontalSlider_valueChanged(int value);
+    void on_muteButton_clicked(bool checked);
+    void updateUserHandValDisplay();
+    void updateDealerHandValDisplay();
 };
 #endif // MAINWINDOW_H
