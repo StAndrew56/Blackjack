@@ -1,5 +1,5 @@
-C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.h \
-  C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/moc_predefs.h \
+C:/Users/joseg/OneDrive/Documents/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/joseg/OneDrive/Documents/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.h \
+  C:/Users/joseg/OneDrive/Documents/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Blackjack_autogen/moc_predefs.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QCryptographicHash \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QDeadlineTimer \
@@ -863,8 +863,8 @@ C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/buil
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
-  C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.h \
-  C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.h \
-  C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.h \
-  C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.h \
-  C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.h
+  C:/Users/joseg/OneDrive/Documents/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.h \
+  C:/Users/joseg/OneDrive/Documents/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.h \
+  C:/Users/joseg/OneDrive/Documents/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.h \
+  C:/Users/joseg/OneDrive/Documents/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.h \
+  C:/Users/joseg/OneDrive/Documents/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.h

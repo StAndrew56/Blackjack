@@ -111,14 +111,14 @@ void mainWindow::on_muteButton_clicked(bool checked) {
 //--------------------------------------BET AMOUNTS--------------------------------------
 void mainWindow::onOneDollarBet() {
     if(user->balance == 0){
-        showErrorMessage("Out of money!");
+        showFloatingMessage("Out of money!");
         return;
     }
     if(user->userHand.size() == 0){
     user->increaseBet(1); // Call the placeBet method from User class
     }
     else{
-        showErrorMessage("You can't change your bet aftering start!");
+        showFloatingMessage("You can't change your bet aftering start!");
     }
     qDebug() << "Current Balance: $" << user->balance;
     qDebug() << "Current Bet: $" << user->betVal;
@@ -126,14 +126,14 @@ void mainWindow::onOneDollarBet() {
 }
 void mainWindow::onFiveDollarBet() {
     if(user->balance == 0){
-        showErrorMessage("Out of money!");
+        showFloatingMessage("Out of money!");
         return;
     }
     if(user->userHand.size() == 0){
         user->increaseBet(5); // Call the placeBet method from User class
     }
     else{
-        showErrorMessage("You can't change your bet aftering start!");
+        showFloatingMessage("You can't change your bet aftering start!");
     }
     qDebug() << "Current Balance: $" << user->balance;
     qDebug() << "Current Bet: $" << user->betVal;
@@ -141,14 +141,14 @@ void mainWindow::onFiveDollarBet() {
 
 void mainWindow::onTenDollarBet() {
     if(user->balance == 0){
-        showErrorMessage("Out of money!");
+        showFloatingMessage("Out of money!");
         return;
     }
     if(user->userHand.size() == 0){
         user->increaseBet(10); // Call the placeBet method from User class
     }
     else{
-        showErrorMessage("You can't change your bet aftering start!");
+        showFloatingMessage("You can't change your bet aftering start!");
     }
 
     qDebug() << "Current Balance: $" << user->balance;
@@ -157,14 +157,14 @@ void mainWindow::onTenDollarBet() {
 
 void mainWindow::onTwentyDollarBet() {
     if(user->balance == 0){
-        showErrorMessage("Out of money!");
+        showFloatingMessage("Out of money!");
         return;
     }
     if(user->userHand.size() == 0){
         user->increaseBet(20); // Call the placeBet method from User class
     }
     else{
-        showErrorMessage("You can't change your bet aftering start!");
+        showFloatingMessage("You can't change your bet aftering start!");
     }
 
     qDebug() << "Current Balance: $" << user->balance;
@@ -173,14 +173,14 @@ void mainWindow::onTwentyDollarBet() {
 
 void mainWindow::onHundredDollarBet() {
     if(user->balance == 0){
-        showErrorMessage("Out of money!");
+        showFloatingMessage("Out of money!");
         return;
     }
     if(user->userHand.size() == 0){
         user->increaseBet(100); // Call the placeBet method from User class
     }
     else{
-        showErrorMessage("You can't change your bet aftering start!");
+        showFloatingMessage("You can't change your bet aftering start!");
     }
 
     qDebug() << "Current Balance: $" << user->balance;
@@ -212,6 +212,7 @@ void mainWindow::onSubmitBet() {
     qDebug() << "tbvwayyyyyyyvabvaw";
     displayDealerHand();
     displayPlayerHand();
+    updateUserHandValDisplay();
 
     // Sound during card deal
     M_Player2->setSource(QUrl("qrc:/sounds/shuffleSound"));
@@ -262,7 +263,7 @@ void mainWindow::onSubmitBet() {
     qDebug() << "New round started, cards dealt, and UI updated.";
     }
     else{
-        showErrorMessage("Finish the current hand first!");
+        showFloatingMessage("Finish the current hand first!");
     }
 }
 
@@ -300,6 +301,8 @@ void mainWindow::onHitButtonClicked() {
 
         // Hit for the main hand
         user->hit(deck);
+        updateUserHandValDisplay();
+
 
         // Animate and display the card
         int newCardIndex = user->userHand.size() - 1;
@@ -335,6 +338,7 @@ void mainWindow::onHitButtonClicked() {
 
         // Hit for the split hand
         user->hitSplit(deck);
+        updateSplitHandValDisplay();
 
         // Animate and display the card
         int newCardIndex = user->splitHand.size() - 1;
@@ -353,11 +357,10 @@ void mainWindow::onHitButtonClicked() {
     }
 }
 
-
 void mainWindow::onDoubleDownButton(){
     // Checks if user has 2 cards and enough money
     if(user->betVal == 0){
-        showErrorMessage("Double down is available only on the initial deal with enough balance.");
+        showFloatingMessage("Double down is available only on the initial deal with enough balance.");
         return;
     }
     if (user->userHand.size() == 2 && user->balance >= user->betVal)
@@ -368,8 +371,9 @@ void mainWindow::onDoubleDownButton(){
 
         // Deal only one card to user
         user->hit(deck);
-
         displayPlayerHand();
+        updateUserHandValDisplay();
+
         //user->displayUserHandVal();
 
         //sound during player DD
@@ -398,7 +402,7 @@ void mainWindow::onDoubleDownButton(){
     }
     else
     {
-        showErrorMessage("Double down is available only on the initial deal with enough balance.");
+        showFloatingMessage("Double down is available only on the initial deal with enough balance.");
     }
 }
 
@@ -423,7 +427,7 @@ void mainWindow::onStandButton() {
             standTimer->start(750);  // 750 ms delay between each dealer hit animation
         }
     } else {
-        showErrorMessage("Please place a bet before standing.");
+        showFloatingMessage("Please place a bet before standing.");
     }
 }
 
@@ -487,7 +491,7 @@ void mainWindow::onSplitButton() {
         splitCardLabel->deleteLater();
         cardLabels.pop_back(); // Removed card from split cardlabel
 
-
+        updateUserHandValDisplay();
 
         // Update UI hand
         displayPlayerHand();
@@ -504,10 +508,10 @@ void mainWindow::onSplitButton() {
         QString cardPath = user->splitHand[0].getCardImagePath(); // Get the image path for the split card
         animateSplitCardToWidget(ui->splitWidget1, cardPath, 100, 150); // Move the split card to the split UI
         qDebug() << "Split completed. Message delayed to ensure UI updates first.";
-
+        updateSplitHandValDisplay();
 
     } else {
-        showErrorMessage("You cannot split these cards.");
+        showFloatingMessage("You cannot split these cards.");
     }
 
 }
@@ -748,17 +752,17 @@ void mainWindow::updateBetDisplay(int bet) {
     ui->label_691->setText(QString("Current Bet: $%1").arg(bet));
 }
 void mainWindow::updateBalanceDisplay() {
-    // Update balance label to show current balance
     ui->label->setText(QString("Current Balance: $%1").arg(user->balance));
 }
 void mainWindow::updateUserHandValDisplay() {
-    // Update balance label to show current balance
-    ui->label_54->setText(QString("Your hand value: %1").arg(user->handVal));
+    ui->label_54->setText(QString("Main Hand Value: %1").arg(user->handVal));
 }
 void mainWindow::updateDealerHandValDisplay() {
+    ui->label_56->setText(QString("Dealer Hand Value: %1").arg(dealer->getDealerHandVal()));
+}
 
-        // Update balance label to show current balance
-        ui->label_56->setText(QString("Dealer hand value: %1").arg(dealer->getDealerHandVal()));
+void mainWindow::updateSplitHandValDisplay(){
+    ui->label_55->setText(QString("Split Hand Value: %1").arg(user->getSplitHandTotal()));
 
 }
 
@@ -794,7 +798,9 @@ void mainWindow::clearCardsDisplayed(){
     user->splitHand.clear(); // Clear the 2nd user's hand
 
 
-
+    ui->label_54->setText(""); // Clear Main Hand Value
+    ui->label_55->setText(""); // Clear Split Hand Value
+    ui->label_56->setText(""); // Clear Dealer Hand Value
 }
 
 
@@ -823,12 +829,14 @@ void mainWindow::onEndGame() {
     showErrorMessage("Game over. Ready for a new game.");
     clearCardsDisplayed();
     qDebug() << "End game: All displays reset, hands cleared, and deck reshuffled.";
+
+
+
 }
 
 
 
 void mainWindow::showFloatingMessage(const QString &message) {
-    // Create a QLabel dynamically
     QLabel *floatingMessage = new QLabel(this);
     floatingMessage->setText(message);
     floatingMessage->setStyleSheet("background-color: rgba(50, 50, 50, 200);"
@@ -839,7 +847,6 @@ void mainWindow::showFloatingMessage(const QString &message) {
                                    "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);");
     floatingMessage->setAlignment(Qt::AlignCenter);
 
-    // Adjust the size dynamically based on the text
     QFont font("Arial", 25, QFont::Bold);
     floatingMessage->setFont(font);
     QFontMetrics metrics(font);
@@ -847,7 +854,6 @@ void mainWindow::showFloatingMessage(const QString &message) {
     int labelWidth = textSize.width() + 30;  // Add padding to width
     int labelHeight = textSize.height() + 30; // Add padding to height
 
-    // Set the initial position and size dynamically
     floatingMessage->setGeometry(width() / 2 - labelWidth / 2, height(), labelWidth, labelHeight);
     floatingMessage->setAttribute(Qt::WA_TranslucentBackground, true); // Enable translucency
     floatingMessage->show();
@@ -858,7 +864,7 @@ void mainWindow::showFloatingMessage(const QString &message) {
     animation->setStartValue(floatingMessage->geometry());
     animation->setEndValue(QRect(width() / 2 - labelWidth / 2, height() / 2, labelWidth, labelHeight)); // Float to the center
 
-    // Delete the message after animation finishes
+    // Delete the message after animation
     connect(animation, &QPropertyAnimation::finished, floatingMessage, &QLabel::deleteLater);
 
     // Start the animation

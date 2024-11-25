@@ -278,53 +278,73 @@ void Dealer::bust(User& user){
     //User already does this in other User member functions
 }
 
-//Card comparison - Which is closer to 21?
 void Dealer::compareCards(vector<Cards>& deck, User& user) {
     int userHandValue = getUserHandVal(user);  // Get the user's main hand value
     int splitHandValue = user.getSplitHandTotal();  // Get the user's split hand value
     bool hasSplit = !user.splitHand.empty();  // Check if there is a split hand
 
-    qDebug() << "Comparing cards: Main hand value:" << userHandValue
-             << ", Split hand value:" << splitHandValue
-             << ", Dealer hand value:" << dealerHandVal;
+    // To deal with main hand quadrupling pay
+    int initialBetVal = user.betVal - user.splitBetVal;
+
+    int mainHandPayout = 0;
+    int splitHandPayout = 0;
 
     // --- Main hand comparison ---
-    if (userHandValue <= 21) {
-        if (userHandValue > dealerHandVal || dealerHandVal > 21) {
-            user.balance += user.betVal * 2;  // Return the bet and add winnings
-            qDebug() << "User wins with main hand. Balance updated.";
-        } else if (userHandValue == dealerHandVal) {
-            user.balance += user.betVal;  // Return the bet only
-            qDebug() << "It's a tie with main hand. Bet returned.";
-        } else {
-            qDebug() << "Dealer wins against main hand. Bet lost.";
+    if (userHandValue <= 21)
+    {
+        //User's main hand beats Dealer
+        if (userHandValue > dealerHandVal || dealerHandVal > 21)
+        {
+            mainHandPayout = initialBetVal * 2;
+            user.balance += mainHandPayout;
         }
-    } else {
-        qDebug() << "Main hand busted. Bet lost.";
+        //User's main hand and dealer tie
+        else if (userHandValue == dealerHandVal)
+        {
+            mainHandPayout = initialBetVal;
+            user.balance += mainHandPayout;
+        }
+        else
+        {
+            //Dealer wins
+        }
     }
+
+
+    // To deal with main hand quadrupling pay
+    user.betVal -= initialBetVal;
 
     // --- Split hand comparison ---
     if (hasSplit) {
-        if (splitHandValue <= 21) {
-            if (splitHandValue > dealerHandVal || dealerHandVal > 21) {
-                user.balance += user.splitBetVal * 2;  // Return the bet and add winnings
-                qDebug() << "User wins with split hand. Balance updated.";
-            } else if (splitHandValue == dealerHandVal) {
-                user.balance += user.splitBetVal;  // Return the bet only
-                qDebug() << "It's a tie with split hand. Split bet returned.";
-            } else {
-                qDebug() << "Dealer wins against split hand. Split bet lost.";
+
+        if (splitHandValue <= 21)
+        {
+            //User's split hand beats dealer
+            if (splitHandValue > dealerHandVal || dealerHandVal > 21)
+            {
+                splitHandPayout = user.splitBetVal * 2;
+                user.balance += splitHandPayout;
             }
-        } else {
-            qDebug() << "Split hand busted. Split bet lost.";
+            //User's split hand and dealer tie
+            else if (splitHandValue == dealerHandVal)
+            {
+                splitHandPayout = user.splitBetVal;
+                user.balance += splitHandPayout;
+            }
+            else
+            {
+                //Dealer wins
+            }
+
         }
+
+
+        // Reset split bet
+        user.splitBetVal = 0;
     }
 
-    // Clear bets after processing
+    // Reset bet value
     user.betVal = 0;
-    user.splitBetVal = 0;
-
-    qDebug() << "Game results processed. Final balance:" << user.balance;
 }
 
 

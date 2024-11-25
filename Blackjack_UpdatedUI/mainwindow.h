@@ -77,6 +77,7 @@ private slots:
     void on_muteButton_clicked(bool checked);
     void updateUserHandValDisplay();
     void updateDealerHandValDisplay();
+    void updateSplitHandValDisplay();
     void onSplitButton();
     void displaySplitHand();
     void animateSplitCardToWidget(QWidget* targetWidget, const QString &cardPath, int width, int height);

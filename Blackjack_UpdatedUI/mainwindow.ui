@@ -22377,6 +22377,7 @@ color: rgb(255, 255, 255);
         </property>
         <property name="styleSheet">
          <string notr="true">border-image: none;
+font: 700 20pt &quot;Segoe UI&quot;;
 color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">

@@ -3638,7 +3638,7 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout_1304;
     QLabel *label_55;
-    QStackedWidget *widget12;
+    QStackedWidget *splitWidget1;
     QWidget *page_1297;
     QHBoxLayout *horizontalLayout_1305;
     QLabel *label_1297;
@@ -3801,7 +3801,7 @@ public:
     QWidget *page_1350;
     QHBoxLayout *horizontalLayout_1358;
     QLabel *label_1350;
-    QStackedWidget *widget13;
+    QStackedWidget *splitWidget2;
     QWidget *page_1351;
     QHBoxLayout *horizontalLayout_1359;
     QLabel *label_1351;
@@ -3964,7 +3964,7 @@ public:
     QWidget *page_1404;
     QHBoxLayout *horizontalLayout_1412;
     QLabel *label_1404;
-    QStackedWidget *widget14;
+    QStackedWidget *splitWidget3;
     QWidget *page_1405;
     QHBoxLayout *horizontalLayout_1413;
     QLabel *label_1405;
@@ -4127,7 +4127,7 @@ public:
     QWidget *page_1458;
     QHBoxLayout *horizontalLayout_1466;
     QLabel *label_1458;
-    QStackedWidget *widget15;
+    QStackedWidget *splitWidget4;
     QWidget *page_1459;
     QHBoxLayout *horizontalLayout_1467;
     QLabel *label_1459;
@@ -4290,7 +4290,7 @@ public:
     QWidget *page_1512;
     QHBoxLayout *horizontalLayout_1520;
     QLabel *label_1512;
-    QStackedWidget *widget16;
+    QStackedWidget *splitWidget5;
     QWidget *page_1513;
     QHBoxLayout *horizontalLayout_1521;
     QLabel *label_1513;
@@ -4453,7 +4453,7 @@ public:
     QWidget *page_1566;
     QHBoxLayout *horizontalLayout_1574;
     QLabel *label_1566;
-    QStackedWidget *widget17;
+    QStackedWidget *splitWidget6;
     QWidget *page_1567;
     QHBoxLayout *horizontalLayout_1575;
     QLabel *label_1567;
@@ -4616,7 +4616,7 @@ public:
     QWidget *page_1620;
     QHBoxLayout *horizontalLayout_1628;
     QLabel *label_1620;
-    QStackedWidget *widget18;
+    QStackedWidget *splitWidget7;
     QWidget *page_1621;
     QHBoxLayout *horizontalLayout_1629;
     QLabel *label_1621;
@@ -4779,7 +4779,7 @@ public:
     QWidget *page_1674;
     QHBoxLayout *horizontalLayout_1682;
     QLabel *label_1674;
-    QStackedWidget *widget19;
+    QStackedWidget *splitWidget8;
     QWidget *page_1675;
     QHBoxLayout *horizontalLayout_1683;
     QLabel *label_1675;
@@ -4942,7 +4942,7 @@ public:
     QWidget *page_1728;
     QHBoxLayout *horizontalLayout_1736;
     QLabel *label_1728;
-    QStackedWidget *widget20;
+    QStackedWidget *splitWidget9;
     QWidget *page_1729;
     QHBoxLayout *horizontalLayout_1737;
     QLabel *label_1729;
@@ -5105,7 +5105,7 @@ public:
     QWidget *page_1782;
     QHBoxLayout *horizontalLayout_1790;
     QLabel *label_1782;
-    QStackedWidget *widget21;
+    QStackedWidget *splitWidget10;
     QWidget *page_1783;
     QHBoxLayout *horizontalLayout_1791;
     QLabel *label_1783;
@@ -5268,7 +5268,7 @@ public:
     QWidget *page_1836;
     QHBoxLayout *horizontalLayout_1844;
     QLabel *label_1836;
-    QStackedWidget *widget22;
+    QStackedWidget *splitWidget11;
     QWidget *page_1837;
     QHBoxLayout *horizontalLayout_1845;
     QLabel *label_1837;
@@ -20512,17 +20512,18 @@ public:
         label_55->setSizePolicy(sizePolicy);
         label_55->setMinimumSize(QSize(150, 50));
         label_55->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+"font: 700 20pt \"Segoe UI\";\n"
 "color: rgb(255, 255, 255);"));
 
         horizontalLayout_1304->addWidget(label_55);
 
-        widget12 = new QStackedWidget(centralwidget);
-        widget12->setObjectName("widget12");
-        sizePolicy.setHeightForWidth(widget12->sizePolicy().hasHeightForWidth());
-        widget12->setSizePolicy(sizePolicy);
-        widget12->setMinimumSize(QSize(100, 150));
-        widget12->setMaximumSize(QSize(100, 150));
-        widget12->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget1 = new QStackedWidget(centralwidget);
+        splitWidget1->setObjectName("splitWidget1");
+        sizePolicy.setHeightForWidth(splitWidget1->sizePolicy().hasHeightForWidth());
+        splitWidget1->setSizePolicy(sizePolicy);
+        splitWidget1->setMinimumSize(QSize(100, 150));
+        splitWidget1->setMaximumSize(QSize(100, 150));
+        splitWidget1->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1297 = new QWidget();
         page_1297->setObjectName("page_1297");
@@ -20533,7 +20534,7 @@ public:
 
         horizontalLayout_1305->addWidget(label_1297);
 
-        widget12->addWidget(page_1297);
+        splitWidget1->addWidget(page_1297);
         page_1298 = new QWidget();
         page_1298->setObjectName("page_1298");
         horizontalLayout_1306 = new QHBoxLayout(page_1298);
@@ -20545,7 +20546,7 @@ public:
 
         horizontalLayout_1306->addWidget(label_1298);
 
-        widget12->addWidget(page_1298);
+        splitWidget1->addWidget(page_1298);
         page_1299 = new QWidget();
         page_1299->setObjectName("page_1299");
         sizePolicy.setHeightForWidth(page_1299->sizePolicy().hasHeightForWidth());
@@ -20567,7 +20568,7 @@ public:
 
         horizontalLayout_1307->addWidget(label_1299);
 
-        widget12->addWidget(page_1299);
+        splitWidget1->addWidget(page_1299);
         page_1300 = new QWidget();
         page_1300->setObjectName("page_1300");
         sizePolicy.setHeightForWidth(page_1300->sizePolicy().hasHeightForWidth());
@@ -20585,7 +20586,7 @@ public:
 
         horizontalLayout_1308->addWidget(label_1300);
 
-        widget12->addWidget(page_1300);
+        splitWidget1->addWidget(page_1300);
         page_1301 = new QWidget();
         page_1301->setObjectName("page_1301");
         sizePolicy.setHeightForWidth(page_1301->sizePolicy().hasHeightForWidth());
@@ -20601,7 +20602,7 @@ public:
 
         horizontalLayout_1309->addWidget(label_1301);
 
-        widget12->addWidget(page_1301);
+        splitWidget1->addWidget(page_1301);
         page_1302 = new QWidget();
         page_1302->setObjectName("page_1302");
         horizontalLayout_1310 = new QHBoxLayout(page_1302);
@@ -20613,7 +20614,7 @@ public:
 
         horizontalLayout_1310->addWidget(label_1302);
 
-        widget12->addWidget(page_1302);
+        splitWidget1->addWidget(page_1302);
         page_1303 = new QWidget();
         page_1303->setObjectName("page_1303");
         horizontalLayout_1311 = new QHBoxLayout(page_1303);
@@ -20625,7 +20626,7 @@ public:
 
         horizontalLayout_1311->addWidget(label_1303);
 
-        widget12->addWidget(page_1303);
+        splitWidget1->addWidget(page_1303);
         page_1304 = new QWidget();
         page_1304->setObjectName("page_1304");
         horizontalLayout_1312 = new QHBoxLayout(page_1304);
@@ -20637,7 +20638,7 @@ public:
 
         horizontalLayout_1312->addWidget(label_1304);
 
-        widget12->addWidget(page_1304);
+        splitWidget1->addWidget(page_1304);
         page_1305 = new QWidget();
         page_1305->setObjectName("page_1305");
         horizontalLayout_1313 = new QHBoxLayout(page_1305);
@@ -20649,7 +20650,7 @@ public:
 
         horizontalLayout_1313->addWidget(label_1305);
 
-        widget12->addWidget(page_1305);
+        splitWidget1->addWidget(page_1305);
         page_1306 = new QWidget();
         page_1306->setObjectName("page_1306");
         horizontalLayout_1314 = new QHBoxLayout(page_1306);
@@ -20661,7 +20662,7 @@ public:
 
         horizontalLayout_1314->addWidget(label_1306);
 
-        widget12->addWidget(page_1306);
+        splitWidget1->addWidget(page_1306);
         page_1307 = new QWidget();
         page_1307->setObjectName("page_1307");
         horizontalLayout_1315 = new QHBoxLayout(page_1307);
@@ -20673,7 +20674,7 @@ public:
 
         horizontalLayout_1315->addWidget(label_1307);
 
-        widget12->addWidget(page_1307);
+        splitWidget1->addWidget(page_1307);
         page_1308 = new QWidget();
         page_1308->setObjectName("page_1308");
         horizontalLayout_1316 = new QHBoxLayout(page_1308);
@@ -20685,7 +20686,7 @@ public:
 
         horizontalLayout_1316->addWidget(label_1308);
 
-        widget12->addWidget(page_1308);
+        splitWidget1->addWidget(page_1308);
         page_1309 = new QWidget();
         page_1309->setObjectName("page_1309");
         horizontalLayout_1317 = new QHBoxLayout(page_1309);
@@ -20697,7 +20698,7 @@ public:
 
         horizontalLayout_1317->addWidget(label_1309);
 
-        widget12->addWidget(page_1309);
+        splitWidget1->addWidget(page_1309);
         page_1310 = new QWidget();
         page_1310->setObjectName("page_1310");
         horizontalLayout_1318 = new QHBoxLayout(page_1310);
@@ -20709,7 +20710,7 @@ public:
 
         horizontalLayout_1318->addWidget(label_1310);
 
-        widget12->addWidget(page_1310);
+        splitWidget1->addWidget(page_1310);
         page_1311 = new QWidget();
         page_1311->setObjectName("page_1311");
         horizontalLayout_1319 = new QHBoxLayout(page_1311);
@@ -20721,7 +20722,7 @@ public:
 
         horizontalLayout_1319->addWidget(label_1311);
 
-        widget12->addWidget(page_1311);
+        splitWidget1->addWidget(page_1311);
         page_1312 = new QWidget();
         page_1312->setObjectName("page_1312");
         horizontalLayout_1320 = new QHBoxLayout(page_1312);
@@ -20733,7 +20734,7 @@ public:
 
         horizontalLayout_1320->addWidget(label_1312);
 
-        widget12->addWidget(page_1312);
+        splitWidget1->addWidget(page_1312);
         page_1313 = new QWidget();
         page_1313->setObjectName("page_1313");
         horizontalLayout_1321 = new QHBoxLayout(page_1313);
@@ -20745,7 +20746,7 @@ public:
 
         horizontalLayout_1321->addWidget(label_1313);
 
-        widget12->addWidget(page_1313);
+        splitWidget1->addWidget(page_1313);
         page_1314 = new QWidget();
         page_1314->setObjectName("page_1314");
         horizontalLayout_1322 = new QHBoxLayout(page_1314);
@@ -20757,7 +20758,7 @@ public:
 
         horizontalLayout_1322->addWidget(label_1314);
 
-        widget12->addWidget(page_1314);
+        splitWidget1->addWidget(page_1314);
         page_1315 = new QWidget();
         page_1315->setObjectName("page_1315");
         horizontalLayout_1323 = new QHBoxLayout(page_1315);
@@ -20769,7 +20770,7 @@ public:
 
         horizontalLayout_1323->addWidget(label_1315);
 
-        widget12->addWidget(page_1315);
+        splitWidget1->addWidget(page_1315);
         page_1316 = new QWidget();
         page_1316->setObjectName("page_1316");
         horizontalLayout_1324 = new QHBoxLayout(page_1316);
@@ -20781,7 +20782,7 @@ public:
 
         horizontalLayout_1324->addWidget(label_1316);
 
-        widget12->addWidget(page_1316);
+        splitWidget1->addWidget(page_1316);
         page_1317 = new QWidget();
         page_1317->setObjectName("page_1317");
         horizontalLayout_1325 = new QHBoxLayout(page_1317);
@@ -20793,7 +20794,7 @@ public:
 
         horizontalLayout_1325->addWidget(label_1317);
 
-        widget12->addWidget(page_1317);
+        splitWidget1->addWidget(page_1317);
         page_1318 = new QWidget();
         page_1318->setObjectName("page_1318");
         horizontalLayout_1326 = new QHBoxLayout(page_1318);
@@ -20805,7 +20806,7 @@ public:
 
         horizontalLayout_1326->addWidget(label_1318);
 
-        widget12->addWidget(page_1318);
+        splitWidget1->addWidget(page_1318);
         page_1319 = new QWidget();
         page_1319->setObjectName("page_1319");
         horizontalLayout_1327 = new QHBoxLayout(page_1319);
@@ -20817,7 +20818,7 @@ public:
 
         horizontalLayout_1327->addWidget(label_1319);
 
-        widget12->addWidget(page_1319);
+        splitWidget1->addWidget(page_1319);
         page_1320 = new QWidget();
         page_1320->setObjectName("page_1320");
         horizontalLayout_1328 = new QHBoxLayout(page_1320);
@@ -20829,7 +20830,7 @@ public:
 
         horizontalLayout_1328->addWidget(label_1320);
 
-        widget12->addWidget(page_1320);
+        splitWidget1->addWidget(page_1320);
         page_1321 = new QWidget();
         page_1321->setObjectName("page_1321");
         horizontalLayout_1329 = new QHBoxLayout(page_1321);
@@ -20841,7 +20842,7 @@ public:
 
         horizontalLayout_1329->addWidget(label_1321);
 
-        widget12->addWidget(page_1321);
+        splitWidget1->addWidget(page_1321);
         page_1322 = new QWidget();
         page_1322->setObjectName("page_1322");
         horizontalLayout_1330 = new QHBoxLayout(page_1322);
@@ -20853,7 +20854,7 @@ public:
 
         horizontalLayout_1330->addWidget(label_1322);
 
-        widget12->addWidget(page_1322);
+        splitWidget1->addWidget(page_1322);
         page_1323 = new QWidget();
         page_1323->setObjectName("page_1323");
         horizontalLayout_1331 = new QHBoxLayout(page_1323);
@@ -20865,7 +20866,7 @@ public:
 
         horizontalLayout_1331->addWidget(label_1323);
 
-        widget12->addWidget(page_1323);
+        splitWidget1->addWidget(page_1323);
         page_1324 = new QWidget();
         page_1324->setObjectName("page_1324");
         horizontalLayout_1332 = new QHBoxLayout(page_1324);
@@ -20877,7 +20878,7 @@ public:
 
         horizontalLayout_1332->addWidget(label_1324);
 
-        widget12->addWidget(page_1324);
+        splitWidget1->addWidget(page_1324);
         page_1325 = new QWidget();
         page_1325->setObjectName("page_1325");
         horizontalLayout_1333 = new QHBoxLayout(page_1325);
@@ -20889,7 +20890,7 @@ public:
 
         horizontalLayout_1333->addWidget(label_1325);
 
-        widget12->addWidget(page_1325);
+        splitWidget1->addWidget(page_1325);
         page_1326 = new QWidget();
         page_1326->setObjectName("page_1326");
         horizontalLayout_1334 = new QHBoxLayout(page_1326);
@@ -20901,7 +20902,7 @@ public:
 
         horizontalLayout_1334->addWidget(label_1326);
 
-        widget12->addWidget(page_1326);
+        splitWidget1->addWidget(page_1326);
         page_1327 = new QWidget();
         page_1327->setObjectName("page_1327");
         horizontalLayout_1335 = new QHBoxLayout(page_1327);
@@ -20913,7 +20914,7 @@ public:
 
         horizontalLayout_1335->addWidget(label_1327);
 
-        widget12->addWidget(page_1327);
+        splitWidget1->addWidget(page_1327);
         page_1328 = new QWidget();
         page_1328->setObjectName("page_1328");
         horizontalLayout_1336 = new QHBoxLayout(page_1328);
@@ -20925,7 +20926,7 @@ public:
 
         horizontalLayout_1336->addWidget(label_1328);
 
-        widget12->addWidget(page_1328);
+        splitWidget1->addWidget(page_1328);
         page_1329 = new QWidget();
         page_1329->setObjectName("page_1329");
         horizontalLayout_1337 = new QHBoxLayout(page_1329);
@@ -20937,7 +20938,7 @@ public:
 
         horizontalLayout_1337->addWidget(label_1329);
 
-        widget12->addWidget(page_1329);
+        splitWidget1->addWidget(page_1329);
         page_1330 = new QWidget();
         page_1330->setObjectName("page_1330");
         horizontalLayout_1338 = new QHBoxLayout(page_1330);
@@ -20949,7 +20950,7 @@ public:
 
         horizontalLayout_1338->addWidget(label_1330);
 
-        widget12->addWidget(page_1330);
+        splitWidget1->addWidget(page_1330);
         page_1331 = new QWidget();
         page_1331->setObjectName("page_1331");
         horizontalLayout_1339 = new QHBoxLayout(page_1331);
@@ -20961,7 +20962,7 @@ public:
 
         horizontalLayout_1339->addWidget(label_1331);
 
-        widget12->addWidget(page_1331);
+        splitWidget1->addWidget(page_1331);
         page_1332 = new QWidget();
         page_1332->setObjectName("page_1332");
         horizontalLayout_1340 = new QHBoxLayout(page_1332);
@@ -20973,7 +20974,7 @@ public:
 
         horizontalLayout_1340->addWidget(label_1332);
 
-        widget12->addWidget(page_1332);
+        splitWidget1->addWidget(page_1332);
         page_1333 = new QWidget();
         page_1333->setObjectName("page_1333");
         horizontalLayout_1341 = new QHBoxLayout(page_1333);
@@ -20985,7 +20986,7 @@ public:
 
         horizontalLayout_1341->addWidget(label_1333);
 
-        widget12->addWidget(page_1333);
+        splitWidget1->addWidget(page_1333);
         page_1334 = new QWidget();
         page_1334->setObjectName("page_1334");
         horizontalLayout_1342 = new QHBoxLayout(page_1334);
@@ -20997,7 +20998,7 @@ public:
 
         horizontalLayout_1342->addWidget(label_1334);
 
-        widget12->addWidget(page_1334);
+        splitWidget1->addWidget(page_1334);
         page_1335 = new QWidget();
         page_1335->setObjectName("page_1335");
         horizontalLayout_1343 = new QHBoxLayout(page_1335);
@@ -21009,7 +21010,7 @@ public:
 
         horizontalLayout_1343->addWidget(label_1335);
 
-        widget12->addWidget(page_1335);
+        splitWidget1->addWidget(page_1335);
         page_1336 = new QWidget();
         page_1336->setObjectName("page_1336");
         horizontalLayout_1344 = new QHBoxLayout(page_1336);
@@ -21021,7 +21022,7 @@ public:
 
         horizontalLayout_1344->addWidget(label_1336);
 
-        widget12->addWidget(page_1336);
+        splitWidget1->addWidget(page_1336);
         page_1337 = new QWidget();
         page_1337->setObjectName("page_1337");
         horizontalLayout_1345 = new QHBoxLayout(page_1337);
@@ -21033,7 +21034,7 @@ public:
 
         horizontalLayout_1345->addWidget(label_1337);
 
-        widget12->addWidget(page_1337);
+        splitWidget1->addWidget(page_1337);
         page_1338 = new QWidget();
         page_1338->setObjectName("page_1338");
         horizontalLayout_1346 = new QHBoxLayout(page_1338);
@@ -21045,7 +21046,7 @@ public:
 
         horizontalLayout_1346->addWidget(label_1338);
 
-        widget12->addWidget(page_1338);
+        splitWidget1->addWidget(page_1338);
         page_1339 = new QWidget();
         page_1339->setObjectName("page_1339");
         horizontalLayout_1347 = new QHBoxLayout(page_1339);
@@ -21057,7 +21058,7 @@ public:
 
         horizontalLayout_1347->addWidget(label_1339);
 
-        widget12->addWidget(page_1339);
+        splitWidget1->addWidget(page_1339);
         page_1340 = new QWidget();
         page_1340->setObjectName("page_1340");
         horizontalLayout_1348 = new QHBoxLayout(page_1340);
@@ -21069,7 +21070,7 @@ public:
 
         horizontalLayout_1348->addWidget(label_1340);
 
-        widget12->addWidget(page_1340);
+        splitWidget1->addWidget(page_1340);
         page_1341 = new QWidget();
         page_1341->setObjectName("page_1341");
         horizontalLayout_1349 = new QHBoxLayout(page_1341);
@@ -21081,7 +21082,7 @@ public:
 
         horizontalLayout_1349->addWidget(label_1341);
 
-        widget12->addWidget(page_1341);
+        splitWidget1->addWidget(page_1341);
         page_1342 = new QWidget();
         page_1342->setObjectName("page_1342");
         horizontalLayout_1350 = new QHBoxLayout(page_1342);
@@ -21093,7 +21094,7 @@ public:
 
         horizontalLayout_1350->addWidget(label_1342);
 
-        widget12->addWidget(page_1342);
+        splitWidget1->addWidget(page_1342);
         page_1343 = new QWidget();
         page_1343->setObjectName("page_1343");
         horizontalLayout_1351 = new QHBoxLayout(page_1343);
@@ -21105,7 +21106,7 @@ public:
 
         horizontalLayout_1351->addWidget(label_1343);
 
-        widget12->addWidget(page_1343);
+        splitWidget1->addWidget(page_1343);
         page_1344 = new QWidget();
         page_1344->setObjectName("page_1344");
         horizontalLayout_1352 = new QHBoxLayout(page_1344);
@@ -21117,7 +21118,7 @@ public:
 
         horizontalLayout_1352->addWidget(label_1344);
 
-        widget12->addWidget(page_1344);
+        splitWidget1->addWidget(page_1344);
         page_1345 = new QWidget();
         page_1345->setObjectName("page_1345");
         horizontalLayout_1353 = new QHBoxLayout(page_1345);
@@ -21129,7 +21130,7 @@ public:
 
         horizontalLayout_1353->addWidget(label_1345);
 
-        widget12->addWidget(page_1345);
+        splitWidget1->addWidget(page_1345);
         page_1346 = new QWidget();
         page_1346->setObjectName("page_1346");
         horizontalLayout_1354 = new QHBoxLayout(page_1346);
@@ -21141,7 +21142,7 @@ public:
 
         horizontalLayout_1354->addWidget(label_1346);
 
-        widget12->addWidget(page_1346);
+        splitWidget1->addWidget(page_1346);
         page_1347 = new QWidget();
         page_1347->setObjectName("page_1347");
         horizontalLayout_1355 = new QHBoxLayout(page_1347);
@@ -21153,7 +21154,7 @@ public:
 
         horizontalLayout_1355->addWidget(label_1347);
 
-        widget12->addWidget(page_1347);
+        splitWidget1->addWidget(page_1347);
         page_1348 = new QWidget();
         page_1348->setObjectName("page_1348");
         horizontalLayout_1356 = new QHBoxLayout(page_1348);
@@ -21165,7 +21166,7 @@ public:
 
         horizontalLayout_1356->addWidget(label_1348);
 
-        widget12->addWidget(page_1348);
+        splitWidget1->addWidget(page_1348);
         page_1349 = new QWidget();
         page_1349->setObjectName("page_1349");
         horizontalLayout_1357 = new QHBoxLayout(page_1349);
@@ -21177,7 +21178,7 @@ public:
 
         horizontalLayout_1357->addWidget(label_1349);
 
-        widget12->addWidget(page_1349);
+        splitWidget1->addWidget(page_1349);
         page_1350 = new QWidget();
         page_1350->setObjectName("page_1350");
         horizontalLayout_1358 = new QHBoxLayout(page_1350);
@@ -21189,17 +21190,17 @@ public:
 
         horizontalLayout_1358->addWidget(label_1350);
 
-        widget12->addWidget(page_1350);
+        splitWidget1->addWidget(page_1350);
 
-        horizontalLayout_1304->addWidget(widget12);
+        horizontalLayout_1304->addWidget(splitWidget1);
 
-        widget13 = new QStackedWidget(centralwidget);
-        widget13->setObjectName("widget13");
-        sizePolicy.setHeightForWidth(widget13->sizePolicy().hasHeightForWidth());
-        widget13->setSizePolicy(sizePolicy);
-        widget13->setMinimumSize(QSize(100, 150));
-        widget13->setMaximumSize(QSize(100, 150));
-        widget13->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget2 = new QStackedWidget(centralwidget);
+        splitWidget2->setObjectName("splitWidget2");
+        sizePolicy.setHeightForWidth(splitWidget2->sizePolicy().hasHeightForWidth());
+        splitWidget2->setSizePolicy(sizePolicy);
+        splitWidget2->setMinimumSize(QSize(100, 150));
+        splitWidget2->setMaximumSize(QSize(100, 150));
+        splitWidget2->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1351 = new QWidget();
         page_1351->setObjectName("page_1351");
@@ -21210,7 +21211,7 @@ public:
 
         horizontalLayout_1359->addWidget(label_1351);
 
-        widget13->addWidget(page_1351);
+        splitWidget2->addWidget(page_1351);
         page_1352 = new QWidget();
         page_1352->setObjectName("page_1352");
         horizontalLayout_1360 = new QHBoxLayout(page_1352);
@@ -21222,7 +21223,7 @@ public:
 
         horizontalLayout_1360->addWidget(label_1352);
 
-        widget13->addWidget(page_1352);
+        splitWidget2->addWidget(page_1352);
         page_1353 = new QWidget();
         page_1353->setObjectName("page_1353");
         sizePolicy.setHeightForWidth(page_1353->sizePolicy().hasHeightForWidth());
@@ -21244,7 +21245,7 @@ public:
 
         horizontalLayout_1361->addWidget(label_1353);
 
-        widget13->addWidget(page_1353);
+        splitWidget2->addWidget(page_1353);
         page_1354 = new QWidget();
         page_1354->setObjectName("page_1354");
         sizePolicy.setHeightForWidth(page_1354->sizePolicy().hasHeightForWidth());
@@ -21262,7 +21263,7 @@ public:
 
         horizontalLayout_1362->addWidget(label_1354);
 
-        widget13->addWidget(page_1354);
+        splitWidget2->addWidget(page_1354);
         page_1355 = new QWidget();
         page_1355->setObjectName("page_1355");
         sizePolicy.setHeightForWidth(page_1355->sizePolicy().hasHeightForWidth());
@@ -21278,7 +21279,7 @@ public:
 
         horizontalLayout_1363->addWidget(label_1355);
 
-        widget13->addWidget(page_1355);
+        splitWidget2->addWidget(page_1355);
         page_1356 = new QWidget();
         page_1356->setObjectName("page_1356");
         horizontalLayout_1364 = new QHBoxLayout(page_1356);
@@ -21290,7 +21291,7 @@ public:
 
         horizontalLayout_1364->addWidget(label_1356);
 
-        widget13->addWidget(page_1356);
+        splitWidget2->addWidget(page_1356);
         page_1357 = new QWidget();
         page_1357->setObjectName("page_1357");
         horizontalLayout_1365 = new QHBoxLayout(page_1357);
@@ -21302,7 +21303,7 @@ public:
 
         horizontalLayout_1365->addWidget(label_1357);
 
-        widget13->addWidget(page_1357);
+        splitWidget2->addWidget(page_1357);
         page_1358 = new QWidget();
         page_1358->setObjectName("page_1358");
         horizontalLayout_1366 = new QHBoxLayout(page_1358);
@@ -21314,7 +21315,7 @@ public:
 
         horizontalLayout_1366->addWidget(label_1358);
 
-        widget13->addWidget(page_1358);
+        splitWidget2->addWidget(page_1358);
         page_1359 = new QWidget();
         page_1359->setObjectName("page_1359");
         horizontalLayout_1367 = new QHBoxLayout(page_1359);
@@ -21326,7 +21327,7 @@ public:
 
         horizontalLayout_1367->addWidget(label_1359);
 
-        widget13->addWidget(page_1359);
+        splitWidget2->addWidget(page_1359);
         page_1360 = new QWidget();
         page_1360->setObjectName("page_1360");
         horizontalLayout_1368 = new QHBoxLayout(page_1360);
@@ -21338,7 +21339,7 @@ public:
 
         horizontalLayout_1368->addWidget(label_1360);
 
-        widget13->addWidget(page_1360);
+        splitWidget2->addWidget(page_1360);
         page_1361 = new QWidget();
         page_1361->setObjectName("page_1361");
         horizontalLayout_1369 = new QHBoxLayout(page_1361);
@@ -21350,7 +21351,7 @@ public:
 
         horizontalLayout_1369->addWidget(label_1361);
 
-        widget13->addWidget(page_1361);
+        splitWidget2->addWidget(page_1361);
         page_1362 = new QWidget();
         page_1362->setObjectName("page_1362");
         horizontalLayout_1370 = new QHBoxLayout(page_1362);
@@ -21362,7 +21363,7 @@ public:
 
         horizontalLayout_1370->addWidget(label_1362);
 
-        widget13->addWidget(page_1362);
+        splitWidget2->addWidget(page_1362);
         page_1363 = new QWidget();
         page_1363->setObjectName("page_1363");
         horizontalLayout_1371 = new QHBoxLayout(page_1363);
@@ -21374,7 +21375,7 @@ public:
 
         horizontalLayout_1371->addWidget(label_1363);
 
-        widget13->addWidget(page_1363);
+        splitWidget2->addWidget(page_1363);
         page_1364 = new QWidget();
         page_1364->setObjectName("page_1364");
         horizontalLayout_1372 = new QHBoxLayout(page_1364);
@@ -21386,7 +21387,7 @@ public:
 
         horizontalLayout_1372->addWidget(label_1364);
 
-        widget13->addWidget(page_1364);
+        splitWidget2->addWidget(page_1364);
         page_1365 = new QWidget();
         page_1365->setObjectName("page_1365");
         horizontalLayout_1373 = new QHBoxLayout(page_1365);
@@ -21398,7 +21399,7 @@ public:
 
         horizontalLayout_1373->addWidget(label_1365);
 
-        widget13->addWidget(page_1365);
+        splitWidget2->addWidget(page_1365);
         page_1366 = new QWidget();
         page_1366->setObjectName("page_1366");
         horizontalLayout_1374 = new QHBoxLayout(page_1366);
@@ -21410,7 +21411,7 @@ public:
 
         horizontalLayout_1374->addWidget(label_1366);
 
-        widget13->addWidget(page_1366);
+        splitWidget2->addWidget(page_1366);
         page_1367 = new QWidget();
         page_1367->setObjectName("page_1367");
         horizontalLayout_1375 = new QHBoxLayout(page_1367);
@@ -21422,7 +21423,7 @@ public:
 
         horizontalLayout_1375->addWidget(label_1367);
 
-        widget13->addWidget(page_1367);
+        splitWidget2->addWidget(page_1367);
         page_1368 = new QWidget();
         page_1368->setObjectName("page_1368");
         horizontalLayout_1376 = new QHBoxLayout(page_1368);
@@ -21434,7 +21435,7 @@ public:
 
         horizontalLayout_1376->addWidget(label_1368);
 
-        widget13->addWidget(page_1368);
+        splitWidget2->addWidget(page_1368);
         page_1369 = new QWidget();
         page_1369->setObjectName("page_1369");
         horizontalLayout_1377 = new QHBoxLayout(page_1369);
@@ -21446,7 +21447,7 @@ public:
 
         horizontalLayout_1377->addWidget(label_1369);
 
-        widget13->addWidget(page_1369);
+        splitWidget2->addWidget(page_1369);
         page_1370 = new QWidget();
         page_1370->setObjectName("page_1370");
         horizontalLayout_1378 = new QHBoxLayout(page_1370);
@@ -21458,7 +21459,7 @@ public:
 
         horizontalLayout_1378->addWidget(label_1370);
 
-        widget13->addWidget(page_1370);
+        splitWidget2->addWidget(page_1370);
         page_1371 = new QWidget();
         page_1371->setObjectName("page_1371");
         horizontalLayout_1379 = new QHBoxLayout(page_1371);
@@ -21470,7 +21471,7 @@ public:
 
         horizontalLayout_1379->addWidget(label_1371);
 
-        widget13->addWidget(page_1371);
+        splitWidget2->addWidget(page_1371);
         page_1372 = new QWidget();
         page_1372->setObjectName("page_1372");
         horizontalLayout_1380 = new QHBoxLayout(page_1372);
@@ -21482,7 +21483,7 @@ public:
 
         horizontalLayout_1380->addWidget(label_1372);
 
-        widget13->addWidget(page_1372);
+        splitWidget2->addWidget(page_1372);
         page_1373 = new QWidget();
         page_1373->setObjectName("page_1373");
         horizontalLayout_1381 = new QHBoxLayout(page_1373);
@@ -21494,7 +21495,7 @@ public:
 
         horizontalLayout_1381->addWidget(label_1373);
 
-        widget13->addWidget(page_1373);
+        splitWidget2->addWidget(page_1373);
         page_1374 = new QWidget();
         page_1374->setObjectName("page_1374");
         horizontalLayout_1382 = new QHBoxLayout(page_1374);
@@ -21506,7 +21507,7 @@ public:
 
         horizontalLayout_1382->addWidget(label_1374);
 
-        widget13->addWidget(page_1374);
+        splitWidget2->addWidget(page_1374);
         page_1375 = new QWidget();
         page_1375->setObjectName("page_1375");
         horizontalLayout_1383 = new QHBoxLayout(page_1375);
@@ -21518,7 +21519,7 @@ public:
 
         horizontalLayout_1383->addWidget(label_1375);
 
-        widget13->addWidget(page_1375);
+        splitWidget2->addWidget(page_1375);
         page_1376 = new QWidget();
         page_1376->setObjectName("page_1376");
         horizontalLayout_1384 = new QHBoxLayout(page_1376);
@@ -21530,7 +21531,7 @@ public:
 
         horizontalLayout_1384->addWidget(label_1376);
 
-        widget13->addWidget(page_1376);
+        splitWidget2->addWidget(page_1376);
         page_1377 = new QWidget();
         page_1377->setObjectName("page_1377");
         horizontalLayout_1385 = new QHBoxLayout(page_1377);
@@ -21542,7 +21543,7 @@ public:
 
         horizontalLayout_1385->addWidget(label_1377);
 
-        widget13->addWidget(page_1377);
+        splitWidget2->addWidget(page_1377);
         page_1378 = new QWidget();
         page_1378->setObjectName("page_1378");
         horizontalLayout_1386 = new QHBoxLayout(page_1378);
@@ -21554,7 +21555,7 @@ public:
 
         horizontalLayout_1386->addWidget(label_1378);
 
-        widget13->addWidget(page_1378);
+        splitWidget2->addWidget(page_1378);
         page_1379 = new QWidget();
         page_1379->setObjectName("page_1379");
         horizontalLayout_1387 = new QHBoxLayout(page_1379);
@@ -21566,7 +21567,7 @@ public:
 
         horizontalLayout_1387->addWidget(label_1379);
 
-        widget13->addWidget(page_1379);
+        splitWidget2->addWidget(page_1379);
         page_1380 = new QWidget();
         page_1380->setObjectName("page_1380");
         horizontalLayout_1388 = new QHBoxLayout(page_1380);
@@ -21578,7 +21579,7 @@ public:
 
         horizontalLayout_1388->addWidget(label_1380);
 
-        widget13->addWidget(page_1380);
+        splitWidget2->addWidget(page_1380);
         page_1381 = new QWidget();
         page_1381->setObjectName("page_1381");
         horizontalLayout_1389 = new QHBoxLayout(page_1381);
@@ -21590,7 +21591,7 @@ public:
 
         horizontalLayout_1389->addWidget(label_1381);
 
-        widget13->addWidget(page_1381);
+        splitWidget2->addWidget(page_1381);
         page_1382 = new QWidget();
         page_1382->setObjectName("page_1382");
         horizontalLayout_1390 = new QHBoxLayout(page_1382);
@@ -21602,7 +21603,7 @@ public:
 
         horizontalLayout_1390->addWidget(label_1382);
 
-        widget13->addWidget(page_1382);
+        splitWidget2->addWidget(page_1382);
         page_1383 = new QWidget();
         page_1383->setObjectName("page_1383");
         horizontalLayout_1391 = new QHBoxLayout(page_1383);
@@ -21614,7 +21615,7 @@ public:
 
         horizontalLayout_1391->addWidget(label_1383);
 
-        widget13->addWidget(page_1383);
+        splitWidget2->addWidget(page_1383);
         page_1384 = new QWidget();
         page_1384->setObjectName("page_1384");
         horizontalLayout_1392 = new QHBoxLayout(page_1384);
@@ -21626,7 +21627,7 @@ public:
 
         horizontalLayout_1392->addWidget(label_1384);
 
-        widget13->addWidget(page_1384);
+        splitWidget2->addWidget(page_1384);
         page_1385 = new QWidget();
         page_1385->setObjectName("page_1385");
         horizontalLayout_1393 = new QHBoxLayout(page_1385);
@@ -21638,7 +21639,7 @@ public:
 
         horizontalLayout_1393->addWidget(label_1385);
 
-        widget13->addWidget(page_1385);
+        splitWidget2->addWidget(page_1385);
         page_1386 = new QWidget();
         page_1386->setObjectName("page_1386");
         horizontalLayout_1394 = new QHBoxLayout(page_1386);
@@ -21650,7 +21651,7 @@ public:
 
         horizontalLayout_1394->addWidget(label_1386);
 
-        widget13->addWidget(page_1386);
+        splitWidget2->addWidget(page_1386);
         page_1387 = new QWidget();
         page_1387->setObjectName("page_1387");
         horizontalLayout_1395 = new QHBoxLayout(page_1387);
@@ -21662,7 +21663,7 @@ public:
 
         horizontalLayout_1395->addWidget(label_1387);
 
-        widget13->addWidget(page_1387);
+        splitWidget2->addWidget(page_1387);
         page_1388 = new QWidget();
         page_1388->setObjectName("page_1388");
         horizontalLayout_1396 = new QHBoxLayout(page_1388);
@@ -21674,7 +21675,7 @@ public:
 
         horizontalLayout_1396->addWidget(label_1388);
 
-        widget13->addWidget(page_1388);
+        splitWidget2->addWidget(page_1388);
         page_1389 = new QWidget();
         page_1389->setObjectName("page_1389");
         horizontalLayout_1397 = new QHBoxLayout(page_1389);
@@ -21686,7 +21687,7 @@ public:
 
         horizontalLayout_1397->addWidget(label_1389);
 
-        widget13->addWidget(page_1389);
+        splitWidget2->addWidget(page_1389);
         page_1390 = new QWidget();
         page_1390->setObjectName("page_1390");
         horizontalLayout_1398 = new QHBoxLayout(page_1390);
@@ -21698,7 +21699,7 @@ public:
 
         horizontalLayout_1398->addWidget(label_1390);
 
-        widget13->addWidget(page_1390);
+        splitWidget2->addWidget(page_1390);
         page_1391 = new QWidget();
         page_1391->setObjectName("page_1391");
         horizontalLayout_1399 = new QHBoxLayout(page_1391);
@@ -21710,7 +21711,7 @@ public:
 
         horizontalLayout_1399->addWidget(label_1391);
 
-        widget13->addWidget(page_1391);
+        splitWidget2->addWidget(page_1391);
         page_1392 = new QWidget();
         page_1392->setObjectName("page_1392");
         horizontalLayout_1400 = new QHBoxLayout(page_1392);
@@ -21722,7 +21723,7 @@ public:
 
         horizontalLayout_1400->addWidget(label_1392);
 
-        widget13->addWidget(page_1392);
+        splitWidget2->addWidget(page_1392);
         page_1393 = new QWidget();
         page_1393->setObjectName("page_1393");
         horizontalLayout_1401 = new QHBoxLayout(page_1393);
@@ -21734,7 +21735,7 @@ public:
 
         horizontalLayout_1401->addWidget(label_1393);
 
-        widget13->addWidget(page_1393);
+        splitWidget2->addWidget(page_1393);
         page_1394 = new QWidget();
         page_1394->setObjectName("page_1394");
         horizontalLayout_1402 = new QHBoxLayout(page_1394);
@@ -21746,7 +21747,7 @@ public:
 
         horizontalLayout_1402->addWidget(label_1394);
 
-        widget13->addWidget(page_1394);
+        splitWidget2->addWidget(page_1394);
         page_1395 = new QWidget();
         page_1395->setObjectName("page_1395");
         horizontalLayout_1403 = new QHBoxLayout(page_1395);
@@ -21758,7 +21759,7 @@ public:
 
         horizontalLayout_1403->addWidget(label_1395);
 
-        widget13->addWidget(page_1395);
+        splitWidget2->addWidget(page_1395);
         page_1396 = new QWidget();
         page_1396->setObjectName("page_1396");
         horizontalLayout_1404 = new QHBoxLayout(page_1396);
@@ -21770,7 +21771,7 @@ public:
 
         horizontalLayout_1404->addWidget(label_1396);
 
-        widget13->addWidget(page_1396);
+        splitWidget2->addWidget(page_1396);
         page_1397 = new QWidget();
         page_1397->setObjectName("page_1397");
         horizontalLayout_1405 = new QHBoxLayout(page_1397);
@@ -21782,7 +21783,7 @@ public:
 
         horizontalLayout_1405->addWidget(label_1397);
 
-        widget13->addWidget(page_1397);
+        splitWidget2->addWidget(page_1397);
         page_1398 = new QWidget();
         page_1398->setObjectName("page_1398");
         horizontalLayout_1406 = new QHBoxLayout(page_1398);
@@ -21794,7 +21795,7 @@ public:
 
         horizontalLayout_1406->addWidget(label_1398);
 
-        widget13->addWidget(page_1398);
+        splitWidget2->addWidget(page_1398);
         page_1399 = new QWidget();
         page_1399->setObjectName("page_1399");
         horizontalLayout_1407 = new QHBoxLayout(page_1399);
@@ -21806,7 +21807,7 @@ public:
 
         horizontalLayout_1407->addWidget(label_1399);
 
-        widget13->addWidget(page_1399);
+        splitWidget2->addWidget(page_1399);
         page_1400 = new QWidget();
         page_1400->setObjectName("page_1400");
         horizontalLayout_1408 = new QHBoxLayout(page_1400);
@@ -21818,7 +21819,7 @@ public:
 
         horizontalLayout_1408->addWidget(label_1400);
 
-        widget13->addWidget(page_1400);
+        splitWidget2->addWidget(page_1400);
         page_1401 = new QWidget();
         page_1401->setObjectName("page_1401");
         horizontalLayout_1409 = new QHBoxLayout(page_1401);
@@ -21830,7 +21831,7 @@ public:
 
         horizontalLayout_1409->addWidget(label_1401);
 
-        widget13->addWidget(page_1401);
+        splitWidget2->addWidget(page_1401);
         page_1402 = new QWidget();
         page_1402->setObjectName("page_1402");
         horizontalLayout_1410 = new QHBoxLayout(page_1402);
@@ -21842,7 +21843,7 @@ public:
 
         horizontalLayout_1410->addWidget(label_1402);
 
-        widget13->addWidget(page_1402);
+        splitWidget2->addWidget(page_1402);
         page_1403 = new QWidget();
         page_1403->setObjectName("page_1403");
         horizontalLayout_1411 = new QHBoxLayout(page_1403);
@@ -21854,7 +21855,7 @@ public:
 
         horizontalLayout_1411->addWidget(label_1403);
 
-        widget13->addWidget(page_1403);
+        splitWidget2->addWidget(page_1403);
         page_1404 = new QWidget();
         page_1404->setObjectName("page_1404");
         horizontalLayout_1412 = new QHBoxLayout(page_1404);
@@ -21866,17 +21867,17 @@ public:
 
         horizontalLayout_1412->addWidget(label_1404);
 
-        widget13->addWidget(page_1404);
+        splitWidget2->addWidget(page_1404);
 
-        horizontalLayout_1304->addWidget(widget13);
+        horizontalLayout_1304->addWidget(splitWidget2);
 
-        widget14 = new QStackedWidget(centralwidget);
-        widget14->setObjectName("widget14");
-        sizePolicy.setHeightForWidth(widget14->sizePolicy().hasHeightForWidth());
-        widget14->setSizePolicy(sizePolicy);
-        widget14->setMinimumSize(QSize(100, 150));
-        widget14->setMaximumSize(QSize(100, 150));
-        widget14->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget3 = new QStackedWidget(centralwidget);
+        splitWidget3->setObjectName("splitWidget3");
+        sizePolicy.setHeightForWidth(splitWidget3->sizePolicy().hasHeightForWidth());
+        splitWidget3->setSizePolicy(sizePolicy);
+        splitWidget3->setMinimumSize(QSize(100, 150));
+        splitWidget3->setMaximumSize(QSize(100, 150));
+        splitWidget3->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1405 = new QWidget();
         page_1405->setObjectName("page_1405");
@@ -21887,7 +21888,7 @@ public:
 
         horizontalLayout_1413->addWidget(label_1405);
 
-        widget14->addWidget(page_1405);
+        splitWidget3->addWidget(page_1405);
         page_1406 = new QWidget();
         page_1406->setObjectName("page_1406");
         horizontalLayout_1414 = new QHBoxLayout(page_1406);
@@ -21899,7 +21900,7 @@ public:
 
         horizontalLayout_1414->addWidget(label_1406);
 
-        widget14->addWidget(page_1406);
+        splitWidget3->addWidget(page_1406);
         page_1407 = new QWidget();
         page_1407->setObjectName("page_1407");
         sizePolicy.setHeightForWidth(page_1407->sizePolicy().hasHeightForWidth());
@@ -21921,7 +21922,7 @@ public:
 
         horizontalLayout_1415->addWidget(label_1407);
 
-        widget14->addWidget(page_1407);
+        splitWidget3->addWidget(page_1407);
         page_1408 = new QWidget();
         page_1408->setObjectName("page_1408");
         sizePolicy.setHeightForWidth(page_1408->sizePolicy().hasHeightForWidth());
@@ -21939,7 +21940,7 @@ public:
 
         horizontalLayout_1416->addWidget(label_1408);
 
-        widget14->addWidget(page_1408);
+        splitWidget3->addWidget(page_1408);
         page_1409 = new QWidget();
         page_1409->setObjectName("page_1409");
         sizePolicy.setHeightForWidth(page_1409->sizePolicy().hasHeightForWidth());
@@ -21955,7 +21956,7 @@ public:
 
         horizontalLayout_1417->addWidget(label_1409);
 
-        widget14->addWidget(page_1409);
+        splitWidget3->addWidget(page_1409);
         page_1410 = new QWidget();
         page_1410->setObjectName("page_1410");
         horizontalLayout_1418 = new QHBoxLayout(page_1410);
@@ -21967,7 +21968,7 @@ public:
 
         horizontalLayout_1418->addWidget(label_1410);
 
-        widget14->addWidget(page_1410);
+        splitWidget3->addWidget(page_1410);
         page_1411 = new QWidget();
         page_1411->setObjectName("page_1411");
         horizontalLayout_1419 = new QHBoxLayout(page_1411);
@@ -21979,7 +21980,7 @@ public:
 
         horizontalLayout_1419->addWidget(label_1411);
 
-        widget14->addWidget(page_1411);
+        splitWidget3->addWidget(page_1411);
         page_1412 = new QWidget();
         page_1412->setObjectName("page_1412");
         horizontalLayout_1420 = new QHBoxLayout(page_1412);
@@ -21991,7 +21992,7 @@ public:
 
         horizontalLayout_1420->addWidget(label_1412);
 
-        widget14->addWidget(page_1412);
+        splitWidget3->addWidget(page_1412);
         page_1413 = new QWidget();
         page_1413->setObjectName("page_1413");
         horizontalLayout_1421 = new QHBoxLayout(page_1413);
@@ -22003,7 +22004,7 @@ public:
 
         horizontalLayout_1421->addWidget(label_1413);
 
-        widget14->addWidget(page_1413);
+        splitWidget3->addWidget(page_1413);
         page_1414 = new QWidget();
         page_1414->setObjectName("page_1414");
         horizontalLayout_1422 = new QHBoxLayout(page_1414);
@@ -22015,7 +22016,7 @@ public:
 
         horizontalLayout_1422->addWidget(label_1414);
 
-        widget14->addWidget(page_1414);
+        splitWidget3->addWidget(page_1414);
         page_1415 = new QWidget();
         page_1415->setObjectName("page_1415");
         horizontalLayout_1423 = new QHBoxLayout(page_1415);
@@ -22027,7 +22028,7 @@ public:
 
         horizontalLayout_1423->addWidget(label_1415);
 
-        widget14->addWidget(page_1415);
+        splitWidget3->addWidget(page_1415);
         page_1416 = new QWidget();
         page_1416->setObjectName("page_1416");
         horizontalLayout_1424 = new QHBoxLayout(page_1416);
@@ -22039,7 +22040,7 @@ public:
 
         horizontalLayout_1424->addWidget(label_1416);
 
-        widget14->addWidget(page_1416);
+        splitWidget3->addWidget(page_1416);
         page_1417 = new QWidget();
         page_1417->setObjectName("page_1417");
         horizontalLayout_1425 = new QHBoxLayout(page_1417);
@@ -22051,7 +22052,7 @@ public:
 
         horizontalLayout_1425->addWidget(label_1417);
 
-        widget14->addWidget(page_1417);
+        splitWidget3->addWidget(page_1417);
         page_1418 = new QWidget();
         page_1418->setObjectName("page_1418");
         horizontalLayout_1426 = new QHBoxLayout(page_1418);
@@ -22063,7 +22064,7 @@ public:
 
         horizontalLayout_1426->addWidget(label_1418);
 
-        widget14->addWidget(page_1418);
+        splitWidget3->addWidget(page_1418);
         page_1419 = new QWidget();
         page_1419->setObjectName("page_1419");
         horizontalLayout_1427 = new QHBoxLayout(page_1419);
@@ -22075,7 +22076,7 @@ public:
 
         horizontalLayout_1427->addWidget(label_1419);
 
-        widget14->addWidget(page_1419);
+        splitWidget3->addWidget(page_1419);
         page_1420 = new QWidget();
         page_1420->setObjectName("page_1420");
         horizontalLayout_1428 = new QHBoxLayout(page_1420);
@@ -22087,7 +22088,7 @@ public:
 
         horizontalLayout_1428->addWidget(label_1420);
 
-        widget14->addWidget(page_1420);
+        splitWidget3->addWidget(page_1420);
         page_1421 = new QWidget();
         page_1421->setObjectName("page_1421");
         horizontalLayout_1429 = new QHBoxLayout(page_1421);
@@ -22099,7 +22100,7 @@ public:
 
         horizontalLayout_1429->addWidget(label_1421);
 
-        widget14->addWidget(page_1421);
+        splitWidget3->addWidget(page_1421);
         page_1422 = new QWidget();
         page_1422->setObjectName("page_1422");
         horizontalLayout_1430 = new QHBoxLayout(page_1422);
@@ -22111,7 +22112,7 @@ public:
 
         horizontalLayout_1430->addWidget(label_1422);
 
-        widget14->addWidget(page_1422);
+        splitWidget3->addWidget(page_1422);
         page_1423 = new QWidget();
         page_1423->setObjectName("page_1423");
         horizontalLayout_1431 = new QHBoxLayout(page_1423);
@@ -22123,7 +22124,7 @@ public:
 
         horizontalLayout_1431->addWidget(label_1423);
 
-        widget14->addWidget(page_1423);
+        splitWidget3->addWidget(page_1423);
         page_1424 = new QWidget();
         page_1424->setObjectName("page_1424");
         horizontalLayout_1432 = new QHBoxLayout(page_1424);
@@ -22135,7 +22136,7 @@ public:
 
         horizontalLayout_1432->addWidget(label_1424);
 
-        widget14->addWidget(page_1424);
+        splitWidget3->addWidget(page_1424);
         page_1425 = new QWidget();
         page_1425->setObjectName("page_1425");
         horizontalLayout_1433 = new QHBoxLayout(page_1425);
@@ -22147,7 +22148,7 @@ public:
 
         horizontalLayout_1433->addWidget(label_1425);
 
-        widget14->addWidget(page_1425);
+        splitWidget3->addWidget(page_1425);
         page_1426 = new QWidget();
         page_1426->setObjectName("page_1426");
         horizontalLayout_1434 = new QHBoxLayout(page_1426);
@@ -22159,7 +22160,7 @@ public:
 
         horizontalLayout_1434->addWidget(label_1426);
 
-        widget14->addWidget(page_1426);
+        splitWidget3->addWidget(page_1426);
         page_1427 = new QWidget();
         page_1427->setObjectName("page_1427");
         horizontalLayout_1435 = new QHBoxLayout(page_1427);
@@ -22171,7 +22172,7 @@ public:
 
         horizontalLayout_1435->addWidget(label_1427);
 
-        widget14->addWidget(page_1427);
+        splitWidget3->addWidget(page_1427);
         page_1428 = new QWidget();
         page_1428->setObjectName("page_1428");
         horizontalLayout_1436 = new QHBoxLayout(page_1428);
@@ -22183,7 +22184,7 @@ public:
 
         horizontalLayout_1436->addWidget(label_1428);
 
-        widget14->addWidget(page_1428);
+        splitWidget3->addWidget(page_1428);
         page_1429 = new QWidget();
         page_1429->setObjectName("page_1429");
         horizontalLayout_1437 = new QHBoxLayout(page_1429);
@@ -22195,7 +22196,7 @@ public:
 
         horizontalLayout_1437->addWidget(label_1429);
 
-        widget14->addWidget(page_1429);
+        splitWidget3->addWidget(page_1429);
         page_1430 = new QWidget();
         page_1430->setObjectName("page_1430");
         horizontalLayout_1438 = new QHBoxLayout(page_1430);
@@ -22207,7 +22208,7 @@ public:
 
         horizontalLayout_1438->addWidget(label_1430);
 
-        widget14->addWidget(page_1430);
+        splitWidget3->addWidget(page_1430);
         page_1431 = new QWidget();
         page_1431->setObjectName("page_1431");
         horizontalLayout_1439 = new QHBoxLayout(page_1431);
@@ -22219,7 +22220,7 @@ public:
 
         horizontalLayout_1439->addWidget(label_1431);
 
-        widget14->addWidget(page_1431);
+        splitWidget3->addWidget(page_1431);
         page_1432 = new QWidget();
         page_1432->setObjectName("page_1432");
         horizontalLayout_1440 = new QHBoxLayout(page_1432);
@@ -22231,7 +22232,7 @@ public:
 
         horizontalLayout_1440->addWidget(label_1432);
 
-        widget14->addWidget(page_1432);
+        splitWidget3->addWidget(page_1432);
         page_1433 = new QWidget();
         page_1433->setObjectName("page_1433");
         horizontalLayout_1441 = new QHBoxLayout(page_1433);
@@ -22243,7 +22244,7 @@ public:
 
         horizontalLayout_1441->addWidget(label_1433);
 
-        widget14->addWidget(page_1433);
+        splitWidget3->addWidget(page_1433);
         page_1434 = new QWidget();
         page_1434->setObjectName("page_1434");
         horizontalLayout_1442 = new QHBoxLayout(page_1434);
@@ -22255,7 +22256,7 @@ public:
 
         horizontalLayout_1442->addWidget(label_1434);
 
-        widget14->addWidget(page_1434);
+        splitWidget3->addWidget(page_1434);
         page_1435 = new QWidget();
         page_1435->setObjectName("page_1435");
         horizontalLayout_1443 = new QHBoxLayout(page_1435);
@@ -22267,7 +22268,7 @@ public:
 
         horizontalLayout_1443->addWidget(label_1435);
 
-        widget14->addWidget(page_1435);
+        splitWidget3->addWidget(page_1435);
         page_1436 = new QWidget();
         page_1436->setObjectName("page_1436");
         horizontalLayout_1444 = new QHBoxLayout(page_1436);
@@ -22279,7 +22280,7 @@ public:
 
         horizontalLayout_1444->addWidget(label_1436);
 
-        widget14->addWidget(page_1436);
+        splitWidget3->addWidget(page_1436);
         page_1437 = new QWidget();
         page_1437->setObjectName("page_1437");
         horizontalLayout_1445 = new QHBoxLayout(page_1437);
@@ -22291,7 +22292,7 @@ public:
 
         horizontalLayout_1445->addWidget(label_1437);
 
-        widget14->addWidget(page_1437);
+        splitWidget3->addWidget(page_1437);
         page_1438 = new QWidget();
         page_1438->setObjectName("page_1438");
         horizontalLayout_1446 = new QHBoxLayout(page_1438);
@@ -22303,7 +22304,7 @@ public:
 
         horizontalLayout_1446->addWidget(label_1438);
 
-        widget14->addWidget(page_1438);
+        splitWidget3->addWidget(page_1438);
         page_1439 = new QWidget();
         page_1439->setObjectName("page_1439");
         horizontalLayout_1447 = new QHBoxLayout(page_1439);
@@ -22315,7 +22316,7 @@ public:
 
         horizontalLayout_1447->addWidget(label_1439);
 
-        widget14->addWidget(page_1439);
+        splitWidget3->addWidget(page_1439);
         page_1440 = new QWidget();
         page_1440->setObjectName("page_1440");
         horizontalLayout_1448 = new QHBoxLayout(page_1440);
@@ -22327,7 +22328,7 @@ public:
 
         horizontalLayout_1448->addWidget(label_1440);
 
-        widget14->addWidget(page_1440);
+        splitWidget3->addWidget(page_1440);
         page_1441 = new QWidget();
         page_1441->setObjectName("page_1441");
         horizontalLayout_1449 = new QHBoxLayout(page_1441);
@@ -22339,7 +22340,7 @@ public:
 
         horizontalLayout_1449->addWidget(label_1441);
 
-        widget14->addWidget(page_1441);
+        splitWidget3->addWidget(page_1441);
         page_1442 = new QWidget();
         page_1442->setObjectName("page_1442");
         horizontalLayout_1450 = new QHBoxLayout(page_1442);
@@ -22351,7 +22352,7 @@ public:
 
         horizontalLayout_1450->addWidget(label_1442);
 
-        widget14->addWidget(page_1442);
+        splitWidget3->addWidget(page_1442);
         page_1443 = new QWidget();
         page_1443->setObjectName("page_1443");
         horizontalLayout_1451 = new QHBoxLayout(page_1443);
@@ -22363,7 +22364,7 @@ public:
 
         horizontalLayout_1451->addWidget(label_1443);
 
-        widget14->addWidget(page_1443);
+        splitWidget3->addWidget(page_1443);
         page_1444 = new QWidget();
         page_1444->setObjectName("page_1444");
         horizontalLayout_1452 = new QHBoxLayout(page_1444);
@@ -22375,7 +22376,7 @@ public:
 
         horizontalLayout_1452->addWidget(label_1444);
 
-        widget14->addWidget(page_1444);
+        splitWidget3->addWidget(page_1444);
         page_1445 = new QWidget();
         page_1445->setObjectName("page_1445");
         horizontalLayout_1453 = new QHBoxLayout(page_1445);
@@ -22387,7 +22388,7 @@ public:
 
         horizontalLayout_1453->addWidget(label_1445);
 
-        widget14->addWidget(page_1445);
+        splitWidget3->addWidget(page_1445);
         page_1446 = new QWidget();
         page_1446->setObjectName("page_1446");
         horizontalLayout_1454 = new QHBoxLayout(page_1446);
@@ -22399,7 +22400,7 @@ public:
 
         horizontalLayout_1454->addWidget(label_1446);
 
-        widget14->addWidget(page_1446);
+        splitWidget3->addWidget(page_1446);
         page_1447 = new QWidget();
         page_1447->setObjectName("page_1447");
         horizontalLayout_1455 = new QHBoxLayout(page_1447);
@@ -22411,7 +22412,7 @@ public:
 
         horizontalLayout_1455->addWidget(label_1447);
 
-        widget14->addWidget(page_1447);
+        splitWidget3->addWidget(page_1447);
         page_1448 = new QWidget();
         page_1448->setObjectName("page_1448");
         horizontalLayout_1456 = new QHBoxLayout(page_1448);
@@ -22423,7 +22424,7 @@ public:
 
         horizontalLayout_1456->addWidget(label_1448);
 
-        widget14->addWidget(page_1448);
+        splitWidget3->addWidget(page_1448);
         page_1449 = new QWidget();
         page_1449->setObjectName("page_1449");
         horizontalLayout_1457 = new QHBoxLayout(page_1449);
@@ -22435,7 +22436,7 @@ public:
 
         horizontalLayout_1457->addWidget(label_1449);
 
-        widget14->addWidget(page_1449);
+        splitWidget3->addWidget(page_1449);
         page_1450 = new QWidget();
         page_1450->setObjectName("page_1450");
         horizontalLayout_1458 = new QHBoxLayout(page_1450);
@@ -22447,7 +22448,7 @@ public:
 
         horizontalLayout_1458->addWidget(label_1450);
 
-        widget14->addWidget(page_1450);
+        splitWidget3->addWidget(page_1450);
         page_1451 = new QWidget();
         page_1451->setObjectName("page_1451");
         horizontalLayout_1459 = new QHBoxLayout(page_1451);
@@ -22459,7 +22460,7 @@ public:
 
         horizontalLayout_1459->addWidget(label_1451);
 
-        widget14->addWidget(page_1451);
+        splitWidget3->addWidget(page_1451);
         page_1452 = new QWidget();
         page_1452->setObjectName("page_1452");
         horizontalLayout_1460 = new QHBoxLayout(page_1452);
@@ -22471,7 +22472,7 @@ public:
 
         horizontalLayout_1460->addWidget(label_1452);
 
-        widget14->addWidget(page_1452);
+        splitWidget3->addWidget(page_1452);
         page_1453 = new QWidget();
         page_1453->setObjectName("page_1453");
         horizontalLayout_1461 = new QHBoxLayout(page_1453);
@@ -22483,7 +22484,7 @@ public:
 
         horizontalLayout_1461->addWidget(label_1453);
 
-        widget14->addWidget(page_1453);
+        splitWidget3->addWidget(page_1453);
         page_1454 = new QWidget();
         page_1454->setObjectName("page_1454");
         horizontalLayout_1462 = new QHBoxLayout(page_1454);
@@ -22495,7 +22496,7 @@ public:
 
         horizontalLayout_1462->addWidget(label_1454);
 
-        widget14->addWidget(page_1454);
+        splitWidget3->addWidget(page_1454);
         page_1455 = new QWidget();
         page_1455->setObjectName("page_1455");
         horizontalLayout_1463 = new QHBoxLayout(page_1455);
@@ -22507,7 +22508,7 @@ public:
 
         horizontalLayout_1463->addWidget(label_1455);
 
-        widget14->addWidget(page_1455);
+        splitWidget3->addWidget(page_1455);
         page_1456 = new QWidget();
         page_1456->setObjectName("page_1456");
         horizontalLayout_1464 = new QHBoxLayout(page_1456);
@@ -22519,7 +22520,7 @@ public:
 
         horizontalLayout_1464->addWidget(label_1456);
 
-        widget14->addWidget(page_1456);
+        splitWidget3->addWidget(page_1456);
         page_1457 = new QWidget();
         page_1457->setObjectName("page_1457");
         horizontalLayout_1465 = new QHBoxLayout(page_1457);
@@ -22531,7 +22532,7 @@ public:
 
         horizontalLayout_1465->addWidget(label_1457);
 
-        widget14->addWidget(page_1457);
+        splitWidget3->addWidget(page_1457);
         page_1458 = new QWidget();
         page_1458->setObjectName("page_1458");
         horizontalLayout_1466 = new QHBoxLayout(page_1458);
@@ -22543,17 +22544,17 @@ public:
 
         horizontalLayout_1466->addWidget(label_1458);
 
-        widget14->addWidget(page_1458);
+        splitWidget3->addWidget(page_1458);
 
-        horizontalLayout_1304->addWidget(widget14);
+        horizontalLayout_1304->addWidget(splitWidget3);
 
-        widget15 = new QStackedWidget(centralwidget);
-        widget15->setObjectName("widget15");
-        sizePolicy.setHeightForWidth(widget15->sizePolicy().hasHeightForWidth());
-        widget15->setSizePolicy(sizePolicy);
-        widget15->setMinimumSize(QSize(100, 150));
-        widget15->setMaximumSize(QSize(100, 150));
-        widget15->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget4 = new QStackedWidget(centralwidget);
+        splitWidget4->setObjectName("splitWidget4");
+        sizePolicy.setHeightForWidth(splitWidget4->sizePolicy().hasHeightForWidth());
+        splitWidget4->setSizePolicy(sizePolicy);
+        splitWidget4->setMinimumSize(QSize(100, 150));
+        splitWidget4->setMaximumSize(QSize(100, 150));
+        splitWidget4->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1459 = new QWidget();
         page_1459->setObjectName("page_1459");
@@ -22564,7 +22565,7 @@ public:
 
         horizontalLayout_1467->addWidget(label_1459);
 
-        widget15->addWidget(page_1459);
+        splitWidget4->addWidget(page_1459);
         page_1460 = new QWidget();
         page_1460->setObjectName("page_1460");
         horizontalLayout_1468 = new QHBoxLayout(page_1460);
@@ -22576,7 +22577,7 @@ public:
 
         horizontalLayout_1468->addWidget(label_1460);
 
-        widget15->addWidget(page_1460);
+        splitWidget4->addWidget(page_1460);
         page_1461 = new QWidget();
         page_1461->setObjectName("page_1461");
         sizePolicy.setHeightForWidth(page_1461->sizePolicy().hasHeightForWidth());
@@ -22598,7 +22599,7 @@ public:
 
         horizontalLayout_1469->addWidget(label_1461);
 
-        widget15->addWidget(page_1461);
+        splitWidget4->addWidget(page_1461);
         page_1462 = new QWidget();
         page_1462->setObjectName("page_1462");
         sizePolicy.setHeightForWidth(page_1462->sizePolicy().hasHeightForWidth());
@@ -22616,7 +22617,7 @@ public:
 
         horizontalLayout_1470->addWidget(label_1462);
 
-        widget15->addWidget(page_1462);
+        splitWidget4->addWidget(page_1462);
         page_1463 = new QWidget();
         page_1463->setObjectName("page_1463");
         sizePolicy.setHeightForWidth(page_1463->sizePolicy().hasHeightForWidth());
@@ -22632,7 +22633,7 @@ public:
 
         horizontalLayout_1471->addWidget(label_1463);
 
-        widget15->addWidget(page_1463);
+        splitWidget4->addWidget(page_1463);
         page_1464 = new QWidget();
         page_1464->setObjectName("page_1464");
         horizontalLayout_1472 = new QHBoxLayout(page_1464);
@@ -22644,7 +22645,7 @@ public:
 
         horizontalLayout_1472->addWidget(label_1464);
 
-        widget15->addWidget(page_1464);
+        splitWidget4->addWidget(page_1464);
         page_1465 = new QWidget();
         page_1465->setObjectName("page_1465");
         horizontalLayout_1473 = new QHBoxLayout(page_1465);
@@ -22656,7 +22657,7 @@ public:
 
         horizontalLayout_1473->addWidget(label_1465);
 
-        widget15->addWidget(page_1465);
+        splitWidget4->addWidget(page_1465);
         page_1466 = new QWidget();
         page_1466->setObjectName("page_1466");
         horizontalLayout_1474 = new QHBoxLayout(page_1466);
@@ -22668,7 +22669,7 @@ public:
 
         horizontalLayout_1474->addWidget(label_1466);
 
-        widget15->addWidget(page_1466);
+        splitWidget4->addWidget(page_1466);
         page_1467 = new QWidget();
         page_1467->setObjectName("page_1467");
         horizontalLayout_1475 = new QHBoxLayout(page_1467);
@@ -22680,7 +22681,7 @@ public:
 
         horizontalLayout_1475->addWidget(label_1467);
 
-        widget15->addWidget(page_1467);
+        splitWidget4->addWidget(page_1467);
         page_1468 = new QWidget();
         page_1468->setObjectName("page_1468");
         horizontalLayout_1476 = new QHBoxLayout(page_1468);
@@ -22692,7 +22693,7 @@ public:
 
         horizontalLayout_1476->addWidget(label_1468);
 
-        widget15->addWidget(page_1468);
+        splitWidget4->addWidget(page_1468);
         page_1469 = new QWidget();
         page_1469->setObjectName("page_1469");
         horizontalLayout_1477 = new QHBoxLayout(page_1469);
@@ -22704,7 +22705,7 @@ public:
 
         horizontalLayout_1477->addWidget(label_1469);
 
-        widget15->addWidget(page_1469);
+        splitWidget4->addWidget(page_1469);
         page_1470 = new QWidget();
         page_1470->setObjectName("page_1470");
         horizontalLayout_1478 = new QHBoxLayout(page_1470);
@@ -22716,7 +22717,7 @@ public:
 
         horizontalLayout_1478->addWidget(label_1470);
 
-        widget15->addWidget(page_1470);
+        splitWidget4->addWidget(page_1470);
         page_1471 = new QWidget();
         page_1471->setObjectName("page_1471");
         horizontalLayout_1479 = new QHBoxLayout(page_1471);
@@ -22728,7 +22729,7 @@ public:
 
         horizontalLayout_1479->addWidget(label_1471);
 
-        widget15->addWidget(page_1471);
+        splitWidget4->addWidget(page_1471);
         page_1472 = new QWidget();
         page_1472->setObjectName("page_1472");
         horizontalLayout_1480 = new QHBoxLayout(page_1472);
@@ -22740,7 +22741,7 @@ public:
 
         horizontalLayout_1480->addWidget(label_1472);
 
-        widget15->addWidget(page_1472);
+        splitWidget4->addWidget(page_1472);
         page_1473 = new QWidget();
         page_1473->setObjectName("page_1473");
         horizontalLayout_1481 = new QHBoxLayout(page_1473);
@@ -22752,7 +22753,7 @@ public:
 
         horizontalLayout_1481->addWidget(label_1473);
 
-        widget15->addWidget(page_1473);
+        splitWidget4->addWidget(page_1473);
         page_1474 = new QWidget();
         page_1474->setObjectName("page_1474");
         horizontalLayout_1482 = new QHBoxLayout(page_1474);
@@ -22764,7 +22765,7 @@ public:
 
         horizontalLayout_1482->addWidget(label_1474);
 
-        widget15->addWidget(page_1474);
+        splitWidget4->addWidget(page_1474);
         page_1475 = new QWidget();
         page_1475->setObjectName("page_1475");
         horizontalLayout_1483 = new QHBoxLayout(page_1475);
@@ -22776,7 +22777,7 @@ public:
 
         horizontalLayout_1483->addWidget(label_1475);
 
-        widget15->addWidget(page_1475);
+        splitWidget4->addWidget(page_1475);
         page_1476 = new QWidget();
         page_1476->setObjectName("page_1476");
         horizontalLayout_1484 = new QHBoxLayout(page_1476);
@@ -22788,7 +22789,7 @@ public:
 
         horizontalLayout_1484->addWidget(label_1476);
 
-        widget15->addWidget(page_1476);
+        splitWidget4->addWidget(page_1476);
         page_1477 = new QWidget();
         page_1477->setObjectName("page_1477");
         horizontalLayout_1485 = new QHBoxLayout(page_1477);
@@ -22800,7 +22801,7 @@ public:
 
         horizontalLayout_1485->addWidget(label_1477);
 
-        widget15->addWidget(page_1477);
+        splitWidget4->addWidget(page_1477);
         page_1478 = new QWidget();
         page_1478->setObjectName("page_1478");
         horizontalLayout_1486 = new QHBoxLayout(page_1478);
@@ -22812,7 +22813,7 @@ public:
 
         horizontalLayout_1486->addWidget(label_1478);
 
-        widget15->addWidget(page_1478);
+        splitWidget4->addWidget(page_1478);
         page_1479 = new QWidget();
         page_1479->setObjectName("page_1479");
         horizontalLayout_1487 = new QHBoxLayout(page_1479);
@@ -22824,7 +22825,7 @@ public:
 
         horizontalLayout_1487->addWidget(label_1479);
 
-        widget15->addWidget(page_1479);
+        splitWidget4->addWidget(page_1479);
         page_1480 = new QWidget();
         page_1480->setObjectName("page_1480");
         horizontalLayout_1488 = new QHBoxLayout(page_1480);
@@ -22836,7 +22837,7 @@ public:
 
         horizontalLayout_1488->addWidget(label_1480);
 
-        widget15->addWidget(page_1480);
+        splitWidget4->addWidget(page_1480);
         page_1481 = new QWidget();
         page_1481->setObjectName("page_1481");
         horizontalLayout_1489 = new QHBoxLayout(page_1481);
@@ -22848,7 +22849,7 @@ public:
 
         horizontalLayout_1489->addWidget(label_1481);
 
-        widget15->addWidget(page_1481);
+        splitWidget4->addWidget(page_1481);
         page_1482 = new QWidget();
         page_1482->setObjectName("page_1482");
         horizontalLayout_1490 = new QHBoxLayout(page_1482);
@@ -22860,7 +22861,7 @@ public:
 
         horizontalLayout_1490->addWidget(label_1482);
 
-        widget15->addWidget(page_1482);
+        splitWidget4->addWidget(page_1482);
         page_1483 = new QWidget();
         page_1483->setObjectName("page_1483");
         horizontalLayout_1491 = new QHBoxLayout(page_1483);
@@ -22872,7 +22873,7 @@ public:
 
         horizontalLayout_1491->addWidget(label_1483);
 
-        widget15->addWidget(page_1483);
+        splitWidget4->addWidget(page_1483);
         page_1484 = new QWidget();
         page_1484->setObjectName("page_1484");
         horizontalLayout_1492 = new QHBoxLayout(page_1484);
@@ -22884,7 +22885,7 @@ public:
 
         horizontalLayout_1492->addWidget(label_1484);
 
-        widget15->addWidget(page_1484);
+        splitWidget4->addWidget(page_1484);
         page_1485 = new QWidget();
         page_1485->setObjectName("page_1485");
         horizontalLayout_1493 = new QHBoxLayout(page_1485);
@@ -22896,7 +22897,7 @@ public:
 
         horizontalLayout_1493->addWidget(label_1485);
 
-        widget15->addWidget(page_1485);
+        splitWidget4->addWidget(page_1485);
         page_1486 = new QWidget();
         page_1486->setObjectName("page_1486");
         horizontalLayout_1494 = new QHBoxLayout(page_1486);
@@ -22908,7 +22909,7 @@ public:
 
         horizontalLayout_1494->addWidget(label_1486);
 
-        widget15->addWidget(page_1486);
+        splitWidget4->addWidget(page_1486);
         page_1487 = new QWidget();
         page_1487->setObjectName("page_1487");
         horizontalLayout_1495 = new QHBoxLayout(page_1487);
@@ -22920,7 +22921,7 @@ public:
 
         horizontalLayout_1495->addWidget(label_1487);
 
-        widget15->addWidget(page_1487);
+        splitWidget4->addWidget(page_1487);
         page_1488 = new QWidget();
         page_1488->setObjectName("page_1488");
         horizontalLayout_1496 = new QHBoxLayout(page_1488);
@@ -22932,7 +22933,7 @@ public:
 
         horizontalLayout_1496->addWidget(label_1488);
 
-        widget15->addWidget(page_1488);
+        splitWidget4->addWidget(page_1488);
         page_1489 = new QWidget();
         page_1489->setObjectName("page_1489");
         horizontalLayout_1497 = new QHBoxLayout(page_1489);
@@ -22944,7 +22945,7 @@ public:
 
         horizontalLayout_1497->addWidget(label_1489);
 
-        widget15->addWidget(page_1489);
+        splitWidget4->addWidget(page_1489);
         page_1490 = new QWidget();
         page_1490->setObjectName("page_1490");
         horizontalLayout_1498 = new QHBoxLayout(page_1490);
@@ -22956,7 +22957,7 @@ public:
 
         horizontalLayout_1498->addWidget(label_1490);
 
-        widget15->addWidget(page_1490);
+        splitWidget4->addWidget(page_1490);
         page_1491 = new QWidget();
         page_1491->setObjectName("page_1491");
         horizontalLayout_1499 = new QHBoxLayout(page_1491);
@@ -22968,7 +22969,7 @@ public:
 
         horizontalLayout_1499->addWidget(label_1491);
 
-        widget15->addWidget(page_1491);
+        splitWidget4->addWidget(page_1491);
         page_1492 = new QWidget();
         page_1492->setObjectName("page_1492");
         horizontalLayout_1500 = new QHBoxLayout(page_1492);
@@ -22980,7 +22981,7 @@ public:
 
         horizontalLayout_1500->addWidget(label_1492);
 
-        widget15->addWidget(page_1492);
+        splitWidget4->addWidget(page_1492);
         page_1493 = new QWidget();
         page_1493->setObjectName("page_1493");
         horizontalLayout_1501 = new QHBoxLayout(page_1493);
@@ -22992,7 +22993,7 @@ public:
 
         horizontalLayout_1501->addWidget(label_1493);
 
-        widget15->addWidget(page_1493);
+        splitWidget4->addWidget(page_1493);
         page_1494 = new QWidget();
         page_1494->setObjectName("page_1494");
         horizontalLayout_1502 = new QHBoxLayout(page_1494);
@@ -23004,7 +23005,7 @@ public:
 
         horizontalLayout_1502->addWidget(label_1494);
 
-        widget15->addWidget(page_1494);
+        splitWidget4->addWidget(page_1494);
         page_1495 = new QWidget();
         page_1495->setObjectName("page_1495");
         horizontalLayout_1503 = new QHBoxLayout(page_1495);
@@ -23016,7 +23017,7 @@ public:
 
         horizontalLayout_1503->addWidget(label_1495);
 
-        widget15->addWidget(page_1495);
+        splitWidget4->addWidget(page_1495);
         page_1496 = new QWidget();
         page_1496->setObjectName("page_1496");
         horizontalLayout_1504 = new QHBoxLayout(page_1496);
@@ -23028,7 +23029,7 @@ public:
 
         horizontalLayout_1504->addWidget(label_1496);
 
-        widget15->addWidget(page_1496);
+        splitWidget4->addWidget(page_1496);
         page_1497 = new QWidget();
         page_1497->setObjectName("page_1497");
         horizontalLayout_1505 = new QHBoxLayout(page_1497);
@@ -23040,7 +23041,7 @@ public:
 
         horizontalLayout_1505->addWidget(label_1497);
 
-        widget15->addWidget(page_1497);
+        splitWidget4->addWidget(page_1497);
         page_1498 = new QWidget();
         page_1498->setObjectName("page_1498");
         horizontalLayout_1506 = new QHBoxLayout(page_1498);
@@ -23052,7 +23053,7 @@ public:
 
         horizontalLayout_1506->addWidget(label_1498);
 
-        widget15->addWidget(page_1498);
+        splitWidget4->addWidget(page_1498);
         page_1499 = new QWidget();
         page_1499->setObjectName("page_1499");
         horizontalLayout_1507 = new QHBoxLayout(page_1499);
@@ -23064,7 +23065,7 @@ public:
 
         horizontalLayout_1507->addWidget(label_1499);
 
-        widget15->addWidget(page_1499);
+        splitWidget4->addWidget(page_1499);
         page_1500 = new QWidget();
         page_1500->setObjectName("page_1500");
         horizontalLayout_1508 = new QHBoxLayout(page_1500);
@@ -23076,7 +23077,7 @@ public:
 
         horizontalLayout_1508->addWidget(label_1500);
 
-        widget15->addWidget(page_1500);
+        splitWidget4->addWidget(page_1500);
         page_1501 = new QWidget();
         page_1501->setObjectName("page_1501");
         horizontalLayout_1509 = new QHBoxLayout(page_1501);
@@ -23088,7 +23089,7 @@ public:
 
         horizontalLayout_1509->addWidget(label_1501);
 
-        widget15->addWidget(page_1501);
+        splitWidget4->addWidget(page_1501);
         page_1502 = new QWidget();
         page_1502->setObjectName("page_1502");
         horizontalLayout_1510 = new QHBoxLayout(page_1502);
@@ -23100,7 +23101,7 @@ public:
 
         horizontalLayout_1510->addWidget(label_1502);
 
-        widget15->addWidget(page_1502);
+        splitWidget4->addWidget(page_1502);
         page_1503 = new QWidget();
         page_1503->setObjectName("page_1503");
         horizontalLayout_1511 = new QHBoxLayout(page_1503);
@@ -23112,7 +23113,7 @@ public:
 
         horizontalLayout_1511->addWidget(label_1503);
 
-        widget15->addWidget(page_1503);
+        splitWidget4->addWidget(page_1503);
         page_1504 = new QWidget();
         page_1504->setObjectName("page_1504");
         horizontalLayout_1512 = new QHBoxLayout(page_1504);
@@ -23124,7 +23125,7 @@ public:
 
         horizontalLayout_1512->addWidget(label_1504);
 
-        widget15->addWidget(page_1504);
+        splitWidget4->addWidget(page_1504);
         page_1505 = new QWidget();
         page_1505->setObjectName("page_1505");
         horizontalLayout_1513 = new QHBoxLayout(page_1505);
@@ -23136,7 +23137,7 @@ public:
 
         horizontalLayout_1513->addWidget(label_1505);
 
-        widget15->addWidget(page_1505);
+        splitWidget4->addWidget(page_1505);
         page_1506 = new QWidget();
         page_1506->setObjectName("page_1506");
         horizontalLayout_1514 = new QHBoxLayout(page_1506);
@@ -23148,7 +23149,7 @@ public:
 
         horizontalLayout_1514->addWidget(label_1506);
 
-        widget15->addWidget(page_1506);
+        splitWidget4->addWidget(page_1506);
         page_1507 = new QWidget();
         page_1507->setObjectName("page_1507");
         horizontalLayout_1515 = new QHBoxLayout(page_1507);
@@ -23160,7 +23161,7 @@ public:
 
         horizontalLayout_1515->addWidget(label_1507);
 
-        widget15->addWidget(page_1507);
+        splitWidget4->addWidget(page_1507);
         page_1508 = new QWidget();
         page_1508->setObjectName("page_1508");
         horizontalLayout_1516 = new QHBoxLayout(page_1508);
@@ -23172,7 +23173,7 @@ public:
 
         horizontalLayout_1516->addWidget(label_1508);
 
-        widget15->addWidget(page_1508);
+        splitWidget4->addWidget(page_1508);
         page_1509 = new QWidget();
         page_1509->setObjectName("page_1509");
         horizontalLayout_1517 = new QHBoxLayout(page_1509);
@@ -23184,7 +23185,7 @@ public:
 
         horizontalLayout_1517->addWidget(label_1509);
 
-        widget15->addWidget(page_1509);
+        splitWidget4->addWidget(page_1509);
         page_1510 = new QWidget();
         page_1510->setObjectName("page_1510");
         horizontalLayout_1518 = new QHBoxLayout(page_1510);
@@ -23196,7 +23197,7 @@ public:
 
         horizontalLayout_1518->addWidget(label_1510);
 
-        widget15->addWidget(page_1510);
+        splitWidget4->addWidget(page_1510);
         page_1511 = new QWidget();
         page_1511->setObjectName("page_1511");
         horizontalLayout_1519 = new QHBoxLayout(page_1511);
@@ -23208,7 +23209,7 @@ public:
 
         horizontalLayout_1519->addWidget(label_1511);
 
-        widget15->addWidget(page_1511);
+        splitWidget4->addWidget(page_1511);
         page_1512 = new QWidget();
         page_1512->setObjectName("page_1512");
         horizontalLayout_1520 = new QHBoxLayout(page_1512);
@@ -23220,17 +23221,17 @@ public:
 
         horizontalLayout_1520->addWidget(label_1512);
 
-        widget15->addWidget(page_1512);
+        splitWidget4->addWidget(page_1512);
 
-        horizontalLayout_1304->addWidget(widget15);
+        horizontalLayout_1304->addWidget(splitWidget4);
 
-        widget16 = new QStackedWidget(centralwidget);
-        widget16->setObjectName("widget16");
-        sizePolicy.setHeightForWidth(widget16->sizePolicy().hasHeightForWidth());
-        widget16->setSizePolicy(sizePolicy);
-        widget16->setMinimumSize(QSize(100, 150));
-        widget16->setMaximumSize(QSize(100, 150));
-        widget16->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget5 = new QStackedWidget(centralwidget);
+        splitWidget5->setObjectName("splitWidget5");
+        sizePolicy.setHeightForWidth(splitWidget5->sizePolicy().hasHeightForWidth());
+        splitWidget5->setSizePolicy(sizePolicy);
+        splitWidget5->setMinimumSize(QSize(100, 150));
+        splitWidget5->setMaximumSize(QSize(100, 150));
+        splitWidget5->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1513 = new QWidget();
         page_1513->setObjectName("page_1513");
@@ -23241,7 +23242,7 @@ public:
 
         horizontalLayout_1521->addWidget(label_1513);
 
-        widget16->addWidget(page_1513);
+        splitWidget5->addWidget(page_1513);
         page_1514 = new QWidget();
         page_1514->setObjectName("page_1514");
         horizontalLayout_1522 = new QHBoxLayout(page_1514);
@@ -23253,7 +23254,7 @@ public:
 
         horizontalLayout_1522->addWidget(label_1514);
 
-        widget16->addWidget(page_1514);
+        splitWidget5->addWidget(page_1514);
         page_1515 = new QWidget();
         page_1515->setObjectName("page_1515");
         sizePolicy.setHeightForWidth(page_1515->sizePolicy().hasHeightForWidth());
@@ -23275,7 +23276,7 @@ public:
 
         horizontalLayout_1523->addWidget(label_1515);
 
-        widget16->addWidget(page_1515);
+        splitWidget5->addWidget(page_1515);
         page_1516 = new QWidget();
         page_1516->setObjectName("page_1516");
         sizePolicy.setHeightForWidth(page_1516->sizePolicy().hasHeightForWidth());
@@ -23293,7 +23294,7 @@ public:
 
         horizontalLayout_1524->addWidget(label_1516);
 
-        widget16->addWidget(page_1516);
+        splitWidget5->addWidget(page_1516);
         page_1517 = new QWidget();
         page_1517->setObjectName("page_1517");
         sizePolicy.setHeightForWidth(page_1517->sizePolicy().hasHeightForWidth());
@@ -23309,7 +23310,7 @@ public:
 
         horizontalLayout_1525->addWidget(label_1517);
 
-        widget16->addWidget(page_1517);
+        splitWidget5->addWidget(page_1517);
         page_1518 = new QWidget();
         page_1518->setObjectName("page_1518");
         horizontalLayout_1526 = new QHBoxLayout(page_1518);
@@ -23321,7 +23322,7 @@ public:
 
         horizontalLayout_1526->addWidget(label_1518);
 
-        widget16->addWidget(page_1518);
+        splitWidget5->addWidget(page_1518);
         page_1519 = new QWidget();
         page_1519->setObjectName("page_1519");
         horizontalLayout_1527 = new QHBoxLayout(page_1519);
@@ -23333,7 +23334,7 @@ public:
 
         horizontalLayout_1527->addWidget(label_1519);
 
-        widget16->addWidget(page_1519);
+        splitWidget5->addWidget(page_1519);
         page_1520 = new QWidget();
         page_1520->setObjectName("page_1520");
         horizontalLayout_1528 = new QHBoxLayout(page_1520);
@@ -23345,7 +23346,7 @@ public:
 
         horizontalLayout_1528->addWidget(label_1520);
 
-        widget16->addWidget(page_1520);
+        splitWidget5->addWidget(page_1520);
         page_1521 = new QWidget();
         page_1521->setObjectName("page_1521");
         horizontalLayout_1529 = new QHBoxLayout(page_1521);
@@ -23357,7 +23358,7 @@ public:
 
         horizontalLayout_1529->addWidget(label_1521);
 
-        widget16->addWidget(page_1521);
+        splitWidget5->addWidget(page_1521);
         page_1522 = new QWidget();
         page_1522->setObjectName("page_1522");
         horizontalLayout_1530 = new QHBoxLayout(page_1522);
@@ -23369,7 +23370,7 @@ public:
 
         horizontalLayout_1530->addWidget(label_1522);
 
-        widget16->addWidget(page_1522);
+        splitWidget5->addWidget(page_1522);
         page_1523 = new QWidget();
         page_1523->setObjectName("page_1523");
         horizontalLayout_1531 = new QHBoxLayout(page_1523);
@@ -23381,7 +23382,7 @@ public:
 
         horizontalLayout_1531->addWidget(label_1523);
 
-        widget16->addWidget(page_1523);
+        splitWidget5->addWidget(page_1523);
         page_1524 = new QWidget();
         page_1524->setObjectName("page_1524");
         horizontalLayout_1532 = new QHBoxLayout(page_1524);
@@ -23393,7 +23394,7 @@ public:
 
         horizontalLayout_1532->addWidget(label_1524);
 
-        widget16->addWidget(page_1524);
+        splitWidget5->addWidget(page_1524);
         page_1525 = new QWidget();
         page_1525->setObjectName("page_1525");
         horizontalLayout_1533 = new QHBoxLayout(page_1525);
@@ -23405,7 +23406,7 @@ public:
 
         horizontalLayout_1533->addWidget(label_1525);
 
-        widget16->addWidget(page_1525);
+        splitWidget5->addWidget(page_1525);
         page_1526 = new QWidget();
         page_1526->setObjectName("page_1526");
         horizontalLayout_1534 = new QHBoxLayout(page_1526);
@@ -23417,7 +23418,7 @@ public:
 
         horizontalLayout_1534->addWidget(label_1526);
 
-        widget16->addWidget(page_1526);
+        splitWidget5->addWidget(page_1526);
         page_1527 = new QWidget();
         page_1527->setObjectName("page_1527");
         horizontalLayout_1535 = new QHBoxLayout(page_1527);
@@ -23429,7 +23430,7 @@ public:
 
         horizontalLayout_1535->addWidget(label_1527);
 
-        widget16->addWidget(page_1527);
+        splitWidget5->addWidget(page_1527);
         page_1528 = new QWidget();
         page_1528->setObjectName("page_1528");
         horizontalLayout_1536 = new QHBoxLayout(page_1528);
@@ -23441,7 +23442,7 @@ public:
 
         horizontalLayout_1536->addWidget(label_1528);
 
-        widget16->addWidget(page_1528);
+        splitWidget5->addWidget(page_1528);
         page_1529 = new QWidget();
         page_1529->setObjectName("page_1529");
         horizontalLayout_1537 = new QHBoxLayout(page_1529);
@@ -23453,7 +23454,7 @@ public:
 
         horizontalLayout_1537->addWidget(label_1529);
 
-        widget16->addWidget(page_1529);
+        splitWidget5->addWidget(page_1529);
         page_1530 = new QWidget();
         page_1530->setObjectName("page_1530");
         horizontalLayout_1538 = new QHBoxLayout(page_1530);
@@ -23465,7 +23466,7 @@ public:
 
         horizontalLayout_1538->addWidget(label_1530);
 
-        widget16->addWidget(page_1530);
+        splitWidget5->addWidget(page_1530);
         page_1531 = new QWidget();
         page_1531->setObjectName("page_1531");
         horizontalLayout_1539 = new QHBoxLayout(page_1531);
@@ -23477,7 +23478,7 @@ public:
 
         horizontalLayout_1539->addWidget(label_1531);
 
-        widget16->addWidget(page_1531);
+        splitWidget5->addWidget(page_1531);
         page_1532 = new QWidget();
         page_1532->setObjectName("page_1532");
         horizontalLayout_1540 = new QHBoxLayout(page_1532);
@@ -23489,7 +23490,7 @@ public:
 
         horizontalLayout_1540->addWidget(label_1532);
 
-        widget16->addWidget(page_1532);
+        splitWidget5->addWidget(page_1532);
         page_1533 = new QWidget();
         page_1533->setObjectName("page_1533");
         horizontalLayout_1541 = new QHBoxLayout(page_1533);
@@ -23501,7 +23502,7 @@ public:
 
         horizontalLayout_1541->addWidget(label_1533);
 
-        widget16->addWidget(page_1533);
+        splitWidget5->addWidget(page_1533);
         page_1534 = new QWidget();
         page_1534->setObjectName("page_1534");
         horizontalLayout_1542 = new QHBoxLayout(page_1534);
@@ -23513,7 +23514,7 @@ public:
 
         horizontalLayout_1542->addWidget(label_1534);
 
-        widget16->addWidget(page_1534);
+        splitWidget5->addWidget(page_1534);
         page_1535 = new QWidget();
         page_1535->setObjectName("page_1535");
         horizontalLayout_1543 = new QHBoxLayout(page_1535);
@@ -23525,7 +23526,7 @@ public:
 
         horizontalLayout_1543->addWidget(label_1535);
 
-        widget16->addWidget(page_1535);
+        splitWidget5->addWidget(page_1535);
         page_1536 = new QWidget();
         page_1536->setObjectName("page_1536");
         horizontalLayout_1544 = new QHBoxLayout(page_1536);
@@ -23537,7 +23538,7 @@ public:
 
         horizontalLayout_1544->addWidget(label_1536);
 
-        widget16->addWidget(page_1536);
+        splitWidget5->addWidget(page_1536);
         page_1537 = new QWidget();
         page_1537->setObjectName("page_1537");
         horizontalLayout_1545 = new QHBoxLayout(page_1537);
@@ -23549,7 +23550,7 @@ public:
 
         horizontalLayout_1545->addWidget(label_1537);
 
-        widget16->addWidget(page_1537);
+        splitWidget5->addWidget(page_1537);
         page_1538 = new QWidget();
         page_1538->setObjectName("page_1538");
         horizontalLayout_1546 = new QHBoxLayout(page_1538);
@@ -23561,7 +23562,7 @@ public:
 
         horizontalLayout_1546->addWidget(label_1538);
 
-        widget16->addWidget(page_1538);
+        splitWidget5->addWidget(page_1538);
         page_1539 = new QWidget();
         page_1539->setObjectName("page_1539");
         horizontalLayout_1547 = new QHBoxLayout(page_1539);
@@ -23573,7 +23574,7 @@ public:
 
         horizontalLayout_1547->addWidget(label_1539);
 
-        widget16->addWidget(page_1539);
+        splitWidget5->addWidget(page_1539);
         page_1540 = new QWidget();
         page_1540->setObjectName("page_1540");
         horizontalLayout_1548 = new QHBoxLayout(page_1540);
@@ -23585,7 +23586,7 @@ public:
 
         horizontalLayout_1548->addWidget(label_1540);
 
-        widget16->addWidget(page_1540);
+        splitWidget5->addWidget(page_1540);
         page_1541 = new QWidget();
         page_1541->setObjectName("page_1541");
         horizontalLayout_1549 = new QHBoxLayout(page_1541);
@@ -23597,7 +23598,7 @@ public:
 
         horizontalLayout_1549->addWidget(label_1541);
 
-        widget16->addWidget(page_1541);
+        splitWidget5->addWidget(page_1541);
         page_1542 = new QWidget();
         page_1542->setObjectName("page_1542");
         horizontalLayout_1550 = new QHBoxLayout(page_1542);
@@ -23609,7 +23610,7 @@ public:
 
         horizontalLayout_1550->addWidget(label_1542);
 
-        widget16->addWidget(page_1542);
+        splitWidget5->addWidget(page_1542);
         page_1543 = new QWidget();
         page_1543->setObjectName("page_1543");
         horizontalLayout_1551 = new QHBoxLayout(page_1543);
@@ -23621,7 +23622,7 @@ public:
 
         horizontalLayout_1551->addWidget(label_1543);
 
-        widget16->addWidget(page_1543);
+        splitWidget5->addWidget(page_1543);
         page_1544 = new QWidget();
         page_1544->setObjectName("page_1544");
         horizontalLayout_1552 = new QHBoxLayout(page_1544);
@@ -23633,7 +23634,7 @@ public:
 
         horizontalLayout_1552->addWidget(label_1544);
 
-        widget16->addWidget(page_1544);
+        splitWidget5->addWidget(page_1544);
         page_1545 = new QWidget();
         page_1545->setObjectName("page_1545");
         horizontalLayout_1553 = new QHBoxLayout(page_1545);
@@ -23645,7 +23646,7 @@ public:
 
         horizontalLayout_1553->addWidget(label_1545);
 
-        widget16->addWidget(page_1545);
+        splitWidget5->addWidget(page_1545);
         page_1546 = new QWidget();
         page_1546->setObjectName("page_1546");
         horizontalLayout_1554 = new QHBoxLayout(page_1546);
@@ -23657,7 +23658,7 @@ public:
 
         horizontalLayout_1554->addWidget(label_1546);
 
-        widget16->addWidget(page_1546);
+        splitWidget5->addWidget(page_1546);
         page_1547 = new QWidget();
         page_1547->setObjectName("page_1547");
         horizontalLayout_1555 = new QHBoxLayout(page_1547);
@@ -23669,7 +23670,7 @@ public:
 
         horizontalLayout_1555->addWidget(label_1547);
 
-        widget16->addWidget(page_1547);
+        splitWidget5->addWidget(page_1547);
         page_1548 = new QWidget();
         page_1548->setObjectName("page_1548");
         horizontalLayout_1556 = new QHBoxLayout(page_1548);
@@ -23681,7 +23682,7 @@ public:
 
         horizontalLayout_1556->addWidget(label_1548);
 
-        widget16->addWidget(page_1548);
+        splitWidget5->addWidget(page_1548);
         page_1549 = new QWidget();
         page_1549->setObjectName("page_1549");
         horizontalLayout_1557 = new QHBoxLayout(page_1549);
@@ -23693,7 +23694,7 @@ public:
 
         horizontalLayout_1557->addWidget(label_1549);
 
-        widget16->addWidget(page_1549);
+        splitWidget5->addWidget(page_1549);
         page_1550 = new QWidget();
         page_1550->setObjectName("page_1550");
         horizontalLayout_1558 = new QHBoxLayout(page_1550);
@@ -23705,7 +23706,7 @@ public:
 
         horizontalLayout_1558->addWidget(label_1550);
 
-        widget16->addWidget(page_1550);
+        splitWidget5->addWidget(page_1550);
         page_1551 = new QWidget();
         page_1551->setObjectName("page_1551");
         horizontalLayout_1559 = new QHBoxLayout(page_1551);
@@ -23717,7 +23718,7 @@ public:
 
         horizontalLayout_1559->addWidget(label_1551);
 
-        widget16->addWidget(page_1551);
+        splitWidget5->addWidget(page_1551);
         page_1552 = new QWidget();
         page_1552->setObjectName("page_1552");
         horizontalLayout_1560 = new QHBoxLayout(page_1552);
@@ -23729,7 +23730,7 @@ public:
 
         horizontalLayout_1560->addWidget(label_1552);
 
-        widget16->addWidget(page_1552);
+        splitWidget5->addWidget(page_1552);
         page_1553 = new QWidget();
         page_1553->setObjectName("page_1553");
         horizontalLayout_1561 = new QHBoxLayout(page_1553);
@@ -23741,7 +23742,7 @@ public:
 
         horizontalLayout_1561->addWidget(label_1553);
 
-        widget16->addWidget(page_1553);
+        splitWidget5->addWidget(page_1553);
         page_1554 = new QWidget();
         page_1554->setObjectName("page_1554");
         horizontalLayout_1562 = new QHBoxLayout(page_1554);
@@ -23753,7 +23754,7 @@ public:
 
         horizontalLayout_1562->addWidget(label_1554);
 
-        widget16->addWidget(page_1554);
+        splitWidget5->addWidget(page_1554);
         page_1555 = new QWidget();
         page_1555->setObjectName("page_1555");
         horizontalLayout_1563 = new QHBoxLayout(page_1555);
@@ -23765,7 +23766,7 @@ public:
 
         horizontalLayout_1563->addWidget(label_1555);
 
-        widget16->addWidget(page_1555);
+        splitWidget5->addWidget(page_1555);
         page_1556 = new QWidget();
         page_1556->setObjectName("page_1556");
         horizontalLayout_1564 = new QHBoxLayout(page_1556);
@@ -23777,7 +23778,7 @@ public:
 
         horizontalLayout_1564->addWidget(label_1556);
 
-        widget16->addWidget(page_1556);
+        splitWidget5->addWidget(page_1556);
         page_1557 = new QWidget();
         page_1557->setObjectName("page_1557");
         horizontalLayout_1565 = new QHBoxLayout(page_1557);
@@ -23789,7 +23790,7 @@ public:
 
         horizontalLayout_1565->addWidget(label_1557);
 
-        widget16->addWidget(page_1557);
+        splitWidget5->addWidget(page_1557);
         page_1558 = new QWidget();
         page_1558->setObjectName("page_1558");
         horizontalLayout_1566 = new QHBoxLayout(page_1558);
@@ -23801,7 +23802,7 @@ public:
 
         horizontalLayout_1566->addWidget(label_1558);
 
-        widget16->addWidget(page_1558);
+        splitWidget5->addWidget(page_1558);
         page_1559 = new QWidget();
         page_1559->setObjectName("page_1559");
         horizontalLayout_1567 = new QHBoxLayout(page_1559);
@@ -23813,7 +23814,7 @@ public:
 
         horizontalLayout_1567->addWidget(label_1559);
 
-        widget16->addWidget(page_1559);
+        splitWidget5->addWidget(page_1559);
         page_1560 = new QWidget();
         page_1560->setObjectName("page_1560");
         horizontalLayout_1568 = new QHBoxLayout(page_1560);
@@ -23825,7 +23826,7 @@ public:
 
         horizontalLayout_1568->addWidget(label_1560);
 
-        widget16->addWidget(page_1560);
+        splitWidget5->addWidget(page_1560);
         page_1561 = new QWidget();
         page_1561->setObjectName("page_1561");
         horizontalLayout_1569 = new QHBoxLayout(page_1561);
@@ -23837,7 +23838,7 @@ public:
 
         horizontalLayout_1569->addWidget(label_1561);
 
-        widget16->addWidget(page_1561);
+        splitWidget5->addWidget(page_1561);
         page_1562 = new QWidget();
         page_1562->setObjectName("page_1562");
         horizontalLayout_1570 = new QHBoxLayout(page_1562);
@@ -23849,7 +23850,7 @@ public:
 
         horizontalLayout_1570->addWidget(label_1562);
 
-        widget16->addWidget(page_1562);
+        splitWidget5->addWidget(page_1562);
         page_1563 = new QWidget();
         page_1563->setObjectName("page_1563");
         horizontalLayout_1571 = new QHBoxLayout(page_1563);
@@ -23861,7 +23862,7 @@ public:
 
         horizontalLayout_1571->addWidget(label_1563);
 
-        widget16->addWidget(page_1563);
+        splitWidget5->addWidget(page_1563);
         page_1564 = new QWidget();
         page_1564->setObjectName("page_1564");
         horizontalLayout_1572 = new QHBoxLayout(page_1564);
@@ -23873,7 +23874,7 @@ public:
 
         horizontalLayout_1572->addWidget(label_1564);
 
-        widget16->addWidget(page_1564);
+        splitWidget5->addWidget(page_1564);
         page_1565 = new QWidget();
         page_1565->setObjectName("page_1565");
         horizontalLayout_1573 = new QHBoxLayout(page_1565);
@@ -23885,7 +23886,7 @@ public:
 
         horizontalLayout_1573->addWidget(label_1565);
 
-        widget16->addWidget(page_1565);
+        splitWidget5->addWidget(page_1565);
         page_1566 = new QWidget();
         page_1566->setObjectName("page_1566");
         horizontalLayout_1574 = new QHBoxLayout(page_1566);
@@ -23897,17 +23898,17 @@ public:
 
         horizontalLayout_1574->addWidget(label_1566);
 
-        widget16->addWidget(page_1566);
+        splitWidget5->addWidget(page_1566);
 
-        horizontalLayout_1304->addWidget(widget16);
+        horizontalLayout_1304->addWidget(splitWidget5);
 
-        widget17 = new QStackedWidget(centralwidget);
-        widget17->setObjectName("widget17");
-        sizePolicy.setHeightForWidth(widget17->sizePolicy().hasHeightForWidth());
-        widget17->setSizePolicy(sizePolicy);
-        widget17->setMinimumSize(QSize(100, 150));
-        widget17->setMaximumSize(QSize(100, 150));
-        widget17->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget6 = new QStackedWidget(centralwidget);
+        splitWidget6->setObjectName("splitWidget6");
+        sizePolicy.setHeightForWidth(splitWidget6->sizePolicy().hasHeightForWidth());
+        splitWidget6->setSizePolicy(sizePolicy);
+        splitWidget6->setMinimumSize(QSize(100, 150));
+        splitWidget6->setMaximumSize(QSize(100, 150));
+        splitWidget6->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1567 = new QWidget();
         page_1567->setObjectName("page_1567");
@@ -23918,7 +23919,7 @@ public:
 
         horizontalLayout_1575->addWidget(label_1567);
 
-        widget17->addWidget(page_1567);
+        splitWidget6->addWidget(page_1567);
         page_1568 = new QWidget();
         page_1568->setObjectName("page_1568");
         horizontalLayout_1576 = new QHBoxLayout(page_1568);
@@ -23930,7 +23931,7 @@ public:
 
         horizontalLayout_1576->addWidget(label_1568);
 
-        widget17->addWidget(page_1568);
+        splitWidget6->addWidget(page_1568);
         page_1569 = new QWidget();
         page_1569->setObjectName("page_1569");
         sizePolicy.setHeightForWidth(page_1569->sizePolicy().hasHeightForWidth());
@@ -23952,7 +23953,7 @@ public:
 
         horizontalLayout_1577->addWidget(label_1569);
 
-        widget17->addWidget(page_1569);
+        splitWidget6->addWidget(page_1569);
         page_1570 = new QWidget();
         page_1570->setObjectName("page_1570");
         sizePolicy.setHeightForWidth(page_1570->sizePolicy().hasHeightForWidth());
@@ -23970,7 +23971,7 @@ public:
 
         horizontalLayout_1578->addWidget(label_1570);
 
-        widget17->addWidget(page_1570);
+        splitWidget6->addWidget(page_1570);
         page_1571 = new QWidget();
         page_1571->setObjectName("page_1571");
         sizePolicy.setHeightForWidth(page_1571->sizePolicy().hasHeightForWidth());
@@ -23986,7 +23987,7 @@ public:
 
         horizontalLayout_1579->addWidget(label_1571);
 
-        widget17->addWidget(page_1571);
+        splitWidget6->addWidget(page_1571);
         page_1572 = new QWidget();
         page_1572->setObjectName("page_1572");
         horizontalLayout_1580 = new QHBoxLayout(page_1572);
@@ -23998,7 +23999,7 @@ public:
 
         horizontalLayout_1580->addWidget(label_1572);
 
-        widget17->addWidget(page_1572);
+        splitWidget6->addWidget(page_1572);
         page_1573 = new QWidget();
         page_1573->setObjectName("page_1573");
         horizontalLayout_1581 = new QHBoxLayout(page_1573);
@@ -24010,7 +24011,7 @@ public:
 
         horizontalLayout_1581->addWidget(label_1573);
 
-        widget17->addWidget(page_1573);
+        splitWidget6->addWidget(page_1573);
         page_1574 = new QWidget();
         page_1574->setObjectName("page_1574");
         horizontalLayout_1582 = new QHBoxLayout(page_1574);
@@ -24022,7 +24023,7 @@ public:
 
         horizontalLayout_1582->addWidget(label_1574);
 
-        widget17->addWidget(page_1574);
+        splitWidget6->addWidget(page_1574);
         page_1575 = new QWidget();
         page_1575->setObjectName("page_1575");
         horizontalLayout_1583 = new QHBoxLayout(page_1575);
@@ -24034,7 +24035,7 @@ public:
 
         horizontalLayout_1583->addWidget(label_1575);
 
-        widget17->addWidget(page_1575);
+        splitWidget6->addWidget(page_1575);
         page_1576 = new QWidget();
         page_1576->setObjectName("page_1576");
         horizontalLayout_1584 = new QHBoxLayout(page_1576);
@@ -24046,7 +24047,7 @@ public:
 
         horizontalLayout_1584->addWidget(label_1576);
 
-        widget17->addWidget(page_1576);
+        splitWidget6->addWidget(page_1576);
         page_1577 = new QWidget();
         page_1577->setObjectName("page_1577");
         horizontalLayout_1585 = new QHBoxLayout(page_1577);
@@ -24058,7 +24059,7 @@ public:
 
         horizontalLayout_1585->addWidget(label_1577);
 
-        widget17->addWidget(page_1577);
+        splitWidget6->addWidget(page_1577);
         page_1578 = new QWidget();
         page_1578->setObjectName("page_1578");
         horizontalLayout_1586 = new QHBoxLayout(page_1578);
@@ -24070,7 +24071,7 @@ public:
 
         horizontalLayout_1586->addWidget(label_1578);
 
-        widget17->addWidget(page_1578);
+        splitWidget6->addWidget(page_1578);
         page_1579 = new QWidget();
         page_1579->setObjectName("page_1579");
         horizontalLayout_1587 = new QHBoxLayout(page_1579);
@@ -24082,7 +24083,7 @@ public:
 
         horizontalLayout_1587->addWidget(label_1579);
 
-        widget17->addWidget(page_1579);
+        splitWidget6->addWidget(page_1579);
         page_1580 = new QWidget();
         page_1580->setObjectName("page_1580");
         horizontalLayout_1588 = new QHBoxLayout(page_1580);
@@ -24094,7 +24095,7 @@ public:
 
         horizontalLayout_1588->addWidget(label_1580);
 
-        widget17->addWidget(page_1580);
+        splitWidget6->addWidget(page_1580);
         page_1581 = new QWidget();
         page_1581->setObjectName("page_1581");
         horizontalLayout_1589 = new QHBoxLayout(page_1581);
@@ -24106,7 +24107,7 @@ public:
 
         horizontalLayout_1589->addWidget(label_1581);
 
-        widget17->addWidget(page_1581);
+        splitWidget6->addWidget(page_1581);
         page_1582 = new QWidget();
         page_1582->setObjectName("page_1582");
         horizontalLayout_1590 = new QHBoxLayout(page_1582);
@@ -24118,7 +24119,7 @@ public:
 
         horizontalLayout_1590->addWidget(label_1582);
 
-        widget17->addWidget(page_1582);
+        splitWidget6->addWidget(page_1582);
         page_1583 = new QWidget();
         page_1583->setObjectName("page_1583");
         horizontalLayout_1591 = new QHBoxLayout(page_1583);
@@ -24130,7 +24131,7 @@ public:
 
         horizontalLayout_1591->addWidget(label_1583);
 
-        widget17->addWidget(page_1583);
+        splitWidget6->addWidget(page_1583);
         page_1584 = new QWidget();
         page_1584->setObjectName("page_1584");
         horizontalLayout_1592 = new QHBoxLayout(page_1584);
@@ -24142,7 +24143,7 @@ public:
 
         horizontalLayout_1592->addWidget(label_1584);
 
-        widget17->addWidget(page_1584);
+        splitWidget6->addWidget(page_1584);
         page_1585 = new QWidget();
         page_1585->setObjectName("page_1585");
         horizontalLayout_1593 = new QHBoxLayout(page_1585);
@@ -24154,7 +24155,7 @@ public:
 
         horizontalLayout_1593->addWidget(label_1585);
 
-        widget17->addWidget(page_1585);
+        splitWidget6->addWidget(page_1585);
         page_1586 = new QWidget();
         page_1586->setObjectName("page_1586");
         horizontalLayout_1594 = new QHBoxLayout(page_1586);
@@ -24166,7 +24167,7 @@ public:
 
         horizontalLayout_1594->addWidget(label_1586);
 
-        widget17->addWidget(page_1586);
+        splitWidget6->addWidget(page_1586);
         page_1587 = new QWidget();
         page_1587->setObjectName("page_1587");
         horizontalLayout_1595 = new QHBoxLayout(page_1587);
@@ -24178,7 +24179,7 @@ public:
 
         horizontalLayout_1595->addWidget(label_1587);
 
-        widget17->addWidget(page_1587);
+        splitWidget6->addWidget(page_1587);
         page_1588 = new QWidget();
         page_1588->setObjectName("page_1588");
         horizontalLayout_1596 = new QHBoxLayout(page_1588);
@@ -24190,7 +24191,7 @@ public:
 
         horizontalLayout_1596->addWidget(label_1588);
 
-        widget17->addWidget(page_1588);
+        splitWidget6->addWidget(page_1588);
         page_1589 = new QWidget();
         page_1589->setObjectName("page_1589");
         horizontalLayout_1597 = new QHBoxLayout(page_1589);
@@ -24202,7 +24203,7 @@ public:
 
         horizontalLayout_1597->addWidget(label_1589);
 
-        widget17->addWidget(page_1589);
+        splitWidget6->addWidget(page_1589);
         page_1590 = new QWidget();
         page_1590->setObjectName("page_1590");
         horizontalLayout_1598 = new QHBoxLayout(page_1590);
@@ -24214,7 +24215,7 @@ public:
 
         horizontalLayout_1598->addWidget(label_1590);
 
-        widget17->addWidget(page_1590);
+        splitWidget6->addWidget(page_1590);
         page_1591 = new QWidget();
         page_1591->setObjectName("page_1591");
         horizontalLayout_1599 = new QHBoxLayout(page_1591);
@@ -24226,7 +24227,7 @@ public:
 
         horizontalLayout_1599->addWidget(label_1591);
 
-        widget17->addWidget(page_1591);
+        splitWidget6->addWidget(page_1591);
         page_1592 = new QWidget();
         page_1592->setObjectName("page_1592");
         horizontalLayout_1600 = new QHBoxLayout(page_1592);
@@ -24238,7 +24239,7 @@ public:
 
         horizontalLayout_1600->addWidget(label_1592);
 
-        widget17->addWidget(page_1592);
+        splitWidget6->addWidget(page_1592);
         page_1593 = new QWidget();
         page_1593->setObjectName("page_1593");
         horizontalLayout_1601 = new QHBoxLayout(page_1593);
@@ -24250,7 +24251,7 @@ public:
 
         horizontalLayout_1601->addWidget(label_1593);
 
-        widget17->addWidget(page_1593);
+        splitWidget6->addWidget(page_1593);
         page_1594 = new QWidget();
         page_1594->setObjectName("page_1594");
         horizontalLayout_1602 = new QHBoxLayout(page_1594);
@@ -24262,7 +24263,7 @@ public:
 
         horizontalLayout_1602->addWidget(label_1594);
 
-        widget17->addWidget(page_1594);
+        splitWidget6->addWidget(page_1594);
         page_1595 = new QWidget();
         page_1595->setObjectName("page_1595");
         horizontalLayout_1603 = new QHBoxLayout(page_1595);
@@ -24274,7 +24275,7 @@ public:
 
         horizontalLayout_1603->addWidget(label_1595);
 
-        widget17->addWidget(page_1595);
+        splitWidget6->addWidget(page_1595);
         page_1596 = new QWidget();
         page_1596->setObjectName("page_1596");
         horizontalLayout_1604 = new QHBoxLayout(page_1596);
@@ -24286,7 +24287,7 @@ public:
 
         horizontalLayout_1604->addWidget(label_1596);
 
-        widget17->addWidget(page_1596);
+        splitWidget6->addWidget(page_1596);
         page_1597 = new QWidget();
         page_1597->setObjectName("page_1597");
         horizontalLayout_1605 = new QHBoxLayout(page_1597);
@@ -24298,7 +24299,7 @@ public:
 
         horizontalLayout_1605->addWidget(label_1597);
 
-        widget17->addWidget(page_1597);
+        splitWidget6->addWidget(page_1597);
         page_1598 = new QWidget();
         page_1598->setObjectName("page_1598");
         horizontalLayout_1606 = new QHBoxLayout(page_1598);
@@ -24310,7 +24311,7 @@ public:
 
         horizontalLayout_1606->addWidget(label_1598);
 
-        widget17->addWidget(page_1598);
+        splitWidget6->addWidget(page_1598);
         page_1599 = new QWidget();
         page_1599->setObjectName("page_1599");
         horizontalLayout_1607 = new QHBoxLayout(page_1599);
@@ -24322,7 +24323,7 @@ public:
 
         horizontalLayout_1607->addWidget(label_1599);
 
-        widget17->addWidget(page_1599);
+        splitWidget6->addWidget(page_1599);
         page_1600 = new QWidget();
         page_1600->setObjectName("page_1600");
         horizontalLayout_1608 = new QHBoxLayout(page_1600);
@@ -24334,7 +24335,7 @@ public:
 
         horizontalLayout_1608->addWidget(label_1600);
 
-        widget17->addWidget(page_1600);
+        splitWidget6->addWidget(page_1600);
         page_1601 = new QWidget();
         page_1601->setObjectName("page_1601");
         horizontalLayout_1609 = new QHBoxLayout(page_1601);
@@ -24346,7 +24347,7 @@ public:
 
         horizontalLayout_1609->addWidget(label_1601);
 
-        widget17->addWidget(page_1601);
+        splitWidget6->addWidget(page_1601);
         page_1602 = new QWidget();
         page_1602->setObjectName("page_1602");
         horizontalLayout_1610 = new QHBoxLayout(page_1602);
@@ -24358,7 +24359,7 @@ public:
 
         horizontalLayout_1610->addWidget(label_1602);
 
-        widget17->addWidget(page_1602);
+        splitWidget6->addWidget(page_1602);
         page_1603 = new QWidget();
         page_1603->setObjectName("page_1603");
         horizontalLayout_1611 = new QHBoxLayout(page_1603);
@@ -24370,7 +24371,7 @@ public:
 
         horizontalLayout_1611->addWidget(label_1603);
 
-        widget17->addWidget(page_1603);
+        splitWidget6->addWidget(page_1603);
         page_1604 = new QWidget();
         page_1604->setObjectName("page_1604");
         horizontalLayout_1612 = new QHBoxLayout(page_1604);
@@ -24382,7 +24383,7 @@ public:
 
         horizontalLayout_1612->addWidget(label_1604);
 
-        widget17->addWidget(page_1604);
+        splitWidget6->addWidget(page_1604);
         page_1605 = new QWidget();
         page_1605->setObjectName("page_1605");
         horizontalLayout_1613 = new QHBoxLayout(page_1605);
@@ -24394,7 +24395,7 @@ public:
 
         horizontalLayout_1613->addWidget(label_1605);
 
-        widget17->addWidget(page_1605);
+        splitWidget6->addWidget(page_1605);
         page_1606 = new QWidget();
         page_1606->setObjectName("page_1606");
         horizontalLayout_1614 = new QHBoxLayout(page_1606);
@@ -24406,7 +24407,7 @@ public:
 
         horizontalLayout_1614->addWidget(label_1606);
 
-        widget17->addWidget(page_1606);
+        splitWidget6->addWidget(page_1606);
         page_1607 = new QWidget();
         page_1607->setObjectName("page_1607");
         horizontalLayout_1615 = new QHBoxLayout(page_1607);
@@ -24418,7 +24419,7 @@ public:
 
         horizontalLayout_1615->addWidget(label_1607);
 
-        widget17->addWidget(page_1607);
+        splitWidget6->addWidget(page_1607);
         page_1608 = new QWidget();
         page_1608->setObjectName("page_1608");
         horizontalLayout_1616 = new QHBoxLayout(page_1608);
@@ -24430,7 +24431,7 @@ public:
 
         horizontalLayout_1616->addWidget(label_1608);
 
-        widget17->addWidget(page_1608);
+        splitWidget6->addWidget(page_1608);
         page_1609 = new QWidget();
         page_1609->setObjectName("page_1609");
         horizontalLayout_1617 = new QHBoxLayout(page_1609);
@@ -24442,7 +24443,7 @@ public:
 
         horizontalLayout_1617->addWidget(label_1609);
 
-        widget17->addWidget(page_1609);
+        splitWidget6->addWidget(page_1609);
         page_1610 = new QWidget();
         page_1610->setObjectName("page_1610");
         horizontalLayout_1618 = new QHBoxLayout(page_1610);
@@ -24454,7 +24455,7 @@ public:
 
         horizontalLayout_1618->addWidget(label_1610);
 
-        widget17->addWidget(page_1610);
+        splitWidget6->addWidget(page_1610);
         page_1611 = new QWidget();
         page_1611->setObjectName("page_1611");
         horizontalLayout_1619 = new QHBoxLayout(page_1611);
@@ -24466,7 +24467,7 @@ public:
 
         horizontalLayout_1619->addWidget(label_1611);
 
-        widget17->addWidget(page_1611);
+        splitWidget6->addWidget(page_1611);
         page_1612 = new QWidget();
         page_1612->setObjectName("page_1612");
         horizontalLayout_1620 = new QHBoxLayout(page_1612);
@@ -24478,7 +24479,7 @@ public:
 
         horizontalLayout_1620->addWidget(label_1612);
 
-        widget17->addWidget(page_1612);
+        splitWidget6->addWidget(page_1612);
         page_1613 = new QWidget();
         page_1613->setObjectName("page_1613");
         horizontalLayout_1621 = new QHBoxLayout(page_1613);
@@ -24490,7 +24491,7 @@ public:
 
         horizontalLayout_1621->addWidget(label_1613);
 
-        widget17->addWidget(page_1613);
+        splitWidget6->addWidget(page_1613);
         page_1614 = new QWidget();
         page_1614->setObjectName("page_1614");
         horizontalLayout_1622 = new QHBoxLayout(page_1614);
@@ -24502,7 +24503,7 @@ public:
 
         horizontalLayout_1622->addWidget(label_1614);
 
-        widget17->addWidget(page_1614);
+        splitWidget6->addWidget(page_1614);
         page_1615 = new QWidget();
         page_1615->setObjectName("page_1615");
         horizontalLayout_1623 = new QHBoxLayout(page_1615);
@@ -24514,7 +24515,7 @@ public:
 
         horizontalLayout_1623->addWidget(label_1615);
 
-        widget17->addWidget(page_1615);
+        splitWidget6->addWidget(page_1615);
         page_1616 = new QWidget();
         page_1616->setObjectName("page_1616");
         horizontalLayout_1624 = new QHBoxLayout(page_1616);
@@ -24526,7 +24527,7 @@ public:
 
         horizontalLayout_1624->addWidget(label_1616);
 
-        widget17->addWidget(page_1616);
+        splitWidget6->addWidget(page_1616);
         page_1617 = new QWidget();
         page_1617->setObjectName("page_1617");
         horizontalLayout_1625 = new QHBoxLayout(page_1617);
@@ -24538,7 +24539,7 @@ public:
 
         horizontalLayout_1625->addWidget(label_1617);
 
-        widget17->addWidget(page_1617);
+        splitWidget6->addWidget(page_1617);
         page_1618 = new QWidget();
         page_1618->setObjectName("page_1618");
         horizontalLayout_1626 = new QHBoxLayout(page_1618);
@@ -24550,7 +24551,7 @@ public:
 
         horizontalLayout_1626->addWidget(label_1618);
 
-        widget17->addWidget(page_1618);
+        splitWidget6->addWidget(page_1618);
         page_1619 = new QWidget();
         page_1619->setObjectName("page_1619");
         horizontalLayout_1627 = new QHBoxLayout(page_1619);
@@ -24562,7 +24563,7 @@ public:
 
         horizontalLayout_1627->addWidget(label_1619);
 
-        widget17->addWidget(page_1619);
+        splitWidget6->addWidget(page_1619);
         page_1620 = new QWidget();
         page_1620->setObjectName("page_1620");
         horizontalLayout_1628 = new QHBoxLayout(page_1620);
@@ -24574,17 +24575,17 @@ public:
 
         horizontalLayout_1628->addWidget(label_1620);
 
-        widget17->addWidget(page_1620);
+        splitWidget6->addWidget(page_1620);
 
-        horizontalLayout_1304->addWidget(widget17);
+        horizontalLayout_1304->addWidget(splitWidget6);
 
-        widget18 = new QStackedWidget(centralwidget);
-        widget18->setObjectName("widget18");
-        sizePolicy.setHeightForWidth(widget18->sizePolicy().hasHeightForWidth());
-        widget18->setSizePolicy(sizePolicy);
-        widget18->setMinimumSize(QSize(100, 150));
-        widget18->setMaximumSize(QSize(100, 150));
-        widget18->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget7 = new QStackedWidget(centralwidget);
+        splitWidget7->setObjectName("splitWidget7");
+        sizePolicy.setHeightForWidth(splitWidget7->sizePolicy().hasHeightForWidth());
+        splitWidget7->setSizePolicy(sizePolicy);
+        splitWidget7->setMinimumSize(QSize(100, 150));
+        splitWidget7->setMaximumSize(QSize(100, 150));
+        splitWidget7->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1621 = new QWidget();
         page_1621->setObjectName("page_1621");
@@ -24595,7 +24596,7 @@ public:
 
         horizontalLayout_1629->addWidget(label_1621);
 
-        widget18->addWidget(page_1621);
+        splitWidget7->addWidget(page_1621);
         page_1622 = new QWidget();
         page_1622->setObjectName("page_1622");
         horizontalLayout_1630 = new QHBoxLayout(page_1622);
@@ -24607,7 +24608,7 @@ public:
 
         horizontalLayout_1630->addWidget(label_1622);
 
-        widget18->addWidget(page_1622);
+        splitWidget7->addWidget(page_1622);
         page_1623 = new QWidget();
         page_1623->setObjectName("page_1623");
         sizePolicy.setHeightForWidth(page_1623->sizePolicy().hasHeightForWidth());
@@ -24629,7 +24630,7 @@ public:
 
         horizontalLayout_1631->addWidget(label_1623);
 
-        widget18->addWidget(page_1623);
+        splitWidget7->addWidget(page_1623);
         page_1624 = new QWidget();
         page_1624->setObjectName("page_1624");
         sizePolicy.setHeightForWidth(page_1624->sizePolicy().hasHeightForWidth());
@@ -24647,7 +24648,7 @@ public:
 
         horizontalLayout_1632->addWidget(label_1624);
 
-        widget18->addWidget(page_1624);
+        splitWidget7->addWidget(page_1624);
         page_1625 = new QWidget();
         page_1625->setObjectName("page_1625");
         sizePolicy.setHeightForWidth(page_1625->sizePolicy().hasHeightForWidth());
@@ -24663,7 +24664,7 @@ public:
 
         horizontalLayout_1633->addWidget(label_1625);
 
-        widget18->addWidget(page_1625);
+        splitWidget7->addWidget(page_1625);
         page_1626 = new QWidget();
         page_1626->setObjectName("page_1626");
         horizontalLayout_1634 = new QHBoxLayout(page_1626);
@@ -24675,7 +24676,7 @@ public:
 
         horizontalLayout_1634->addWidget(label_1626);
 
-        widget18->addWidget(page_1626);
+        splitWidget7->addWidget(page_1626);
         page_1627 = new QWidget();
         page_1627->setObjectName("page_1627");
         horizontalLayout_1635 = new QHBoxLayout(page_1627);
@@ -24687,7 +24688,7 @@ public:
 
         horizontalLayout_1635->addWidget(label_1627);
 
-        widget18->addWidget(page_1627);
+        splitWidget7->addWidget(page_1627);
         page_1628 = new QWidget();
         page_1628->setObjectName("page_1628");
         horizontalLayout_1636 = new QHBoxLayout(page_1628);
@@ -24699,7 +24700,7 @@ public:
 
         horizontalLayout_1636->addWidget(label_1628);
 
-        widget18->addWidget(page_1628);
+        splitWidget7->addWidget(page_1628);
         page_1629 = new QWidget();
         page_1629->setObjectName("page_1629");
         horizontalLayout_1637 = new QHBoxLayout(page_1629);
@@ -24711,7 +24712,7 @@ public:
 
         horizontalLayout_1637->addWidget(label_1629);
 
-        widget18->addWidget(page_1629);
+        splitWidget7->addWidget(page_1629);
         page_1630 = new QWidget();
         page_1630->setObjectName("page_1630");
         horizontalLayout_1638 = new QHBoxLayout(page_1630);
@@ -24723,7 +24724,7 @@ public:
 
         horizontalLayout_1638->addWidget(label_1630);
 
-        widget18->addWidget(page_1630);
+        splitWidget7->addWidget(page_1630);
         page_1631 = new QWidget();
         page_1631->setObjectName("page_1631");
         horizontalLayout_1639 = new QHBoxLayout(page_1631);
@@ -24735,7 +24736,7 @@ public:
 
         horizontalLayout_1639->addWidget(label_1631);
 
-        widget18->addWidget(page_1631);
+        splitWidget7->addWidget(page_1631);
         page_1632 = new QWidget();
         page_1632->setObjectName("page_1632");
         horizontalLayout_1640 = new QHBoxLayout(page_1632);
@@ -24747,7 +24748,7 @@ public:
 
         horizontalLayout_1640->addWidget(label_1632);
 
-        widget18->addWidget(page_1632);
+        splitWidget7->addWidget(page_1632);
         page_1633 = new QWidget();
         page_1633->setObjectName("page_1633");
         horizontalLayout_1641 = new QHBoxLayout(page_1633);
@@ -24759,7 +24760,7 @@ public:
 
         horizontalLayout_1641->addWidget(label_1633);
 
-        widget18->addWidget(page_1633);
+        splitWidget7->addWidget(page_1633);
         page_1634 = new QWidget();
         page_1634->setObjectName("page_1634");
         horizontalLayout_1642 = new QHBoxLayout(page_1634);
@@ -24771,7 +24772,7 @@ public:
 
         horizontalLayout_1642->addWidget(label_1634);
 
-        widget18->addWidget(page_1634);
+        splitWidget7->addWidget(page_1634);
         page_1635 = new QWidget();
         page_1635->setObjectName("page_1635");
         horizontalLayout_1643 = new QHBoxLayout(page_1635);
@@ -24783,7 +24784,7 @@ public:
 
         horizontalLayout_1643->addWidget(label_1635);
 
-        widget18->addWidget(page_1635);
+        splitWidget7->addWidget(page_1635);
         page_1636 = new QWidget();
         page_1636->setObjectName("page_1636");
         horizontalLayout_1644 = new QHBoxLayout(page_1636);
@@ -24795,7 +24796,7 @@ public:
 
         horizontalLayout_1644->addWidget(label_1636);
 
-        widget18->addWidget(page_1636);
+        splitWidget7->addWidget(page_1636);
         page_1637 = new QWidget();
         page_1637->setObjectName("page_1637");
         horizontalLayout_1645 = new QHBoxLayout(page_1637);
@@ -24807,7 +24808,7 @@ public:
 
         horizontalLayout_1645->addWidget(label_1637);
 
-        widget18->addWidget(page_1637);
+        splitWidget7->addWidget(page_1637);
         page_1638 = new QWidget();
         page_1638->setObjectName("page_1638");
         horizontalLayout_1646 = new QHBoxLayout(page_1638);
@@ -24819,7 +24820,7 @@ public:
 
         horizontalLayout_1646->addWidget(label_1638);
 
-        widget18->addWidget(page_1638);
+        splitWidget7->addWidget(page_1638);
         page_1639 = new QWidget();
         page_1639->setObjectName("page_1639");
         horizontalLayout_1647 = new QHBoxLayout(page_1639);
@@ -24831,7 +24832,7 @@ public:
 
         horizontalLayout_1647->addWidget(label_1639);
 
-        widget18->addWidget(page_1639);
+        splitWidget7->addWidget(page_1639);
         page_1640 = new QWidget();
         page_1640->setObjectName("page_1640");
         horizontalLayout_1648 = new QHBoxLayout(page_1640);
@@ -24843,7 +24844,7 @@ public:
 
         horizontalLayout_1648->addWidget(label_1640);
 
-        widget18->addWidget(page_1640);
+        splitWidget7->addWidget(page_1640);
         page_1641 = new QWidget();
         page_1641->setObjectName("page_1641");
         horizontalLayout_1649 = new QHBoxLayout(page_1641);
@@ -24855,7 +24856,7 @@ public:
 
         horizontalLayout_1649->addWidget(label_1641);
 
-        widget18->addWidget(page_1641);
+        splitWidget7->addWidget(page_1641);
         page_1642 = new QWidget();
         page_1642->setObjectName("page_1642");
         horizontalLayout_1650 = new QHBoxLayout(page_1642);
@@ -24867,7 +24868,7 @@ public:
 
         horizontalLayout_1650->addWidget(label_1642);
 
-        widget18->addWidget(page_1642);
+        splitWidget7->addWidget(page_1642);
         page_1643 = new QWidget();
         page_1643->setObjectName("page_1643");
         horizontalLayout_1651 = new QHBoxLayout(page_1643);
@@ -24879,7 +24880,7 @@ public:
 
         horizontalLayout_1651->addWidget(label_1643);
 
-        widget18->addWidget(page_1643);
+        splitWidget7->addWidget(page_1643);
         page_1644 = new QWidget();
         page_1644->setObjectName("page_1644");
         horizontalLayout_1652 = new QHBoxLayout(page_1644);
@@ -24891,7 +24892,7 @@ public:
 
         horizontalLayout_1652->addWidget(label_1644);
 
-        widget18->addWidget(page_1644);
+        splitWidget7->addWidget(page_1644);
         page_1645 = new QWidget();
         page_1645->setObjectName("page_1645");
         horizontalLayout_1653 = new QHBoxLayout(page_1645);
@@ -24903,7 +24904,7 @@ public:
 
         horizontalLayout_1653->addWidget(label_1645);
 
-        widget18->addWidget(page_1645);
+        splitWidget7->addWidget(page_1645);
         page_1646 = new QWidget();
         page_1646->setObjectName("page_1646");
         horizontalLayout_1654 = new QHBoxLayout(page_1646);
@@ -24915,7 +24916,7 @@ public:
 
         horizontalLayout_1654->addWidget(label_1646);
 
-        widget18->addWidget(page_1646);
+        splitWidget7->addWidget(page_1646);
         page_1647 = new QWidget();
         page_1647->setObjectName("page_1647");
         horizontalLayout_1655 = new QHBoxLayout(page_1647);
@@ -24927,7 +24928,7 @@ public:
 
         horizontalLayout_1655->addWidget(label_1647);
 
-        widget18->addWidget(page_1647);
+        splitWidget7->addWidget(page_1647);
         page_1648 = new QWidget();
         page_1648->setObjectName("page_1648");
         horizontalLayout_1656 = new QHBoxLayout(page_1648);
@@ -24939,7 +24940,7 @@ public:
 
         horizontalLayout_1656->addWidget(label_1648);
 
-        widget18->addWidget(page_1648);
+        splitWidget7->addWidget(page_1648);
         page_1649 = new QWidget();
         page_1649->setObjectName("page_1649");
         horizontalLayout_1657 = new QHBoxLayout(page_1649);
@@ -24951,7 +24952,7 @@ public:
 
         horizontalLayout_1657->addWidget(label_1649);
 
-        widget18->addWidget(page_1649);
+        splitWidget7->addWidget(page_1649);
         page_1650 = new QWidget();
         page_1650->setObjectName("page_1650");
         horizontalLayout_1658 = new QHBoxLayout(page_1650);
@@ -24963,7 +24964,7 @@ public:
 
         horizontalLayout_1658->addWidget(label_1650);
 
-        widget18->addWidget(page_1650);
+        splitWidget7->addWidget(page_1650);
         page_1651 = new QWidget();
         page_1651->setObjectName("page_1651");
         horizontalLayout_1659 = new QHBoxLayout(page_1651);
@@ -24975,7 +24976,7 @@ public:
 
         horizontalLayout_1659->addWidget(label_1651);
 
-        widget18->addWidget(page_1651);
+        splitWidget7->addWidget(page_1651);
         page_1652 = new QWidget();
         page_1652->setObjectName("page_1652");
         horizontalLayout_1660 = new QHBoxLayout(page_1652);
@@ -24987,7 +24988,7 @@ public:
 
         horizontalLayout_1660->addWidget(label_1652);
 
-        widget18->addWidget(page_1652);
+        splitWidget7->addWidget(page_1652);
         page_1653 = new QWidget();
         page_1653->setObjectName("page_1653");
         horizontalLayout_1661 = new QHBoxLayout(page_1653);
@@ -24999,7 +25000,7 @@ public:
 
         horizontalLayout_1661->addWidget(label_1653);
 
-        widget18->addWidget(page_1653);
+        splitWidget7->addWidget(page_1653);
         page_1654 = new QWidget();
         page_1654->setObjectName("page_1654");
         horizontalLayout_1662 = new QHBoxLayout(page_1654);
@@ -25011,7 +25012,7 @@ public:
 
         horizontalLayout_1662->addWidget(label_1654);
 
-        widget18->addWidget(page_1654);
+        splitWidget7->addWidget(page_1654);
         page_1655 = new QWidget();
         page_1655->setObjectName("page_1655");
         horizontalLayout_1663 = new QHBoxLayout(page_1655);
@@ -25023,7 +25024,7 @@ public:
 
         horizontalLayout_1663->addWidget(label_1655);
 
-        widget18->addWidget(page_1655);
+        splitWidget7->addWidget(page_1655);
         page_1656 = new QWidget();
         page_1656->setObjectName("page_1656");
         horizontalLayout_1664 = new QHBoxLayout(page_1656);
@@ -25035,7 +25036,7 @@ public:
 
         horizontalLayout_1664->addWidget(label_1656);
 
-        widget18->addWidget(page_1656);
+        splitWidget7->addWidget(page_1656);
         page_1657 = new QWidget();
         page_1657->setObjectName("page_1657");
         horizontalLayout_1665 = new QHBoxLayout(page_1657);
@@ -25047,7 +25048,7 @@ public:
 
         horizontalLayout_1665->addWidget(label_1657);
 
-        widget18->addWidget(page_1657);
+        splitWidget7->addWidget(page_1657);
         page_1658 = new QWidget();
         page_1658->setObjectName("page_1658");
         horizontalLayout_1666 = new QHBoxLayout(page_1658);
@@ -25059,7 +25060,7 @@ public:
 
         horizontalLayout_1666->addWidget(label_1658);
 
-        widget18->addWidget(page_1658);
+        splitWidget7->addWidget(page_1658);
         page_1659 = new QWidget();
         page_1659->setObjectName("page_1659");
         horizontalLayout_1667 = new QHBoxLayout(page_1659);
@@ -25071,7 +25072,7 @@ public:
 
         horizontalLayout_1667->addWidget(label_1659);
 
-        widget18->addWidget(page_1659);
+        splitWidget7->addWidget(page_1659);
         page_1660 = new QWidget();
         page_1660->setObjectName("page_1660");
         horizontalLayout_1668 = new QHBoxLayout(page_1660);
@@ -25083,7 +25084,7 @@ public:
 
         horizontalLayout_1668->addWidget(label_1660);
 
-        widget18->addWidget(page_1660);
+        splitWidget7->addWidget(page_1660);
         page_1661 = new QWidget();
         page_1661->setObjectName("page_1661");
         horizontalLayout_1669 = new QHBoxLayout(page_1661);
@@ -25095,7 +25096,7 @@ public:
 
         horizontalLayout_1669->addWidget(label_1661);
 
-        widget18->addWidget(page_1661);
+        splitWidget7->addWidget(page_1661);
         page_1662 = new QWidget();
         page_1662->setObjectName("page_1662");
         horizontalLayout_1670 = new QHBoxLayout(page_1662);
@@ -25107,7 +25108,7 @@ public:
 
         horizontalLayout_1670->addWidget(label_1662);
 
-        widget18->addWidget(page_1662);
+        splitWidget7->addWidget(page_1662);
         page_1663 = new QWidget();
         page_1663->setObjectName("page_1663");
         horizontalLayout_1671 = new QHBoxLayout(page_1663);
@@ -25119,7 +25120,7 @@ public:
 
         horizontalLayout_1671->addWidget(label_1663);
 
-        widget18->addWidget(page_1663);
+        splitWidget7->addWidget(page_1663);
         page_1664 = new QWidget();
         page_1664->setObjectName("page_1664");
         horizontalLayout_1672 = new QHBoxLayout(page_1664);
@@ -25131,7 +25132,7 @@ public:
 
         horizontalLayout_1672->addWidget(label_1664);
 
-        widget18->addWidget(page_1664);
+        splitWidget7->addWidget(page_1664);
         page_1665 = new QWidget();
         page_1665->setObjectName("page_1665");
         horizontalLayout_1673 = new QHBoxLayout(page_1665);
@@ -25143,7 +25144,7 @@ public:
 
         horizontalLayout_1673->addWidget(label_1665);
 
-        widget18->addWidget(page_1665);
+        splitWidget7->addWidget(page_1665);
         page_1666 = new QWidget();
         page_1666->setObjectName("page_1666");
         horizontalLayout_1674 = new QHBoxLayout(page_1666);
@@ -25155,7 +25156,7 @@ public:
 
         horizontalLayout_1674->addWidget(label_1666);
 
-        widget18->addWidget(page_1666);
+        splitWidget7->addWidget(page_1666);
         page_1667 = new QWidget();
         page_1667->setObjectName("page_1667");
         horizontalLayout_1675 = new QHBoxLayout(page_1667);
@@ -25167,7 +25168,7 @@ public:
 
         horizontalLayout_1675->addWidget(label_1667);
 
-        widget18->addWidget(page_1667);
+        splitWidget7->addWidget(page_1667);
         page_1668 = new QWidget();
         page_1668->setObjectName("page_1668");
         horizontalLayout_1676 = new QHBoxLayout(page_1668);
@@ -25179,7 +25180,7 @@ public:
 
         horizontalLayout_1676->addWidget(label_1668);
 
-        widget18->addWidget(page_1668);
+        splitWidget7->addWidget(page_1668);
         page_1669 = new QWidget();
         page_1669->setObjectName("page_1669");
         horizontalLayout_1677 = new QHBoxLayout(page_1669);
@@ -25191,7 +25192,7 @@ public:
 
         horizontalLayout_1677->addWidget(label_1669);
 
-        widget18->addWidget(page_1669);
+        splitWidget7->addWidget(page_1669);
         page_1670 = new QWidget();
         page_1670->setObjectName("page_1670");
         horizontalLayout_1678 = new QHBoxLayout(page_1670);
@@ -25203,7 +25204,7 @@ public:
 
         horizontalLayout_1678->addWidget(label_1670);
 
-        widget18->addWidget(page_1670);
+        splitWidget7->addWidget(page_1670);
         page_1671 = new QWidget();
         page_1671->setObjectName("page_1671");
         horizontalLayout_1679 = new QHBoxLayout(page_1671);
@@ -25215,7 +25216,7 @@ public:
 
         horizontalLayout_1679->addWidget(label_1671);
 
-        widget18->addWidget(page_1671);
+        splitWidget7->addWidget(page_1671);
         page_1672 = new QWidget();
         page_1672->setObjectName("page_1672");
         horizontalLayout_1680 = new QHBoxLayout(page_1672);
@@ -25227,7 +25228,7 @@ public:
 
         horizontalLayout_1680->addWidget(label_1672);
 
-        widget18->addWidget(page_1672);
+        splitWidget7->addWidget(page_1672);
         page_1673 = new QWidget();
         page_1673->setObjectName("page_1673");
         horizontalLayout_1681 = new QHBoxLayout(page_1673);
@@ -25239,7 +25240,7 @@ public:
 
         horizontalLayout_1681->addWidget(label_1673);
 
-        widget18->addWidget(page_1673);
+        splitWidget7->addWidget(page_1673);
         page_1674 = new QWidget();
         page_1674->setObjectName("page_1674");
         horizontalLayout_1682 = new QHBoxLayout(page_1674);
@@ -25251,17 +25252,17 @@ public:
 
         horizontalLayout_1682->addWidget(label_1674);
 
-        widget18->addWidget(page_1674);
+        splitWidget7->addWidget(page_1674);
 
-        horizontalLayout_1304->addWidget(widget18);
+        horizontalLayout_1304->addWidget(splitWidget7);
 
-        widget19 = new QStackedWidget(centralwidget);
-        widget19->setObjectName("widget19");
-        sizePolicy.setHeightForWidth(widget19->sizePolicy().hasHeightForWidth());
-        widget19->setSizePolicy(sizePolicy);
-        widget19->setMinimumSize(QSize(100, 150));
-        widget19->setMaximumSize(QSize(100, 150));
-        widget19->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget8 = new QStackedWidget(centralwidget);
+        splitWidget8->setObjectName("splitWidget8");
+        sizePolicy.setHeightForWidth(splitWidget8->sizePolicy().hasHeightForWidth());
+        splitWidget8->setSizePolicy(sizePolicy);
+        splitWidget8->setMinimumSize(QSize(100, 150));
+        splitWidget8->setMaximumSize(QSize(100, 150));
+        splitWidget8->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1675 = new QWidget();
         page_1675->setObjectName("page_1675");
@@ -25272,7 +25273,7 @@ public:
 
         horizontalLayout_1683->addWidget(label_1675);
 
-        widget19->addWidget(page_1675);
+        splitWidget8->addWidget(page_1675);
         page_1676 = new QWidget();
         page_1676->setObjectName("page_1676");
         horizontalLayout_1684 = new QHBoxLayout(page_1676);
@@ -25284,7 +25285,7 @@ public:
 
         horizontalLayout_1684->addWidget(label_1676);
 
-        widget19->addWidget(page_1676);
+        splitWidget8->addWidget(page_1676);
         page_1677 = new QWidget();
         page_1677->setObjectName("page_1677");
         sizePolicy.setHeightForWidth(page_1677->sizePolicy().hasHeightForWidth());
@@ -25306,7 +25307,7 @@ public:
 
         horizontalLayout_1685->addWidget(label_1677);
 
-        widget19->addWidget(page_1677);
+        splitWidget8->addWidget(page_1677);
         page_1678 = new QWidget();
         page_1678->setObjectName("page_1678");
         sizePolicy.setHeightForWidth(page_1678->sizePolicy().hasHeightForWidth());
@@ -25324,7 +25325,7 @@ public:
 
         horizontalLayout_1686->addWidget(label_1678);
 
-        widget19->addWidget(page_1678);
+        splitWidget8->addWidget(page_1678);
         page_1679 = new QWidget();
         page_1679->setObjectName("page_1679");
         sizePolicy.setHeightForWidth(page_1679->sizePolicy().hasHeightForWidth());
@@ -25340,7 +25341,7 @@ public:
 
         horizontalLayout_1687->addWidget(label_1679);
 
-        widget19->addWidget(page_1679);
+        splitWidget8->addWidget(page_1679);
         page_1680 = new QWidget();
         page_1680->setObjectName("page_1680");
         horizontalLayout_1688 = new QHBoxLayout(page_1680);
@@ -25352,7 +25353,7 @@ public:
 
         horizontalLayout_1688->addWidget(label_1680);
 
-        widget19->addWidget(page_1680);
+        splitWidget8->addWidget(page_1680);
         page_1681 = new QWidget();
         page_1681->setObjectName("page_1681");
         horizontalLayout_1689 = new QHBoxLayout(page_1681);
@@ -25364,7 +25365,7 @@ public:
 
         horizontalLayout_1689->addWidget(label_1681);
 
-        widget19->addWidget(page_1681);
+        splitWidget8->addWidget(page_1681);
         page_1682 = new QWidget();
         page_1682->setObjectName("page_1682");
         horizontalLayout_1690 = new QHBoxLayout(page_1682);
@@ -25376,7 +25377,7 @@ public:
 
         horizontalLayout_1690->addWidget(label_1682);
 
-        widget19->addWidget(page_1682);
+        splitWidget8->addWidget(page_1682);
         page_1683 = new QWidget();
         page_1683->setObjectName("page_1683");
         horizontalLayout_1691 = new QHBoxLayout(page_1683);
@@ -25388,7 +25389,7 @@ public:
 
         horizontalLayout_1691->addWidget(label_1683);
 
-        widget19->addWidget(page_1683);
+        splitWidget8->addWidget(page_1683);
         page_1684 = new QWidget();
         page_1684->setObjectName("page_1684");
         horizontalLayout_1692 = new QHBoxLayout(page_1684);
@@ -25400,7 +25401,7 @@ public:
 
         horizontalLayout_1692->addWidget(label_1684);
 
-        widget19->addWidget(page_1684);
+        splitWidget8->addWidget(page_1684);
         page_1685 = new QWidget();
         page_1685->setObjectName("page_1685");
         horizontalLayout_1693 = new QHBoxLayout(page_1685);
@@ -25412,7 +25413,7 @@ public:
 
         horizontalLayout_1693->addWidget(label_1685);
 
-        widget19->addWidget(page_1685);
+        splitWidget8->addWidget(page_1685);
         page_1686 = new QWidget();
         page_1686->setObjectName("page_1686");
         horizontalLayout_1694 = new QHBoxLayout(page_1686);
@@ -25424,7 +25425,7 @@ public:
 
         horizontalLayout_1694->addWidget(label_1686);
 
-        widget19->addWidget(page_1686);
+        splitWidget8->addWidget(page_1686);
         page_1687 = new QWidget();
         page_1687->setObjectName("page_1687");
         horizontalLayout_1695 = new QHBoxLayout(page_1687);
@@ -25436,7 +25437,7 @@ public:
 
         horizontalLayout_1695->addWidget(label_1687);
 
-        widget19->addWidget(page_1687);
+        splitWidget8->addWidget(page_1687);
         page_1688 = new QWidget();
         page_1688->setObjectName("page_1688");
         horizontalLayout_1696 = new QHBoxLayout(page_1688);
@@ -25448,7 +25449,7 @@ public:
 
         horizontalLayout_1696->addWidget(label_1688);
 
-        widget19->addWidget(page_1688);
+        splitWidget8->addWidget(page_1688);
         page_1689 = new QWidget();
         page_1689->setObjectName("page_1689");
         horizontalLayout_1697 = new QHBoxLayout(page_1689);
@@ -25460,7 +25461,7 @@ public:
 
         horizontalLayout_1697->addWidget(label_1689);
 
-        widget19->addWidget(page_1689);
+        splitWidget8->addWidget(page_1689);
         page_1690 = new QWidget();
         page_1690->setObjectName("page_1690");
         horizontalLayout_1698 = new QHBoxLayout(page_1690);
@@ -25472,7 +25473,7 @@ public:
 
         horizontalLayout_1698->addWidget(label_1690);
 
-        widget19->addWidget(page_1690);
+        splitWidget8->addWidget(page_1690);
         page_1691 = new QWidget();
         page_1691->setObjectName("page_1691");
         horizontalLayout_1699 = new QHBoxLayout(page_1691);
@@ -25484,7 +25485,7 @@ public:
 
         horizontalLayout_1699->addWidget(label_1691);
 
-        widget19->addWidget(page_1691);
+        splitWidget8->addWidget(page_1691);
         page_1692 = new QWidget();
         page_1692->setObjectName("page_1692");
         horizontalLayout_1700 = new QHBoxLayout(page_1692);
@@ -25496,7 +25497,7 @@ public:
 
         horizontalLayout_1700->addWidget(label_1692);
 
-        widget19->addWidget(page_1692);
+        splitWidget8->addWidget(page_1692);
         page_1693 = new QWidget();
         page_1693->setObjectName("page_1693");
         horizontalLayout_1701 = new QHBoxLayout(page_1693);
@@ -25508,7 +25509,7 @@ public:
 
         horizontalLayout_1701->addWidget(label_1693);
 
-        widget19->addWidget(page_1693);
+        splitWidget8->addWidget(page_1693);
         page_1694 = new QWidget();
         page_1694->setObjectName("page_1694");
         horizontalLayout_1702 = new QHBoxLayout(page_1694);
@@ -25520,7 +25521,7 @@ public:
 
         horizontalLayout_1702->addWidget(label_1694);
 
-        widget19->addWidget(page_1694);
+        splitWidget8->addWidget(page_1694);
         page_1695 = new QWidget();
         page_1695->setObjectName("page_1695");
         horizontalLayout_1703 = new QHBoxLayout(page_1695);
@@ -25532,7 +25533,7 @@ public:
 
         horizontalLayout_1703->addWidget(label_1695);
 
-        widget19->addWidget(page_1695);
+        splitWidget8->addWidget(page_1695);
         page_1696 = new QWidget();
         page_1696->setObjectName("page_1696");
         horizontalLayout_1704 = new QHBoxLayout(page_1696);
@@ -25544,7 +25545,7 @@ public:
 
         horizontalLayout_1704->addWidget(label_1696);
 
-        widget19->addWidget(page_1696);
+        splitWidget8->addWidget(page_1696);
         page_1697 = new QWidget();
         page_1697->setObjectName("page_1697");
         horizontalLayout_1705 = new QHBoxLayout(page_1697);
@@ -25556,7 +25557,7 @@ public:
 
         horizontalLayout_1705->addWidget(label_1697);
 
-        widget19->addWidget(page_1697);
+        splitWidget8->addWidget(page_1697);
         page_1698 = new QWidget();
         page_1698->setObjectName("page_1698");
         horizontalLayout_1706 = new QHBoxLayout(page_1698);
@@ -25568,7 +25569,7 @@ public:
 
         horizontalLayout_1706->addWidget(label_1698);
 
-        widget19->addWidget(page_1698);
+        splitWidget8->addWidget(page_1698);
         page_1699 = new QWidget();
         page_1699->setObjectName("page_1699");
         horizontalLayout_1707 = new QHBoxLayout(page_1699);
@@ -25580,7 +25581,7 @@ public:
 
         horizontalLayout_1707->addWidget(label_1699);
 
-        widget19->addWidget(page_1699);
+        splitWidget8->addWidget(page_1699);
         page_1700 = new QWidget();
         page_1700->setObjectName("page_1700");
         horizontalLayout_1708 = new QHBoxLayout(page_1700);
@@ -25592,7 +25593,7 @@ public:
 
         horizontalLayout_1708->addWidget(label_1700);
 
-        widget19->addWidget(page_1700);
+        splitWidget8->addWidget(page_1700);
         page_1701 = new QWidget();
         page_1701->setObjectName("page_1701");
         horizontalLayout_1709 = new QHBoxLayout(page_1701);
@@ -25604,7 +25605,7 @@ public:
 
         horizontalLayout_1709->addWidget(label_1701);
 
-        widget19->addWidget(page_1701);
+        splitWidget8->addWidget(page_1701);
         page_1702 = new QWidget();
         page_1702->setObjectName("page_1702");
         horizontalLayout_1710 = new QHBoxLayout(page_1702);
@@ -25616,7 +25617,7 @@ public:
 
         horizontalLayout_1710->addWidget(label_1702);
 
-        widget19->addWidget(page_1702);
+        splitWidget8->addWidget(page_1702);
         page_1703 = new QWidget();
         page_1703->setObjectName("page_1703");
         horizontalLayout_1711 = new QHBoxLayout(page_1703);
@@ -25628,7 +25629,7 @@ public:
 
         horizontalLayout_1711->addWidget(label_1703);
 
-        widget19->addWidget(page_1703);
+        splitWidget8->addWidget(page_1703);
         page_1704 = new QWidget();
         page_1704->setObjectName("page_1704");
         horizontalLayout_1712 = new QHBoxLayout(page_1704);
@@ -25640,7 +25641,7 @@ public:
 
         horizontalLayout_1712->addWidget(label_1704);
 
-        widget19->addWidget(page_1704);
+        splitWidget8->addWidget(page_1704);
         page_1705 = new QWidget();
         page_1705->setObjectName("page_1705");
         horizontalLayout_1713 = new QHBoxLayout(page_1705);
@@ -25652,7 +25653,7 @@ public:
 
         horizontalLayout_1713->addWidget(label_1705);
 
-        widget19->addWidget(page_1705);
+        splitWidget8->addWidget(page_1705);
         page_1706 = new QWidget();
         page_1706->setObjectName("page_1706");
         horizontalLayout_1714 = new QHBoxLayout(page_1706);
@@ -25664,7 +25665,7 @@ public:
 
         horizontalLayout_1714->addWidget(label_1706);
 
-        widget19->addWidget(page_1706);
+        splitWidget8->addWidget(page_1706);
         page_1707 = new QWidget();
         page_1707->setObjectName("page_1707");
         horizontalLayout_1715 = new QHBoxLayout(page_1707);
@@ -25676,7 +25677,7 @@ public:
 
         horizontalLayout_1715->addWidget(label_1707);
 
-        widget19->addWidget(page_1707);
+        splitWidget8->addWidget(page_1707);
         page_1708 = new QWidget();
         page_1708->setObjectName("page_1708");
         horizontalLayout_1716 = new QHBoxLayout(page_1708);
@@ -25688,7 +25689,7 @@ public:
 
         horizontalLayout_1716->addWidget(label_1708);
 
-        widget19->addWidget(page_1708);
+        splitWidget8->addWidget(page_1708);
         page_1709 = new QWidget();
         page_1709->setObjectName("page_1709");
         horizontalLayout_1717 = new QHBoxLayout(page_1709);
@@ -25700,7 +25701,7 @@ public:
 
         horizontalLayout_1717->addWidget(label_1709);
 
-        widget19->addWidget(page_1709);
+        splitWidget8->addWidget(page_1709);
         page_1710 = new QWidget();
         page_1710->setObjectName("page_1710");
         horizontalLayout_1718 = new QHBoxLayout(page_1710);
@@ -25712,7 +25713,7 @@ public:
 
         horizontalLayout_1718->addWidget(label_1710);
 
-        widget19->addWidget(page_1710);
+        splitWidget8->addWidget(page_1710);
         page_1711 = new QWidget();
         page_1711->setObjectName("page_1711");
         horizontalLayout_1719 = new QHBoxLayout(page_1711);
@@ -25724,7 +25725,7 @@ public:
 
         horizontalLayout_1719->addWidget(label_1711);
 
-        widget19->addWidget(page_1711);
+        splitWidget8->addWidget(page_1711);
         page_1712 = new QWidget();
         page_1712->setObjectName("page_1712");
         horizontalLayout_1720 = new QHBoxLayout(page_1712);
@@ -25736,7 +25737,7 @@ public:
 
         horizontalLayout_1720->addWidget(label_1712);
 
-        widget19->addWidget(page_1712);
+        splitWidget8->addWidget(page_1712);
         page_1713 = new QWidget();
         page_1713->setObjectName("page_1713");
         horizontalLayout_1721 = new QHBoxLayout(page_1713);
@@ -25748,7 +25749,7 @@ public:
 
         horizontalLayout_1721->addWidget(label_1713);
 
-        widget19->addWidget(page_1713);
+        splitWidget8->addWidget(page_1713);
         page_1714 = new QWidget();
         page_1714->setObjectName("page_1714");
         horizontalLayout_1722 = new QHBoxLayout(page_1714);
@@ -25760,7 +25761,7 @@ public:
 
         horizontalLayout_1722->addWidget(label_1714);
 
-        widget19->addWidget(page_1714);
+        splitWidget8->addWidget(page_1714);
         page_1715 = new QWidget();
         page_1715->setObjectName("page_1715");
         horizontalLayout_1723 = new QHBoxLayout(page_1715);
@@ -25772,7 +25773,7 @@ public:
 
         horizontalLayout_1723->addWidget(label_1715);
 
-        widget19->addWidget(page_1715);
+        splitWidget8->addWidget(page_1715);
         page_1716 = new QWidget();
         page_1716->setObjectName("page_1716");
         horizontalLayout_1724 = new QHBoxLayout(page_1716);
@@ -25784,7 +25785,7 @@ public:
 
         horizontalLayout_1724->addWidget(label_1716);
 
-        widget19->addWidget(page_1716);
+        splitWidget8->addWidget(page_1716);
         page_1717 = new QWidget();
         page_1717->setObjectName("page_1717");
         horizontalLayout_1725 = new QHBoxLayout(page_1717);
@@ -25796,7 +25797,7 @@ public:
 
         horizontalLayout_1725->addWidget(label_1717);
 
-        widget19->addWidget(page_1717);
+        splitWidget8->addWidget(page_1717);
         page_1718 = new QWidget();
         page_1718->setObjectName("page_1718");
         horizontalLayout_1726 = new QHBoxLayout(page_1718);
@@ -25808,7 +25809,7 @@ public:
 
         horizontalLayout_1726->addWidget(label_1718);
 
-        widget19->addWidget(page_1718);
+        splitWidget8->addWidget(page_1718);
         page_1719 = new QWidget();
         page_1719->setObjectName("page_1719");
         horizontalLayout_1727 = new QHBoxLayout(page_1719);
@@ -25820,7 +25821,7 @@ public:
 
         horizontalLayout_1727->addWidget(label_1719);
 
-        widget19->addWidget(page_1719);
+        splitWidget8->addWidget(page_1719);
         page_1720 = new QWidget();
         page_1720->setObjectName("page_1720");
         horizontalLayout_1728 = new QHBoxLayout(page_1720);
@@ -25832,7 +25833,7 @@ public:
 
         horizontalLayout_1728->addWidget(label_1720);
 
-        widget19->addWidget(page_1720);
+        splitWidget8->addWidget(page_1720);
         page_1721 = new QWidget();
         page_1721->setObjectName("page_1721");
         horizontalLayout_1729 = new QHBoxLayout(page_1721);
@@ -25844,7 +25845,7 @@ public:
 
         horizontalLayout_1729->addWidget(label_1721);
 
-        widget19->addWidget(page_1721);
+        splitWidget8->addWidget(page_1721);
         page_1722 = new QWidget();
         page_1722->setObjectName("page_1722");
         horizontalLayout_1730 = new QHBoxLayout(page_1722);
@@ -25856,7 +25857,7 @@ public:
 
         horizontalLayout_1730->addWidget(label_1722);
 
-        widget19->addWidget(page_1722);
+        splitWidget8->addWidget(page_1722);
         page_1723 = new QWidget();
         page_1723->setObjectName("page_1723");
         horizontalLayout_1731 = new QHBoxLayout(page_1723);
@@ -25868,7 +25869,7 @@ public:
 
         horizontalLayout_1731->addWidget(label_1723);
 
-        widget19->addWidget(page_1723);
+        splitWidget8->addWidget(page_1723);
         page_1724 = new QWidget();
         page_1724->setObjectName("page_1724");
         horizontalLayout_1732 = new QHBoxLayout(page_1724);
@@ -25880,7 +25881,7 @@ public:
 
         horizontalLayout_1732->addWidget(label_1724);
 
-        widget19->addWidget(page_1724);
+        splitWidget8->addWidget(page_1724);
         page_1725 = new QWidget();
         page_1725->setObjectName("page_1725");
         horizontalLayout_1733 = new QHBoxLayout(page_1725);
@@ -25892,7 +25893,7 @@ public:
 
         horizontalLayout_1733->addWidget(label_1725);
 
-        widget19->addWidget(page_1725);
+        splitWidget8->addWidget(page_1725);
         page_1726 = new QWidget();
         page_1726->setObjectName("page_1726");
         horizontalLayout_1734 = new QHBoxLayout(page_1726);
@@ -25904,7 +25905,7 @@ public:
 
         horizontalLayout_1734->addWidget(label_1726);
 
-        widget19->addWidget(page_1726);
+        splitWidget8->addWidget(page_1726);
         page_1727 = new QWidget();
         page_1727->setObjectName("page_1727");
         horizontalLayout_1735 = new QHBoxLayout(page_1727);
@@ -25916,7 +25917,7 @@ public:
 
         horizontalLayout_1735->addWidget(label_1727);
 
-        widget19->addWidget(page_1727);
+        splitWidget8->addWidget(page_1727);
         page_1728 = new QWidget();
         page_1728->setObjectName("page_1728");
         horizontalLayout_1736 = new QHBoxLayout(page_1728);
@@ -25928,17 +25929,17 @@ public:
 
         horizontalLayout_1736->addWidget(label_1728);
 
-        widget19->addWidget(page_1728);
+        splitWidget8->addWidget(page_1728);
 
-        horizontalLayout_1304->addWidget(widget19);
+        horizontalLayout_1304->addWidget(splitWidget8);
 
-        widget20 = new QStackedWidget(centralwidget);
-        widget20->setObjectName("widget20");
-        sizePolicy.setHeightForWidth(widget20->sizePolicy().hasHeightForWidth());
-        widget20->setSizePolicy(sizePolicy);
-        widget20->setMinimumSize(QSize(100, 150));
-        widget20->setMaximumSize(QSize(100, 150));
-        widget20->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget9 = new QStackedWidget(centralwidget);
+        splitWidget9->setObjectName("splitWidget9");
+        sizePolicy.setHeightForWidth(splitWidget9->sizePolicy().hasHeightForWidth());
+        splitWidget9->setSizePolicy(sizePolicy);
+        splitWidget9->setMinimumSize(QSize(100, 150));
+        splitWidget9->setMaximumSize(QSize(100, 150));
+        splitWidget9->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1729 = new QWidget();
         page_1729->setObjectName("page_1729");
@@ -25949,7 +25950,7 @@ public:
 
         horizontalLayout_1737->addWidget(label_1729);
 
-        widget20->addWidget(page_1729);
+        splitWidget9->addWidget(page_1729);
         page_1730 = new QWidget();
         page_1730->setObjectName("page_1730");
         horizontalLayout_1738 = new QHBoxLayout(page_1730);
@@ -25961,7 +25962,7 @@ public:
 
         horizontalLayout_1738->addWidget(label_1730);
 
-        widget20->addWidget(page_1730);
+        splitWidget9->addWidget(page_1730);
         page_1731 = new QWidget();
         page_1731->setObjectName("page_1731");
         sizePolicy.setHeightForWidth(page_1731->sizePolicy().hasHeightForWidth());
@@ -25983,7 +25984,7 @@ public:
 
         horizontalLayout_1739->addWidget(label_1731);
 
-        widget20->addWidget(page_1731);
+        splitWidget9->addWidget(page_1731);
         page_1732 = new QWidget();
         page_1732->setObjectName("page_1732");
         sizePolicy.setHeightForWidth(page_1732->sizePolicy().hasHeightForWidth());
@@ -26001,7 +26002,7 @@ public:
 
         horizontalLayout_1740->addWidget(label_1732);
 
-        widget20->addWidget(page_1732);
+        splitWidget9->addWidget(page_1732);
         page_1733 = new QWidget();
         page_1733->setObjectName("page_1733");
         sizePolicy.setHeightForWidth(page_1733->sizePolicy().hasHeightForWidth());
@@ -26017,7 +26018,7 @@ public:
 
         horizontalLayout_1741->addWidget(label_1733);
 
-        widget20->addWidget(page_1733);
+        splitWidget9->addWidget(page_1733);
         page_1734 = new QWidget();
         page_1734->setObjectName("page_1734");
         horizontalLayout_1742 = new QHBoxLayout(page_1734);
@@ -26029,7 +26030,7 @@ public:
 
         horizontalLayout_1742->addWidget(label_1734);
 
-        widget20->addWidget(page_1734);
+        splitWidget9->addWidget(page_1734);
         page_1735 = new QWidget();
         page_1735->setObjectName("page_1735");
         horizontalLayout_1743 = new QHBoxLayout(page_1735);
@@ -26041,7 +26042,7 @@ public:
 
         horizontalLayout_1743->addWidget(label_1735);
 
-        widget20->addWidget(page_1735);
+        splitWidget9->addWidget(page_1735);
         page_1736 = new QWidget();
         page_1736->setObjectName("page_1736");
         horizontalLayout_1744 = new QHBoxLayout(page_1736);
@@ -26053,7 +26054,7 @@ public:
 
         horizontalLayout_1744->addWidget(label_1736);
 
-        widget20->addWidget(page_1736);
+        splitWidget9->addWidget(page_1736);
         page_1737 = new QWidget();
         page_1737->setObjectName("page_1737");
         horizontalLayout_1745 = new QHBoxLayout(page_1737);
@@ -26065,7 +26066,7 @@ public:
 
         horizontalLayout_1745->addWidget(label_1737);
 
-        widget20->addWidget(page_1737);
+        splitWidget9->addWidget(page_1737);
         page_1738 = new QWidget();
         page_1738->setObjectName("page_1738");
         horizontalLayout_1746 = new QHBoxLayout(page_1738);
@@ -26077,7 +26078,7 @@ public:
 
         horizontalLayout_1746->addWidget(label_1738);
 
-        widget20->addWidget(page_1738);
+        splitWidget9->addWidget(page_1738);
         page_1739 = new QWidget();
         page_1739->setObjectName("page_1739");
         horizontalLayout_1747 = new QHBoxLayout(page_1739);
@@ -26089,7 +26090,7 @@ public:
 
         horizontalLayout_1747->addWidget(label_1739);
 
-        widget20->addWidget(page_1739);
+        splitWidget9->addWidget(page_1739);
         page_1740 = new QWidget();
         page_1740->setObjectName("page_1740");
         horizontalLayout_1748 = new QHBoxLayout(page_1740);
@@ -26101,7 +26102,7 @@ public:
 
         horizontalLayout_1748->addWidget(label_1740);
 
-        widget20->addWidget(page_1740);
+        splitWidget9->addWidget(page_1740);
         page_1741 = new QWidget();
         page_1741->setObjectName("page_1741");
         horizontalLayout_1749 = new QHBoxLayout(page_1741);
@@ -26113,7 +26114,7 @@ public:
 
         horizontalLayout_1749->addWidget(label_1741);
 
-        widget20->addWidget(page_1741);
+        splitWidget9->addWidget(page_1741);
         page_1742 = new QWidget();
         page_1742->setObjectName("page_1742");
         horizontalLayout_1750 = new QHBoxLayout(page_1742);
@@ -26125,7 +26126,7 @@ public:
 
         horizontalLayout_1750->addWidget(label_1742);
 
-        widget20->addWidget(page_1742);
+        splitWidget9->addWidget(page_1742);
         page_1743 = new QWidget();
         page_1743->setObjectName("page_1743");
         horizontalLayout_1751 = new QHBoxLayout(page_1743);
@@ -26137,7 +26138,7 @@ public:
 
         horizontalLayout_1751->addWidget(label_1743);
 
-        widget20->addWidget(page_1743);
+        splitWidget9->addWidget(page_1743);
         page_1744 = new QWidget();
         page_1744->setObjectName("page_1744");
         horizontalLayout_1752 = new QHBoxLayout(page_1744);
@@ -26149,7 +26150,7 @@ public:
 
         horizontalLayout_1752->addWidget(label_1744);
 
-        widget20->addWidget(page_1744);
+        splitWidget9->addWidget(page_1744);
         page_1745 = new QWidget();
         page_1745->setObjectName("page_1745");
         horizontalLayout_1753 = new QHBoxLayout(page_1745);
@@ -26161,7 +26162,7 @@ public:
 
         horizontalLayout_1753->addWidget(label_1745);
 
-        widget20->addWidget(page_1745);
+        splitWidget9->addWidget(page_1745);
         page_1746 = new QWidget();
         page_1746->setObjectName("page_1746");
         horizontalLayout_1754 = new QHBoxLayout(page_1746);
@@ -26173,7 +26174,7 @@ public:
 
         horizontalLayout_1754->addWidget(label_1746);
 
-        widget20->addWidget(page_1746);
+        splitWidget9->addWidget(page_1746);
         page_1747 = new QWidget();
         page_1747->setObjectName("page_1747");
         horizontalLayout_1755 = new QHBoxLayout(page_1747);
@@ -26185,7 +26186,7 @@ public:
 
         horizontalLayout_1755->addWidget(label_1747);
 
-        widget20->addWidget(page_1747);
+        splitWidget9->addWidget(page_1747);
         page_1748 = new QWidget();
         page_1748->setObjectName("page_1748");
         horizontalLayout_1756 = new QHBoxLayout(page_1748);
@@ -26197,7 +26198,7 @@ public:
 
         horizontalLayout_1756->addWidget(label_1748);
 
-        widget20->addWidget(page_1748);
+        splitWidget9->addWidget(page_1748);
         page_1749 = new QWidget();
         page_1749->setObjectName("page_1749");
         horizontalLayout_1757 = new QHBoxLayout(page_1749);
@@ -26209,7 +26210,7 @@ public:
 
         horizontalLayout_1757->addWidget(label_1749);
 
-        widget20->addWidget(page_1749);
+        splitWidget9->addWidget(page_1749);
         page_1750 = new QWidget();
         page_1750->setObjectName("page_1750");
         horizontalLayout_1758 = new QHBoxLayout(page_1750);
@@ -26221,7 +26222,7 @@ public:
 
         horizontalLayout_1758->addWidget(label_1750);
 
-        widget20->addWidget(page_1750);
+        splitWidget9->addWidget(page_1750);
         page_1751 = new QWidget();
         page_1751->setObjectName("page_1751");
         horizontalLayout_1759 = new QHBoxLayout(page_1751);
@@ -26233,7 +26234,7 @@ public:
 
         horizontalLayout_1759->addWidget(label_1751);
 
-        widget20->addWidget(page_1751);
+        splitWidget9->addWidget(page_1751);
         page_1752 = new QWidget();
         page_1752->setObjectName("page_1752");
         horizontalLayout_1760 = new QHBoxLayout(page_1752);
@@ -26245,7 +26246,7 @@ public:
 
         horizontalLayout_1760->addWidget(label_1752);
 
-        widget20->addWidget(page_1752);
+        splitWidget9->addWidget(page_1752);
         page_1753 = new QWidget();
         page_1753->setObjectName("page_1753");
         horizontalLayout_1761 = new QHBoxLayout(page_1753);
@@ -26257,7 +26258,7 @@ public:
 
         horizontalLayout_1761->addWidget(label_1753);
 
-        widget20->addWidget(page_1753);
+        splitWidget9->addWidget(page_1753);
         page_1754 = new QWidget();
         page_1754->setObjectName("page_1754");
         horizontalLayout_1762 = new QHBoxLayout(page_1754);
@@ -26269,7 +26270,7 @@ public:
 
         horizontalLayout_1762->addWidget(label_1754);
 
-        widget20->addWidget(page_1754);
+        splitWidget9->addWidget(page_1754);
         page_1755 = new QWidget();
         page_1755->setObjectName("page_1755");
         horizontalLayout_1763 = new QHBoxLayout(page_1755);
@@ -26281,7 +26282,7 @@ public:
 
         horizontalLayout_1763->addWidget(label_1755);
 
-        widget20->addWidget(page_1755);
+        splitWidget9->addWidget(page_1755);
         page_1756 = new QWidget();
         page_1756->setObjectName("page_1756");
         horizontalLayout_1764 = new QHBoxLayout(page_1756);
@@ -26293,7 +26294,7 @@ public:
 
         horizontalLayout_1764->addWidget(label_1756);
 
-        widget20->addWidget(page_1756);
+        splitWidget9->addWidget(page_1756);
         page_1757 = new QWidget();
         page_1757->setObjectName("page_1757");
         horizontalLayout_1765 = new QHBoxLayout(page_1757);
@@ -26305,7 +26306,7 @@ public:
 
         horizontalLayout_1765->addWidget(label_1757);
 
-        widget20->addWidget(page_1757);
+        splitWidget9->addWidget(page_1757);
         page_1758 = new QWidget();
         page_1758->setObjectName("page_1758");
         horizontalLayout_1766 = new QHBoxLayout(page_1758);
@@ -26317,7 +26318,7 @@ public:
 
         horizontalLayout_1766->addWidget(label_1758);
 
-        widget20->addWidget(page_1758);
+        splitWidget9->addWidget(page_1758);
         page_1759 = new QWidget();
         page_1759->setObjectName("page_1759");
         horizontalLayout_1767 = new QHBoxLayout(page_1759);
@@ -26329,7 +26330,7 @@ public:
 
         horizontalLayout_1767->addWidget(label_1759);
 
-        widget20->addWidget(page_1759);
+        splitWidget9->addWidget(page_1759);
         page_1760 = new QWidget();
         page_1760->setObjectName("page_1760");
         horizontalLayout_1768 = new QHBoxLayout(page_1760);
@@ -26341,7 +26342,7 @@ public:
 
         horizontalLayout_1768->addWidget(label_1760);
 
-        widget20->addWidget(page_1760);
+        splitWidget9->addWidget(page_1760);
         page_1761 = new QWidget();
         page_1761->setObjectName("page_1761");
         horizontalLayout_1769 = new QHBoxLayout(page_1761);
@@ -26353,7 +26354,7 @@ public:
 
         horizontalLayout_1769->addWidget(label_1761);
 
-        widget20->addWidget(page_1761);
+        splitWidget9->addWidget(page_1761);
         page_1762 = new QWidget();
         page_1762->setObjectName("page_1762");
         horizontalLayout_1770 = new QHBoxLayout(page_1762);
@@ -26365,7 +26366,7 @@ public:
 
         horizontalLayout_1770->addWidget(label_1762);
 
-        widget20->addWidget(page_1762);
+        splitWidget9->addWidget(page_1762);
         page_1763 = new QWidget();
         page_1763->setObjectName("page_1763");
         horizontalLayout_1771 = new QHBoxLayout(page_1763);
@@ -26377,7 +26378,7 @@ public:
 
         horizontalLayout_1771->addWidget(label_1763);
 
-        widget20->addWidget(page_1763);
+        splitWidget9->addWidget(page_1763);
         page_1764 = new QWidget();
         page_1764->setObjectName("page_1764");
         horizontalLayout_1772 = new QHBoxLayout(page_1764);
@@ -26389,7 +26390,7 @@ public:
 
         horizontalLayout_1772->addWidget(label_1764);
 
-        widget20->addWidget(page_1764);
+        splitWidget9->addWidget(page_1764);
         page_1765 = new QWidget();
         page_1765->setObjectName("page_1765");
         horizontalLayout_1773 = new QHBoxLayout(page_1765);
@@ -26401,7 +26402,7 @@ public:
 
         horizontalLayout_1773->addWidget(label_1765);
 
-        widget20->addWidget(page_1765);
+        splitWidget9->addWidget(page_1765);
         page_1766 = new QWidget();
         page_1766->setObjectName("page_1766");
         horizontalLayout_1774 = new QHBoxLayout(page_1766);
@@ -26413,7 +26414,7 @@ public:
 
         horizontalLayout_1774->addWidget(label_1766);
 
-        widget20->addWidget(page_1766);
+        splitWidget9->addWidget(page_1766);
         page_1767 = new QWidget();
         page_1767->setObjectName("page_1767");
         horizontalLayout_1775 = new QHBoxLayout(page_1767);
@@ -26425,7 +26426,7 @@ public:
 
         horizontalLayout_1775->addWidget(label_1767);
 
-        widget20->addWidget(page_1767);
+        splitWidget9->addWidget(page_1767);
         page_1768 = new QWidget();
         page_1768->setObjectName("page_1768");
         horizontalLayout_1776 = new QHBoxLayout(page_1768);
@@ -26437,7 +26438,7 @@ public:
 
         horizontalLayout_1776->addWidget(label_1768);
 
-        widget20->addWidget(page_1768);
+        splitWidget9->addWidget(page_1768);
         page_1769 = new QWidget();
         page_1769->setObjectName("page_1769");
         horizontalLayout_1777 = new QHBoxLayout(page_1769);
@@ -26449,7 +26450,7 @@ public:
 
         horizontalLayout_1777->addWidget(label_1769);
 
-        widget20->addWidget(page_1769);
+        splitWidget9->addWidget(page_1769);
         page_1770 = new QWidget();
         page_1770->setObjectName("page_1770");
         horizontalLayout_1778 = new QHBoxLayout(page_1770);
@@ -26461,7 +26462,7 @@ public:
 
         horizontalLayout_1778->addWidget(label_1770);
 
-        widget20->addWidget(page_1770);
+        splitWidget9->addWidget(page_1770);
         page_1771 = new QWidget();
         page_1771->setObjectName("page_1771");
         horizontalLayout_1779 = new QHBoxLayout(page_1771);
@@ -26473,7 +26474,7 @@ public:
 
         horizontalLayout_1779->addWidget(label_1771);
 
-        widget20->addWidget(page_1771);
+        splitWidget9->addWidget(page_1771);
         page_1772 = new QWidget();
         page_1772->setObjectName("page_1772");
         horizontalLayout_1780 = new QHBoxLayout(page_1772);
@@ -26485,7 +26486,7 @@ public:
 
         horizontalLayout_1780->addWidget(label_1772);
 
-        widget20->addWidget(page_1772);
+        splitWidget9->addWidget(page_1772);
         page_1773 = new QWidget();
         page_1773->setObjectName("page_1773");
         horizontalLayout_1781 = new QHBoxLayout(page_1773);
@@ -26497,7 +26498,7 @@ public:
 
         horizontalLayout_1781->addWidget(label_1773);
 
-        widget20->addWidget(page_1773);
+        splitWidget9->addWidget(page_1773);
         page_1774 = new QWidget();
         page_1774->setObjectName("page_1774");
         horizontalLayout_1782 = new QHBoxLayout(page_1774);
@@ -26509,7 +26510,7 @@ public:
 
         horizontalLayout_1782->addWidget(label_1774);
 
-        widget20->addWidget(page_1774);
+        splitWidget9->addWidget(page_1774);
         page_1775 = new QWidget();
         page_1775->setObjectName("page_1775");
         horizontalLayout_1783 = new QHBoxLayout(page_1775);
@@ -26521,7 +26522,7 @@ public:
 
         horizontalLayout_1783->addWidget(label_1775);
 
-        widget20->addWidget(page_1775);
+        splitWidget9->addWidget(page_1775);
         page_1776 = new QWidget();
         page_1776->setObjectName("page_1776");
         horizontalLayout_1784 = new QHBoxLayout(page_1776);
@@ -26533,7 +26534,7 @@ public:
 
         horizontalLayout_1784->addWidget(label_1776);
 
-        widget20->addWidget(page_1776);
+        splitWidget9->addWidget(page_1776);
         page_1777 = new QWidget();
         page_1777->setObjectName("page_1777");
         horizontalLayout_1785 = new QHBoxLayout(page_1777);
@@ -26545,7 +26546,7 @@ public:
 
         horizontalLayout_1785->addWidget(label_1777);
 
-        widget20->addWidget(page_1777);
+        splitWidget9->addWidget(page_1777);
         page_1778 = new QWidget();
         page_1778->setObjectName("page_1778");
         horizontalLayout_1786 = new QHBoxLayout(page_1778);
@@ -26557,7 +26558,7 @@ public:
 
         horizontalLayout_1786->addWidget(label_1778);
 
-        widget20->addWidget(page_1778);
+        splitWidget9->addWidget(page_1778);
         page_1779 = new QWidget();
         page_1779->setObjectName("page_1779");
         horizontalLayout_1787 = new QHBoxLayout(page_1779);
@@ -26569,7 +26570,7 @@ public:
 
         horizontalLayout_1787->addWidget(label_1779);
 
-        widget20->addWidget(page_1779);
+        splitWidget9->addWidget(page_1779);
         page_1780 = new QWidget();
         page_1780->setObjectName("page_1780");
         horizontalLayout_1788 = new QHBoxLayout(page_1780);
@@ -26581,7 +26582,7 @@ public:
 
         horizontalLayout_1788->addWidget(label_1780);
 
-        widget20->addWidget(page_1780);
+        splitWidget9->addWidget(page_1780);
         page_1781 = new QWidget();
         page_1781->setObjectName("page_1781");
         horizontalLayout_1789 = new QHBoxLayout(page_1781);
@@ -26593,7 +26594,7 @@ public:
 
         horizontalLayout_1789->addWidget(label_1781);
 
-        widget20->addWidget(page_1781);
+        splitWidget9->addWidget(page_1781);
         page_1782 = new QWidget();
         page_1782->setObjectName("page_1782");
         horizontalLayout_1790 = new QHBoxLayout(page_1782);
@@ -26605,17 +26606,17 @@ public:
 
         horizontalLayout_1790->addWidget(label_1782);
 
-        widget20->addWidget(page_1782);
+        splitWidget9->addWidget(page_1782);
 
-        horizontalLayout_1304->addWidget(widget20);
+        horizontalLayout_1304->addWidget(splitWidget9);
 
-        widget21 = new QStackedWidget(centralwidget);
-        widget21->setObjectName("widget21");
-        sizePolicy.setHeightForWidth(widget21->sizePolicy().hasHeightForWidth());
-        widget21->setSizePolicy(sizePolicy);
-        widget21->setMinimumSize(QSize(100, 150));
-        widget21->setMaximumSize(QSize(100, 150));
-        widget21->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget10 = new QStackedWidget(centralwidget);
+        splitWidget10->setObjectName("splitWidget10");
+        sizePolicy.setHeightForWidth(splitWidget10->sizePolicy().hasHeightForWidth());
+        splitWidget10->setSizePolicy(sizePolicy);
+        splitWidget10->setMinimumSize(QSize(100, 150));
+        splitWidget10->setMaximumSize(QSize(100, 150));
+        splitWidget10->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1783 = new QWidget();
         page_1783->setObjectName("page_1783");
@@ -26626,7 +26627,7 @@ public:
 
         horizontalLayout_1791->addWidget(label_1783);
 
-        widget21->addWidget(page_1783);
+        splitWidget10->addWidget(page_1783);
         page_1784 = new QWidget();
         page_1784->setObjectName("page_1784");
         horizontalLayout_1792 = new QHBoxLayout(page_1784);
@@ -26638,7 +26639,7 @@ public:
 
         horizontalLayout_1792->addWidget(label_1784);
 
-        widget21->addWidget(page_1784);
+        splitWidget10->addWidget(page_1784);
         page_1785 = new QWidget();
         page_1785->setObjectName("page_1785");
         sizePolicy.setHeightForWidth(page_1785->sizePolicy().hasHeightForWidth());
@@ -26660,7 +26661,7 @@ public:
 
         horizontalLayout_1793->addWidget(label_1785);
 
-        widget21->addWidget(page_1785);
+        splitWidget10->addWidget(page_1785);
         page_1786 = new QWidget();
         page_1786->setObjectName("page_1786");
         sizePolicy.setHeightForWidth(page_1786->sizePolicy().hasHeightForWidth());
@@ -26678,7 +26679,7 @@ public:
 
         horizontalLayout_1794->addWidget(label_1786);
 
-        widget21->addWidget(page_1786);
+        splitWidget10->addWidget(page_1786);
         page_1787 = new QWidget();
         page_1787->setObjectName("page_1787");
         sizePolicy.setHeightForWidth(page_1787->sizePolicy().hasHeightForWidth());
@@ -26694,7 +26695,7 @@ public:
 
         horizontalLayout_1795->addWidget(label_1787);
 
-        widget21->addWidget(page_1787);
+        splitWidget10->addWidget(page_1787);
         page_1788 = new QWidget();
         page_1788->setObjectName("page_1788");
         horizontalLayout_1796 = new QHBoxLayout(page_1788);
@@ -26706,7 +26707,7 @@ public:
 
         horizontalLayout_1796->addWidget(label_1788);
 
-        widget21->addWidget(page_1788);
+        splitWidget10->addWidget(page_1788);
         page_1789 = new QWidget();
         page_1789->setObjectName("page_1789");
         horizontalLayout_1797 = new QHBoxLayout(page_1789);
@@ -26718,7 +26719,7 @@ public:
 
         horizontalLayout_1797->addWidget(label_1789);
 
-        widget21->addWidget(page_1789);
+        splitWidget10->addWidget(page_1789);
         page_1790 = new QWidget();
         page_1790->setObjectName("page_1790");
         horizontalLayout_1798 = new QHBoxLayout(page_1790);
@@ -26730,7 +26731,7 @@ public:
 
         horizontalLayout_1798->addWidget(label_1790);
 
-        widget21->addWidget(page_1790);
+        splitWidget10->addWidget(page_1790);
         page_1791 = new QWidget();
         page_1791->setObjectName("page_1791");
         horizontalLayout_1799 = new QHBoxLayout(page_1791);
@@ -26742,7 +26743,7 @@ public:
 
         horizontalLayout_1799->addWidget(label_1791);
 
-        widget21->addWidget(page_1791);
+        splitWidget10->addWidget(page_1791);
         page_1792 = new QWidget();
         page_1792->setObjectName("page_1792");
         horizontalLayout_1800 = new QHBoxLayout(page_1792);
@@ -26754,7 +26755,7 @@ public:
 
         horizontalLayout_1800->addWidget(label_1792);
 
-        widget21->addWidget(page_1792);
+        splitWidget10->addWidget(page_1792);
         page_1793 = new QWidget();
         page_1793->setObjectName("page_1793");
         horizontalLayout_1801 = new QHBoxLayout(page_1793);
@@ -26766,7 +26767,7 @@ public:
 
         horizontalLayout_1801->addWidget(label_1793);
 
-        widget21->addWidget(page_1793);
+        splitWidget10->addWidget(page_1793);
         page_1794 = new QWidget();
         page_1794->setObjectName("page_1794");
         horizontalLayout_1802 = new QHBoxLayout(page_1794);
@@ -26778,7 +26779,7 @@ public:
 
         horizontalLayout_1802->addWidget(label_1794);
 
-        widget21->addWidget(page_1794);
+        splitWidget10->addWidget(page_1794);
         page_1795 = new QWidget();
         page_1795->setObjectName("page_1795");
         horizontalLayout_1803 = new QHBoxLayout(page_1795);
@@ -26790,7 +26791,7 @@ public:
 
         horizontalLayout_1803->addWidget(label_1795);
 
-        widget21->addWidget(page_1795);
+        splitWidget10->addWidget(page_1795);
         page_1796 = new QWidget();
         page_1796->setObjectName("page_1796");
         horizontalLayout_1804 = new QHBoxLayout(page_1796);
@@ -26802,7 +26803,7 @@ public:
 
         horizontalLayout_1804->addWidget(label_1796);
 
-        widget21->addWidget(page_1796);
+        splitWidget10->addWidget(page_1796);
         page_1797 = new QWidget();
         page_1797->setObjectName("page_1797");
         horizontalLayout_1805 = new QHBoxLayout(page_1797);
@@ -26814,7 +26815,7 @@ public:
 
         horizontalLayout_1805->addWidget(label_1797);
 
-        widget21->addWidget(page_1797);
+        splitWidget10->addWidget(page_1797);
         page_1798 = new QWidget();
         page_1798->setObjectName("page_1798");
         horizontalLayout_1806 = new QHBoxLayout(page_1798);
@@ -26826,7 +26827,7 @@ public:
 
         horizontalLayout_1806->addWidget(label_1798);
 
-        widget21->addWidget(page_1798);
+        splitWidget10->addWidget(page_1798);
         page_1799 = new QWidget();
         page_1799->setObjectName("page_1799");
         horizontalLayout_1807 = new QHBoxLayout(page_1799);
@@ -26838,7 +26839,7 @@ public:
 
         horizontalLayout_1807->addWidget(label_1799);
 
-        widget21->addWidget(page_1799);
+        splitWidget10->addWidget(page_1799);
         page_1800 = new QWidget();
         page_1800->setObjectName("page_1800");
         horizontalLayout_1808 = new QHBoxLayout(page_1800);
@@ -26850,7 +26851,7 @@ public:
 
         horizontalLayout_1808->addWidget(label_1800);
 
-        widget21->addWidget(page_1800);
+        splitWidget10->addWidget(page_1800);
         page_1801 = new QWidget();
         page_1801->setObjectName("page_1801");
         horizontalLayout_1809 = new QHBoxLayout(page_1801);
@@ -26862,7 +26863,7 @@ public:
 
         horizontalLayout_1809->addWidget(label_1801);
 
-        widget21->addWidget(page_1801);
+        splitWidget10->addWidget(page_1801);
         page_1802 = new QWidget();
         page_1802->setObjectName("page_1802");
         horizontalLayout_1810 = new QHBoxLayout(page_1802);
@@ -26874,7 +26875,7 @@ public:
 
         horizontalLayout_1810->addWidget(label_1802);
 
-        widget21->addWidget(page_1802);
+        splitWidget10->addWidget(page_1802);
         page_1803 = new QWidget();
         page_1803->setObjectName("page_1803");
         horizontalLayout_1811 = new QHBoxLayout(page_1803);
@@ -26886,7 +26887,7 @@ public:
 
         horizontalLayout_1811->addWidget(label_1803);
 
-        widget21->addWidget(page_1803);
+        splitWidget10->addWidget(page_1803);
         page_1804 = new QWidget();
         page_1804->setObjectName("page_1804");
         horizontalLayout_1812 = new QHBoxLayout(page_1804);
@@ -26898,7 +26899,7 @@ public:
 
         horizontalLayout_1812->addWidget(label_1804);
 
-        widget21->addWidget(page_1804);
+        splitWidget10->addWidget(page_1804);
         page_1805 = new QWidget();
         page_1805->setObjectName("page_1805");
         horizontalLayout_1813 = new QHBoxLayout(page_1805);
@@ -26910,7 +26911,7 @@ public:
 
         horizontalLayout_1813->addWidget(label_1805);
 
-        widget21->addWidget(page_1805);
+        splitWidget10->addWidget(page_1805);
         page_1806 = new QWidget();
         page_1806->setObjectName("page_1806");
         horizontalLayout_1814 = new QHBoxLayout(page_1806);
@@ -26922,7 +26923,7 @@ public:
 
         horizontalLayout_1814->addWidget(label_1806);
 
-        widget21->addWidget(page_1806);
+        splitWidget10->addWidget(page_1806);
         page_1807 = new QWidget();
         page_1807->setObjectName("page_1807");
         horizontalLayout_1815 = new QHBoxLayout(page_1807);
@@ -26934,7 +26935,7 @@ public:
 
         horizontalLayout_1815->addWidget(label_1807);
 
-        widget21->addWidget(page_1807);
+        splitWidget10->addWidget(page_1807);
         page_1808 = new QWidget();
         page_1808->setObjectName("page_1808");
         horizontalLayout_1816 = new QHBoxLayout(page_1808);
@@ -26946,7 +26947,7 @@ public:
 
         horizontalLayout_1816->addWidget(label_1808);
 
-        widget21->addWidget(page_1808);
+        splitWidget10->addWidget(page_1808);
         page_1809 = new QWidget();
         page_1809->setObjectName("page_1809");
         horizontalLayout_1817 = new QHBoxLayout(page_1809);
@@ -26958,7 +26959,7 @@ public:
 
         horizontalLayout_1817->addWidget(label_1809);
 
-        widget21->addWidget(page_1809);
+        splitWidget10->addWidget(page_1809);
         page_1810 = new QWidget();
         page_1810->setObjectName("page_1810");
         horizontalLayout_1818 = new QHBoxLayout(page_1810);
@@ -26970,7 +26971,7 @@ public:
 
         horizontalLayout_1818->addWidget(label_1810);
 
-        widget21->addWidget(page_1810);
+        splitWidget10->addWidget(page_1810);
         page_1811 = new QWidget();
         page_1811->setObjectName("page_1811");
         horizontalLayout_1819 = new QHBoxLayout(page_1811);
@@ -26982,7 +26983,7 @@ public:
 
         horizontalLayout_1819->addWidget(label_1811);
 
-        widget21->addWidget(page_1811);
+        splitWidget10->addWidget(page_1811);
         page_1812 = new QWidget();
         page_1812->setObjectName("page_1812");
         horizontalLayout_1820 = new QHBoxLayout(page_1812);
@@ -26994,7 +26995,7 @@ public:
 
         horizontalLayout_1820->addWidget(label_1812);
 
-        widget21->addWidget(page_1812);
+        splitWidget10->addWidget(page_1812);
         page_1813 = new QWidget();
         page_1813->setObjectName("page_1813");
         horizontalLayout_1821 = new QHBoxLayout(page_1813);
@@ -27006,7 +27007,7 @@ public:
 
         horizontalLayout_1821->addWidget(label_1813);
 
-        widget21->addWidget(page_1813);
+        splitWidget10->addWidget(page_1813);
         page_1814 = new QWidget();
         page_1814->setObjectName("page_1814");
         horizontalLayout_1822 = new QHBoxLayout(page_1814);
@@ -27018,7 +27019,7 @@ public:
 
         horizontalLayout_1822->addWidget(label_1814);
 
-        widget21->addWidget(page_1814);
+        splitWidget10->addWidget(page_1814);
         page_1815 = new QWidget();
         page_1815->setObjectName("page_1815");
         horizontalLayout_1823 = new QHBoxLayout(page_1815);
@@ -27030,7 +27031,7 @@ public:
 
         horizontalLayout_1823->addWidget(label_1815);
 
-        widget21->addWidget(page_1815);
+        splitWidget10->addWidget(page_1815);
         page_1816 = new QWidget();
         page_1816->setObjectName("page_1816");
         horizontalLayout_1824 = new QHBoxLayout(page_1816);
@@ -27042,7 +27043,7 @@ public:
 
         horizontalLayout_1824->addWidget(label_1816);
 
-        widget21->addWidget(page_1816);
+        splitWidget10->addWidget(page_1816);
         page_1817 = new QWidget();
         page_1817->setObjectName("page_1817");
         horizontalLayout_1825 = new QHBoxLayout(page_1817);
@@ -27054,7 +27055,7 @@ public:
 
         horizontalLayout_1825->addWidget(label_1817);
 
-        widget21->addWidget(page_1817);
+        splitWidget10->addWidget(page_1817);
         page_1818 = new QWidget();
         page_1818->setObjectName("page_1818");
         horizontalLayout_1826 = new QHBoxLayout(page_1818);
@@ -27066,7 +27067,7 @@ public:
 
         horizontalLayout_1826->addWidget(label_1818);
 
-        widget21->addWidget(page_1818);
+        splitWidget10->addWidget(page_1818);
         page_1819 = new QWidget();
         page_1819->setObjectName("page_1819");
         horizontalLayout_1827 = new QHBoxLayout(page_1819);
@@ -27078,7 +27079,7 @@ public:
 
         horizontalLayout_1827->addWidget(label_1819);
 
-        widget21->addWidget(page_1819);
+        splitWidget10->addWidget(page_1819);
         page_1820 = new QWidget();
         page_1820->setObjectName("page_1820");
         horizontalLayout_1828 = new QHBoxLayout(page_1820);
@@ -27090,7 +27091,7 @@ public:
 
         horizontalLayout_1828->addWidget(label_1820);
 
-        widget21->addWidget(page_1820);
+        splitWidget10->addWidget(page_1820);
         page_1821 = new QWidget();
         page_1821->setObjectName("page_1821");
         horizontalLayout_1829 = new QHBoxLayout(page_1821);
@@ -27102,7 +27103,7 @@ public:
 
         horizontalLayout_1829->addWidget(label_1821);
 
-        widget21->addWidget(page_1821);
+        splitWidget10->addWidget(page_1821);
         page_1822 = new QWidget();
         page_1822->setObjectName("page_1822");
         horizontalLayout_1830 = new QHBoxLayout(page_1822);
@@ -27114,7 +27115,7 @@ public:
 
         horizontalLayout_1830->addWidget(label_1822);
 
-        widget21->addWidget(page_1822);
+        splitWidget10->addWidget(page_1822);
         page_1823 = new QWidget();
         page_1823->setObjectName("page_1823");
         horizontalLayout_1831 = new QHBoxLayout(page_1823);
@@ -27126,7 +27127,7 @@ public:
 
         horizontalLayout_1831->addWidget(label_1823);
 
-        widget21->addWidget(page_1823);
+        splitWidget10->addWidget(page_1823);
         page_1824 = new QWidget();
         page_1824->setObjectName("page_1824");
         horizontalLayout_1832 = new QHBoxLayout(page_1824);
@@ -27138,7 +27139,7 @@ public:
 
         horizontalLayout_1832->addWidget(label_1824);
 
-        widget21->addWidget(page_1824);
+        splitWidget10->addWidget(page_1824);
         page_1825 = new QWidget();
         page_1825->setObjectName("page_1825");
         horizontalLayout_1833 = new QHBoxLayout(page_1825);
@@ -27150,7 +27151,7 @@ public:
 
         horizontalLayout_1833->addWidget(label_1825);
 
-        widget21->addWidget(page_1825);
+        splitWidget10->addWidget(page_1825);
         page_1826 = new QWidget();
         page_1826->setObjectName("page_1826");
         horizontalLayout_1834 = new QHBoxLayout(page_1826);
@@ -27162,7 +27163,7 @@ public:
 
         horizontalLayout_1834->addWidget(label_1826);
 
-        widget21->addWidget(page_1826);
+        splitWidget10->addWidget(page_1826);
         page_1827 = new QWidget();
         page_1827->setObjectName("page_1827");
         horizontalLayout_1835 = new QHBoxLayout(page_1827);
@@ -27174,7 +27175,7 @@ public:
 
         horizontalLayout_1835->addWidget(label_1827);
 
-        widget21->addWidget(page_1827);
+        splitWidget10->addWidget(page_1827);
         page_1828 = new QWidget();
         page_1828->setObjectName("page_1828");
         horizontalLayout_1836 = new QHBoxLayout(page_1828);
@@ -27186,7 +27187,7 @@ public:
 
         horizontalLayout_1836->addWidget(label_1828);
 
-        widget21->addWidget(page_1828);
+        splitWidget10->addWidget(page_1828);
         page_1829 = new QWidget();
         page_1829->setObjectName("page_1829");
         horizontalLayout_1837 = new QHBoxLayout(page_1829);
@@ -27198,7 +27199,7 @@ public:
 
         horizontalLayout_1837->addWidget(label_1829);
 
-        widget21->addWidget(page_1829);
+        splitWidget10->addWidget(page_1829);
         page_1830 = new QWidget();
         page_1830->setObjectName("page_1830");
         horizontalLayout_1838 = new QHBoxLayout(page_1830);
@@ -27210,7 +27211,7 @@ public:
 
         horizontalLayout_1838->addWidget(label_1830);
 
-        widget21->addWidget(page_1830);
+        splitWidget10->addWidget(page_1830);
         page_1831 = new QWidget();
         page_1831->setObjectName("page_1831");
         horizontalLayout_1839 = new QHBoxLayout(page_1831);
@@ -27222,7 +27223,7 @@ public:
 
         horizontalLayout_1839->addWidget(label_1831);
 
-        widget21->addWidget(page_1831);
+        splitWidget10->addWidget(page_1831);
         page_1832 = new QWidget();
         page_1832->setObjectName("page_1832");
         horizontalLayout_1840 = new QHBoxLayout(page_1832);
@@ -27234,7 +27235,7 @@ public:
 
         horizontalLayout_1840->addWidget(label_1832);
 
-        widget21->addWidget(page_1832);
+        splitWidget10->addWidget(page_1832);
         page_1833 = new QWidget();
         page_1833->setObjectName("page_1833");
         horizontalLayout_1841 = new QHBoxLayout(page_1833);
@@ -27246,7 +27247,7 @@ public:
 
         horizontalLayout_1841->addWidget(label_1833);
 
-        widget21->addWidget(page_1833);
+        splitWidget10->addWidget(page_1833);
         page_1834 = new QWidget();
         page_1834->setObjectName("page_1834");
         horizontalLayout_1842 = new QHBoxLayout(page_1834);
@@ -27258,7 +27259,7 @@ public:
 
         horizontalLayout_1842->addWidget(label_1834);
 
-        widget21->addWidget(page_1834);
+        splitWidget10->addWidget(page_1834);
         page_1835 = new QWidget();
         page_1835->setObjectName("page_1835");
         horizontalLayout_1843 = new QHBoxLayout(page_1835);
@@ -27270,7 +27271,7 @@ public:
 
         horizontalLayout_1843->addWidget(label_1835);
 
-        widget21->addWidget(page_1835);
+        splitWidget10->addWidget(page_1835);
         page_1836 = new QWidget();
         page_1836->setObjectName("page_1836");
         horizontalLayout_1844 = new QHBoxLayout(page_1836);
@@ -27282,17 +27283,17 @@ public:
 
         horizontalLayout_1844->addWidget(label_1836);
 
-        widget21->addWidget(page_1836);
+        splitWidget10->addWidget(page_1836);
 
-        horizontalLayout_1304->addWidget(widget21);
+        horizontalLayout_1304->addWidget(splitWidget10);
 
-        widget22 = new QStackedWidget(centralwidget);
-        widget22->setObjectName("widget22");
-        sizePolicy.setHeightForWidth(widget22->sizePolicy().hasHeightForWidth());
-        widget22->setSizePolicy(sizePolicy);
-        widget22->setMinimumSize(QSize(100, 150));
-        widget22->setMaximumSize(QSize(100, 150));
-        widget22->setStyleSheet(QString::fromUtf8("border-image: none;\n"
+        splitWidget11 = new QStackedWidget(centralwidget);
+        splitWidget11->setObjectName("splitWidget11");
+        sizePolicy.setHeightForWidth(splitWidget11->sizePolicy().hasHeightForWidth());
+        splitWidget11->setSizePolicy(sizePolicy);
+        splitWidget11->setMinimumSize(QSize(100, 150));
+        splitWidget11->setMaximumSize(QSize(100, 150));
+        splitWidget11->setStyleSheet(QString::fromUtf8("border-image: none;\n"
 ""));
         page_1837 = new QWidget();
         page_1837->setObjectName("page_1837");
@@ -27303,7 +27304,7 @@ public:
 
         horizontalLayout_1845->addWidget(label_1837);
 
-        widget22->addWidget(page_1837);
+        splitWidget11->addWidget(page_1837);
         page_1838 = new QWidget();
         page_1838->setObjectName("page_1838");
         horizontalLayout_1846 = new QHBoxLayout(page_1838);
@@ -27315,7 +27316,7 @@ public:
 
         horizontalLayout_1846->addWidget(label_1838);
 
-        widget22->addWidget(page_1838);
+        splitWidget11->addWidget(page_1838);
         page_1839 = new QWidget();
         page_1839->setObjectName("page_1839");
         sizePolicy.setHeightForWidth(page_1839->sizePolicy().hasHeightForWidth());
@@ -27337,7 +27338,7 @@ public:
 
         horizontalLayout_1847->addWidget(label_1839);
 
-        widget22->addWidget(page_1839);
+        splitWidget11->addWidget(page_1839);
         page_1840 = new QWidget();
         page_1840->setObjectName("page_1840");
         sizePolicy.setHeightForWidth(page_1840->sizePolicy().hasHeightForWidth());
@@ -27355,7 +27356,7 @@ public:
 
         horizontalLayout_1848->addWidget(label_1840);
 
-        widget22->addWidget(page_1840);
+        splitWidget11->addWidget(page_1840);
         page_1841 = new QWidget();
         page_1841->setObjectName("page_1841");
         sizePolicy.setHeightForWidth(page_1841->sizePolicy().hasHeightForWidth());
@@ -27371,7 +27372,7 @@ public:
 
         horizontalLayout_1849->addWidget(label_1841);
 
-        widget22->addWidget(page_1841);
+        splitWidget11->addWidget(page_1841);
         page_1842 = new QWidget();
         page_1842->setObjectName("page_1842");
         horizontalLayout_1850 = new QHBoxLayout(page_1842);
@@ -27383,7 +27384,7 @@ public:
 
         horizontalLayout_1850->addWidget(label_1842);
 
-        widget22->addWidget(page_1842);
+        splitWidget11->addWidget(page_1842);
         page_1843 = new QWidget();
         page_1843->setObjectName("page_1843");
         horizontalLayout_1851 = new QHBoxLayout(page_1843);
@@ -27395,7 +27396,7 @@ public:
 
         horizontalLayout_1851->addWidget(label_1843);
 
-        widget22->addWidget(page_1843);
+        splitWidget11->addWidget(page_1843);
         page_1844 = new QWidget();
         page_1844->setObjectName("page_1844");
         horizontalLayout_1852 = new QHBoxLayout(page_1844);
@@ -27407,7 +27408,7 @@ public:
 
         horizontalLayout_1852->addWidget(label_1844);
 
-        widget22->addWidget(page_1844);
+        splitWidget11->addWidget(page_1844);
         page_1845 = new QWidget();
         page_1845->setObjectName("page_1845");
         horizontalLayout_1853 = new QHBoxLayout(page_1845);
@@ -27419,7 +27420,7 @@ public:
 
         horizontalLayout_1853->addWidget(label_1845);
 
-        widget22->addWidget(page_1845);
+        splitWidget11->addWidget(page_1845);
         page_1846 = new QWidget();
         page_1846->setObjectName("page_1846");
         horizontalLayout_1854 = new QHBoxLayout(page_1846);
@@ -27431,7 +27432,7 @@ public:
 
         horizontalLayout_1854->addWidget(label_1846);
 
-        widget22->addWidget(page_1846);
+        splitWidget11->addWidget(page_1846);
         page_1847 = new QWidget();
         page_1847->setObjectName("page_1847");
         horizontalLayout_1855 = new QHBoxLayout(page_1847);
@@ -27443,7 +27444,7 @@ public:
 
         horizontalLayout_1855->addWidget(label_1847);
 
-        widget22->addWidget(page_1847);
+        splitWidget11->addWidget(page_1847);
         page_1848 = new QWidget();
         page_1848->setObjectName("page_1848");
         horizontalLayout_1856 = new QHBoxLayout(page_1848);
@@ -27455,7 +27456,7 @@ public:
 
         horizontalLayout_1856->addWidget(label_1848);
 
-        widget22->addWidget(page_1848);
+        splitWidget11->addWidget(page_1848);
         page_1849 = new QWidget();
         page_1849->setObjectName("page_1849");
         horizontalLayout_1857 = new QHBoxLayout(page_1849);
@@ -27467,7 +27468,7 @@ public:
 
         horizontalLayout_1857->addWidget(label_1849);
 
-        widget22->addWidget(page_1849);
+        splitWidget11->addWidget(page_1849);
         page_1850 = new QWidget();
         page_1850->setObjectName("page_1850");
         horizontalLayout_1858 = new QHBoxLayout(page_1850);
@@ -27479,7 +27480,7 @@ public:
 
         horizontalLayout_1858->addWidget(label_1850);
 
-        widget22->addWidget(page_1850);
+        splitWidget11->addWidget(page_1850);
         page_1851 = new QWidget();
         page_1851->setObjectName("page_1851");
         horizontalLayout_1859 = new QHBoxLayout(page_1851);
@@ -27491,7 +27492,7 @@ public:
 
         horizontalLayout_1859->addWidget(label_1851);
 
-        widget22->addWidget(page_1851);
+        splitWidget11->addWidget(page_1851);
         page_1852 = new QWidget();
         page_1852->setObjectName("page_1852");
         horizontalLayout_1860 = new QHBoxLayout(page_1852);
@@ -27503,7 +27504,7 @@ public:
 
         horizontalLayout_1860->addWidget(label_1852);
 
-        widget22->addWidget(page_1852);
+        splitWidget11->addWidget(page_1852);
         page_1853 = new QWidget();
         page_1853->setObjectName("page_1853");
         horizontalLayout_1861 = new QHBoxLayout(page_1853);
@@ -27515,7 +27516,7 @@ public:
 
         horizontalLayout_1861->addWidget(label_1853);
 
-        widget22->addWidget(page_1853);
+        splitWidget11->addWidget(page_1853);
         page_1854 = new QWidget();
         page_1854->setObjectName("page_1854");
         horizontalLayout_1862 = new QHBoxLayout(page_1854);
@@ -27527,7 +27528,7 @@ public:
 
         horizontalLayout_1862->addWidget(label_1854);
 
-        widget22->addWidget(page_1854);
+        splitWidget11->addWidget(page_1854);
         page_1855 = new QWidget();
         page_1855->setObjectName("page_1855");
         horizontalLayout_1863 = new QHBoxLayout(page_1855);
@@ -27539,7 +27540,7 @@ public:
 
         horizontalLayout_1863->addWidget(label_1855);
 
-        widget22->addWidget(page_1855);
+        splitWidget11->addWidget(page_1855);
         page_1856 = new QWidget();
         page_1856->setObjectName("page_1856");
         horizontalLayout_1864 = new QHBoxLayout(page_1856);
@@ -27551,7 +27552,7 @@ public:
 
         horizontalLayout_1864->addWidget(label_1856);
 
-        widget22->addWidget(page_1856);
+        splitWidget11->addWidget(page_1856);
         page_1857 = new QWidget();
         page_1857->setObjectName("page_1857");
         horizontalLayout_1865 = new QHBoxLayout(page_1857);
@@ -27563,7 +27564,7 @@ public:
 
         horizontalLayout_1865->addWidget(label_1857);
 
-        widget22->addWidget(page_1857);
+        splitWidget11->addWidget(page_1857);
         page_1858 = new QWidget();
         page_1858->setObjectName("page_1858");
         horizontalLayout_1866 = new QHBoxLayout(page_1858);
@@ -27575,7 +27576,7 @@ public:
 
         horizontalLayout_1866->addWidget(label_1858);
 
-        widget22->addWidget(page_1858);
+        splitWidget11->addWidget(page_1858);
         page_1859 = new QWidget();
         page_1859->setObjectName("page_1859");
         horizontalLayout_1867 = new QHBoxLayout(page_1859);
@@ -27587,7 +27588,7 @@ public:
 
         horizontalLayout_1867->addWidget(label_1859);
 
-        widget22->addWidget(page_1859);
+        splitWidget11->addWidget(page_1859);
         page_1860 = new QWidget();
         page_1860->setObjectName("page_1860");
         horizontalLayout_1868 = new QHBoxLayout(page_1860);
@@ -27599,7 +27600,7 @@ public:
 
         horizontalLayout_1868->addWidget(label_1860);
 
-        widget22->addWidget(page_1860);
+        splitWidget11->addWidget(page_1860);
         page_1861 = new QWidget();
         page_1861->setObjectName("page_1861");
         horizontalLayout_1869 = new QHBoxLayout(page_1861);
@@ -27611,7 +27612,7 @@ public:
 
         horizontalLayout_1869->addWidget(label_1861);
 
-        widget22->addWidget(page_1861);
+        splitWidget11->addWidget(page_1861);
         page_1862 = new QWidget();
         page_1862->setObjectName("page_1862");
         horizontalLayout_1870 = new QHBoxLayout(page_1862);
@@ -27623,7 +27624,7 @@ public:
 
         horizontalLayout_1870->addWidget(label_1862);
 
-        widget22->addWidget(page_1862);
+        splitWidget11->addWidget(page_1862);
         page_1863 = new QWidget();
         page_1863->setObjectName("page_1863");
         horizontalLayout_1871 = new QHBoxLayout(page_1863);
@@ -27635,7 +27636,7 @@ public:
 
         horizontalLayout_1871->addWidget(label_1863);
 
-        widget22->addWidget(page_1863);
+        splitWidget11->addWidget(page_1863);
         page_1864 = new QWidget();
         page_1864->setObjectName("page_1864");
         horizontalLayout_1872 = new QHBoxLayout(page_1864);
@@ -27647,7 +27648,7 @@ public:
 
         horizontalLayout_1872->addWidget(label_1864);
 
-        widget22->addWidget(page_1864);
+        splitWidget11->addWidget(page_1864);
         page_1865 = new QWidget();
         page_1865->setObjectName("page_1865");
         horizontalLayout_1873 = new QHBoxLayout(page_1865);
@@ -27659,7 +27660,7 @@ public:
 
         horizontalLayout_1873->addWidget(label_1865);
 
-        widget22->addWidget(page_1865);
+        splitWidget11->addWidget(page_1865);
         page_1866 = new QWidget();
         page_1866->setObjectName("page_1866");
         horizontalLayout_1874 = new QHBoxLayout(page_1866);
@@ -27671,7 +27672,7 @@ public:
 
         horizontalLayout_1874->addWidget(label_1866);
 
-        widget22->addWidget(page_1866);
+        splitWidget11->addWidget(page_1866);
         page_1867 = new QWidget();
         page_1867->setObjectName("page_1867");
         horizontalLayout_1875 = new QHBoxLayout(page_1867);
@@ -27683,7 +27684,7 @@ public:
 
         horizontalLayout_1875->addWidget(label_1867);
 
-        widget22->addWidget(page_1867);
+        splitWidget11->addWidget(page_1867);
         page_1868 = new QWidget();
         page_1868->setObjectName("page_1868");
         horizontalLayout_1876 = new QHBoxLayout(page_1868);
@@ -27695,7 +27696,7 @@ public:
 
         horizontalLayout_1876->addWidget(label_1868);
 
-        widget22->addWidget(page_1868);
+        splitWidget11->addWidget(page_1868);
         page_1869 = new QWidget();
         page_1869->setObjectName("page_1869");
         horizontalLayout_1877 = new QHBoxLayout(page_1869);
@@ -27707,7 +27708,7 @@ public:
 
         horizontalLayout_1877->addWidget(label_1869);
 
-        widget22->addWidget(page_1869);
+        splitWidget11->addWidget(page_1869);
         page_1870 = new QWidget();
         page_1870->setObjectName("page_1870");
         horizontalLayout_1878 = new QHBoxLayout(page_1870);
@@ -27719,7 +27720,7 @@ public:
 
         horizontalLayout_1878->addWidget(label_1870);
 
-        widget22->addWidget(page_1870);
+        splitWidget11->addWidget(page_1870);
         page_1871 = new QWidget();
         page_1871->setObjectName("page_1871");
         horizontalLayout_1879 = new QHBoxLayout(page_1871);
@@ -27731,7 +27732,7 @@ public:
 
         horizontalLayout_1879->addWidget(label_1871);
 
-        widget22->addWidget(page_1871);
+        splitWidget11->addWidget(page_1871);
         page_1872 = new QWidget();
         page_1872->setObjectName("page_1872");
         horizontalLayout_1880 = new QHBoxLayout(page_1872);
@@ -27743,7 +27744,7 @@ public:
 
         horizontalLayout_1880->addWidget(label_1872);
 
-        widget22->addWidget(page_1872);
+        splitWidget11->addWidget(page_1872);
         page_1873 = new QWidget();
         page_1873->setObjectName("page_1873");
         horizontalLayout_1881 = new QHBoxLayout(page_1873);
@@ -27755,7 +27756,7 @@ public:
 
         horizontalLayout_1881->addWidget(label_1873);
 
-        widget22->addWidget(page_1873);
+        splitWidget11->addWidget(page_1873);
         page_1874 = new QWidget();
         page_1874->setObjectName("page_1874");
         horizontalLayout_1882 = new QHBoxLayout(page_1874);
@@ -27767,7 +27768,7 @@ public:
 
         horizontalLayout_1882->addWidget(label_1874);
 
-        widget22->addWidget(page_1874);
+        splitWidget11->addWidget(page_1874);
         page_1875 = new QWidget();
         page_1875->setObjectName("page_1875");
         horizontalLayout_1883 = new QHBoxLayout(page_1875);
@@ -27779,7 +27780,7 @@ public:
 
         horizontalLayout_1883->addWidget(label_1875);
 
-        widget22->addWidget(page_1875);
+        splitWidget11->addWidget(page_1875);
         page_1876 = new QWidget();
         page_1876->setObjectName("page_1876");
         horizontalLayout_1884 = new QHBoxLayout(page_1876);
@@ -27791,7 +27792,7 @@ public:
 
         horizontalLayout_1884->addWidget(label_1876);
 
-        widget22->addWidget(page_1876);
+        splitWidget11->addWidget(page_1876);
         page_1877 = new QWidget();
         page_1877->setObjectName("page_1877");
         horizontalLayout_1885 = new QHBoxLayout(page_1877);
@@ -27803,7 +27804,7 @@ public:
 
         horizontalLayout_1885->addWidget(label_1877);
 
-        widget22->addWidget(page_1877);
+        splitWidget11->addWidget(page_1877);
         page_1878 = new QWidget();
         page_1878->setObjectName("page_1878");
         horizontalLayout_1886 = new QHBoxLayout(page_1878);
@@ -27815,7 +27816,7 @@ public:
 
         horizontalLayout_1886->addWidget(label_1878);
 
-        widget22->addWidget(page_1878);
+        splitWidget11->addWidget(page_1878);
         page_1879 = new QWidget();
         page_1879->setObjectName("page_1879");
         horizontalLayout_1887 = new QHBoxLayout(page_1879);
@@ -27827,7 +27828,7 @@ public:
 
         horizontalLayout_1887->addWidget(label_1879);
 
-        widget22->addWidget(page_1879);
+        splitWidget11->addWidget(page_1879);
         page_1880 = new QWidget();
         page_1880->setObjectName("page_1880");
         horizontalLayout_1888 = new QHBoxLayout(page_1880);
@@ -27839,7 +27840,7 @@ public:
 
         horizontalLayout_1888->addWidget(label_1880);
 
-        widget22->addWidget(page_1880);
+        splitWidget11->addWidget(page_1880);
         page_1881 = new QWidget();
         page_1881->setObjectName("page_1881");
         horizontalLayout_1889 = new QHBoxLayout(page_1881);
@@ -27851,7 +27852,7 @@ public:
 
         horizontalLayout_1889->addWidget(label_1881);
 
-        widget22->addWidget(page_1881);
+        splitWidget11->addWidget(page_1881);
         page_1882 = new QWidget();
         page_1882->setObjectName("page_1882");
         horizontalLayout_1890 = new QHBoxLayout(page_1882);
@@ -27863,7 +27864,7 @@ public:
 
         horizontalLayout_1890->addWidget(label_1882);
 
-        widget22->addWidget(page_1882);
+        splitWidget11->addWidget(page_1882);
         page_1883 = new QWidget();
         page_1883->setObjectName("page_1883");
         horizontalLayout_1891 = new QHBoxLayout(page_1883);
@@ -27875,7 +27876,7 @@ public:
 
         horizontalLayout_1891->addWidget(label_1883);
 
-        widget22->addWidget(page_1883);
+        splitWidget11->addWidget(page_1883);
         page_1884 = new QWidget();
         page_1884->setObjectName("page_1884");
         horizontalLayout_1892 = new QHBoxLayout(page_1884);
@@ -27887,7 +27888,7 @@ public:
 
         horizontalLayout_1892->addWidget(label_1884);
 
-        widget22->addWidget(page_1884);
+        splitWidget11->addWidget(page_1884);
         page_1885 = new QWidget();
         page_1885->setObjectName("page_1885");
         horizontalLayout_1893 = new QHBoxLayout(page_1885);
@@ -27899,7 +27900,7 @@ public:
 
         horizontalLayout_1893->addWidget(label_1885);
 
-        widget22->addWidget(page_1885);
+        splitWidget11->addWidget(page_1885);
         page_1886 = new QWidget();
         page_1886->setObjectName("page_1886");
         horizontalLayout_1894 = new QHBoxLayout(page_1886);
@@ -27911,7 +27912,7 @@ public:
 
         horizontalLayout_1894->addWidget(label_1886);
 
-        widget22->addWidget(page_1886);
+        splitWidget11->addWidget(page_1886);
         page_1887 = new QWidget();
         page_1887->setObjectName("page_1887");
         horizontalLayout_1895 = new QHBoxLayout(page_1887);
@@ -27923,7 +27924,7 @@ public:
 
         horizontalLayout_1895->addWidget(label_1887);
 
-        widget22->addWidget(page_1887);
+        splitWidget11->addWidget(page_1887);
         page_1888 = new QWidget();
         page_1888->setObjectName("page_1888");
         horizontalLayout_1896 = new QHBoxLayout(page_1888);
@@ -27935,7 +27936,7 @@ public:
 
         horizontalLayout_1896->addWidget(label_1888);
 
-        widget22->addWidget(page_1888);
+        splitWidget11->addWidget(page_1888);
         page_1889 = new QWidget();
         page_1889->setObjectName("page_1889");
         horizontalLayout_1897 = new QHBoxLayout(page_1889);
@@ -27947,7 +27948,7 @@ public:
 
         horizontalLayout_1897->addWidget(label_1889);
 
-        widget22->addWidget(page_1889);
+        splitWidget11->addWidget(page_1889);
         page_1890 = new QWidget();
         page_1890->setObjectName("page_1890");
         horizontalLayout_1898 = new QHBoxLayout(page_1890);
@@ -27959,9 +27960,9 @@ public:
 
         horizontalLayout_1898->addWidget(label_1890);
 
-        widget22->addWidget(page_1890);
+        splitWidget11->addWidget(page_1890);
 
-        horizontalLayout_1304->addWidget(widget22);
+        horizontalLayout_1304->addWidget(splitWidget11);
 
         horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
@@ -28330,17 +28331,17 @@ public:
         widget9->setCurrentIndex(0);
         widget10->setCurrentIndex(0);
         widget11->setCurrentIndex(0);
-        widget12->setCurrentIndex(0);
-        widget13->setCurrentIndex(0);
-        widget14->setCurrentIndex(0);
-        widget15->setCurrentIndex(0);
-        widget16->setCurrentIndex(0);
-        widget17->setCurrentIndex(0);
-        widget18->setCurrentIndex(0);
-        widget19->setCurrentIndex(0);
-        widget20->setCurrentIndex(0);
-        widget21->setCurrentIndex(0);
-        widget22->setCurrentIndex(0);
+        splitWidget1->setCurrentIndex(0);
+        splitWidget2->setCurrentIndex(0);
+        splitWidget3->setCurrentIndex(0);
+        splitWidget4->setCurrentIndex(0);
+        splitWidget5->setCurrentIndex(0);
+        splitWidget6->setCurrentIndex(0);
+        splitWidget7->setCurrentIndex(0);
+        splitWidget8->setCurrentIndex(0);
+        splitWidget9->setCurrentIndex(0);
+        splitWidget10->setCurrentIndex(0);
+        splitWidget11->setCurrentIndex(0);
         pushButton_6->setDefault(false);
 
 
