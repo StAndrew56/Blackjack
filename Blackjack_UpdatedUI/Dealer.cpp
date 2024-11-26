@@ -222,7 +222,8 @@ void Dealer::bust(User& user){
 }
 
 //Card comparison - Which is closer to 21?
-void Dealer::compareCards(vector<Cards>& deck, User& user) {
+//String return type for testing purposes
+string Dealer::compareCards(vector<Cards>& deck, User& user) {
     int userHandValue = getUserHandVal(user);  // Get the user’s hand value for comparison
 
     qDebug() << "Comparing cards: User hand value:" << userHandValue << ", Dealer hand value:" << dealerHandVal;
@@ -231,24 +232,27 @@ void Dealer::compareCards(vector<Cards>& deck, User& user) {
     if (userHandValue > dealerHandVal || dealerHandVal > 21) {
         user.pay();
         qDebug() << "User wins. Balance updated.";
+        return "User";
     }
     // Tie condition
     else if (userHandValue == dealerHandVal) {
         user.clearBet();
         qDebug() << "It's a tie. Bet cleared.";
+        return "Tie";
     }
     // Dealer wins
     else {
         user.betVal = 0;
         user.clearBet();  // Clear the bet with no payout
         qDebug() << "Dealer wins. Bet cleared, user loses.";
+        return "Dealer";
     }
 }
 
 
 void Dealer::gameLoop(vector<Cards>& deck, User& user){
     //Dealer play
-    cout << "Dealer's turn";
+    qDebug() << "Dealer's turn";
     //Facedown card faceup, needs ui implementation --------- NEEDS DISCUSSION!!!!
     //Check Dealer val
     if(dealerHandVal < 21){
@@ -282,19 +286,10 @@ void Dealer::gameLoop(vector<Cards>& deck, User& user){
     removeCards();
 }
 
-
-
-
 int Dealer::getHandValue() {
     trueRank();  // Calculate the hand value
     return dealerHandVal;
 }
-
-
-
-
-
-
 
 vector<Cards>& Dealer::getDealerHand() {
     return dealerHand;

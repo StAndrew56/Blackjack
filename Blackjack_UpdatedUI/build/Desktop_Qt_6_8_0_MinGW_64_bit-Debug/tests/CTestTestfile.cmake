@@ -5,4 +5,4 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 add_test(BlackjackTests "testBlackjack")
-set_tests_properties(BlackjackTests PROPERTIES  _BACKTRACE_TRIPLES "C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/CMakeLists.txt;19;add_test;C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/CMakeLists.txt;0;")
+set_tests_properties(BlackjackTests PROPERTIES  _BACKTRACE_TRIPLES "C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/CMakeLists.txt;38;add_test;C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/CMakeLists.txt;0;")

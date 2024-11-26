@@ -83,21 +83,39 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/BJLogicTest.h",
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.h",
 			"MU",
-			"EWIEGA46WW/moc_BJLogicTest.cpp",
+			"YCDLW3T4OG/moc_Cards.cpp",
 			null
 		],
 		[
-			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/mainwindowTest.h",
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindowTest.cpp",
+			"YCDLW3T4OG/moc_Dealer.cpp",
 			null
 		],
 		[
-			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/testMain.h",
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.h",
 			"MU",
-			"EWIEGA46WW/moc_testMain.cpp",
+			"YCDLW3T4OG/moc_Deck.cpp",
+			null
+		],
+		[
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.h",
+			"MU",
+			"YCDLW3T4OG/moc_Suit.cpp",
+			null
+		],
+		[
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.h",
+			"MU",
+			"YCDLW3T4OG/moc_User.cpp",
+			null
+		],
+		[
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/dealerLogicTest.h",
+			"MU",
+			"EWIEGA46WW/moc_dealerLogicTest.cpp",
 			null
 		]
 	],
@@ -129,7 +147,6 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI",
 		"C:/Qt/6.8.0/mingw_64/include/QtTest",
 		"C:/Qt/6.8.0/mingw_64/include",
 		"C:/Qt/6.8.0/mingw_64/include/QtCore",
@@ -177,17 +194,32 @@
 	"SOURCES" : 
 	[
 		[
-			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/BJLogicTest.cpp",
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/mainwindowTest.cpp",
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/testMain.cpp",
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/dealerLogicTest.cpp",
 			"MU",
 			null
 		]

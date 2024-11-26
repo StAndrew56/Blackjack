@@ -66,7 +66,7 @@ public:
     int getUserHandVal(User&);
 
     //void setUserHandVal();
-    void compareCards(vector<Cards>& deck, User&);
+    string compareCards(vector<Cards>& deck, User&);
 
     void gameLoop(vector<Cards>& deck, User&);
 
@@ -83,6 +83,9 @@ public:
     vector<Cards>& getDealerHand();
 
     int getDealerHandVal() const;
+
+    //For testing purposes
+    void setDealerHandValue(int);
 
 
 

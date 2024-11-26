@@ -691,33 +691,57 @@ build tests/CMakeFiles/BlackjackTests.dir/BlackjackTests_autogen/mocs_compilatio
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests\" -DQT_TESTCASE_SOURCEDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\BlackjackTests_autogen\mocs_compilation.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
+  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
   OBJECT_DIR = tests\CMakeFiles\BlackjackTests.dir
   OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir\BlackjackTests_autogen
 
-build tests/CMakeFiles/BlackjackTests.dir/testMain.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/testMain.cpp || cmake_object_order_depends_target_BlackjackTests
+build tests/CMakeFiles/BlackjackTests.dir/dealerLogicTest.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/dealerLogicTest.cpp || cmake_object_order_depends_target_BlackjackTests
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests\" -DQT_TESTCASE_SOURCEDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\testMain.cpp.obj.d
+  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\dealerLogicTest.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
+  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
   OBJECT_DIR = tests\CMakeFiles\BlackjackTests.dir
   OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir
 
-build tests/CMakeFiles/BlackjackTests.dir/mainwindowTest.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/mainwindowTest.cpp || cmake_object_order_depends_target_BlackjackTests
+build tests/CMakeFiles/BlackjackTests.dir/__/Suit.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Suit.cpp || cmake_object_order_depends_target_BlackjackTests
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests\" -DQT_TESTCASE_SOURCEDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\mainwindowTest.cpp.obj.d
+  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\__\Suit.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
+  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
   OBJECT_DIR = tests\CMakeFiles\BlackjackTests.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir\__
 
-build tests/CMakeFiles/BlackjackTests.dir/BJLogicTest.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/BJLogicTest.cpp || cmake_object_order_depends_target_BlackjackTests
+build tests/CMakeFiles/BlackjackTests.dir/__/Cards.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.cpp || cmake_object_order_depends_target_BlackjackTests
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests\" -DQT_TESTCASE_SOURCEDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\BJLogicTest.cpp.obj.d
+  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\__\Cards.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
+  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
   OBJECT_DIR = tests\CMakeFiles\BlackjackTests.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir\__
+
+build tests/CMakeFiles/BlackjackTests.dir/__/Dealer.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Dealer.cpp || cmake_object_order_depends_target_BlackjackTests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests\" -DQT_TESTCASE_SOURCEDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\__\Dealer.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
+  OBJECT_DIR = tests\CMakeFiles\BlackjackTests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir\__
+
+build tests/CMakeFiles/BlackjackTests.dir/__/User.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.cpp || cmake_object_order_depends_target_BlackjackTests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests\" -DQT_TESTCASE_SOURCEDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\__\User.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
+  OBJECT_DIR = tests\CMakeFiles\BlackjackTests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir\__
+
+build tests/CMakeFiles/BlackjackTests.dir/__/Deck.cpp.obj: CXX_COMPILER__BlackjackTests_unscanned_Debug C$:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Deck.cpp || cmake_object_order_depends_target_BlackjackTests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_TESTCASE_BUILDDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests\" -DQT_TESTCASE_SOURCEDIR=\"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\CMakeFiles\BlackjackTests.dir\__\Deck.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/tests/BlackjackTests_autogen/include -isystem C:/Qt/6.8.0/mingw_64/include/QtTest -isystem C:/Qt/6.8.0/mingw_64/include -isystem C:/Qt/6.8.0/mingw_64/include/QtCore -isystem C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.0/mingw_64/include/QtGui
+  OBJECT_DIR = tests\CMakeFiles\BlackjackTests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\BlackjackTests.dir\__
 
 
 # =============================================================================
@@ -727,9 +751,9 @@ build tests/CMakeFiles/BlackjackTests.dir/BJLogicTest.cpp.obj: CXX_COMPILER__Bla
 #############################################
 # Link the executable tests\BlackjackTests.exe
 
-build tests/BlackjackTests.exe: CXX_EXECUTABLE_LINKER__BlackjackTests_Debug tests/CMakeFiles/BlackjackTests.dir/BlackjackTests_autogen/mocs_compilation.cpp.obj tests/CMakeFiles/BlackjackTests.dir/testMain.cpp.obj tests/CMakeFiles/BlackjackTests.dir/mainwindowTest.cpp.obj tests/CMakeFiles/BlackjackTests.dir/BJLogicTest.cpp.obj | C$:/Qt/6.8.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Test.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Core.a || tests/BlackjackTests_autogen tests/BlackjackTests_autogen_timestamp_deps
+build tests/BlackjackTests.exe: CXX_EXECUTABLE_LINKER__BlackjackTests_Debug tests/CMakeFiles/BlackjackTests.dir/BlackjackTests_autogen/mocs_compilation.cpp.obj tests/CMakeFiles/BlackjackTests.dir/dealerLogicTest.cpp.obj tests/CMakeFiles/BlackjackTests.dir/__/Suit.cpp.obj tests/CMakeFiles/BlackjackTests.dir/__/Cards.cpp.obj tests/CMakeFiles/BlackjackTests.dir/__/Dealer.cpp.obj tests/CMakeFiles/BlackjackTests.dir/__/User.cpp.obj tests/CMakeFiles/BlackjackTests.dir/__/Deck.cpp.obj | C$:/Qt/6.8.0/mingw_64/lib/libQt6Test.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.0/mingw_64/lib/libQt6Core.a || tests/BlackjackTests_autogen tests/BlackjackTests_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
-  LINK_LIBRARIES = C:/Qt/6.8.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.8.0/mingw_64/lib/libQt6Test.a  C:/Qt/6.8.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.8.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = C:/Qt/6.8.0/mingw_64/lib/libQt6Test.a  C:/Qt/6.8.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.8.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.8.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = tests\CMakeFiles\BlackjackTests.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
