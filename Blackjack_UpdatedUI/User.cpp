@@ -163,22 +163,20 @@ void User::hit(Deck& deck) {
         //ace counter is above and in dealer class(in function dealCards()).
         if(handVal > 21){
 
-            for(int i =0; i < userHand.size(); i++){
+            if(handVal != 21){
 
-                if(userHand[i].cardRank == Rank::ACE){
+                while(handVal > 21 && aceCount > 0){
 
-                    if(handVal != 21){
+                    handVal -= 10;//turn the ace into a 1.
 
-                        while(handVal > 21 && aceCount > 0){
+                    aceCount--;//ace can't be decremented again.
 
-                            handVal -= 10;//turn the ace into a 1.
-
-                            aceCount--;//ace can't be decremented again.
-                        }
+                    if(handVal <= 21){
+                        return;
                     }
-
                 }
             }
+
         }
     }
     //user has 21
@@ -248,7 +246,7 @@ void User::doubleDown(){
 
 }
 void User::blackJack(){
-
+    balance += betVal * 2.5;
 }
 //gets called when user places legal bet
 //will do the subtraction from the balance
@@ -399,17 +397,24 @@ int User::calculateHandTotal(std::vector<Cards>& hand) {
         }
 
         // Adjust for Aces if total exceeds 21
-        if (total > 21) {
-            for (size_t i = 0; i < hand.size(); i++) {
-                if (hand[i].cardRank == Rank::ACE) {
-                    if (total != 21) {
-                        while (total > 21 && aceCount > 0) {
-                            total -= 10;
-                            aceCount--;
-                        }
+        if(handVal > 21){
+
+            if(handVal != 21){
+
+                while(handVal > 21 && aceCount > 0){
+
+                    handVal -= 10;//turn the ace into a 1.
+
+                    aceCount--;//ace can't be decremented again.
+
+                    total = handVal;
+
+                    if(handVal <= 21){
+                        return total;
                     }
                 }
             }
+
         }
     }
 

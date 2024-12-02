@@ -133,6 +133,9 @@ void Dealer::trueRank(){
 
 //Dealer deals cards - 1 to User then 1 to Dealer performed 2 times
 void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* user)  {
+    dealerAceCount = 0;
+    user->aceCount = 0;
+
     for(int i = 0; i < 2; i++){
         addCard(playerHand, deck);
         addCard(dealerHand, deck);
@@ -143,7 +146,8 @@ void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* use
     for(int i = 0; i < playerHand.size(); i++){
 
         if(playerHand[i].cardRank == Rank::ACE){
-            user->aceCount++;
+            user->aceCount += 1;
+            qDebug() << "made it User";
         }
     }
     //do Not remove, needed to deal with aces, will count num of
@@ -152,7 +156,21 @@ void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* use
 
         if(dealerHand[i].cardRank == Rank::ACE){
             dealerAceCount++;
+            qDebug() << "made it dealer";
         }
+    }
+    user->trueRank();
+    trueRank();
+
+    //case for 2 ace's dealt
+    if(user->aceCount == 2){
+        user->handVal -= 10;
+        user->aceCount --;
+    }
+    //case for 2 ace's dealt
+    if(dealerAceCount == 2){
+        dealerHandVal -= 10;
+        dealerAceCount --;
     }
 }
 
@@ -230,20 +248,18 @@ void Dealer::hit(vector<Cards>& deck) {
         //ace counter is above and in dealer class(in function dealCards()).
         if(dealerHandVal > 21){
 
-            for(int i =0; i < dealerHand.size(); i++){
+            if(dealerHandVal != 21){
 
-                if(dealerHand[i].cardRank == Rank::ACE){
+                while(dealerHandVal > 21 && dealerAceCount > 0){
+                    qDebug() << "something made it through " << (int)dealerHand[lastCard].cardRank;
 
-                    if(dealerHandVal != 21){
+                    dealerHandVal -= 10;//turn the ace into a 1.
 
-                        while(dealerHandVal > 21 && dealerAceCount > 0){
+                    dealerAceCount--;//ace can't be decremented again.
 
-                            dealerHandVal -= 10;//turn the ace into a 1.
-
-                            dealerAceCount--;//ace can't be decremented again.
-                        }
+                    if(dealerHandVal <= 21){
+                        return;
                     }
-
                 }
             }
         }
@@ -255,8 +271,6 @@ void Dealer::hit(vector<Cards>& deck) {
     }
 
 }
-
-
 
 //Dealer stand
 void Dealer::stand(){
@@ -279,8 +293,8 @@ void Dealer::bust(User& user){
 }
 
 void Dealer::compareCards(vector<Cards>& deck, User& user) {
-    int userHandValue = getUserHandVal(user);  // Get the user's main hand value
-    int splitHandValue = user.getSplitHandTotal();  // Get the user's split hand value
+    int userHandValue = user.handVal;  // Get the user's main hand value
+    int splitHandValue = user.splitHandVal;  // Get the user's split hand value
     bool hasSplit = !user.splitHand.empty();  // Check if there is a split hand
 
     // To deal with main hand quadrupling pay
@@ -333,7 +347,9 @@ void Dealer::compareCards(vector<Cards>& deck, User& user) {
             }
             else
             {
-                //Dealer wins
+                user.betVal = 0;
+                user.clearBetForStand();  // Clear the bet with no payout
+                qDebug() << "Dealer wins. Bet cleared, user loses.";
             }
 
         }

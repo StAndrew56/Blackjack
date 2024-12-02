@@ -207,7 +207,6 @@ void mainWindow::onSubmitBet() {
     dealer->dealCards(user->userHand, deck.deckOfCards, user);
 
 
-    user->trueRank();
     qDebug() << "Current handVal: " << user->handVal;
     qDebug() << "tbvwayyyyyyyvabvaw";
     displayDealerHand();
@@ -303,6 +302,10 @@ void mainWindow::onHitButtonClicked() {
         user->hit(deck);
         updateUserHandValDisplay();
 
+        //sound during player Hit
+        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+        M_Player2->play();
+        controlSFX->setVolume(100);
 
         // Animate and display the card
         int newCardIndex = user->userHand.size() - 1;
@@ -805,6 +808,10 @@ void mainWindow::clearCardsDisplayed(){
 
 
 void mainWindow::onEndGame() {
+    // Update the UI to show the new card
+    displayDealerHand();
+    // Display dealer hand value
+    dealer->displayDealerHandVal();
 
 
     // Reset the deck if needed
