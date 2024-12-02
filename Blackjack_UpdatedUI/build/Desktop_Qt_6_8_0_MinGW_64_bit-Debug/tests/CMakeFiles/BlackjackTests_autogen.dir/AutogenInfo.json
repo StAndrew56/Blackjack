@@ -113,6 +113,12 @@
 			null
 		],
 		[
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.h",
+			"MU",
+			"YCDLW3T4OG/moc_mainwindow.cpp",
+			null
+		],
+		[
 			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/tests/dealerLogicTest.h",
 			"MU",
 			"EWIEGA46WW/moc_dealerLogicTest.cpp",
@@ -147,10 +153,11 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"C:/Qt/6.8.0/mingw_64/include/QtTest",
-		"C:/Qt/6.8.0/mingw_64/include",
+		"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI",
 		"C:/Qt/6.8.0/mingw_64/include/QtCore",
+		"C:/Qt/6.8.0/mingw_64/include",
 		"C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++",
+		"C:/Qt/6.8.0/mingw_64/include/QtTest",
 		"C:/Qt/6.8.0/mingw_64/include/QtWidgets",
 		"C:/Qt/6.8.0/mingw_64/include/QtGui",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
@@ -215,6 +222,11 @@
 		],
 		[
 			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/User.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/GitProjectFolder/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.cpp",
 			"MU",
 			null
 		],

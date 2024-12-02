@@ -70,7 +70,7 @@ public:
 
     void gameLoop(vector<Cards>& deck, User&);
 
-    void hit(vector<Cards>& deck);
+    string hit(vector<Cards>& deck);
 
     void stand();
 

@@ -11,8 +11,8 @@ class TestDealerLogic : public QObject {
 
 private slots:
     // Define your test cases
-    void testDealer();
     void testDealerCardCompare();
+    void testDealerHit();
 };
 
 #endif // DEALERLOGICTEST_H

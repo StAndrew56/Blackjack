@@ -189,14 +189,16 @@ int Dealer::getUserHandVal(User& user) {
 //}
 
 //Dealer hit
-void Dealer::hit(vector<Cards>& deck) {
+string Dealer::hit(vector<Cards>& deck) {
     if (deck.empty()) {
         qDebug() << "Error: Deck is empty, cannot hit!";
-        return;
+        //return;
+        return "Empty";
     }
     qDebug() << "Dealer hitting, adding card from deck.";
     addCard(dealerHand, deck);
     qDebug() << "Dealer hand size after hit:" << dealerHand.size();
+    return "Hit";
 }
 
 
@@ -297,6 +299,11 @@ vector<Cards>& Dealer::getDealerHand() {
 
 int Dealer::getDealerHandVal() const {
     return dealerHandVal;
+}
+
+//For testing purposes
+void Dealer::setDealerHandValue(int testVal){
+    dealerHandVal = testVal;
 }
 
 

@@ -36,9 +36,9 @@ namespace {
 struct qt_meta_stringdata_CLASSTestDealerLogicENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSTestDealerLogicENDCLASS = QtMocHelpers::stringData(
     "TestDealerLogic",
-    "testDealer",
+    "testDealerCardCompare",
     "",
-    "testDealerCardCompare"
+    "testDealerHit"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -78,9 +78,9 @@ Q_CONSTINIT const QMetaObject TestDealerLogic::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSTestDealerLogicENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<TestDealerLogic, std::true_type>,
-        // method 'testDealer'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'testDealerCardCompare'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'testDealerHit'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -92,8 +92,8 @@ void TestDealerLogic::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         auto *_t = static_cast<TestDealerLogic *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->testDealer(); break;
-        case 1: _t->testDealerCardCompare(); break;
+        case 0: _t->testDealerCardCompare(); break;
+        case 1: _t->testDealerHit(); break;
         default: ;
         }
     }
