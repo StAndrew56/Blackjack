@@ -248,18 +248,20 @@ void Dealer::hit(vector<Cards>& deck) {
         //ace counter is above and in dealer class(in function dealCards()).
         if(dealerHandVal > 21){
 
-            if(dealerHandVal != 21){
+            for(int i =0; i < dealerHand.size(); i++){
 
-                while(dealerHandVal > 21 && dealerAceCount > 0){
-                    qDebug() << "something made it through " << (int)dealerHand[lastCard].cardRank;
+                if(dealerHand[i].cardRank == Rank::ACE){
 
-                    dealerHandVal -= 10;//turn the ace into a 1.
+                    if(dealerHandVal != 21){
 
-                    dealerAceCount--;//ace can't be decremented again.
+                        while(dealerHandVal > 21 && dealerAceCount > 0){
 
-                    if(dealerHandVal <= 21){
-                        return;
+                            dealerHandVal -= 10;//turn the ace into a 1.
+
+                            dealerAceCount--;//ace can't be decremented again.
+                        }
                     }
+
                 }
             }
         }
@@ -271,6 +273,8 @@ void Dealer::hit(vector<Cards>& deck) {
     }
 
 }
+
+
 
 //Dealer stand
 void Dealer::stand(){
@@ -293,76 +297,56 @@ void Dealer::bust(User& user){
 }
 
 void Dealer::compareCards(vector<Cards>& deck, User& user) {
-    int userHandValue = user.handVal;  // Get the user's main hand value
-    int splitHandValue = user.splitHandVal;  // Get the user's split hand value
+    int userHandValue = getUserHandVal(user);
+    int splitHandValue = user.getSplitHandTotal();
     bool hasSplit = !user.splitHand.empty();  // Check if there is a split hand
 
-    // To deal with main hand quadrupling pay
-    int initialBetVal = user.betVal - user.splitBetVal;
+    // Separate initial bet value and split bet value
+    int mainHandBet = user.initalBet;  // The original bet value for the main hand
+    int splitHandBet = user.splitBetVal;  // The current split bet value
 
     int mainHandPayout = 0;
     int splitHandPayout = 0;
 
     // --- Main hand comparison ---
-    if (userHandValue <= 21)
-    {
-        //User's main hand beats Dealer
-        if (userHandValue > dealerHandVal || dealerHandVal > 21)
-        {
-            mainHandPayout = initialBetVal * 2;
+    if (userHandValue <= 21) {
+        // User's main hand beats Dealer
+        if (userHandValue > dealerHandVal || dealerHandVal > 21) {
+            mainHandPayout = mainHandBet * 2;  // Double the main hand bet
             user.balance += mainHandPayout;
         }
-        //User's main hand and dealer tie
-        else if (userHandValue == dealerHandVal)
-        {
-            mainHandPayout = initialBetVal;
+        // User's main hand and dealer tie
+        else if (userHandValue == dealerHandVal) {
+            mainHandPayout = mainHandBet;  // Return the main hand bet
             user.balance += mainHandPayout;
         }
-        else
-        {
-            //Dealer wins
-        }
+        // Dealer wins: no payout
     }
-
-
-    // To deal with main hand quadrupling pay
-    user.betVal -= initialBetVal;
 
     // --- Split hand comparison ---
     if (hasSplit) {
-
-        if (splitHandValue <= 21)
-        {
-            //User's split hand beats dealer
-            if (splitHandValue > dealerHandVal || dealerHandVal > 21)
-            {
-                splitHandPayout = user.splitBetVal * 2;
+        if (splitHandValue <= 21) {
+            // User's split hand beats Dealer
+            if (splitHandValue > dealerHandVal || dealerHandVal > 21) {
+                splitHandPayout = splitHandBet * 2;  // Double the split hand bet
                 user.balance += splitHandPayout;
             }
-            //User's split hand and dealer tie
-            else if (splitHandValue == dealerHandVal)
-            {
-                splitHandPayout = user.splitBetVal;
+            // User's split hand and dealer tie
+            else if (splitHandValue == dealerHandVal) {
+                splitHandPayout = splitHandBet;  // Return the split hand bet
                 user.balance += splitHandPayout;
             }
-            else
-            {
-                user.betVal = 0;
-                user.clearBetForStand();  // Clear the bet with no payout
-                qDebug() << "Dealer wins. Bet cleared, user loses.";
-            }
-
+            // Dealer wins: no payout
         }
-
 
         // Reset split bet
         user.splitBetVal = 0;
     }
 
-    // Reset bet value
+    // Reset main hand bet after calculation
     user.betVal = 0;
-}
 
+}
 
 
 

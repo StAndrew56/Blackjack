@@ -28,6 +28,7 @@ public:
     int splitBetVal;
     int aceCount = 0;
     int splitHandVal = 0;
+    int initalBet = 0;
 
 
 
@@ -42,6 +43,7 @@ public:
     void printUserSplitHand();
 
     void doubleDown();
+    void doubleDownSplit();
 
     void hit(Deck& deck);
 

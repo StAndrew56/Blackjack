@@ -18,7 +18,7 @@ class Deck {
 public:
 
     vector<Cards> deckOfCards;
-    //bool testingMode = true;  // Enable this as well as 2 other functions in Deck.cpp to test split
+    bool testingMode = true;  // Enable this as well as 2 other functions in Deck.cpp to test split
 
 
 Deck();

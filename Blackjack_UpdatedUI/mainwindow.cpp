@@ -288,7 +288,13 @@ void mainWindow::onHitButtonClicked() {
         if (!user->splitHand.empty() && user->getUserHandTotal() > 21) {
             isPlayingSplitHand = true;
             showErrorMessage("You busted on your main hand. Now playing your split hand.");
-            displaySplitHand();
+
+
+            user->hitSplit(deck);
+            int newSplitCardIndex = user->splitHand.size() - 1;
+            QString splitCardPath = user->splitHand[newSplitCardIndex].getCardImagePath();
+            animateSplitCardToWidget(ui->splitWidget2, splitCardPath, 100, 150);  // Update split hand UI
+            updateSplitHandValDisplay();
             return;
         }
 
@@ -322,6 +328,13 @@ void mainWindow::onHitButtonClicked() {
                 isPlayingSplitHand = true;  // Switch to the split hand if it exists
                 displaySplitHand();
                 showErrorMessage("Now playing your split hand.");
+
+                user->hitSplit(deck);
+                int newSplitCardIndex = user->splitHand.size() - 1;
+                QString splitCardPath = user->splitHand[newSplitCardIndex].getCardImagePath();
+                animateSplitCardToWidget(ui->splitWidget2, splitCardPath, 100, 150);  // Update split hand UI
+                updateSplitHandValDisplay();
+
             } else {
 
                 onEndGame();  // End the game if there's no split hand
@@ -355,58 +368,91 @@ void mainWindow::onHitButtonClicked() {
         // Check for bust on the split hand
         if (user->getSplitHandTotal() > 21) {
             showErrorMessage("You busted on your split hand!");
+            onStandButton();
             isPlayingSplitHand = false;  // End split hand play
-            onEndGame();
         }
     }
 }
 
-void mainWindow::onDoubleDownButton(){
-    // Checks if user has 2 cards and enough money
-    if(user->betVal == 0){
+void mainWindow::onDoubleDownButton() {
+    // Check if user has placed a bet
+    if (user->betVal == 0) {
         showFloatingMessage("Double down is available only on the initial deal with enough balance.");
         return;
     }
-    if (user->userHand.size() == 2 && user->balance >= user->betVal)
-    {
-        user->doubleDown();  // Double current bet amount
-        updateBalanceDisplay();  // Show new current money on UI
-        updateBetDisplay(user->betVal);  // Show new current bet amount on UI
 
-        // Deal only one card to user
-        user->hit(deck);
-        displayPlayerHand();
-        updateUserHandValDisplay();
+    // Check if playing the main hand
+    if (!isPlayingSplitHand) {
+        if (user->userHand.size() == 2 && user->balance >= user->betVal) {
+            user->doubleDown();  // Double the bet for the main hand
+            updateBalanceDisplay();  // Update the displayed balance
+            updateBetDisplay(user->betVal);  // Update the displayed bet
 
-        //user->displayUserHandVal();
+            // Deal one card for double down
+            user->hit(deck);
+            displayPlayerHand();
+            updateUserHandValDisplay();
 
-        //sound during player DD
-        M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
-        M_Player2->play();
-        controlSFX->setVolume(100);
+            // Sound for double down
+            M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+            M_Player2->play();
+            controlSFX->setVolume(100);
 
-        // Check if the player has busted after doubling down
-        if (user->getUserHandTotal() > 21) {
-            userTurn = false;
-            displayDealerHand();
-            // Display dealer hand value
-            dealer->displayDealerHandVal();
-
-            qDebug() << "Player busted after double down!";
-            showErrorMessage("You busted!");
-            user->clearUserHand();//clear the hand from the vector
-            onEndGame();
-        }
-        // Player finishes turn for rest of game and dealer takes over
-        else
-        {
-            qDebug() << "Player doubled down and stands.";
-            onStandButton();
+            // Check if player busts after double down
+            if (user->getUserHandTotal() > 21) {
+                userTurn = false;
+                displayDealerHand();
+                dealer->displayDealerHandVal();
+                qDebug() << "Player busted after double down!";
+                showErrorMessage("You busted!");
+                user->clearUserHand();  // Clear the main hand
+                onEndGame();
+            } else {
+                qDebug() << "Player doubled down and stands.";
+                onStandButton();  // Automatically stand after doubling down
+            }
+        } else {
+            showFloatingMessage("Double down is available only on the initial deal with enough balance.");
         }
     }
-    else
-    {
-        showFloatingMessage("Double down is available only on the initial deal with enough balance.");
+    // Check if playing the split hand
+    else {
+        if (user->splitHand.size() == 2 && user->balance >= user->splitBetVal) {
+            user->doubleDownSplit();   // Double the bet for the split hand
+            updateBalanceDisplay();  // Update the displayed balance
+            updateBetDisplay(user->betVal);  // Update the displayed split bet
+
+            // Deal one card for double down
+            user->hitSplit(deck);
+
+            int newCardIndex = user->splitHand.size() - 1;
+            QString cardPath = user->splitHand[newCardIndex].getCardImagePath();
+
+            QList<QWidget*> splitWidgets = {ui->splitWidget1, ui->splitWidget2, ui->splitWidget3, ui->splitWidget4, ui->splitWidget5};
+            if (newCardIndex < splitWidgets.size()) {
+                animateSplitCardToWidget(splitWidgets[newCardIndex], cardPath, 100, 150);
+            }
+
+            updateSplitHandValDisplay();
+
+            // Sound for double down
+            M_Player2->setSource(QUrl("qrc:/sounds/singleFlipSound"));
+            M_Player2->play();
+            controlSFX->setVolume(100);
+
+            // Check if split hand busts after double down
+            if (user->getSplitHandTotal() > 21) {
+                qDebug() << "Split hand busted after double down!";
+                showErrorMessage("You busted on your split hand!");
+                isPlayingSplitHand = false;
+                onEndGame();  // End the game if the split hand busts
+            } else {
+                qDebug() << "Split hand doubled down and stands.";
+                onStandButton();  // Automatically stand after doubling down
+            }
+        } else {
+            showFloatingMessage("Double down is available only on the initial deal with enough balance.");
+        }
     }
 }
 
@@ -421,6 +467,13 @@ void mainWindow::onStandButton() {
             qDebug() << "Finished playing the starting hand. Switching to split hand.";
             isPlayingSplitHand = true;
             showErrorMessage("Now playing the split hand.");
+
+
+            user->hitSplit(deck);
+            int newSplitCardIndex = user->splitHand.size() - 1;
+            QString splitCardPath = user->splitHand[newSplitCardIndex].getCardImagePath();
+            animateSplitCardToWidget(ui->splitWidget2, splitCardPath, 100, 150);  // Update split hand UI
+            updateSplitHandValDisplay();
         } else {
             // If playing the split hand, proceed with the dealer's turn
             dealer->stand();  // Trigger dealer logic
@@ -479,47 +532,52 @@ void mainWindow::dealerStandStep() {
 
 
 
-void mainWindow::onSplitButton() {
-    // NOT FINISHED
-    // 1. IMPLEMENTATION NEEDED FOR NOT HAVING ENOUGH MONEY TO SPLIT!!!
-    // 2. NEED TO CONSIDER DOUBLE DOWN
-    // 3 .
 
+
+void mainWindow::onSplitButton() {
     // Check if user can split
-    if (user->userHand.size() >= 2 && user->userHand[0].cardRank == user->userHand[1].cardRank ) {
+    if (user->userHand.size() >= 2 && user->userHand[0].cardRank == user->userHand[1].cardRank && user->balance >= user->betVal) {
         user->split();  // User.cpp Split Function
         hasSplit = true;
 
-        // Remove the split card from the starting deck's UI but we can't because error message
+        // Remove the split card from the starting deck's UI
         QLabel* splitCardLabel = cardLabels.last();
         splitCardLabel->deleteLater();
-        cardLabels.pop_back(); // Removed card from split cardlabel
+        cardLabels.pop_back();  // Removed card from cardLabels
 
+        // Update the main hand display
         updateUserHandValDisplay();
-
-        // Update UI hand
         displayPlayerHand();
+
+        // Animate the split card moving to the split hand UI
+        QString cardPath = user->splitHand[0].getCardImagePath();
+        animateSplitCardToWidget(ui->splitWidget1, cardPath, 100, 150);
+
+        // Deal one card to the main hand
+        user->hit(deck);
+        int newMainCardIndex = user->userHand.size() - 1;
+        QString mainCardPath = user->userHand[newMainCardIndex].getCardImagePath();
+        animateCardToWidget(ui->widget2, mainCardPath, 100, 150);  // Update main hand UI
+
+        // Deal one card to the split hand
+
+
+        // Update both hand displays
+        updateUserHandValDisplay();
+        updateSplitHandValDisplay();
+
+        // Update UI labels and notify the user
         updateBetDisplay(user->betVal);
         updateBalanceDisplay();
-
-
-        // Delaying Error Message to allow split hand to be removed first
         QTimer::singleShot(500, this, [this]() {
             showErrorMessage("Playing the starting hand. Split hand will follow.");
         });
 
-        // Animate the card
-        QString cardPath = user->splitHand[0].getCardImagePath(); // Get the image path for the split card
-        animateSplitCardToWidget(ui->splitWidget1, cardPath, 100, 150); // Move the split card to the split UI
-        qDebug() << "Split completed. Message delayed to ensure UI updates first.";
-        updateSplitHandValDisplay();
-
+        qDebug() << "Split completed. Cards dealt to both hands.";
     } else {
         showFloatingMessage("You cannot split these cards.");
     }
-
 }
-
 
 
 

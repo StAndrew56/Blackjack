@@ -255,6 +255,7 @@ void User::placeBet(int bet) {
     if (bet <= balance) {
         balance -= bet;
         betVal = bet;
+        initalBet = betVal; // Placeholder if user double downs on SplitHand
         emit betPlaced(bet); // Emit a signal to update the UI
     }
     else {
@@ -368,6 +369,18 @@ void User::hitSplit(Deck& deck) {
 
 int User::getSplitHandTotal() {
     return splitHandVal; // Returns the current total for split hand
+}
+
+
+void User::doubleDownSplit() {
+    int splitBetIncrease = initalBet;
+    if (splitBetIncrease > balance) {
+        emit actionError("Not enough balance to double down on the split hand!");
+        return;
+    }
+
+    balance -= splitBetIncrease;  // Deduct
+    splitBetVal += splitBetIncrease;  // Add
 }
 
 
