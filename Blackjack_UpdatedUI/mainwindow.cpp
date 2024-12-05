@@ -323,6 +323,7 @@ void mainWindow::onHitButtonClicked() {
                 displaySplitHand();
                 showErrorMessage("Now playing your split hand.");
             } else {
+
                 onEndGame();  // End the game if there's no split hand
             }
         }
@@ -808,6 +809,7 @@ void mainWindow::clearCardsDisplayed(){
 
 
 void mainWindow::onEndGame() {
+    userTurn = false;
     // Update the UI to show the new card
     displayDealerHand();
     // Display dealer hand value
