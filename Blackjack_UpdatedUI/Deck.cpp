@@ -23,7 +23,6 @@ Deck::Deck() {
 
 }
 //will create the create of 52 cards
-/*
 void Deck::createDeck(){
 
     //iterate through all suits
@@ -62,10 +61,9 @@ void Deck::createDeck(){
 
 
 }
-*/
 
  //FOR TESTING SPLIT
-
+/*
 void Deck::createDeck() {
     deckOfCards.clear();
 
@@ -111,7 +109,7 @@ void Deck::createDeck() {
     shuffle();  // Shuffle the remaining cards (optional, but useful for testing)
 }
 
-
+*/
 
 //called when you want to print the suit of the card.
 void Deck::printSuit(Suit suit){
@@ -198,7 +196,7 @@ void Deck::printDeck(){
 
 //Shuffles the deck of cards. This implementation is modified version
 //of the "Fisher-Yates" Shuffle algorithm.
-/*
+
 void Deck::shuffle() {
     unsigned int seed = std::random_device{}() + static_cast<unsigned int>(chrono::system_clock::now().time_since_epoch().count());
     default_random_engine rng(seed);
@@ -208,18 +206,18 @@ void Deck::shuffle() {
         swap(deckOfCards[i], deckOfCards[j]);
     }
 }
-*/
+
 
 
 
 //FOR TESTING SPLIT
-
+/*
 void Deck::shuffle() {
     if (!testingMode) {
         std::random_shuffle(deckOfCards.begin(), deckOfCards.end());
     }
 }
-
+*/
 void Deck::printSize(){
     cout << "Deck Size: " << deckOfCards.size();
 
