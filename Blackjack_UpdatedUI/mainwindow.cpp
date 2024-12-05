@@ -213,6 +213,7 @@ void mainWindow::onSubmitBet() {
     displayPlayerHand();
     updateUserHandValDisplay();
 
+
     // Sound during card deal
     M_Player2->setSource(QUrl("qrc:/sounds/shuffleSound"));
     M_Player2->play();
@@ -225,7 +226,7 @@ void mainWindow::onSubmitBet() {
     ui->label_56->setText(QString(""));
 
     // User is dealt blackjack
-    if (user->getUserHandTotal() == 21 && dealer->getHandValue() != 21){
+    if (user->getUserHandTotal() == 21 && dealer->getDealerHandVal() != 21){
         showErrorMessage("Blackjack! You win!");
         user->blackJack();
         user->betVal = 0;
@@ -240,8 +241,9 @@ void mainWindow::onSubmitBet() {
         onEndGame();
         return;
     }
+
     // Dealer is dealt blackjack
-    if(dealer->getHandValue() == 21 && user->getUserHandTotal() != 21){
+    if(dealer->getDealerHandVal() == 21 && user->getUserHandTotal() != 21){
         showErrorMessage("Dealer has blackjack... You Lose.");
         user->betVal = 0;
         user->clearUserHand();
@@ -249,10 +251,12 @@ void mainWindow::onSubmitBet() {
         userTurn = false;
         // Update the UI to show the new card
         displayDealerHand();
+
         // Display dealer hand value
         dealer->displayDealerHandVal();
 
         onEndGame();
+
         return;
     }
 
@@ -264,6 +268,7 @@ void mainWindow::onSubmitBet() {
     else{
         showFloatingMessage("Finish the current hand first!");
     }
+
 }
 
 
@@ -475,6 +480,7 @@ void mainWindow::onStandButton() {
             animateSplitCardToWidget(ui->splitWidget2, splitCardPath, 100, 150);  // Update split hand UI
             updateSplitHandValDisplay();
         } else {
+
             // If playing the split hand, proceed with the dealer's turn
             dealer->stand();  // Trigger dealer logic
 
@@ -493,6 +499,7 @@ void mainWindow::onStandButton() {
 
 void mainWindow::dealerStandStep() {
     userTurn = false;
+
     // Getter to get dealer hand value
     if (dealer->getDealerHandVal() >= 17 || dealer->getDealerHandVal() > 21)
     {
@@ -500,6 +507,7 @@ void mainWindow::dealerStandStep() {
         standTimer->stop();
         delete standTimer;
         standTimer = nullptr;
+
 
         displayDealerHand();
         // Display dealer hand value

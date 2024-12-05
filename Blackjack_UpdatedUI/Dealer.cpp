@@ -163,15 +163,16 @@ void Dealer::dealCards(vector<Cards>& playerHand, vector<Cards>& deck, User* use
     trueRank();
 
     //case for 2 ace's dealt
-    if(user->aceCount == 2){
+    if(user->handVal == 22){
         user->handVal -= 10;
         user->aceCount --;
     }
     //case for 2 ace's dealt
-    if(dealerAceCount == 2){
+    if(dealerHandVal == 22){
         dealerHandVal -= 10;
         dealerAceCount --;
     }
+
 }
 
 /**
@@ -214,9 +215,9 @@ void Dealer::hit(vector<Cards>& deck) {
     //addCard(dealerHand, deck);
     //qDebug() << "Dealer hand size after hit:" << dealerHand.size();
     //handVal = 0;
-    if(dealerHandVal == 0){
-        trueRank();
-    }
+    //if(dealerHandVal == 0){
+        //trueRank();
+    //}
     //make sure dealer doesn't have 21
     if(dealerHandVal != 21){
         //add the card to dealerHand

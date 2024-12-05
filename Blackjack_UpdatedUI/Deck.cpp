@@ -23,6 +23,7 @@ Deck::Deck() {
 
 }
 //will create the create of 52 cards
+
 void Deck::createDeck(){
 
     //iterate through all suits
@@ -62,6 +63,7 @@ void Deck::createDeck(){
 
 }
 
+
  //FOR TESTING SPLIT
 /*
 void Deck::createDeck() {
@@ -81,12 +83,12 @@ void Deck::createDeck() {
     // Add specific cards for the dealer next
     Cards dealerCard1;
     dealerCard1.suit = Suit::Diamonds;
-    dealerCard1.cardRank = Rank::FIVE;
+    dealerCard1.cardRank = Rank::ACE;
     dealerCard1.value = 10;
 
     Cards dealerCard2;
     dealerCard2.suit = Suit::Spades;
-    dealerCard2.cardRank = Rank::TWO;
+    dealerCard2.cardRank = Rank::ACE;
     dealerCard2.value = 10;
 
     // Push the test cards in the correct dealing order
@@ -108,8 +110,8 @@ void Deck::createDeck() {
 
     shuffle();  // Shuffle the remaining cards (optional, but useful for testing)
 }
-
 */
+
 
 //called when you want to print the suit of the card.
 void Deck::printSuit(Suit suit){
