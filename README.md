@@ -1,7 +1,7 @@
 # **:black_joker:Blackjack:black_joker:**
 
 ## :spades:How to Clone:spades:
-1. press <>Code (green button)
+1. Press <>Code (green button)
 2. Either clone with URL or download zip
 3. Locate folder location (unzip if needed)
 
