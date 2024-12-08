@@ -73,11 +73,11 @@ public:
     void setDealerHandVal(int val);
 
     //void setUserHandVal();
-    void compareCards(vector<Cards>& deck, User&);
+    string compareCards(vector<Cards>& deck, User&);
 
     void gameLoop(vector<Cards>& deck, User&);
 
-    void hit(vector<Cards>& deck);
+    string hit(vector<Cards>& deck);
 
     void stand();
 

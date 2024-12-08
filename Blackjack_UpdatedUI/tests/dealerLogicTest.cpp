@@ -20,18 +20,18 @@ void TestDealerLogic::testDealerCardCompare() {
     deck.createDeck();
     User user; //Need
 
-    dealer.setDealerHandValue(18);
+    dealer.setDealerHandVal(18);
     user.handVal = 19;
     qDebug() << "Comparing cards: User hand value:" << user.handVal << ", Dealer hand value:" << dealer.getDealerHandVal();
     // Expected: "User" (Means user wins round)
     QCOMPARE(dealer.compareCards(deck.deckOfCards, user), "User"); //user.trueRank function is making this difficult
 
-    dealer.setDealerHandValue(19);
+    dealer.setDealerHandVal(19);
     user.handVal = 19;
     // Expected: "Tie"
     QCOMPARE(dealer.compareCards(deck.deckOfCards, user), "Tie");
 
-    dealer.setDealerHandValue(20);
+    dealer.setDealerHandVal(20);
     user.handVal = 19;
     // Expected: "Dealer" (Means user wins round)
     QCOMPARE(dealer.compareCards(deck.deckOfCards, user), "Dealer");

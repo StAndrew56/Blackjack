@@ -205,14 +205,13 @@ int Dealer::getUserHandVal(User& user) {
 //}
 
 //Dealer hit
-void Dealer::hit(vector<Cards>& deck) {
+string Dealer::hit(vector<Cards>& deck) {
     if (deck.empty()) {
         qDebug() << "Error: Deck is empty, cannot hit!";
-        return;
+        return "Empty";
     }
-    //qDebug() << "Dealer hitting, adding card from deck.";
+    qDebug() << "Dealer hitting, adding card from deck.";
     //addCard(dealerHand, deck);
-    //qDebug() << "Dealer hand size after hit:" << dealerHand.size();
     //handVal = 0;
     if(dealerHandVal == 0){
         trueRank();
@@ -265,12 +264,14 @@ void Dealer::hit(vector<Cards>& deck) {
                 }
             }
         }
+        qDebug() << "Dealer hand size after hit:" << dealerHand.size();
     }
     //user has 21
     else{
 
         emit actionError("Your already have 21! Press Stand to continue.");
     }
+    return "Hit";
 
 }
 
@@ -296,7 +297,8 @@ void Dealer::bust(User& user){
     //User already does this in other User member functions
 }
 
-void Dealer::compareCards(vector<Cards>& deck, User& user) {
+string Dealer::compareCards(vector<Cards>& deck, User& user) {
+    string compareResult = "default"; // Something is wrong if "Default" shows up
     int userHandValue = getUserHandVal(user);
     int splitHandValue = user.getSplitHandTotal();
     bool hasSplit = !user.splitHand.empty();  // Check if there is a split hand
@@ -314,13 +316,18 @@ void Dealer::compareCards(vector<Cards>& deck, User& user) {
         if (userHandValue > dealerHandVal || dealerHandVal > 21) {
             mainHandPayout = mainHandBet * 2;  // Double the main hand bet
             user.balance += mainHandPayout;
+            compareResult = "User";
         }
         // User's main hand and dealer tie
         else if (userHandValue == dealerHandVal) {
             mainHandPayout = mainHandBet;  // Return the main hand bet
             user.balance += mainHandPayout;
+            compareResult = "Tie";
         }
         // Dealer wins: no payout
+        else{
+            compareResult = "Dealer";
+        }
     }
 
     // --- Split hand comparison ---
@@ -330,13 +337,18 @@ void Dealer::compareCards(vector<Cards>& deck, User& user) {
             if (splitHandValue > dealerHandVal || dealerHandVal > 21) {
                 splitHandPayout = splitHandBet * 2;  // Double the split hand bet
                 user.balance += splitHandPayout;
+                compareResult = "User";
             }
             // User's split hand and dealer tie
             else if (splitHandValue == dealerHandVal) {
                 splitHandPayout = splitHandBet;  // Return the split hand bet
                 user.balance += splitHandPayout;
+                compareResult = "Tie";
             }
             // Dealer wins: no payout
+            else{
+                compareResult = "Dealer";
+            }
         }
 
         // Reset split bet
@@ -345,6 +357,7 @@ void Dealer::compareCards(vector<Cards>& deck, User& user) {
 
     // Reset main hand bet after calculation
     user.betVal = 0;
+    return compareResult;
 
 }
 
