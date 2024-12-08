@@ -10,7 +10,7 @@
 1. Locate "Group3_CS4398_Blackjack" folder location
 2. Locate "Release" folder.
 3. Locate "Blackjack.exe"
-4. Run.
+4. Double click "Blackjack.exe" to run.
 
 ## :floppy_disk:Tech Stack:floppy_disk:
 Frontend: Qt Framweork
