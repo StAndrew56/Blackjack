@@ -22,10 +22,10 @@ void TestDealerLogic::testDealCards() {
 }
 
 void TestDealerLogic::testDealerCardCompareWin() {
-    Dealer dealer; //Need
-    Deck deck; //May not need based on params later
+    Dealer dealer;
+    Deck deck;
     deck.createDeck();
-    User user; //Need
+    User user;
 
     dealer.setDealerHandVal(18);
     user.handVal = 19;
@@ -40,10 +40,10 @@ void TestDealerLogic::testDealerCardCompareWin() {
 }
 
 void TestDealerLogic::testDealerCardCompareTie() {
-    Dealer dealer; //Need
-    Deck deck; //May not need based on params later
+    Dealer dealer;
+    Deck deck;
     deck.createDeck();
-    User user; //Need
+    User user;
 
     dealer.setDealerHandVal(19);
     user.handVal = 19;
@@ -58,10 +58,10 @@ void TestDealerLogic::testDealerCardCompareTie() {
 }
 
 void TestDealerLogic::testDealerCardCompareLose() {
-    Dealer dealer; //Need
-    Deck deck; //May not need based on params later
+    Dealer dealer;
+    Deck deck;
     deck.createDeck();
-    User user; //Need
+    User user;
 
     dealer.setDealerHandVal(20);
     user.handVal = 19;
