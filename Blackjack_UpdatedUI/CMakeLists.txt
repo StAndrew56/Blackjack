@@ -76,3 +76,12 @@ install(TARGETS Blackjack
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Blackjack)
 endif()
+
+# Unit Testing - this connects Unit Test build to Project build
+include(CTest) # Makes BUILD_TESTING CMake option available in Project Build settings
+option(BUILD_TESTS "Build the unit tests" ON)
+
+if (BUILD_TESTS) # If BUILD_TESTS option is on in Project Build settings
+    add_subdirectory(tests) # Enable access to tests directory
+endif()
+# add_subdirectory(tests) # Adds tests directory to project
