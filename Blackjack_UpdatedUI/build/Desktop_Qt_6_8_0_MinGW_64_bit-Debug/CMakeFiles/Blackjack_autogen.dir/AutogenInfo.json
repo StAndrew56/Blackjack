@@ -338,7 +338,20 @@
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Multimedia/Qt6QWindowsMediaPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Multimedia/Qt6QWindowsMediaPluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaVersionlessAliasTargets.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersion.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Test/Qt6TestConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Test/Qt6TestDependencies.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake",
+		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Test/Qt6TestVersionlessAliasTargets.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CTest.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CTestUseLaunchers.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CTestTargets.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/DartConfiguration.tcl.in",
 		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/BJpngs.qrc",
 		"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/resources.qrc"
 	],
@@ -348,12 +361,6 @@
 	"DEP_FILE_RULE_NAME" : "Blackjack_autogen/timestamp",
 	"HEADERS" : 
 	[
-		[
-			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/AIplayer.h",
-			"MU",
-			"EWIEGA46WW/moc_AIplayer.cpp",
-			null
-		],
 		[
 			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.h",
 			"MU",
@@ -389,6 +396,12 @@
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
+		],
+		[
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/test.h",
+			"MU",
+			"EWIEGA46WW/moc_test.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -402,6 +415,9 @@
 		"QT_MULTIMEDIA_LIB",
 		"QT_NEEDS_QMAIN",
 		"QT_NETWORK_LIB",
+		"QT_TESTCASE_BUILDDIR=\"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug\"",
+		"QT_TESTCASE_SOURCEDIR=\"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI\"",
+		"QT_TESTLIB_LIB",
 		"QT_WIDGETS_LIB",
 		"UNICODE",
 		"WIN32",
@@ -426,6 +442,7 @@
 		"C:/Qt/6.8.0/mingw_64/include/QtGui",
 		"C:/Qt/6.8.0/mingw_64/include/QtMultimedia",
 		"C:/Qt/6.8.0/mingw_64/include/QtNetwork",
+		"C:/Qt/6.8.0/mingw_64/include/QtTest",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
@@ -467,11 +484,6 @@
 	"SOURCES" : 
 	[
 		[
-			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/AIplayer.cpp",
-			"MU",
-			null
-		],
-		[
 			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/Cards.cpp",
 			"MU",
 			null
@@ -503,6 +515,11 @@
 		],
 		[
 			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/maype/Documents/GitHub/Group3_CS4398_Blackjack/Blackjack_UpdatedUI/test.cpp",
 			"MU",
 			null
 		]

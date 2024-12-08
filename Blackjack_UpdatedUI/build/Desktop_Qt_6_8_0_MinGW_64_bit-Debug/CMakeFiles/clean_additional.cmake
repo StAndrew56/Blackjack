@@ -6,5 +6,8 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "Debug")
   "Blackjack_autogen"
   "CMakeFiles\\Blackjack_autogen.dir\\AutogenUsed.txt"
   "CMakeFiles\\Blackjack_autogen.dir\\ParseCache.txt"
+  "tests\\BlackjackTests_autogen"
+  "tests\\CMakeFiles\\BlackjackTests_autogen.dir\\AutogenUsed.txt"
+  "tests\\CMakeFiles\\BlackjackTests_autogen.dir\\ParseCache.txt"
   )
 endif()
