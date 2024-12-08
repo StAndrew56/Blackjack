@@ -11,6 +11,7 @@
 2. Locate "Release" folder.
 3. Locate "Blackjack.exe"
 4. Double click "Blackjack.exe" to run.
+5. Enjoy!
 
 ## :floppy_disk:Tech Stack:floppy_disk:
 Frontend: Qt Framweork
