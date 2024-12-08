@@ -7,7 +7,7 @@
 
 
 ## :hearts:How to Play:hearts:
-1. Locate folder location
+1. Locate "Group3_CS4398_Blackjack" folder location
 2. Locate "Release" folder.
 3. Locate Blackjack.exe
 4. Run.
