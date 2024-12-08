@@ -8,7 +8,9 @@ find_package(Qt6 REQUIRED COMPONENTS Test Widgets)
 #testMain.cpp testMain.h
 #mainwindowTest.cpp mainwindowTest.h
 add_executable(BlackjackTests
+    testsMain.cpp
     dealerLogicTest.cpp dealerLogicTest.h
+    userLogicTest.cpp userLogicTest.h
 )
 
 target_link_libraries(BlackjackTests PRIVATE Qt6::Core Qt6::Test Qt6::Widgets)

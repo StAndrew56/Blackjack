@@ -73,7 +73,7 @@ void TestDealerLogic::testDealerHit() {
 }
 
 // Run the test
-QTEST_MAIN(TestDealerLogic)
+//QTEST_MAIN(TestDealerLogic)
 //#include "dealerLogicTest.moc"
 
 //If user variables become private variables,
