@@ -1,4 +1,4 @@
-:black_joker:Blackjack:black_joker:
+/:black_joker:Blackjack:black_joker:
 
 :spades:How to Clone:spades:
 1. press <>Code (green button)
