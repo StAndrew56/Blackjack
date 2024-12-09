@@ -14,6 +14,6 @@
 5. Enjoy!
 
 ## :floppy_disk:Tech Stack:floppy_disk:
-Frontend: Qt Framweork
+Frontend: C++ uding Qt Framweork
 
 Backend: C++
