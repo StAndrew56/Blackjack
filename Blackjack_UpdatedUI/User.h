@@ -23,7 +23,7 @@ public:
     int handVal;
     vector<Cards> userHand;
     double betVal;
-    double balance = 1000;
+    double balance = 0;
     vector<Cards> splitHand;
     int splitBetVal;
     int aceCount = 0;

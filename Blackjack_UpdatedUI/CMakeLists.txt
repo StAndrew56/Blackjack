@@ -19,6 +19,10 @@ set(PROJECT_SOURCES
         mainwindow.ui
 )
 
+if(WIN32)
+    set(RC_FILE "${CMAKE_CURRENT_SOURCE_DIR}/appicon.rc")
+endif()
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Blackjack
         MANUAL_FINALIZATION
@@ -30,7 +34,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Suit.cpp Suit.h
         User.cpp User.h
         resources.qrc
-
+        ${RC_FILE}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Blackjack APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -85,3 +89,5 @@ if (BUILD_TESTS) # If BUILD_TESTS option is on in Project Build settings
     add_subdirectory(tests) # Enable access to tests directory
 endif()
 #add_subdirectory(tests) # Adds tests directory to project
+
+

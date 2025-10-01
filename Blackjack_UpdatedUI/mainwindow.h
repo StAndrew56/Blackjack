@@ -27,6 +27,7 @@ public:
     ~mainWindow();
 protected:
     void resizeEvent(QResizeEvent *event) override;
+    void closeEvent(QCloseEvent *event) override;
 private:
     Ui::mainWindow *ui;
     User *user;
@@ -61,6 +62,7 @@ private slots:
     void onTenDollarBet();
     void onTwentyDollarBet();
     void onHundredDollarBet();
+    void onAllInBet();
     void updateBalanceDisplay();
     void onSubmitBet();
     void displayPlayerHand();
@@ -71,6 +73,9 @@ private slots:
     void onDoubleDownButton();
     void onStandButton();
     void dealerStandStep();
+    void checkBet();
+    void saveBalance();
+    void loadBalance();
     void onEndGame();
     void clearCardsDisplayed();
     void on_horizontalSlider_valueChanged(int value);

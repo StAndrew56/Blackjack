@@ -51,6 +51,7 @@ mainWindow::mainWindow(QWidget *parent)
     connect(ui->pushButton_2, &QPushButton::clicked, this, &mainWindow::onFiveDollarBet);
     connect(ui->pushButton_3, &QPushButton::clicked, this, &mainWindow::onTenDollarBet);
     connect(ui->pushButton_4, &QPushButton::clicked, this, &mainWindow::onTwentyDollarBet);
+    connect(ui->pushButton_12, &QPushButton::clicked, this, &mainWindow::onAllInBet);
     connect(ui->pushButton_5, &QPushButton::clicked, this, &mainWindow::onHundredDollarBet);
     connect(ui->pushButton_10, &QPushButton::clicked, user, &User::clearBet);
     connect(user, &User::balanceUpdated, this, &mainWindow::updateBalanceDisplay);
@@ -64,7 +65,7 @@ mainWindow::mainWindow(QWidget *parent)
     connect(ui->pushButton_8, &QPushButton::clicked, this, &mainWindow::onSplitButton);
 
 
-
+    loadBalance();
     updateBalanceDisplay();
 
     deck.createDeck();
@@ -76,7 +77,6 @@ mainWindow::mainWindow(QWidget *parent)
     volumeControl->setVolume(0.1);
     M_Player->play();
     M_Player->setLoops(QMediaPlayer::Infinite);
-
 
 
 
@@ -109,6 +109,7 @@ void mainWindow::on_muteButton_clicked(bool checked) {
 //--------------------------------------***********--------------------------------------
 
 //--------------------------------------BET AMOUNTS--------------------------------------
+
 void mainWindow::onOneDollarBet() {
     if(user->balance == 0){
         showFloatingMessage("Out of money!");
@@ -187,6 +188,20 @@ void mainWindow::onHundredDollarBet() {
     qDebug() << "Current Bet: $" << user->betVal;
 }
 
+void mainWindow::onAllInBet(){
+    if(user->balance == 0){
+        showFloatingMessage("Out of money!");
+        return;
+    }
+    if(user->userHand.size() == 0){
+        user->increaseBet(user->balance); // Call the placeBet method from User class
+    }
+    else{
+        showFloatingMessage("You can't change your bet aftering start!");
+    }
+    qDebug() << "Current Balance: $" << user->balance;
+    qDebug() << "Current Bet: $" << user->betVal;
+}
 
 
 
@@ -197,73 +212,73 @@ void mainWindow::onSubmitBet() {
     }
     // Ensure a bet is placed
     if(user->userHand.size() == 0){
-    if (user->betVal <= 0) {
-        return;
-    }
-    user->userHand.clear();
-    dealer->removeCards();
-    clearCardsDisplayed();
+        if (user->betVal <= 0) {
+            return;
+        }
+        user->userHand.clear();
+        dealer->removeCards();
+        clearCardsDisplayed();
 
-    dealer->dealCards(user->userHand, deck.deckOfCards, user);
-
-
-    qDebug() << "Current handVal: " << user->handVal;
-    qDebug() << "tbvwayyyyyyyvabvaw";
-    displayDealerHand();
-    displayPlayerHand();
-    updateUserHandValDisplay();
+        dealer->dealCards(user->userHand, deck.deckOfCards, user);
 
 
-    // Sound during card deal
-    M_Player2->setSource(QUrl("qrc:/sounds/shuffleSound"));
-    M_Player2->play();
-    controlSFX->setVolume(100);
-
-    // Display user hand value
-    //user->displayUserHandVal();
-
-    // Turn off dealer hand value on deal
-    ui->label_56->setText(QString(""));
-
-    // User is dealt blackjack
-    if (user->getUserHandTotal() == 21 && dealer->getDealerHandVal() != 21){
-        showErrorMessage("Blackjack! You win!");
-        user->blackJack();
-        user->betVal = 0;
-        user->clearUserHand();
-
-        userTurn = false;
-        // Update the UI to show the new card
+        qDebug() << "Current handVal: " << user->handVal;
+        qDebug() << "tbvwayyyyyyyvabvaw";
         displayDealerHand();
-        // Display dealer hand value
-        dealer->displayDealerHandVal();
+        displayPlayerHand();
+        updateUserHandValDisplay();
 
-        onEndGame();
-        return;
-    }
 
-    // Dealer is dealt blackjack
-    if(dealer->getDealerHandVal() == 21 && user->getUserHandTotal() != 21){
-        showErrorMessage("Dealer has blackjack... You Lose.");
-        user->betVal = 0;
-        user->clearUserHand();
+        // Sound during card deal
+        M_Player2->setSource(QUrl("qrc:/sounds/shuffleSound"));
+        M_Player2->play();
+        controlSFX->setVolume(100);
 
-        userTurn = false;
-        // Update the UI to show the new card
-        displayDealerHand();
+        // Display user hand value
+        //user->displayUserHandVal();
 
-        // Display dealer hand value
-        dealer->displayDealerHandVal();
+        // Turn off dealer hand value on deal
+        ui->label_56->setText(QString(""));
 
-        onEndGame();
+        // User is dealt blackjack
+        if (user->getUserHandTotal() == 21 && dealer->getDealerHandVal() != 21){
+            showErrorMessage("Blackjack! You win!");
+            user->blackJack();
+            user->betVal = 0;
+            user->clearUserHand();
 
-        return;
-    }
+            userTurn = false;
+            // Update the UI to show the new card
+            displayDealerHand();
+            // Display dealer hand value
+            dealer->displayDealerHandVal();
 
-    updateBetDisplay(user->betVal);
-    updateBalanceDisplay();
+            onEndGame();
+            return;
+        }
 
-    qDebug() << "New round started, cards dealt, and UI updated.";
+        // Dealer is dealt blackjack
+        if(dealer->getDealerHandVal() == 21 && user->getUserHandTotal() != 21){
+            showErrorMessage("Dealer has blackjack... You Lose.");
+            user->betVal = 0;
+            user->clearUserHand();
+
+            userTurn = false;
+            // Update the UI to show the new card
+            displayDealerHand();
+
+            // Display dealer hand value
+            dealer->displayDealerHandVal();
+
+            onEndGame();
+
+            return;
+        }
+
+        updateBetDisplay(user->betVal);
+        updateBalanceDisplay();
+
+        qDebug() << "New round started, cards dealt, and UI updated.";
     }
     else{
         showFloatingMessage("Finish the current hand first!");
@@ -811,6 +826,44 @@ void mainWindow::animateDealerCardToWidget(QWidget* targetWidget, const QString 
 
 
 
+//--------------------------------------Save State--------------------------------------
+
+//--------------------------------------***********--------------------------------------
+//--------------------------------------***********--------------------------------------
+
+void mainWindow::checkBet(){
+    if(user->userHand.size() == 0){
+        if(user->betVal > 0){
+            user->balance += user->betVal;
+        }
+    }
+
+}
+
+void mainWindow::saveBalance(){
+    QFile file("Qt8_compiler.txt");
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text)){
+        QTextStream out(&file);
+        out << user->balance;
+    }
+}
+
+void mainWindow::loadBalance(){
+    QFile file("Qt8_compiler.txt");
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream in(&file);
+        int readNumber;
+        in >> readNumber;
+        user->balance = readNumber;
+    }
+    if(user->balance == 0){
+        user->balance = 1000;
+    }
+}
+
+
+
+
 //--------------------------------------CARDANIMATE--------------------------------------
 
 //--------------------------------------***********--------------------------------------
@@ -905,6 +958,17 @@ void mainWindow::onEndGame() {
     clearCardsDisplayed();
     qDebug() << "End game: All displays reset, hands cleared, and deck reshuffled.";
 
+    if(user->balance == 0){
+        showErrorMessage("You're broke. Would you like some brokey funds?");
+        user->balance = 1000;
+
+        // Update balance and bet displays
+        updateBalanceDisplay();  // Update balance display label
+        updateBetDisplay(0);     // Reset bet display to 0
+        user->betVal = 0;
+        user->splitBetVal = 0;
+    }
+
 
 
 }
@@ -975,8 +1039,12 @@ void mainWindow::setButtons(){
 }
 
 
-
-
+//call for graceful exit
+void mainWindow::closeEvent(QCloseEvent *event) {
+    checkBet();
+    saveBalance(); // save player balance
+    QMainWindow::closeEvent(event); // close the game gracefully
+}
 
 mainWindow::~mainWindow()
 {
