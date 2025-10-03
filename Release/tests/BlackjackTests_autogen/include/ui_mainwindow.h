@@ -5453,6 +5453,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
+    QPushButton *pushButton_12;
     QPushButton *pushButton_11;
 
     void setupUi(QMainWindow *mainWindow)
@@ -28267,6 +28268,29 @@ public:
 
         horizontalLayout->addWidget(pushButton_5);
 
+        pushButton_12 = new QPushButton(centralwidget);
+        pushButton_12->setObjectName("pushButton_12");
+        pushButton_12->setMinimumSize(QSize(100, 100));
+        pushButton_12->setFont(font);
+        pushButton_12->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"       /* Default button style */\n"
+"		border-image: none;\n"
+"		border-image: url(:/chips/red.png);\n"
+"		border-radius: 50px;\n"
+"		color: rgb(0, 0, 0);\n"
+"		\n"
+"   }\n"
+"\n"
+"   QPushButton:pressed {\n"
+"       /* Style when button is pressed */\n"
+"		border-image: none;\n"
+"		border-image: url(:/buttons/button-icon-png-21055.png);\n"
+"		border-radius: 55px;\n"
+"		color: rgb(0, 0, 0);\n"
+"   }"));
+
+        horizontalLayout->addWidget(pushButton_12);
+
         pushButton_11 = new QPushButton(centralwidget);
         pushButton_11->setObjectName("pushButton_11");
         sizePolicy1.setHeightForWidth(pushButton_11->sizePolicy().hasHeightForWidth());
@@ -30145,6 +30169,7 @@ public:
         pushButton_3->setText(QCoreApplication::translate("mainWindow", "10$", nullptr));
         pushButton_4->setText(QCoreApplication::translate("mainWindow", "20$", nullptr));
         pushButton_5->setText(QCoreApplication::translate("mainWindow", "100$", nullptr));
+        pushButton_12->setText(QCoreApplication::translate("mainWindow", "All In", nullptr));
         pushButton_11->setText(QCoreApplication::translate("mainWindow", "Submit", nullptr));
     } // retranslateUi
 
